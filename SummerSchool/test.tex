@@ -1,0 +1,170 @@
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%
+% Class Options (see http://www.brian-amberg.de/uni/poster/baposter/baposter_guide.pdf for more details)
+%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% a0paper               % paper size (choose one)
+% a1paper               % 
+% a2paper               %
+% a3paper               %
+% a4paper               %
+% archE                 %
+%
+% paperwidth = length   % alternative to paper size eg paperwidth=100cm
+% paperheight = length  %
+%
+% landscape             % paper orientation (choose one)
+% portrait              %        
+%
+% margin = length       % give length e.g. margin=2cm
+%
+% fontscale = number    % font size
+%
+% showframe             % frame for debugging
+%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\documentclass[a0paper,landscape]{baposter}
+\usepackage{graphicx} %to insert pictures
+\usepackage{color} %to set colors
+\usepackage{helvet} %to use helvet font
+\renewcommand{\familydefault}{\sfdefault} %set default font to sans-serif for entire document.
+  
+\begin{document}
+\begin{poster}{
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%
+% Poster Environment Options (see http://www.brian-amberg.de/uni/poster/baposter/baposter_guide.pdf for more details)
+%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% grid = true               % grid for helping design  (choose one)
+% grid = false              %
+%
+% columns = number          % number of columns (default 4 in landscape and 3 in portrait format, maximum number is 6)
+%
+% colspacing = length       % space betweeen columns e.g. colspacing=0.5cm 
+%        
+% headerheight = length     % height of poster header (not boxes in poster), default value is 0.1\textheight
+%
+% background = plain        % background type set as bgColorOne
+% background = shade-lr     % background type shades from bgColorOne to bgColorTwo
+% background = shade-tb     % background type shades from bgColorOne to bgColorTwo
+% background = user         % background from user picture, (set as \background{...})
+% background = none         % no background 
+%
+% bgColorOne = color name   % backgound color 1 
+% bgColorTWO = color name   % backgound color 2 (used for shading)
+%
+% eyecatcher = true         % eyecatcher image (choose one)
+% eyecatcher = false        %
+%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+grid=false,
+columns=4,
+colspacing=0.5cm,
+headerheight=0.1\textheight,
+background=plain,
+bgColorOne=white,
+bgColorTwo=red,
+eyecatcher=false,
+ 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+%
+% Posterbox Environment Options (see http://www.brian-amberg.de/uni/poster/baposter/baposter_guide.pdf for more details)
+%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% borderColor = color             % box border color
+%
+% headerColorOne = color          % box header color 1
+% headerColorTwo = color          % box header color 2
+%
+% textborder = none               % lower box border type/shape (choose one)
+% textborder = bars               % 
+% textborder = coils              % 
+% textborder = triangles          % 
+% textborder = rectangle          % 
+% textborder = rounded            %
+% textborder = faded              %
+% textborder = roundedsmall       %
+% textborder = roundedleft        %
+% textborder = roundedright       %
+%                                
+% headerborder = none             % upper box border type (choose one)
+% headerborder = closed           %
+% headerborder = open             %
+%
+% headershape = rectangle         % upper box border shape (choose one)
+% headershape = small-rounded     %
+% headershape = roundedright      %
+% headershape = roundedleft       %
+% headershape = rounded           %
+%
+% headershade = plain             % upper box shading type (choose one)
+% headershade = shade-lr          % left to right
+% headershade = shade-tb          % top to bottom
+% headershade = shade-tb-inverse  %
+%
+% boxshade = shade-lr             % lower box shading type (choose one)
+% boxshade = shade-tb             %
+% boxshade = plain                %
+% boxshade = none                 %
+%
+% headerfont = font               % font type in box header 
+% headerFontColor = color         % font color in box header
+%
+% linewidth = length              % width of box border lines
+%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+borderColor=black,
+headerColorOne=red,
+headerColorTwo=red,
+textborder=roundedsmall,
+headerborder=closed,
+headershape=roundedright,
+headershade=none,
+boxshade=none,
+headerfont=\sc,
+headerFontColor=white,
+linewidth=0.15cm
+}
+  
+%%
+%% POSTER HEADER
+%%
+% Eye Catcher Images to go left of your title.
+{\includegraphics[height=0.1\textheight]{rolling-stones.pdf}} %will not show if put eyecatcher=false
+% Title
+{Poster Title}
+% Author
+{Author}
+% Logo
+{\includegraphics[height=0.1\textheight]{rolling-stones.pdf}}
+  
+%%
+%% POSTER CONTENTS
+%%
+% BOX 1
+\headerbox{Box 1}{name=box1,column=0,row=0}{
+blah
+}
+% BOX 2
+\headerbox{Box 2}{name=box2,column=0,below=box1}{
+blah blah
+}
+% BOX 3
+\headerbox{Box 3}{name=box3,column=1}{
+blah blah blah
+}
+% BOX 4
+\headerbox{Box 4}{name=box4,column=1,below=box3,span=2}{
+blah blah blah, blah blah blah
+}
+% BOX 5
+\headerbox{Box 5}{name=box5,column=2}{
+blah blah
+}
+% BOX 6
+\headerbox{Box 6}{name=box6,column=3}{
+blah blah blah blah
+}
+\end{poster}
+\end{document}

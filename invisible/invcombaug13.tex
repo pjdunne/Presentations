@@ -1,0 +1,127 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+\begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+  \includegraphics[height=1cm]{icl.pdf}
+  \hfill
+  \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+\end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+\begin{beamercolorbox}[ht=.55cm,dp=0.4cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+  \begin{minipage}[c]{5cm}%
+    \usebeamerfont{author in head/foot}
+    \insertshortauthor 
+    \insertshorttitle
+    \end{minipage}\hfill%
+  \insertframenumber{} / \pageref{lastframe}
+  \hfill
+  \begin{minipage}{6cm}
+    \hfill
+  \end{minipage}
+\end{beamercolorbox}%
+}
+
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\title{\vspace{-0.2cm} Combination of Higgs to Invisible Channels}
+%\subtitle{AN-12-403,PAS-HIG-13-013 \vspace{-0.7cm}}
+%\author[P. Dunne]{ D.Colling, G. Davies \underline{P. Dunne}, N. Wardle} % A.M. Magnan and A. Nikitenko Joao Pela with \\ R. Aggleton, J. Brooke: Bristol \\ C.Asawangtrakuldee, Q.Li: Peking \\ P. Srimanobhas: Chulalongkorn \\ S. Kumar, K. Mazumdar: Mumbai}
+\titlegraphic{
+  \vspace{-0.7cm}
+%% \begin{fmfgraph*}(100,70)
+%%         \fmfleft{i1,i2}
+%%         \fmfright{o1,o2,o3}
+%%         \fmf{fermion}{i1,v1,o1}
+%%         \fmf{fermion}{i2,v2,o3}
+%%         \fmf{phantom,tension=4/5}{v1,v2}
+%%         \fmffreeze
+%%         \fmf{photon,label=$W,,Z$}{v1,v3}
+%%         \fmf{photon,label=$W,,Z$}{v2,v3}
+%%         \fmf{dashes}{v3,o2}
+%%         \fmflabel{$q$}{i1}
+%%         \fmflabel{$q$}{i2}
+%%         \fmflabel{$q$}{o1}
+%%         \fmflabel{$q$}{o3}
+%%         \fmflabel{$H$}{o2}
+%%       \end{fmfgraph*}
+}
+\date{}
+\begin{document}
+\begin{fmffile}{feynmandiags}
+
+%TITLE PAGE
+\section{Title}
+\begin{frame}
+  \titlepage
+  
+\end{frame}
+
+%OUTLINE
+\begin{frame}
+  \frametitle{Introduction}
+  \begin{itemize}
+  \item Decays of the Higgs boson to invisible final states are a strong indication of BSM physics
+  \item[-] SUSY, graviscalars, etc.
+  \item Because the final state is invisible the search must be carried out in the associated production channels:
+  \item[-] Look for large missing transverse energy plus associated production
+  \item All following results are limits on the invisible branching fraction of a 125 GeV Higgs boson.
+  
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Analyses}
+  \begin{itemize}
+  \item There are two currently approved CMS analyses searching for invisible final states of the Higgs boson.
+  \item[-] HIG-13-013, VBF production, sees an observed (expected) limit of 69\% (53\%) at 95\% C.L.
+  \item[-] HIG-13-018, ZH channel, sees an observed (expected) limit of 75\% (91\%) at 95\% C.L.
+  \item A further analysis, HIG-13-028, in the ZH$\rightarrow$bb+invisible channel is in progress
+  \item The CMS indirect limit, from visible channels, is 64\%
+  \item Both approved analyses have uploaded their datacards to the combinations SVN.
+  \end{itemize}
+\end{frame}
+  
+\begin{frame}
+  \frametitle{Combination Method}
+  \begin{itemize}
+  \item Using the standard Higgs combination tool I combined the cards for the two approved analyses
+  \item The luminosity uncertainties were considered correlated between the analyses
+  \item All other uncertainties were considered not to be correlated between analyses
+  \item[-] VBF analysis datacard does not separate out individual sources of error so JES/R correlations cannot be taken into account without more information
+  \end{itemize}
+\end{frame}
+    
+\begin{frame}
+  \frametitle{Results}
+  \begin{itemize}
+  \item The expected limit is found to be: 46\%
+  \item[-] The 68\% C.L. band on the expected limit is 34-62\%
+  \item The observed limit is 53\%
+  \item Compatible with the SM
+  \item Strongest limit so far on invisible branching fraction of the Higgs boson.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Backup}
+\end{frame}
+
+\begin{frame}
+  \frametitle{ATLAS results}
+  \begin{itemize}
+  \item Indirect limit 60\%
+  \item ZH 65\% observed for 84\% expected
+  \end{itemize}
+\end{frame}
+
+\end{fmffile}
+\end{document}
+

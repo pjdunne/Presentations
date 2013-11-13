@@ -1,0 +1,11 @@
+\begin{tabular}{|l|p{0.07\textwidth}|p{0.07\textwidth}|p{0.07\textwidth}|p{0.07\textwidth}|p{0.07\textwidth}|p{0.07\textwidth}||p{0.07\textwidth}|c||p{0.07\textwidth}|}
+\hline
+Step & QCD & $\gamma$+jets & Top & W+jets & Z+jets & VV & SumMC & Data & Signal 120 \\
+\hline
+JetPair & $ 3951479 \pm 351967 $ & $ 7660 \pm 85 $ & $ 21435 \pm 195 $ & $ 82247 \pm 256 $ & $ 23305 \pm 191 $ & $ 851 \pm 9 $ & $ 4086977 \pm 352703 $ & $ 1502780 $ & $ 1951 \pm 27 $ \\ 
+MET & $ 26468 \pm 1896 $ & $ 420 \pm 18 $ & $ 5775 \pm 84 $ & $ 18645 \pm 112 $ & $ 7737 \pm 70 $ & $ 279 \pm 5 $ & $ 59325 \pm 2184 $ & $ 47481 $ & $ 1195 \pm 21 $ \\ 
+DEta & $ 3741 \pm 1371 $ & $ 64 \pm 9 $ & $ 733 \pm 41 $ & $ 4901 \pm 62 $ & $ 2258 \pm 38 $ & $ 51 \pm 2 $ & $ 11747 \pm 1523 $ & $ 11281 $ & $ 795 \pm 17 $ \\ 
+LeptonVeto & $ 3741 \pm 1371 $ & $ 64 \pm 9 $ & $ 479 \pm 34 $ & $ 3955 \pm 55 $ & $ 2225 \pm 35 $ & $ 41 \pm 2 $ & $ 10505 \pm 1506 $ & $ 10389 $ & $ 795 \pm 17 $ \\ 
+DPhi & $ 2012 \pm 1173 $ & $ 45 \pm 8 $ & $ 303 \pm 24 $ & $ 2506 \pm 44 $ & $ 1374 \pm 27 $ & $ 28 \pm 2 $ & $ 6268 \pm 1279 $ & $ 5990 $ & $ 573 \pm 15 $ \\ 
+\hline
+\end{tabular}

@@ -1,0 +1,174 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+\begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+  \includegraphics[height=1cm]{icl.pdf}
+  \hfill
+  \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+\end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+\begin{beamercolorbox}[ht=.55cm,dp=0.4cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+  \begin{minipage}[c]{5cm}%
+    \usebeamerfont{author in head/foot}
+    \insertshortauthor 
+    \insertshorttitle
+    \end{minipage}\hfill%
+  \insertframenumber{} / \pageref{lastframe}
+  \hfill
+  \begin{minipage}{6cm}
+    \hfill
+  \end{minipage}
+\end{beamercolorbox}%
+}
+
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\title{Tau ID for W$\rightarrow \tau\nu$ background estimation}
+\author[P. Dunne]{ D.Colling, \underline{P. Dunne}, A. Magnan, A. Nikitenko, J. Pela}
+\date{}
+\begin{document}
+\begin{fmffile}{feynmandiags}
+
+%% %TITLE PAGE
+%% \section{Title}
+%% \begin{frame}
+%%   \titlepage
+
+%% \end{frame}
+
+%OUTLINE
+\begin{frame}
+    \vspace{-0.3cm}
+    
+    \begin{block}{\scriptsize Reminder of $W\rightarrow\tau\nu$ equation and method}
+      \scriptsize
+      \centering
+      $N_{Data}^{W\rightarrow\tau\nu}=(N_{Data}^{\tau control region}-N_{MC}^{Background})X\frac{\epsilon_{CJV}}{\epsilon_{\tau_{ID}}}$,
+
+      \begin{itemize}
+      \item Tau control region is signal region (without CJV to increase stat.) plus requirement of 1 $\tau_{hadronic}$ candidate with $p_T>20 GeV$, $|\eta|<2.3$:
+      \item Use Tau POG approved discriminant: ``byTightCombinedIsolationDeltaBetaCorr3Hits'' 
+      \item Use Tau POG antilepton discriminant: choice of loose or tight working points
+      \item[-] Pre-approval number was with loose, result was 95
+      \end{itemize}
+    \end{block}
+
+    \vspace{-0.2cm}
+    
+    \begin{block}{\scriptsize Update}
+      \scriptsize
+      \begin{itemize}
+      \item Bug fix to include Z+2j: $N_{MC}^{Background}$ changes from 15.4 to 16.4 for loose antilepton discriminant, result changes to $92\pm 23 (stat.) \pm 19 (syst.)$
+      \item Propose using tight antilepton discriminant because of better purity (see table), result is $76\pm 25 (stat.) \pm 19 (syst.)$
+      \end{itemize}
+    \end{block}
+    
+    \vspace{-0.2cm}
+
+    \begin{block}
+      \centering
+      \scriptsize
+      \begin{tabular}{|l|c|c|c|c|c|}
+        \hline
+        Discriminant & $W\rightarrow e\nu$ & $W\rightarrow\mu\nu$ & $W\rightarrow\tau\nu$ & Bkg & Data\\
+        \hline
+        againste$\mu$loose & $2\pm1$ & $0\pm0$ & $26\pm4$ & $16.4\pm3.2$ & $47\pm7$\\
+        againste$\mu$tight & $0.4\pm0.4$ & $0\pm0$ & $20\pm4$ & $12.4\pm2.2$ & $32\pm6$ \\
+        \hline
+      \end{tabular}
+    \end{block}
+  
+\end{frame}
+
+%% \begin{frame}
+%%   \begin{block}{}      
+%%     $\epsilon_{\tau_{ID}}=\frac{N_{W\rightarrow\tau\nu}^{tau subregion}}{N_{W\rightarrow\tau\nu}^{Signal region without CJV}}\,,\,\epsilon_{CJV}=\frac{N_{W\rightarrow\tau\nu}^{Signal region with CJV}}{N_{W\rightarrow\tau\nu}^{Signal region without CJV}}$
+%%     \end{block}
+    
+%% \end{frame}
+
+%% \begin{frame}
+%%   \frametitle{Efficiencies}
+%%   \begin{block}
+%%     \centering
+%%     \scriptsize
+%%     \begin{tabular}{|l|c|}
+%%       \hline
+%%       Discriminant & $\epsilon_{\tau_{ID}}$ \\
+%%       \hline
+%%       3Hits \& againste$\mu$loose discriminant & $0.14 \pm 0.03$ \\
+%%       3Hits \& againste$\mu$tight discriminant & $0.11 \pm 0.02$ \\
+%%       MVA2 \& againste$\mu$loose discriminant & $0.22 \pm 0.03$ \\
+%%       MVA2 \& againste$\mu$tight discriminant & $0.22 \pm 0.03$ \\
+%%       \hline
+%%     \end{tabular}
+%%     \begin{itemize}
+%%     \item $\epsilon_{CJV}$ is independent of discriminant choice and is $0.43 \pm 0.03$.
+%%     \end{itemize}
+%%   \end{block}
+%% \end{frame}
+
+%% \begin{frame}
+%%   \frametitle{Remaining $W\rightarrow e\nu$ events}
+%%   \begin{block}{}
+%%   \begin{itemize}
+%%   \item With loose(tight) antilepton discrimant $W\rightarrow e\nu$ from MC is:
+%%     \item[-] 8(2)\% of expected $W\rightarrow\tau\nu$ events for 3hit discriminant
+%%     \item[-] 15(15)\% for the MVA2 discriminant
+%%   \item[-] this is 12(3)\% of the expected background for 3hit and 27(30)\% for MVA2 .
+%%   \item Two approaches will be compared:
+%%   \item[1)] subtract MC prediction of $W\rightarrow e\nu$ from $N_{Data}^{C}$ and update stat. error accordingly
+%%   \item[2)] add number of $W\rightarrow e\nu$ from MC as an additional systematic
+%%   \end{itemize}
+%%   \end{block}
+%% \end{frame}
+
+%% \begin{frame}
+%%   \frametitle{Option 1}
+%%   \begin{block}{}
+%%     \begin{itemize}
+%%     \item Subtracting MC estimation of $W\rightarrow e\nu$ contamination gives a final $W\rightarrow\tau\nu$ estimate of:
+%%     \item[-] 3Hits againste$\mu$loose: $86\pm 29 \pm 19$
+%%     \item[-] 3Hits againste$\mu$tight: $75\pm 30 \pm 18$
+%%     \item[-] MVA2 againste$\mu$loose: $91\pm 25 \pm 17$
+%%     \item[-] MVA2 againste$\mu$tight: $85\pm 23 \pm 15$
+%%     \end{itemize}
+%%   \end{block}
+%% \end{frame}
+
+%% \begin{frame}
+%%   \frametitle{Option 2}
+%%   \begin{block}{}
+%%   \begin{itemize}
+%%   \item Adding MC prediction of $W\rightarrow e\nu$ contribution as a systematic gives a final $W\rightarrow\tau\nu$ estimate of:
+%%   \item[-] 3Hits againste$\mu$loose: $92\pm 29 \pm 20$
+%%   \item[-] 3Hits againste$\mu$tight: $76\pm 31 \pm 18$
+%%   \item[-] MVA2 againste$\mu$loose: $102\pm 26 \pm 20$
+%%   \item[-] MVA2 againste$\mu$tight: $97\pm 24 \pm 19$
+%%   \end{itemize}
+%%   \end{block}
+%% \end{frame}
+
+%% \begin{frame}\label{lastframe}
+%%   \frametitle{Summary}
+%%   \begin{block}{}
+%%     \begin{itemize}
+%%     \item Behaviour agrees with what is seen in tau tau
+%%     \item Best purity comes from tight antilepton discrimination
+%%     \item For the main discriminant with tight antilepton discrimination the $W\rightarrow e\nu$ contamination is small ~2\% so systematic approach apropriate.
+%%     \item For the cross-check discriminant $W\rightarrow e\nu$ contamination is large so subtraction may be the better option.
+%%     \item Should we be doing anything else to reduce $W\rightarrow e\nu$ contribution?
+%%     \end{itemize}
+%%   \end{block}
+%% \end{frame}
+
+\end{fmffile}
+\end{document}

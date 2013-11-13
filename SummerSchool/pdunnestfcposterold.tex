@@ -1,0 +1,44 @@
+\documentclass[a0paper,portrait]{baposter}
+\usepackage{graphicx} %to insert pictures
+\usepackage{color} %to set colors
+
+\definecolor{beamer@icdarkblue}{RGB}{0,51,102}
+\definecolor{beamer@icmiddleblue}{RGB}{0,82,150}
+\definecolor{beamer@iclightblue}{RGB}{200,212,232}
+\definecolor{beamer@icmiddlered}{RGB}{204,51,0}
+\definecolor{beamer@iclightred}{RGB}{232,212,32}
+
+\begin{document}
+\begin{poster}{%options
+    background=plain,
+    bgColorOne=white,
+    eyecatcher=true
+  }
+  {%eyecatcher
+  }
+  {%title
+    A Study of VBF Produced Higgs Boson Decays to Invisible Final States at the Compact Muon Solenoid (CMS)
+  }
+  {%authors
+    Patrick Dunne, Imperial College London
+  }
+  {%logo
+  }
+
+  \headerbox{Box 1}{name=box1,column=0,headerColorOne=beamer@icdarkblue,headershade=plain,headerFontColor=beamer@iclightblue,boxshade=plain}{
+  }
+  \headerbox{Box 2}{name=box2,column=0,below=box1}{
+   
+  }
+  \headerbox{Box 3}{name=box3,column=1}{
+   
+  }
+  \headerbox{Box 4}{name=box4,column=1,below=box3,span=2}{
+  }
+
+  %\begin{figure*}
+  %  \includegraphics[height=.1\textheight]{Pictures/icl.pdf}
+  %  \includegraphics[height=.1\textheight]{Pictures/CMS-Color.pdf}
+  %\end{figure*}
+\end{poster}
+\end{document}
