@@ -97,7 +97,16 @@
   \end{itemize}
 \end{frame}  
 
-
+\begin{frame}
+  \frametitle{Combination Method}
+  \begin{itemize}
+  \item The cards for the two approved analyses were combined using the standard Higgs combination tool
+  \item[-] A bug was found in the tool that meant that lnN correlated uncertainties were not being properly treated, fixed in latest combine version
+  \item Correlations between analyses were taken into account according to combination group recommendations
+  \item All other uncertainties were considered fully uncorrelated between analyses
+  \end{itemize}
+\end{frame}
+    
 \begin{frame}
   \frametitle{Separate results: Direct}
   \centering
@@ -160,22 +169,8 @@
   \end{columns}
 \end{frame}
 
-
-
-
-
 \begin{frame}
-  \frametitle{Combination Method}
-  \begin{itemize}
-  \item The cards for the two approved analyses were combined using the standard Higgs combination tool
-  \item[-] A bug was found in the tool that meant that lnN correlated uncertainties were not being properly treated, fixed in latest combine version
-  \item Correlations between analyses were taken into account according to combination group recommendations
-  \item All other uncertainties were considered fully uncorrelated between analyses
-  \end{itemize}
-\end{frame}
-    
-\begin{frame}
-  \frametitle{Results}
+  \frametitle{Combined Results}
   \centering
   \vspace{-.2cm}
   \includegraphics[clip=true,trim=0 5 0 20, width=.8\textwidth]{TalkPics/invcomb021213/combinedlimit.pdf}
