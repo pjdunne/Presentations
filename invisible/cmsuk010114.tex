@@ -32,26 +32,27 @@
 \DeclareGraphicsRule{*}{mps}{*}{}
 
 \title{\vspace{-0.2cm} Higgs to Invisible Analyses at CMS}
-\subtitle{PAS-HIG-13-013, HIG-13-030 \vspace{-0.7cm}}
-\author[P. Dunne]{R. Aggleton, C. Asawatangtrakuldee, J. Brooke, O. Buchmueller D. Colling, G. Davies \underline{P. Dunne}, S. Kumar, Q. Li,  A. Magnan, K. Mazumdar, A. Nikitenko, J. Pela, P. Srimanobhas}%!!FIX AUTHOR LIST AND TITLE GRAPHIC GO FROM COMB OR HIGGS EXO PRESENTATION
+\subtitle{HIG-13-030 \vspace{-0.7cm}}
+\author[P. Dunne]{P. Dunne on Behalf of the Higgs to Invisible Analysis Groups}
 \titlegraphic{
   \vspace{-0.7cm}
-\begin{fmfgraph*}(100,70)
-        \fmfleft{i1,i2}
-        \fmfright{o1,o2,o3}
-        \fmf{fermion}{i1,v1,o1}
-        \fmf{fermion}{i2,v2,o3}
-        \fmf{phantom,tension=4/5}{v1,v2}
-        \fmffreeze
-        \fmf{photon,label=$W,,Z$}{v1,v3}
-        \fmf{photon,label=$W,,Z$}{v2,v3}
-        \fmf{dashes}{v3,o2}
-        \fmflabel{$q$}{i1}
-        \fmflabel{$q$}{i2}
-        \fmflabel{$q$}{o1}
-        \fmflabel{$q$}{o3}
-        \fmflabel{$H$}{o2}
-      \end{fmfgraph*}
+\includegraphics[width=\textwidth]{TalkPics/invcomb021213/feyndiags}
+%% \begin{fmfgraph*}(100,70)
+%%         \fmfleft{i1,i2}
+%%         \fmfright{o1,o2,o3}
+%%         \fmf{fermion}{i1,v1,o1}
+%%         \fmf{fermion}{i2,v2,o3}
+%%         \fmf{phantom,tension=4/5}{v1,v2}
+%%         \fmffreeze
+%%         \fmf{photon,label=$W,,Z$}{v1,v3}
+%%         \fmf{photon,label=$W,,Z$}{v2,v3}
+%%         \fmf{dashes}{v3,o2}
+%%         \fmflabel{$q$}{i1}
+%%         \fmflabel{$q$}{i2}
+%%         \fmflabel{$q$}{o1}
+%%         \fmflabel{$q$}{o3}
+%%         \fmflabel{$H$}{o2}
+%%       \end{fmfgraph*}
 }
 \date{}
 \begin{document}
@@ -64,30 +65,77 @@
 
  \end{frame}
 
- %OUTLINE
- \begin{frame} %!!UPDATE
-   \frametitle{Introduction}
-   \begin{columns}
-     \column{.6\textwidth}
-     \begin{itemize}
-     \item Searching for VBF produced Higgs decaying to invisible final state
-     \item Visible decays constrain invisible BF to less than 64\% at 95\% C.L. (assumes standard model width)
-     \item Many theoretical possibilities for BSM invisible final states:
-     \item[-] $H\rightarrow 2 LSPs$ (SUSY)
-     \item[-] $H\rightarrow$ dark matter (Extra Dimensions)
-     \item[-] etc.
-     \end{itemize}
-     \column{.4\textwidth}
-     \includegraphics[width=\textwidth]{TalkPics/invbr.pdf}
-   \end{columns}
- \end{frame}
+%OUTLINE                                                                                                                                                                
+\begin{frame}
+  \frametitle{Introduction}
+  \begin{columns}
+    \column{.7\textwidth}
+    \begin{block}{}
+      \scriptsize
+  \begin{itemize}
+  \item Many BSM theories predict invisible Higgs decays:
+  \item[-] SUSY, Extra Dimensions, etc.
+  \item Visible decays constrain invisible BF to less than 64\% at 95\% C.L.
+  \item Direct searches must be performed in associated production channels
+  \item There are three approved CMS Higgs to invisible results in the following channels:
+  \item[-] VBF (HIG-13-013), Z($\ell\ell$)H(inv) (HIG-13-018), Z($b\bar{b}$)H(inv) (HIG-13-028)
+  \item These results have been combined for a paper (HIG-13-030)
+  \end{itemize}
+  \end{block}
+  \column{.4\textwidth}
+  \includegraphics[width=\textwidth]{indirectbrbsm.png}
+  \end{columns}
+\end{frame}
 
  %OVERALL STRATEGY
- \begin{frame}%!!MAKE MORE GENERAL TO ALL THREE ANALYSES
-   \frametitle{Measurement Strategy}
+\begin{frame}
+  \frametitle{The Three Channels}
+  \begin{columns}
+    \column{.7\textwidth}
+    \vspace{-0.7cm}
+    \begin{block}{\scriptsize VBF}
+      \scriptsize
+    \begin{itemize}
+    \item[-] Highest production cross-section
+    \item[-] Difficult all hadronic final state
+    \end{itemize}
+    \end{block}
+    \column{.3\textwidth}
+    \includegraphics[clip=true,trim=0 0 460 0,height=.3\textheight]{TalkPics/invcomb021213/feyndiags}
+  \end{columns}
+  \begin{columns}
+    \column{.7\textwidth}
+    \vspace{-0.7cm}
+    \begin{block}{\scriptsize Z($\ell\ell$)H(inv)}
+      \scriptsize
+    \begin{itemize}
+    \item[-] Production cross-section lower than VBF
+    \item[-] Clean all leptonic final state
+    \end{itemize}
+    \end{block}
+    \column{.3\textwidth}
+    \includegraphics[clip=true,trim=235 0 220 0,height=.3\textheight]{TalkPics/invcomb021213/feyndiags}
+  \end{columns}
+  \begin{columns}
+    \column{.7\textwidth}
+    \vspace{-0.7cm}
+    \begin{block}{\scriptsize Z($b\bar{b}$)H(inv)}
+      \scriptsize
+    \begin{itemize}
+    \item[-] Also much lower production cross-section than VBF
+    \item[-] Same final state as Z(inv)H($b\bar{b}$)
+    \end{itemize}
+    \end{block}
+    \column{.3\textwidth}
+    \includegraphics[clip=true,trim=470 0 0 0,height=.3\textheight]{TalkPics/invcomb021213/feyndiags}
+  \end{columns}
+\end{frame}
+
+ \begin{frame}%
+   \frametitle{VBF Measurement Strategy}
    \begin{columns}
      \column{.5\textwidth}
-     
+     \vspace{-.2cm}
      \scriptsize
      \begin{block}{\scriptsize General Strategy}
        \begin{itemize}
@@ -97,22 +145,16 @@
        \end{itemize}
      \end{block}
 
-     \vspace{.25cm}
+     \vspace{-.15cm}
 
-     \begin{figure}
-     \begin{fmfgraph*}(100,70)
-       \fmftop{i1,m1,o1}
-       \fmfbottom{i2,o2}
-       \fmf{fermion}{v1,o2}
-       \fmf{fermion}{v1,i2}
-       \fmf{dashes,label=$H$}{v1,m1}
-       \fmflabel{$jet$}{i2}
-       \fmflabel{$jet$}{o2}
-       \fmflabel{$MET$}{m1}
-     \end{fmfgraph*}
-     \end{figure}
-
-
+    \begin{block}{\scriptsize Main backgrounds:}
+      \scriptsize
+      \begin{itemize}
+      \item $W$ + jets where lepton is missed
+      \item $Z\rightarrow\nu\nu$ + jets
+      \item QCD
+      \end{itemize}
+    \end{block}
 
      \column{.5\textwidth}
      \centering
@@ -124,7 +166,9 @@
        \item Need dedicated VBF trigger
        \end{itemize}
      \end{block}
-     
+
+     \vspace{-0.3cm}
+
      \begin{block}{\scriptsize Cuts}
        \scriptsize
        \begin{itemize}
@@ -133,7 +177,8 @@
        \item[-] $p_{T} > 50 GeV$,  $|\eta| < 4.7$
        \item[-] $|\Delta\eta|>4.2$ , $\eta_{j_{1}}*\eta_{j{_2}}<0$
        \item[-] $m_{jj} > 1100 GeV$
-       \item Veto events with jets with $p_{T}>30$GeV between the tag jets unless stated otherwise (CJV)
+       \item Central Jet Veto (CJV)
+       \item[-] Veto events with jets with $p_{T}>30$GeV between the tag jets unless stated otherwise
       \end{itemize}
      \end{block}
 
@@ -141,110 +186,9 @@
   \end{columns}
 \end{frame}
 
-%!!DO A SECTION ON EACH ANALYSIS
-
-\begin{frame}
-  \frametitle{Backgrounds Overview}
-  \begin{columns}
-    \column{.6\textwidth}
-    \vspace{-0.3cm}
-    \begin{block}{\scriptsize Main backgrounds:}
-      \scriptsize
-      \begin{itemize}
-      \item $W$ + jets where lepton is missed
-      \item[-] {\color{red}AM+Patrick cross check}
-      \item $Z\rightarrow\nu\nu$ + jets
-      \item QCD: {\color{red}Sasha}
-      \end{itemize}
-    \end{block}
-    \vspace{-0.3cm}
-    \begin{block}{\scriptsize Data driven $W/Z$ + jets estimation:}
-      \scriptsize
-      \begin{itemize}
-      \item Pick $W/Z$ dominated control region in same trigger sample with same VBF selection
-      \item[-] For muons recalculate MET after removing leptons from $W$ \& $Z$ to mimic $W$ with missed muon/$Z\rightarrow\nu\nu$
-      \item Check data/MC shape agreement in control regions
-      \item Assume MC signal/control ratio is the same as that in data
-      \end{itemize}
-    \end{block}
-    \column{.05\textwidth}
-    \column{.35\textwidth}
-    %WJETS
-    \begin{fmfgraph*}(75,60)
-      \fmftop{i1,m1,m2,o1}
-      \fmfbottom{i2,o2}
-      \fmf{fermion,label=$e/\mu/\tau$,label.side=left}{v2,m1}
-      \fmf{fermion,label=$\nu$,label.side=right}{v2,m2}
-      \fmf{photon,tension=7/5,label=$W$}{v1,v2}
-      \fmf{fermion}{v1,i2}
-      \fmf{fermion}{v1,o2}
-      \fmflabel{$jet$}{i2}
-      \fmflabel{$jet$}{o2}
-    \end{fmfgraph*}
-    \vspace{0.2cm}
-    %ZJETS
-    \begin{fmfgraph*}(75,50)
-      \fmftop{i1,m1,m2,o1}
-      \fmfbottom{i2,o2}
-      \fmf{fermion}{v1,i2}
-      \fmf{fermion}{v1,o2}
-      \fmf{photon,tension=7/5,label=$Z$}{v1,v2}
-      \fmf{fermion,label=$\nu$,label.side=left}{v2,m1}
-      \fmf{fermion,label=$\nu$,label.side=right}{v2,m2}
-      \fmflabel{$jet$}{i2}
-      \fmflabel{$jet$}{o2}
-    \end{fmfgraph*}
-    
-    %QCD
-    \begin{fmfgraph*}(75,60)
-      \fmftop{i1,m1,m2,m3,m4,o1}
-      \fmfbottom{i2,o2}
-      \fmf{fermion,tension=4}{v1,i2}
-      \fmf{fermion,tension=4}{v1,o2}
-      \fmf{fermion,label=$jets$,label.side=left}{v1,m1}
-      \fmf{fermion}{v1,m2}
-      \fmf{fermion}{v1,m3}
-      \fmf{fermion}{v1,m4}
-      \fmflabel{$jet$}{i2}
-      \fmflabel{$jet$}{o2}
-    \end{fmfgraph*}
-  \end{columns}
-\end{frame}
-
-%TRIGGER AND DATASETS
-\begin{frame}
-  \frametitle{Datasets and Trigger}
-  \begin{columns}
-    \column{.5\textwidth}
-    \vspace{-0.2cm}
-    \begin{block}{\scriptsize Datasets:}
-      \scriptsize
-      \begin{itemize}
-      \item 8 TeV MET datasets
-      \item[-] Total of 19.6 $fb^{-1}$
-      \item MET filters are used to cut out events with mismeasured MET
-      \end{itemize}
-    \end{block}
-    \vspace{-0.3cm}
-    \begin{block}{\scriptsize Trigger:}
-      \scriptsize
-      \begin{itemize}  
-      \item HLT\_DiPFJet40\_PFMET noMu65\_MJJ800VBF\_AllJets
-      \item[-] VBF means $|\Delta \eta_{j_{1}j_{2}}| > 3.5 $
-      \item {\color{red} IC heavily involved in design of the trigger}
-      \end{itemize}
-    \end{block}
-    \column{.5\textwidth}
-    \centering
-    \includegraphics[height=.45\textheight]{TalkPics/METtrig.png}
-    
-    \includegraphics[height=.45\textheight]{TalkPics/Mjjtrig.png}
-  \end{columns}
-\end{frame}
-
 %SIGNAL EVENT SELECTION
-\begin{frame}
-    \frametitle{Signal Event Selection}
+\begin{frame} 
+  \frametitle{VBF Signal Event Selection}
   \vspace{-0.2cm}
   \begin{block}{\scriptsize Signal Region Selection:}
     \scriptsize
@@ -269,10 +213,387 @@
 \vspace{-0.1cm}
 \end{frame}
 
-%BACKGROUNDS
 
-%Background estimations!
+
+\begin{frame}%!!PUT RESULTS IN
+  \frametitle{VBF W/Z + jets Background Estimation}
+  \begin{columns}
+    \column{.6\textwidth}
+    \vspace{-0.3cm}
+    \begin{block}{\scriptsize Data Driven Estimation Method:}
+      \scriptsize
+      \begin{itemize}
+      \item Pick $W/Z$ dominated control region in same trigger sample with same VBF selection
+      \item[-] For muons recalculate MET after removing leptons from $W$ \& $Z$ to mimic $W$ with missed muon/$Z\rightarrow\nu\nu$
+      \item Check data/MC shape agreement in control regions
+      \item Assume MC signal/control ratio is the same as that in data
+      \end{itemize}
+    \end{block}
+
+    \vspace{-0.3cm}
+
+    \begin{block}{\scriptsize Results}
+      \scriptsize
+      \begin{itemize}
+        \item $W\rightarrow e\nu$: 62.7 $\pm$ 8.7 (stat.) $\pm$ 8.6 (syst.)
+        \item $W\rightarrow\mu\nu$: 66.8 $\pm$ 5.2 (stat.) $\pm$ 7.0 (syst.)
+        \item $W\rightarrow\tau\nu$: 53 $\pm$ 18 (stat.) $\pm$ 14 (syst.)
+        \item $Z\rightarrow\nu\nu$: 103 $\pm$ 30 (stat.) $\pm$ 14 (syst.)
+      \end{itemize}
+    \end{block}
+    \column{.4\textwidth}
+    \begin{block}{\scriptsize $W \rightarrow \mu/ e$ Control Region:}
+      \scriptsize
+      \begin{itemize}
+      \item 1 tight muon/electron:
+      \item MET $>130 GeV$
+      \end{itemize}
+    \end{block}
+
+    \vspace{-0.3cm}
+
+    \begin{block}{\scriptsize $W\rightarrow \tau$ Control Region:}
+      \scriptsize
+      \begin{itemize}
+      \item Remove CJV
+      \item Require 1 $\tau_{hadronic}$ candidate
+      \end{itemize}
+    \end{block}
+
+    \vspace{-0.3cm}
+
+    \begin{block}{\scriptsize $Z\rightarrow\nu\nu$ Control Region:}
+      \scriptsize
+      \begin{itemize}
+      \item Require 2 tight muons with $60<M_{\mu\mu}<120$ GeV
+      \item MET without $Z$ candidate $> 130 GeV$
+      \item Correct for different cross-section for the two processes
+      \end{itemize}
+    \end{block}
+    
+  \end{columns}
+\end{frame}
+
+%QCD
+\begin{frame}%!!UPDATE
+  \frametitle{VBF QCD Estimation}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{\scriptsize QCD Background Strategy}
+      \scriptsize
+      \begin{itemize}
+      \item V. low MC statistics
+      \item[1)] Reduce background with cuts
+      \item[2)] Estimate using data driven ABCD method in MET and CJV
+      \item[3)] Cross-check using ABCD method in MET and $\Delta\phi_{jj}$
+            \end{itemize}
+    \end{block}
+    \begin{block}{\scriptsize QCD ABCD method:}
+      \scriptsize
+      \begin{itemize}
+      \item Choose 4 regions:
+      \end{itemize}
+      \begin{tabular}{|l|c|c|}
+        \hline
+        & Fail MET & Pass MET \\
+        \hline
+        Fail CJV & A & B \\
+        \hline
+        Pass CJV & C & D (signal) \\
+        \hline
+      \end{tabular}
+      \begin{itemize}
+      \item $N_{D}=N_{B}N_{C}/N_{A}$
+      \end{itemize}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{}
+      \scriptsize
+      \begin{itemize}
+      \item $N_{QCD}=$32.5 $\pm$ 5.6 (stat.) $\pm$ 13.0 (syst.)
+      \end{itemize}
+    \end{block}
+
+    \vspace{.5cm}
+
+    \includegraphics[width=\textwidth,height=.6\textheight]{TalkPics/iccms091013/qcdmet.png}
+  \end{columns}
+\end{frame}
+
+
+
 \begin{frame}
+  \frametitle{Combination Method}
+  \begin{block}{}
+    \scriptsize
+  \begin{itemize}
+  \item Datacards for the three channels were combined using the standard Higgs combination tool
+  \item The following uncertainties were considered correlated between channels in decreasing order of importance:
+  \end{itemize}
+  \end{block}
+
+  \begin{block}{}
+      \scriptsize
+      \center
+    \begin{tabular}{|l|c|}
+      \hline
+      Nuisance & Analyses which it affects \\
+      \hline
+      Jet energy scale & VBF, Z($\ell\ell$)H(inv) \\
+      PDF uncertainties & VBF, Z($b\bar{b}$), Z($\ell\ell$)H(inv) \\
+      QCD scale & VBF, Z($b\bar{b}$), Z($\ell\ell$)H(inv) \\
+      Luminosity & VBF, Z($b\bar{b}$)H(inv), Z($\ell\ell$)H(inv) \\
+      Jet energy resolution & VBF, Z($\ell\ell$)H(inv) \\
+      Unclustered energy scale & VBF, Z($b\bar{b}$)H(inv), Z($\ell\ell$)H(inv) \\
+      Muon identification efficiency & VBF, Z($\ell\ell$)H(inv) \\
+      Electron identification efficiency & VBF, Z($\ell\ell$)H(inv) \\
+      \hline
+    \end{tabular}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Separate results: Cross-Section limits}
+  \centering
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{itemize}
+    \item VBF
+    \end{itemize}
+    \column{.5\textwidth}
+    \begin{itemize}
+    \item ZH
+    \end{itemize}
+  \end{columns}
+  \begin{columns}
+    \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{TalkPics/invcomb021213/vbfxslimit.pdf}
+    \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{TalkPics/invcomb021213/zhxslimit.pdf}
+  \end{columns}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{}
+      \scriptsize
+    \begin{itemize}
+    \item Observed (expected) limit of 67\% (52\%) at 95\% C.L. on $BR_{inv}$ for a 125 GeV Higgs
+    \end{itemize}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{}
+      \scriptsize
+    \begin{itemize}
+    \item Observed (expected) limit of 81\% (83\%) at 95\% C.L. on $BR_{inv}$ for a 125 GeV Higgs
+    \end{itemize}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Separate results: Direct}
+  \centering
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{itemize}
+    \item VBF
+    \end{itemize}
+    \column{.5\textwidth}
+    \begin{itemize}
+    \item ZH
+    \end{itemize}
+  \end{columns}
+  \begin{columns}
+    \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{TalkPics/invcomb021213/vbflimit.pdf}
+    \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{TalkPics/invcomb021213/zhlimit.pdf}
+  \end{columns}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{}
+      \scriptsize
+    \begin{itemize}
+    \item Observed (expected) limit of 67\% (52\%) at 95\% C.L. on $BR_{inv}$ for a 125 GeV Higgs
+    \end{itemize}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{}
+      \scriptsize
+    \begin{itemize}
+    \item Observed (expected) limit of 81\% (83\%) at 95\% C.L. on $BR_{inv}$ for a 125 GeV Higgs
+    \end{itemize}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Combined Results}
+  \centering
+  %\vspace{-.2cm}
+  \includegraphics[clip=true,trim=0 5 0 20, width=.8\textwidth]{TalkPics/invcomb021213/combinedlimit.pdf}
+  \vspace{-.3cm}
+  \begin{block}{}
+    \scriptsize
+  \begin{itemize}
+  \item Observed (expected) limit at 125 GeV is 58(46)\%
+  \item[-] Combination between direct and indirect methods is being investigated
+  \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Other Interpretations}
+  \centering
+  \vspace{-.3cm}
+  \begin{columns}
+    \column{.5\textwidth}
+  \begin{block}{}
+    \scriptsize
+  \begin{itemize}
+  \item Z($\ell\ell$)H(inv) and VBF both have datacards up to 300 GeV
+  \item The method above was used to combine these two channels between 115 and 300 GeV
+  \end{itemize}
+  \end{block}
+  \includegraphics[clip=true,trim=0 5 0 20, width=1.1\textwidth]{TalkPics/invcomb021213/highmasslimit.pdf}
+  \column{.5\textwidth}
+  \vspace{0.2cm}
+  \begin{block}{}
+      \scriptsize
+      \begin{itemize}
+      \item Limits can also be interpreted as constraints on dark matter models (arXiv:1205.3169)
+      \item Competitive with dedicated experiments at very low mass
+      \end{itemize}
+    \end{block}
+
+    %\vspace{.6cm}
+
+    \includegraphics[width=\textwidth]{TalkPics/cmsuk080114/dmlimit1.png}
+  \end{columns}
+ \end{frame}
+
+\begin{frame}
+  \frametitle{Conclusions}
+  \label{lastframe}
+  \begin{columns}
+    \column{.5\textwidth}
+    \vspace{-0.3cm}
+    \begin{block}{}
+      \scriptsize
+      \begin{itemize}
+      \item All three H$\rightarrow$invisible channels have been combined using the standard Higgs combination tool
+      \item The result is compatible with the SM
+      \item The combined result gives the strongest limit on the invisible branching fraction of the 125 GeV Higgs
+      \end{itemize}
+    \end{block}
+    
+    \vspace{-0.3cm}
+    \begin{block}{\footnotesize Plans}
+      \scriptsize
+      \begin{itemize}
+      \item A paper for the prompt data has just finished CWR
+      \item An improved analysis is planned using the parked data
+      \end{itemize}
+    \end{block}
+    
+
+    \column{.5\textwidth}
+    \includegraphics[clip=true,trim=0 5 0 20, width=1.2\textwidth]{TalkPics/invcomb021213/combinedlimit.pdf}
+  \end{columns}
+\end{frame}
+
+%!!UPDATE
+
+\begin{frame}%!! UPDATE ALL BACKUP
+  \frametitle{BACKUP}
+\end{frame}
+
+\begin{frame}%!!UPDATE MAYBE TRIM
+  \frametitle{Datacards}
+  \begin{itemize}
+    \item All three channels have signal MC at different mass points
+  \end{itemize}
+  \begin{center}
+  \begin{tabular}{|l|c|}
+    \hline
+    Channel & Mass Points/GeV \\
+    \hline
+    Z($\ell\ell$)H(inv) & 105, 115, 125, 135, 145, 175, 200 \& 300 \\
+    Z($b\bar{b}$)H(inv) & 105, 115, 125, 135, 145 \& 150 \\
+    VBF & 110, 125, 150, 200, 300 \& 400 \\
+    \hline
+  \end{tabular}
+  \end{center}
+  \begin{itemize}
+  \item New VBF datacards were produced for 115,135 and 145 GeV
+  \item[-] Nuisances are linearly interpolated between mass points.
+  \item[-] Signal yields are interpolated using the method described below.
+  \end{itemize}
+  \begin{itemize}
+  \item[-] Combination between direct and indirect methods is being investigated e.g. \href{https://indico.cern.ch/getFile.py/access?contribId=3&sessionId=9&resId=1&materialId=slides&confId=267834}{talk by M. Zanetti}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}%!!MAYBE MOVE TO BACKUP
+  \frametitle{Signal Yield interpolation}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{itemize}
+    \item $N_{Signal}=eff. \times acc. \times \mathcal L\sigma$
+    \item Luminosity is constant
+    \item Yield over cross-section is thus proportional to efficiency times acceptance
+    \item[-] Cross-sections from LHC-HXSWG were used
+    \end{itemize}
+    \column{.5\textwidth}
+    \centering
+    \hspace{-.5cm}
+    \includegraphics[clip=true,trim=0 0 0 30, width=1.2\textwidth]{TalkPics/invcomb021213/yieldoverxs.pdf}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Parked Data}
+  \begin{block}{}
+    \begin{itemize} 
+    \item Jet $E_{T}>35(30) GeV$, $\Delta\eta_{jj}>3.5$, $m_{jj}>700 GeV$
+    \item[-] Trigger with $E_{T}>30 GeV$ added for run D
+    \item Good efficiency for visible and invisible VBF Higgs channels
+    \item Plan to update result with parked data included after paper
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+%TRIGGER AND DATASETS
+\begin{frame}
+  \frametitle{VBF Datasets and Trigger}
+  \begin{columns}
+    \column{.5\textwidth}
+    \vspace{-0.2cm}
+    \begin{block}{\scriptsize Datasets:}
+      \scriptsize
+      \begin{itemize}
+      \item 8 TeV MET datasets
+      \item[-] Total of 19.6 $fb^{-1}$
+      \item MET filters are used to cut out events with mismeasured MET
+      \end{itemize}
+    \end{block}
+    \vspace{-0.3cm}
+    \begin{block}{\scriptsize Trigger:}
+      \scriptsize
+      \begin{itemize}  
+      \item HLT\_DiPFJet40\_PFMET noMu65\_MJJ800VBF\_AllJets
+      \item[-] VBF means $|\Delta \eta_{j_{1}j_{2}}| > 3.5 $
+      \end{itemize}
+    \end{block}
+    \column{.5\textwidth}
+    \centering
+    \includegraphics[height=.45\textheight]{TalkPics/METtrig.png}
+    
+    \includegraphics[height=.45\textheight]{TalkPics/Mjjtrig.png}
+  \end{columns}
+\end{frame}
+
+%BACKGROUNDS
+\begin{frame} 
   \frametitle{$W$+jets Background Estimation}
   \vspace{-0.4cm}
   \begin{columns}
@@ -321,7 +642,7 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}
+\begin{frame}%!!PROBABLY DROP
   \frametitle{$W\rightarrow\tau_{\tiny had}\nu$ Background Estimation}
   \begin{columns}
     \column{.5\textwidth}
@@ -354,7 +675,7 @@
 \end{frame}
 
 
-\begin{frame}
+\begin{frame}%!!PROBABLY DROP
   \frametitle{$Z$+jets Background Estimation}
   \begin{block}{\scriptsize Z+jets background estimation formula:}
     \scriptsize 
@@ -385,7 +706,7 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}
+\begin{frame}%!!PROBABLY DROP
   \frametitle{Consistency Tests}
   \begin{columns}
     \column{.5\textwidth}
@@ -403,272 +724,6 @@
     \includegraphics[width=\textwidth]{TalkPics/iccms091013/MJJ_Welnu_frac.pdf}
     \end{block}
   \end{columns}
-\end{frame}
-
-%QCD
-\begin{frame}
-  \frametitle{QCD}
-  \begin{columns}
-    \column{.5\textwidth}
-    \begin{block}{\scriptsize QCD Background Strategy}
-      \scriptsize
-      \begin{itemize}
-      \item V. low MC statistics
-      \item[1)] Reduce background with cuts
-      \item[2)] Estimate using data driven ABCD method in MET and CJV
-      \item[3)] Cross-check using ABCD method in MET and $\Delta\phi_{jj}$
-            \end{itemize}
-    \end{block}
-    \begin{block}{\scriptsize QCD ABCD method:}
-      \scriptsize
-      \begin{itemize}
-      \item Choose 4 regions:
-      \end{itemize}
-      \begin{tabular}{|l|c|c|}
-        \hline
-        & Fail MET & Pass MET \\
-        \hline
-        Fail CJV & A & B \\
-        \hline
-        Pass CJV & C & D (signal) \\
-        \hline
-      \end{tabular}
-      \begin{itemize}
-      \item $N_{D}=N_{B}N_{C}/N_{A}$
-      \end{itemize}
-    \end{block}
-    \column{.5\textwidth}
-    \begin{block}{}
-      \scriptsize
-      \begin{itemize}
-      \item $N_{QCD}=36.8\pm5.6(stat.)\pm30.6{syst.}$
-      \end{itemize}
-    \end{block}
-
-    \vspace{.5cm}
-
-    \includegraphics[width=\textwidth,height=.6\textheight]{TalkPics/iccms091013/qcdmet.png}
-  \end{columns}
-\end{frame}
-
-%!!MAKE THIS PART MORE GENERAL COMBINATIONS AND CORRELATIONS
-
-\begin{frame}
-  \frametitle{Uncertainties}
-  \begin{columns}
-    \column{.5\textwidth}
-    \begin{block}{}
-      \scriptsize
-      \begin{table}\tiny
-        \setlength{\tabcolsep}{3pt}
-        \begin{tabular}{|l|c|c|}
-          \hline
-          Background & Source & Uncertainty \\
-          \hline
-          $Z\rightarrow\nu\nu$ & Statistics in control region & 29\% \\
-          & MC statistics & 14\% \\
-          & Theory uncertainty & 20\% \\
-          & Jet/MET scale/resolotion & 5\% \\
-          \hline
-          $W\rightarrow\mu\nu$ & Statistics in control region & 5\% \\
-          & MC statistics & 10\% \\
-          & Theory uncertainty & 20\% \\
-          & Jet/MET scale/resolotion & 4\% \\
-          \hline
-          $W\rightarrow e\nu$ & Statistics in control region & 10\% \\
-          & MC statistics & 10\% \\
-          & Theory uncertainty & 20\% \\
-          & Jet/MET scale/resolotion & $^{+5}_{-11}$\% \\
-          \hline
-          $W\rightarrow\tau\nu$ & Statistics in control region & 30\% \\
-          & MC statistics & 20\% \\
-          & Theory uncertainty & 20\% \\
-          & Jet/MET scale/resolotion & $^{+16}_{-2}$\% \\
-          & Tau ID efficiency & 8\% \\
-          & Electron contamination & 5\% \\
-          \hline
-        \end{tabular}
-      \end{table}
-      \vspace{-.4cm}
-    \end{block}
-    
-    \column{.5\textwidth}
-    \begin{block}{}
-       \scriptsize
-       \begin{table}\tiny
-         \setlength{\tabcolsep}{3pt}
-         \begin{tabular}{|l|c|c|}
-           \hline
-           Background & Source & Uncertainty \\
-           \hline
-           QCD & Statistics in control region & 2\% \\
-           & MC statistics (background) & 2\% \\
-           & Jet/MET scale/resolution & $^{+45}_{-75}$\% \\
-           & MET shape & 35\% \\
-           \hline
-           Other & Luminosity & 4\% \\
-           backgrounds & MC statistics & 10 \% \\
-           & Jet/MET scale/resolution & 28-81\% \\
-           & Cross-section uncertainty & 8-20\% \\ 
-           \hline
-           Signal & MC statistics & 10\% \\
-           & Jet/MET scale/resolution & 11\% \\
-           & PDF uncertainty & 5\% \\
-           & QCD scale uncertainty & 4\% \\
-           \hline
-         \end{tabular}
-       \end{table}
-       \vspace{-.4cm}
-    \end{block}
-
-  \end{columns}
-\end{frame}
-
-%GENERAL RESULTS
-
-%LIMIT PLOTS
-\begin{frame}
-  \frametitle{Results}
-  \centering
-  \scriptsize
-  \vspace{-0.2cm}
-  \begin{columns}
-    \column{.5\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{TalkPics/iccms091013/XSLimit.pdf}
-    \column{.5\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{TalkPics/iccms091013/xsiLimit.pdf}
-  \end{columns}
-  \vspace{-0.2cm}
-  \begin{block}{}
-    \scriptsize
-    \begin{itemize}
-    \item Expected $339\pm36(stat.)\pm50(syst.)$ events, observed 390 events
-    \item Limits produced with standard CMS Higgs combination package
-    \item 95\% CL observed (expected) limit on the invisible BR for 125 GeV: 69(53)\%
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-\begin{frame}
-  \frametitle{ZH$\rightarrow$invisible}
-  \begin{columns}
-    \column{.5\textwidth}
-    \begin{block}{\scriptsize Current ZH$\rightarrow$ invisible analyses}
-      \scriptsize
-    \begin{itemize}
-    \item The Higgs to invisible analysis is also done in the ZH channel where the Z boson decays to two leptons (HIG-13-018)
-    \item[-] 95\% CL observed (expected) limit on the invisible BR for 125 GeV: 75(91\%)
-    \item A further analysis where the Z boson decays to two b quarks is in progress (HIG-13-028)
-    \end{itemize}
-    \end{block}
-    
-    \column{.5\textwidth}
-    \vspace{.5cm}
-    \includegraphics[clip=true,trim=400 0 0 0,width=\textwidth]{individualresults.png}  
-  \end{columns}
-\end{frame}
-
-%!!CAN BE COVERED ABOVE
-
-\begin{frame}
-  \frametitle{Combining the ZH and VBF channels}
-  \begin{block}{\scriptsize Datacards}
-  \begin{itemize}
-    \scriptsize
-  \item VBF and ZH analysis have datacards at different Higgs boson mass points
-  \item For the VBF channel only the signal yield is Higgs boson mass dependent
-  \item[-] New datacards can therefore be made by interpolating the signal yields (details in backup)
-  \end{itemize}
-  \end{block}
-  \begin{block}{\scriptsize Combination method}
-    \scriptsize
-    \begin{itemize}
-    \item These new datacards were combined with the ZH cards using the standard Higgs group combination tool
-    \item Luminosity uncertainties are considered correlated between analyses
-    \item[-] All other uncertainties are considered to be uncorrelated (see discussion later)
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Preliminary Results}
-  \centering
-  \vspace{-.13cm}
-  \includegraphics[clip=true,trim=0 5 0 35, width=.8\textwidth]{TalkPics/invlimitfinalfromPASs.pdf}
-  \vspace{-.2cm}
-  \begin{block}{}
-  \begin{itemize}
-  \item Observed (expected) limit at 125 GeV is 54(46)\%
-  \item Made public through analysis twikis
-  \end{itemize}
-  \end{block}
-\end{frame}
-
-%!!INCORPORATE ELSEWHERE AND REMOVE
-
-\begin{frame}
-  \frametitle{Improvements for Paper}
-  \begin{block}{\scriptsize Consideration of uncertainties}
-    \scriptsize
-    \begin{itemize}
-    \item Current VBF channel datacards do not consider correlations between uncertainties
-    \item[-] New datacards are being produced which separate out the uncertainty sources
-    \item The following uncertainties will be considered correlated between the two channels
-    \item[-] luminosity, jet energy scale and resolution, met scale, pdf uncertainties
-    \end{itemize}
-  \end{block}
-  \begin{block}{\scriptsize W$\rightarrow\tau\nu$ background}
-    \scriptsize
-      \begin{itemize}
-      \item Disagreement seen between IC cross-check and main analysis
-      \item[-] Disagreement found to be from different jet smearing methods
-      \item[-] Work is being done to synchronise these methods
-      \end{itemize}
-  \end{block}
-\end{frame}
-
-%!!UPDATE
-
-\begin{frame}
-  \frametitle{Summary}
-  \begin{block}{\footnotesize Current Status}
-    \footnotesize
-  \begin{itemize}
-  \item A limit has been placed on the invisible branching fraction of the Higgs boson produced in the VBF channel:
-  \item[-] Observed(Expected) limit at 95\% CL is 69(53)\% for a 125 GeV Higgs
-  \item This result has been combined with the ZH$\rightarrow$ll+invisible channel
-  \item[-] Observed(Expected) limit at 95\% CL is 54(46)\% for a 125 GeV Higgs
-  \item This combined result is the current strongest limit on BR(invisible)
-  \end{itemize}
-  \end{block}
-  \begin{block}{\footnotesize Plans}
-    \footnotesize
-  \begin{itemize}
-  \item A paper for the prompt data is being written with the improvements discussed above
-  \item An improved analysis is planned using the parked data
-  \end{itemize}
-  \end{block}
-\end{frame}
-
-%!!CHANGE TO FUTURE
-
-\begin{frame}\label{lastframe}
-  \frametitle{Parked Data}
-  \begin{block}{}
-    \begin{itemize} 
-    \item{\color{red} IC pushed strongly for data parking}    
-    \item Jet $E_{T}>35(30) GeV$, $\Delta\eta_{jj}>3.5$, $m_{jj}>700 GeV$
-    \item[-] Trigger with $E_{T}>30 GeV$ added for run D
-    \item Good efficiency for visible and invisible VBF Higgs channels
-    \item Plan to update result with parked data included after paper
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-\begin{frame}%!! UPDATE ALL BACKUP
-  \frametitle{BACKUP}
 \end{frame}
 
 %OBJECTS
@@ -714,24 +769,6 @@
         \item[-] $p_{T}>20 GeV$, $|\eta<2.1|$
       \end{itemize}
     \end{block}
-  \end{columns}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Signal Yield interpolation}
-  \begin{columns}
-    \column{.5\textwidth}
-    \begin{itemize}
-    \item $N_{Signal}=eff. \times acc. \times \mathcal L\sigma$
-    \item Luminosity is constant
-    \item Yield over cross-section is thus proportional to efficiency times acceptance
-    \item Signal yields were produced at 115, 125(to cross-check), 135 and 145 GeV for the VBF channel
-    \item[-] Cross-sections from LHC-HXSWG were used
-    \end{itemize}
-    \column{.5\textwidth}
-    \centering
-    \hspace{-.5cm}
-    \includegraphics[clip=true,trim=0 0 0 30, width=1.2\textwidth]{yieldoverxs.pdf}
   \end{columns}
 \end{frame}
 
