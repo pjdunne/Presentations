@@ -1,0 +1,289 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+\begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+  \includegraphics[height=1cm]{icl.pdf}
+  \hfill
+  \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+\end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+\begin{beamercolorbox}[ht=.55cm,dp=0.4cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+  \begin{minipage}[c]{5cm}%
+    \usebeamerfont{author in head/foot}
+    \insertshortauthor 
+    \insertshorttitle
+    \end{minipage}\hfill%
+  \insertframenumber{} / \pageref{lastframe}
+  \hfill
+  \begin{minipage}{6cm}
+    \hfill
+  \end{minipage}
+\end{beamercolorbox}%
+}
+
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\title{\vspace{-0.2cm} Z Background Synchronisation}
+\author[P. Dunne]{\underline{P. Dunne}, C. Asawatangtrakuldee}
+\titlegraphic{
+  \vspace{-0.7cm}
+  %% \begin{fmfgraph*}(100,70)
+%%         \fmfleft{i1,i2}
+%%         \fmfright{o1,o2,o3}
+%%         \fmf{fermion}{i1,v1,o1}
+%%         \fmf{fermion}{i2,v2,o3}
+%%         \fmf{phantom,tension=4/5}{v1,v2}
+%%         \fmffreeze
+%%         \fmf{photon,label=$W,,Z$}{v1,v3}
+%%         \fmf{photon,label=$W,,Z$}{v2,v3}
+%%         \fmf{dashes}{v3,o2}
+%%         \fmflabel{$q$}{i1}
+%%         \fmflabel{$q$}{i2}
+%%         \fmflabel{$q$}{o1}
+%%         \fmflabel{$q$}{o3}
+%%         \fmflabel{$H$}{o2}
+%%       \end{fmfgraph*}
+}
+\date{}
+\begin{document}
+\begin{fmffile}{feynmandiagszbkg}
+
+%TITLE PAGE
+\section{Title}
+\begin{frame}
+  \titlepage
+  
+\end{frame}
+
+%OUTLINE
+\begin{frame}
+  \frametitle{Outline}
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}
+    \item A synchronisation has been carried out between analysis A and B Z estimates
+    \item A couple of bugs were found in the preliminary analysis B number
+    \item Two main changes were made to the analysis A Z background estimate
+    \item[-] Correction of efficiency definitions
+    \item[-] Updates to EWK cross-sections
+    \item The two analyses now produce consistent estimates of the Z background
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Corrections to efficiency formulae from paper draft}
+  \begin{block}{}
+    \scriptsize
+    \centering
+        $N_{S}^{Data}=(N_{C}^{Data}-N_{C}^{BKG})\cdot \frac{\sigma(Z\rightarrow\nu\nu)}{\sigma(Z/\gamma^{*}\rightarrow\mu\mu)} \cdot\frac{\epsilon_{S}^{VBF}}{\epsilon_{C}^{VBF}\epsilon_{\mu\mu}}$
+    \begin{itemize}
+    \item For the number in the paper the following form was used for efficiencies:
+    \item[-] $\epsilon = \frac{\sigma(QCD)\cdot N_{Sel}^{MC}(QCD)+\sigma(EWK)\cdot N_{Sel}^{MC}(EWK)}{N_{Gen}^{MC}(QCD)+N_{Gen}^{MC}(EWK)}$
+    \item This is not quite right and has been corrected to:
+    \item[-] $\epsilon = \frac{\sigma(QCD)\cdot\frac{N_{Sel}^{MC}(QCD)}{N_{Gen}^{MC}(QCD} + \sigma(EWK)\cdot\frac{N_{Sel}^{MC}(EWK)}{N_{Gen}^{MC}(EWK}}{\sigma(QCD)+\sigma(EWK)}$
+    \item $\epsilon_{C}^{VBF}\cdot\epsilon_{\mu\mu}$ is also now calculated as one number, due to cancellations between the numbers used in each efficiency
+      \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Updates to EWK cross-sections}
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}
+    \item In addition to the efficiency correction the EWK cross-sections have been updated
+    \item For the paper we used LO EWK cross-sections
+    \item Sasha has calculated NLO cross-sections:
+    \item[-] $\sigma_{NLO}(Z/\gamma^{*}\rightarrow\mu\mu,EWK)=304fb$, $\sigma_{LO}(Z/\gamma^{*}\rightarrow\mu\mu,EWK)=288fb$
+    \item Also for the paper $\frac{\sigma(Z\rightarrow\nu\nu)}{\sigma(Z/\gamma^{*}\rightarrow\mu\mu)}$ was taken to be the same for QCD and EWK
+    \item Sasha has calculated that the cross-section ratio is very different for EWK:
+    \item[-] Ratio(EWK)=1.480, Ratio(QCD)=5.616
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Other differences between analyses A \& B}
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}
+    \item Analysis A use the inclusive DY+Jets sample with a cut of $Z_{pT}^{Gen}<100$ GeV and the high Z pt DY+Jets sample
+    \item[-] No events pass from the inclusive DY+Jets sample with the $p_{T}$ cut
+    \item Analysis B previously used the inclusive DY+Jets sample and the DY+1/2/3/4 Jets samples correctly weighted
+    \item[-] Similarly to in the W estimate
+    \item This was changed to using the 5 weighted $p_{T}$ inclusive samples with a cut of $Z_{pT}^{Gen}<100$ GeV and the high Z pt DY+Jets sample
+    \item This changed the result by 9\% for an MC stat error of 18\%
+    \item[-] There is very little overlap between the events used in the two estimates as few inclusive sample events pass the $Z_{pT}^{Gen}$ cut
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New Results}
+  \label{lastframe}
+  \begin{columns}
+    \column{1.1\textwidth}
+  \begin{block}{}
+    \centering
+    \scriptsize
+    \begin{tabular}{|c|c|c|c|}
+      \hline
+      Analysis & Paper draft & $\sigma(Z/\gamma^{*}\rightarrow\mu\mu,EWK)$ & Ratio $\sigma(EWK)$ corrected \\
+      & &  \& $\epsilon$ formula corrected & \\
+      \hline
+      A & $104 \pm 30 (stat.)$ & $105 \pm 31 (stat.)$ & $92 \pm 27 (stat.)$ \\
+      B & N/A & $102 \pm 30 (stat.)$ & $88 \pm 25 (stat.)$ \\
+      \hline
+    \end{tabular}
+    \begin{itemize}
+    \item Efficiency formula and $\sigma(Z/\gamma^{*}\rightarrow\mu\mu,EWK)$ corrections go in opposite directions
+    \item[-] Hence small change in middle column
+    \item The two analyses are consistent
+    \item There is a 12\% decrease in the analysis A Z background estimate
+    \end{itemize}
+  \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Backup}
+\end{frame}
+
+%!!UPDATE
+\begin{frame}
+  \frametitle{Numbers}
+  \begin{block}{}
+    \centering
+    \scriptsize
+    \begin{tabular}{|l|c|c|}
+      \hline
+      Number & Analysis B & Analysis A \\
+      \hline
+      nCData-nCBKG & $12 \pm 3 (stat)$ & 12\\
+      nSMC QCD & $30 \pm 3 (stat)$ & 32\\
+      nSMC EWK & $6.0 \pm 0.2 (stat)$ & 6.0 \\
+      nSMC Total & $36 \pm 3 (stat)$ & 38 \\
+      nCMCQCD Total &  $20 \pm 3 (stat)$ & 21\\
+      nCMCEWK Total &  $4.2 \pm 0.2 (stat)$ & 4.3 \\
+      nCMC Total &  $24 \pm 3 (stat)$ & 25 \\
+      nGen QCD & $2.3e+07 \pm 7000 (stat)$ & 2.3e+07\\
+      nGen EWK &  $5800 \pm 6 (stat)$ & 5800\\
+      nGen Total & $2.3e+07 \pm 7000 (stat)$ & 2.3e+07\\
+      nGenZMassFiltered QCD &  $ 2.2e+07 \pm 7000 (stat)$ & 2.2e+07\\
+      nGenZMassFiltered EWK & $ 5000 \pm 6 (stat)$ & 5000\\
+      nGenZMassFiltered Total &  $ 2.2e+07 \pm 7000 (stat)$ & 2.2e+07\\
+      \hline
+
+    \end{tabular}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Definitions}
+  \vspace{-.1cm}
+  \begin{block}{\scriptsize Regions}
+    \begin{itemize}
+      \scriptsize
+    \item Control Region: Reco dimuon, with $60<m_{\mu\mu}^{reco}<120 GeV$ passing VBF selections
+    \item[-] $N_{C}^{MC}$ is measured in $Z\rightarrow\mu\mu + Jets$ MC with a generator level cut of $m_{Z}^{Gen}>50 GeV$
+    \item Signal Region: VBF selections and no veto leptons
+    \item[-] We use the same $Z\rightarrow\mu\mu$ sample as for $N_{C}^{MC}$ and ignore the leptons to approximate a $Z\rightarrow\nu\nu$ sample, this will be denoted $N_{S}^{MC}$
+    \item[-] For the efficiencies to be the same for the $Z\rightarrow\mu\mu$ and $Z\rightarrow\nu\nu$ samples a generator level mass window of $60<m_{Z}^{Gen}<120$ must be applied, this will be denoted $N_{S}^{MC}[60,120]$.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation of formula}
+  \vspace{-.2cm}
+  \begin{block}{}
+    \begin{itemize}
+    \item {\scriptsize Basic formula for data driven estimate}
+    \end{itemize}
+    \footnotesize
+    \hspace{1cm}$N_{S}^{\nu\nu\,Data}=\frac{N_{C}^{Data}-N_{C}^{BKG}}{N_{C}^{MC}}\cdot N_{S}^{\nu\nu\,MC}$
+    \begin{itemize}
+    \item {\scriptsize To use $Z\rightarrow\mu\mu$ MC we use the formula:}
+    \end{itemize}
+    
+        \hspace{1cm}{\scriptsize $N_{S}^{\nu\nu\,MC}=N_{S}^{MC}[60,120]\cdot\underbrace{\frac{\sigma(Z\rightarrow\nu\nu)}{\sigma(Z/\gamma^{*}\rightarrow\mu\mu,\,60<m_{Z}^{Gen}<120 GeV)}}_{R[60,120]}$}
+        \begin{itemize}
+    \item {\scriptsize The cross-section ratio that we have calculated is:}
+        \end{itemize}
+        
+        \hspace{1cm}$R[50,\infty]=\frac{\sigma(Z\rightarrow\nu\nu)}{\sigma(Z/\gamma^{*}\rightarrow\mu\mu,\,m_{Z}^{Gen}>50)}$
+        \begin{itemize}
+    \item {\scriptsize We therefore use:}
+      \end{itemize}
+      \scriptsize
+    \hspace{1cm}$\begin{aligned}[t] R[60,120]&=\frac{\sigma(Z/\gamma^{*}\rightarrow\mu\mu,m_{Z}^{Gen}>50 GeV)}{\sigma(Z/\gamma^{*}\rightarrow\mu\mu,\,60<m_{Z}^{Gen}<120 GeV)}\cdot R[50,\infty] \\ &=\frac{N(Z/\gamma^{*}\rightarrow\mu\mu,m_{Z}^{Gen}>50 GeV)}{N(Z/\gamma^{*}\rightarrow\mu\mu,60<m_{Z}^{Gen}<120 GeV)} \cdot R[50,\infty] \end{aligned}$
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation of formula (2)}
+  \begin{columns}
+    \column{1.1\textwidth}
+  \begin{block}{}
+    \begin{itemize}
+    \item {\scriptsize Substituting our expression for $N_{S}^{\nu\nu\,MC}$ into the original formula gives:}
+    \end{itemize}
+    \scriptsize
+    $\begin{aligned}[t] N_{S}^{\nu\nu\,Data}&=\frac{N_{C}^{Data}-N_{C}^{BKG}}{N_{C}^{MC}}\cdot N_{S}^{MC}[60,120]\cdot R[60,120] \\
+    &=\frac{N_{C}^{Data}-N_{C}^{BKG}}{N_{C}^{MC}}\cdot N_{S}^{MC}[60,120]\cdot \frac{N(Z/\gamma^{*}\rightarrow\mu\mu,m_{Z}^{Gen}>50 GeV)}{N(Z/\gamma^{*}\rightarrow\mu\mu,60<m_{Z}^{Gen}<120 GeV)} \cdot R[50,\infty]\end{aligned}$
+  \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Formulae from paper}
+  \begin{block}{}
+    \centering
+        $N_{S}^{Data}=(N_{C}^{Data}-N_{C}^{BKG})\cdot R[50,\infty]\cdot\frac{\epsilon_{S}^{VBF}}{\epsilon_{C}^{VBF}\epsilon_{\mu\mu}}$
+    \begin{itemize}
+    \item $\epsilon_{\mu\mu} = \frac{N(\rm{Z/\gamma^{*}\rightarrow\mu\mu,\,reco\,dimuon},\,60<m_{\mu\mu}^{reco}<120 GeV)}{N(Z/\gamma^{*}\rightarrow\mu\mu,\,m_{Z}^{Gen}>50 GeV)}$
+    \item $\epsilon_{C}^{VBF} = \frac{N_{C}^{MC}}{N(Z/\gamma^{*}\rightarrow\mu\mu,\,\rm{reco\,dimuon},\,60<m_{\mu\mu}^{reco}<120 GeV)}$
+    \item $\epsilon_{S}^{VBF} = \frac{N_{S}^{MC}[60,120]}{N(Z/\gamma^{*}\rightarrow\mu\mu,\,60<m_{Z}^{Gen}<120 GeV)}$
+    \item {\scriptsize n.b. efficiencies are not defined in the paper, so the differences in the denominator between $\epsilon_{\mu\mu}$ and $\epsilon_{S}^{VBF}$ are not apparent}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Simplifications}
+  \begin{columns}
+    \column{1.1\textwidth}
+    \vspace{-0.2cm}
+  \begin{block}{}
+  \begin{itemize}
+  \item {\scriptsize Numerator of $\epsilon_{\mu\mu}$ and denominator of $\epsilon_{C}^{VBF}$ cancel so they should not be included in the error calculation}
+  \item[-] {\scriptsize Currently stat, lepton ID, JES, JER and UES uncertainties are considered on all terms}
+  \item $\epsilon_{C}^{VBF}\cdot\epsilon_{\mu\mu} = \frac{N_{C}^{MC}}{N(Z/\gamma^{*}\rightarrow\mu\mu,\,m_{Z}^{Gen}>50 GeV)}$
+  \item $\frac{\epsilon_{S}^{VBF}}{\epsilon_{C}^{VBF}\cdot\epsilon_{\mu\mu}} = \frac{N_{S}^{MC}[60,120]}{N_{C}^{MC}}\cdot\frac{N(Z/\gamma^{*}\rightarrow\mu\mu,\,m_{Z}^{Gen}>50 GeV)}{N(Z/\gamma^{*}\rightarrow\mu\mu,\,60<m_{Z}^{Gen}<120 GeV)}$
+  \end{itemize}
+  \end{block}
+\vspace{-0.2cm}
+  \begin{block}{\scriptsize Final formula}
+    \footnotesize
+    \centering
+    $\begin{aligned}[t] N_{S}^{\nu\nu\,Data}=&\frac{N_{C}^{Data}-N_{C}^{BKG}}{N_{C}^{MC}(Z^{Gen}\rightarrow\mu\mu)}\cdot N_{S}^{MC}[60,120](Z^{Gen}\rightarrow\mu\mu) \\ & x \frac{N(Z/\gamma^{*}\rightarrow\mu\mu,m_{Z}^{Gen}>50 GeV)}{N(Z/\gamma^{*}\rightarrow\mu\mu,60<m_{Z}^{Gen}<120 GeV)} \cdot R[50,\infty]\end{aligned}$
+    \scriptsize
+    \begin{itemize}
+    \item This is the same as the formula derived above
+    \end{itemize}
+  \end{block}
+  \end{columns}
+\end{frame}
+
+
+\end{fmffile}
+\end{document}

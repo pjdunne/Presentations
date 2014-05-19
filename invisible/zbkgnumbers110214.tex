@@ -1,0 +1,272 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+\begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+  \includegraphics[height=1cm]{icl.pdf}
+  \hfill
+  \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+\end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+\begin{beamercolorbox}[ht=.55cm,dp=0.4cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+  \begin{minipage}[c]{5cm}%
+    \usebeamerfont{author in head/foot}
+    \insertshortauthor 
+    \insertshorttitle
+    \end{minipage}\hfill%
+  \insertframenumber{} / \pageref{lastframe}
+  \hfill
+  \begin{minipage}{6cm}
+    \hfill
+  \end{minipage}
+\end{beamercolorbox}%
+}
+
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\title{\vspace{-0.2cm} Z Background Formulae}
+\subtitle{Paper - HIG-13-030, PASs: HIG-13-013, HIG-13-018, HIG-13-028 \vspace{-0.7cm}}
+\author[P. Dunne]{D. Colling, G. Davies \underline{P. Dunne}, A.M. Magnan, A. Nikitenko and Joao Pela: Imperial with \\ R. Aggleton, J. Brooke: Bristol \\ C.Asawangtrakuldee, Q.Li: Peking \\ P. Srimanobhas: Chulalongkorn \\ S. Kumar, K. Mazumdar: Mumbai}
+\titlegraphic{
+  \vspace{-0.7cm}
+  %% \begin{fmfgraph*}(100,70)
+%%         \fmfleft{i1,i2}
+%%         \fmfright{o1,o2,o3}
+%%         \fmf{fermion}{i1,v1,o1}
+%%         \fmf{fermion}{i2,v2,o3}
+%%         \fmf{phantom,tension=4/5}{v1,v2}
+%%         \fmffreeze
+%%         \fmf{photon,label=$W,,Z$}{v1,v3}
+%%         \fmf{photon,label=$W,,Z$}{v2,v3}
+%%         \fmf{dashes}{v3,o2}
+%%         \fmflabel{$q$}{i1}
+%%         \fmflabel{$q$}{i2}
+%%         \fmflabel{$q$}{o1}
+%%         \fmflabel{$q$}{o3}
+%%         \fmflabel{$H$}{o2}
+%%       \end{fmfgraph*}
+}
+\date{}
+\begin{document}
+\begin{fmffile}{feynmandiagszbkg}
+
+%TITLE PAGE
+\section{Title}
+\begin{frame}
+  \titlepage
+  
+\end{frame}
+
+%OUTLINE
+\begin{frame}
+  \frametitle{Definitions}
+  \vspace{-.1cm}
+  \begin{block}{\scriptsize Regions}
+    \begin{itemize}
+      \scriptsize
+    \item Control Region: Reco dimuon, with $60<m_{\mu\mu}^{reco}<120 GeV$ passing VBF selections
+    \item[-] $N_{C}^{MC}$ is measured in $Z\rightarrow\mu\mu + Jets$ MC with a generator level cut of $m_{Z}^{Gen}>50 GeV$
+    \item Signal Region: VBF selections and no veto leptons
+    \item[-] We use the same $Z\rightarrow\mu\mu$ sample as for $N_{C}^{MC}$ and ignore the leptons to approximate a $Z\rightarrow\nu\nu$ sample, this will be denoted $N_{S}^{MC}$
+    \item[-] For the efficiencies to be the same for the $Z\rightarrow\mu\mu$ and $Z\rightarrow\nu\nu$ samples a generator level mass window of $60<m_{Z}^{Gen}<120$ must be applied, this will be denoted $N_{S}^{MC}[60,120]$.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation of formula}
+  \vspace{-.2cm}
+  \begin{block}{}
+    \begin{itemize}
+    \item {\scriptsize Basic formula for data driven estimate}
+    \end{itemize}
+    \footnotesize
+    \hspace{1cm}$N_{S}^{\nu\nu\,Data}=\frac{N_{C}^{Data}-N_{C}^{BKG}}{N_{C}^{MC}}\cdot N_{S}^{\nu\nu\,MC}$
+    \begin{itemize}
+    \item {\scriptsize To use $Z\rightarrow\mu\mu$ MC we use the formula:}
+    \end{itemize}
+    
+        \hspace{1cm}{\scriptsize $N_{S}^{\nu\nu\,MC}=N_{S}^{MC}[60,120]\cdot\underbrace{\frac{\sigma(Z\rightarrow\nu\nu)}{\sigma(Z/\gamma^{*}\rightarrow\mu\mu,\,60<m_{Z}^{Gen}<120 GeV)}}_{R[60,120]}$}
+        \begin{itemize}
+    \item {\scriptsize The cross-section ratio that we have calculated is:}
+        \end{itemize}
+        
+        \hspace{1cm}$R[50,\infty]=\frac{\sigma(Z\rightarrow\nu\nu)}{\sigma(Z/\gamma^{*}\rightarrow\mu\mu,\,m_{Z}^{Gen}>50)}$
+        \begin{itemize}
+    \item {\scriptsize We therefore use:}
+      \end{itemize}
+      \scriptsize
+    \hspace{1cm}$\begin{aligned}[t] R[60,120]&=\frac{\sigma(Z/\gamma^{*}\rightarrow\mu\mu,m_{Z}^{Gen}>50 GeV)}{\sigma(Z/\gamma^{*}\rightarrow\mu\mu,\,60<m_{Z}^{Gen}<120 GeV)}\cdot R[50,\infty] \\ &=\frac{N(Z/\gamma^{*}\rightarrow\mu\mu,m_{Z}^{Gen}>50 GeV)}{N(Z/\gamma^{*}\rightarrow\mu\mu,60<m_{Z}^{Gen}<120 GeV)} \cdot R[50,\infty] \end{aligned}$
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation of formula (2)}
+  \begin{columns}
+    \column{1.1\textwidth}
+  \begin{block}{}
+    \begin{itemize}
+    \item {\scriptsize Substituting our expression for $N_{S}^{\nu\nu\,MC}$ into the original formula gives:}
+    \end{itemize}
+    \scriptsize
+    $\begin{aligned}[t] N_{S}^{\nu\nu\,Data}&=\frac{N_{C}^{Data}-N_{C}^{BKG}}{N_{C}^{MC}}\cdot N_{S}^{MC}[60,120]\cdot R[60,120] \\
+    &=\frac{N_{C}^{Data}-N_{C}^{BKG}}{N_{C}^{MC}}\cdot N_{S}^{MC}[60,120]\cdot \frac{N(Z/\gamma^{*}\rightarrow\mu\mu,m_{Z}^{Gen}>50 GeV)}{N(Z/\gamma^{*}\rightarrow\mu\mu,60<m_{Z}^{Gen}<120 GeV)} \cdot R[50,\infty]\end{aligned}$
+  \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Formulae from paper}
+  \begin{block}{}
+    \centering
+        $N_{S}^{Data}=(N_{C}^{Data}-N_{C}^{BKG})\cdot R[50,\infty]\cdot\frac{\epsilon_{S}^{VBF}}{\epsilon_{C}^{VBF}\epsilon_{\mu\mu}}$
+    \begin{itemize}
+    \item $\epsilon_{\mu\mu} = \frac{N(\rm{Z/\gamma^{*}\rightarrow\mu\mu,\,reco\,dimuon},\,60<m_{\mu\mu}^{reco}<120 GeV)}{N(Z/\gamma^{*}\rightarrow\mu\mu,\,m_{Z}^{Gen}>50 GeV)}$
+    \item $\epsilon_{C}^{VBF} = \frac{N_{C}^{MC}}{N(Z/\gamma^{*}\rightarrow\mu\mu,\,\rm{reco\,dimuon},\,60<m_{\mu\mu}^{reco}<120 GeV)}$
+    \item $\epsilon_{S}^{VBF} = \frac{N_{S}^{MC}[60,120]}{N(Z/\gamma^{*}\rightarrow\mu\mu,\,60<m_{Z}^{Gen}<120 GeV)}$
+    \item {\scriptsize n.b. efficiencies are not defined in the paper, so the differences in the denominator between $\epsilon_{\mu\mu}$ and $\epsilon_{S}^{VBF}$ are not apparent}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Simplifications}
+  \begin{columns}
+    \column{1.1\textwidth}
+    \vspace{-0.2cm}
+  \begin{block}{}
+  \begin{itemize}
+  \item {\scriptsize Numerator of $\epsilon_{\mu\mu}$ and denominator of $\epsilon_{C}^{VBF}$ cancel so they should not be included in the error calculation}
+  \item[-] {\scriptsize Currently stat, lepton ID, JES, JER and UES uncertainties are considered on all terms}
+  \item $\epsilon_{C}^{VBF}\cdot\epsilon_{\mu\mu} = \frac{N_{C}^{MC}}{N(Z/\gamma^{*}\rightarrow\mu\mu,\,m_{Z}^{Gen}>50 GeV)}$
+  \item $\frac{\epsilon_{S}^{VBF}}{\epsilon_{C}^{VBF}\cdot\epsilon_{\mu\mu}} = \frac{N_{S}^{MC}[60,120]}{N_{C}^{MC}}\cdot\frac{N(Z/\gamma^{*}\rightarrow\mu\mu,\,m_{Z}^{Gen}>50 GeV)}{N(Z/\gamma^{*}\rightarrow\mu\mu,\,60<m_{Z}^{Gen}<120 GeV)}$
+  \end{itemize}
+  \end{block}
+\vspace{-0.2cm}
+  \begin{block}{\scriptsize Final formula}
+    \footnotesize
+    \centering
+    $\begin{aligned}[t] N_{S}^{\nu\nu\,Data}=&\frac{N_{C}^{Data}-N_{C}^{BKG}}{N_{C}^{MC}(Z^{Gen}\rightarrow\mu\mu)}\cdot N_{S}^{MC}[60,120](Z^{Gen}\rightarrow\mu\mu) \\ & x \frac{N(Z/\gamma^{*}\rightarrow\mu\mu,m_{Z}^{Gen}>50 GeV)}{N(Z/\gamma^{*}\rightarrow\mu\mu,60<m_{Z}^{Gen}<120 GeV)} \cdot R[50,\infty]\end{aligned}$
+    \scriptsize
+    \begin{itemize}
+    \item This is the same as the formula derived above
+    \end{itemize}
+  \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Preliminary Results - No Systematics}
+  \begin{block}{Components}
+    \scriptsize
+    \begin{itemize}
+    \item $N_{C}^{Data}: 12 \pm 3.4641 (stat)$ 
+    \item $N_{C}^{Bkg}: 0.225755 \pm 0.118559 (stat)$
+    \item $N_{S}^{MC}[60,120]: 40.9211 \pm 1.86195 (stat)$
+    \item $N_{C}^{MC}(Z^{Gen}\rightarrow\mu\mu): 26.4646 \pm 1.46436 (stat)$
+    \item $N(Z/\gamma^{*}\rightarrow\mu\mu,m_{Z}^{Gen}>50 GeV): 3.3216e+07 \pm 5763.33 (stat)$
+    \item $N(Z/\gamma^{*}\rightarrow\mu\mu,60<m_{Z}^{Gen}<120 GeV): 3.1915e+07 \pm 5649.33 (stat)$
+    \end{itemize}
+  \end{block}
+  \begin{block}{Preliminary Result}
+    \scriptsize
+    \begin{itemize}
+    \item Analysis B - $98.4151 \pm 28.41 (stat.) \pm 13.6326 (MC stat.)$
+    \item Analysis A - $103.452 \pm 30.4366 (stat.) \pm 14.2746 (MC stat.)$
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{What about QCD/EWK cross-section ratio difference}
+  \begin{block}{}
+  \begin{itemize}
+  \item For QCD the ratio of $\nu\nu$ and $\mu\mu$ cross-sections is $~5.6$
+  \item For EWK Sasha has calculated that it is ~1.6
+  \item $N_{S}^{MC}$ is made up of 23 QCD events and 18 EWK events
+  \item To my mind this means that the background estimation decreases considerably as a result of the much lower ratio for $~40\%$ of the signal events
+  \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Method}
+\begin{block}{}
+    \footnotesize
+    \centering
+    $\begin{aligned}[t] N_{S}^{\nu\nu\,Data}=&\frac{N_{C}^{Data}-N_{C}^{BKG}}{N_{C}^{MC}(Z^{Gen}\rightarrow\mu\mu)}\cdot N_{S}^{MC}[60,120](Z^{Gen}\rightarrow\mu\mu) \\ & x \frac{N(Z/\gamma^{*}\rightarrow\mu\mu,m_{Z}^{Gen}>50 GeV)}{N(Z/\gamma^{*}\rightarrow\mu\mu,60<m_{Z}^{Gen}<120 GeV)} \cdot R[50,\infty]\end{aligned}$
+    \scriptsize
+    \begin{itemize}
+    \item Separate everything after $\frac{N_{C}^{Data}-N_{C}^{BKG}}{N_{C}^{MC}}$ term into QCD and EWK and redo
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Numbers}
+    \begin{block}{}
+    \scriptsize
+\centering
+  \begin{tabular}{|l|c|}
+    \hline
+  nCData & $12 \pm 3.4641 (stat) $ \\
+  nCBkg & $0.225755 \pm 0.118559 (stat) $ \\
+  nSMC QCD & $23.0621 \pm 1.80889 (stat) $ \\
+  nSMC EWK & $17.859 \pm 0.441336 (stat) $ \\
+  nSMC Total & $40.9211 \pm 1.86195 (stat) $ \\
+  nCMCQCD Total & $13.925 \pm 1.41699 (stat) $ \\
+  nCMCEWK Total & $12.5396 \pm 0.369427 (stat) $ \\
+  nCMC Total & $26.4646 \pm 1.46436 (stat) $ \\
+  nGen no mass window QCD & $3.12267e+07 \pm 5588.08 (stat) $ \\
+  nGen no mass window EWK & $1.98928e+06 \pm 1410.42 (stat) $ \\
+  nGen no mass window Total & $3.3216e+07 \pm 5763.33 (stat) $ \\
+  nGen Z mass window QCD & $3.01797e+07 \pm 5493.6 (stat) $ \\
+  nGen Z mass window EWK & $1.73525e+06 \pm 1317.29 (stat) $ \\
+  nGen Z mass window Total & $3.1915e+07 \pm 5649.33 (stat) $ \\ 
+  \hline
+  \end{tabular}
+    \end{block}
+\end{frame}
+\begin{frame}
+  \frametitle{Results}
+  \begin{block}{}
+    \scriptsize
+    \centering
+  \begin{tabular}{|l|c|}
+    \hline
+    $N^{S}_{Total}$ Equal R & $98.4151 \pm 28.41 (stat.) \pm 13.6326 (MC stat.)$ \\
+    $N^{S}_{QCD}$ & $55.7898 \pm 16.1051 (stat.) \pm 8.51048 (MC stat.)$\\
+    $N^{S}_{EWK}$ &$11.0895 \pm 3.20125 (stat.) \pm 1.47655 (MC stat.)$\\
+    $N^{S}_{Total}$ &$66.8793 \pm 16.4202 (stat.) \pm 8.63762 (MC stat.)$\\
+  \hline
+  \end{tabular}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Conclusions}
+  \label{lastframe}
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}
+    \item Original method does seem consistent between analysis A and B
+    \item Preliminary results for equal R from analysis B are compatible with analysis A at at least the same level as the W estimates
+    \item How to resolve different R between EWK and QCD issue?
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Backup}
+\end{frame}
+
+
+\end{fmffile}
+\end{document}
