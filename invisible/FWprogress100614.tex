@@ -71,56 +71,80 @@
   \begin{block}{}
     \scriptsize
     \begin{itemize}
-    \item Compare updated W background estimates from both frameworks
-    \item List changes since last week
+    \item General progress update
+    \item Show MVAs trained with new FW
     \item Twiki with instructions to have a go yourself can be found \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/VBFHinvisibleParkedData}{here}
     \end{itemize}
   \end{block}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Checks of framework}
+  \frametitle{General progress update}
   \begin{columns}
     \column{1.1\textwidth}
   \begin{block}{}
     \scriptsize
     \begin{itemize}
-    \item $W\rightarrow\mu/e\nu$ background estimate module was producing slightly different results from old FW
-    \item Unweighted results were identical to old framework
-    \item Bug found in lepton weights code
-    \item New weighted results are as below:
-    \item[-] Note these numbers are different from those in our AN as they use the re-reco data
+    \item Light trees for all samples are accessible through xrootd:
+    \item[-] Some modules will run on these remotely.
+    \item[-] A local copy is needed for some modules requiring access to many files at once due to xrootd memory issues.
+    \item An MVA Training module is now available.
+    \item Scripts to support running the framework on the Imperial and CERN batch systems have been added.
+    \item Many options are now configurable through config files
     \end{itemize}
-    \begin{table}
-      \begin{tabular}{|l||c|c||c|c|}
-        \hline
-        Result & Old FW munu & New FW munu & Old FW enu & New FW enu \\
-        \hline
-        NSMC & 123 & 123 & 124 & 124 \\
-        NCMC & 371 & 371 & 113 & 113 \\
-        NCData$-$NCBkg & 196 & 196 & 62 & 62 \\
-        Result & 65.1 & 65.1 & 68.3 & 68.3 \\
-        \hline
-      \end{tabular}
-    \end{table}
   \end{block}
   \end{columns}
 \end{frame}
 
+
+
 \begin{frame}
-  \frametitle{Updates since last week}
+  \frametitle{Test of MVA Training}
+
+  \vspace{-.3cm}
+
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{\scriptsize Old Macro}
+      \includegraphics[width=\textwidth]{TalkPics/FWprog100614/AMbdteff.png}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{\scriptsize New FW Code}
+      \includegraphics[width=\textwidth]{TalkPics/FWprog100614/AMrepbdteff.pdf}
+    \end{block}
+  \end{columns}
+
+  \vspace{-.2cm}
+
   \begin{block}{}
     \scriptsize
     \begin{itemize}
-    \item Light tree making part of old framework separated into its own executable
-    \item[-] Much faster (less than half the time)
-    \item[-] Should now be easier for new users to customise and run
-    \item Configuration files and filelist parser added to light tree analyser
-    \item[-] Code is now much neater and more changes can be made without recompiling
-    \item Variable list adjusted to be compatible with all control regions of prompt analysis, Joao and Anne Marie's QCD pre-selection and future signal selection BDT.
-    \item[-] Still open to optimization
+    \item Same input variables and preselection
+    \item Results comparable
+    \item[-] Differences may be due to differing test and training tree selection
     \end{itemize}
   \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Instructions for new users}
+  \scriptsize
+  \begin{block}{}
+    \begin{itemize}
+    \item Follow instructions \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/VBFHinvisibleParkedData}{here} for installation
+    \item A simple analysis can be found in: ICHiggsTauTau/Analysis/HiggsNuNu/LightTree/test/IntroLTAnalysis.cpp
+    \item Instructions to run it can be found in  the ``For the impatient user'' section at the above link.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Quick Example}
+  \begin{columns}
+    \column{1.2\textwidth}
+  \includegraphics[height=.9\textheight]{TalkPics/FWprog100614/mvatrainsetup.png}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -130,10 +154,10 @@
   \begin{block}{}
     \scriptsize
     \begin{itemize}
-    \item New framework reproduces to results of old framework
-    \item Light Ntuples will be uploaded to dcache soon
-    \item[-] Last couple of data jobs are running
-    \item Instruction to try it out can be found \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/VBFHinvisibleParkedData}{here}
+    \item New framework now has most functionality needed for analysis optimisation
+    \item[-] Instructions to try it out can be found \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/VBFHinvisibleParkedData}{here}
+    \item Light Ntuples are in DCache
+
     \end{itemize}
   \end{block}
 
