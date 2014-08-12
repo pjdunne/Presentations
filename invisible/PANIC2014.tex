@@ -32,6 +32,7 @@
 \usepackage{pdfpages}
 \usepackage{feynmp}
 \usepackage{rotating}
+\usepackage{moresize}
 \usepackage{xcolor,colortbl}
 \DeclareGraphicsRule{*}{mps}{*}{}
 
@@ -83,7 +84,7 @@
         \end{itemize}
       \end{block}
       \column{.45\textwidth}
-      \hfill\includegraphics[height=.55\textheight]{TalkPics/panicpics/brlimits.pdf}
+      \hfill\includegraphics[height=.55\textheight]{TalkPics/panicpics/indirectbrbsm.pdf}
       \column{.05\textwidth}
       \begin{turn}{-90}\scriptsize CMS-PAS-HIG-14-009\end{turn}
     \end{columns}
@@ -183,6 +184,7 @@
         \scriptsize
         \begin{itemize}
         \item Two jets with large rapidity separation and missing transverse momentum (MET)
+          \ssmall
         \item[-] 2 jets, $p_{T}>50 GeV$, $\eta_{j1}\cdot\eta_{j2}<0$, $\Delta\eta_{jj}>4.2$
         \item[-] $M_{jj}>1100 GeV$, $\Delta\phi_{jj}<1.0$
         \item[-] $MET>130 GeV$
@@ -192,9 +194,15 @@
       \begin{block}{\scriptsize Backgrounds and Rejection Cuts}
         \scriptsize
         \begin{itemize}
-        \item $W\rightarrow \ell\nu$+jets: Veto any events with leptons with $p_{T}>10$ GeV
+        \item $W\rightarrow \ell\nu$+jets:
+          \ssmall
+        \item[-]Veto any events with leptons with $p_{T}>10$ GeV
+          \scriptsize
         \item $Z\rightarrow\nu\nu$+jets: Irreducible
-        \item QCD multijet events: Veto events with jets with $p_{T}>30$ GeV between the two selected jets (CJV)
+        \item QCD multijet events:
+          \ssmall
+        \item[-]Veto events with jets with $p_{T}>30$ GeV between the two selected jets (CJV)
+          \scriptsize
         \item Minor backgrounds from: $t\bar{t}$, single top, diboson and $Z\rightarrow \ell\ell$+jets
         \end{itemize}
       \end{block}
@@ -230,25 +238,25 @@
     \frametitle{VBF background estimation}
     \begin{columns}
       \column{.6\textwidth}
-      \begin{block}{\scriptsize Z+jets - Estimate using $Z\rightarrow\mu\mu$+jets events}
-        \scriptsize
+      \begin{block}{\footnotesize Z+jets - Estimate using $Z\rightarrow\mu\mu$+jets events}
+          \scriptsize
         \begin{itemize}
-        \item Sig. sel.+two muons 60$<$$m_{\mu\mu}$$<$120 GeV
+        \item[-] Sig. sel.+two muons 60$<$$m_{\mu\mu}$$<$120 GeV
         \item Control$\rightarrow$signal extrapolation factor from MC
         \item $N_{Z\rightarrow\mu\mu}=99\pm 29(stat.)\pm 25 (syst.)$
         \end{itemize}
       \end{block}
-      \begin{block}{\scriptsize W+jets - Estimate using $W\rightarrow\ell\nu$+jets events}
-        \scriptsize
-        \begin{itemize}
-        \item Sig. sel. + require one e/$\mu$/$\tau$
+      \begin{block}{\footnotesize W+jets - Estimate using $W\rightarrow\ell\nu$+jets events}
+          \scriptsize
+          \begin{itemize}
+        \item[-] Sig. sel. + require one e/$\mu$/$\tau$
         \item Control$\rightarrow$signal extrapolation factor from MC
         \item $N_{W\rightarrow e\nu}=63\pm 9(stat.)\pm 18 (syst.)$
         \item $N_{W\rightarrow \mu\nu}=67\pm 5(stat.)\pm 16 (syst.)$
         \item $N_{W\rightarrow \tau\nu}=53\pm 18(stat.)\pm 18 (syst.)$
         \end{itemize}
       \end{block}
-      \begin{block}{\scriptsize QCD - Use ``ABCD method'' in MET and CJV}
+      \begin{block}{\footnotesize QCD - Use ``ABCD method'' in MET and CJV}
         \scriptsize
         \begin{itemize}
         \item $N_{QCD}=30.9\pm 1.6 (stat.) \pm 23.0 (syst.)$
@@ -286,8 +294,8 @@
             \hline
             Total background & $332\pm 35 (stat.) \pm 45 (syst.)$ \\ 
             \hline
-            VBF H(inv.) &  $210 \pm 30(syst.)$ \\ 
-            ggF H(inv.) & $14 \pm 11 (syst.)$ \\
+            VBF H(inv.) assuming B(H$\rightarrow$inv)=100\% &  $210 \pm 30(syst.)$ \\ 
+            ggF H(inv.) assuming B(H$\rightarrow$inv)=100\%& $14 \pm 11 (syst.)$ \\
             \hline
             Observed data & 390 \\
             \hline
@@ -298,7 +306,7 @@
           \begin{block}{}
             \scriptsize
             \begin{itemize}
-            \item Set limits on $\sigma$x$B(H\rightarrow inv.)$
+            \item Set limits on $\sigma$x$B(H\rightarrow inv)$
               \vspace{-.1cm}
             \item[-] Perform a single bin counting experiment using $CL_{S}$ method
             \item Assuming SM Higgs production cross-section and acceptance:
@@ -338,21 +346,28 @@
         \scriptsize
         \begin{itemize}
         \item Two same flavour opposite sign electrons or muons
+          \ssmall
         \item[-] $p_{T}>20$ GeV, $|M_{\ell\ell}-m_{Z}|<15$ GeV
+          \scriptsize
         \item Large MET
+          \ssmall
         \item[-] $MET>120$ GeV
         \end{itemize}
       \end{block}
-      \vspace{-.3cm}
       \begin{block}{\scriptsize Backgrounds and Rejection Cuts}
         \scriptsize
         \begin{itemize}
         \item ZZ($\ell\ell\nu\nu$)+jets, WW($\ell\nu\ell\nu$)+jets
         \item WZ($\ell\nu\ell\ell$)+jets
+          \ssmall
         \item[-] Veto events with $>$3 leptons, $p_{T}$$>$10 GeV
+          \scriptsize
         \item Z($\ell\ell$)+jets
+          \ssmall
         \item[-] MET cut, MET-$\ell\ell$ balance requirement
+          \scriptsize
         \item $t\bar{t}$, single top, W($\ell\nu$), QCD
+          \ssmall
         \item[-] $\leq$1 jet, $p_{T}$$>$30 GeV
         \item[-] no b-tagged jets, $p_{T}>30$ GeV
         \end{itemize}
@@ -390,7 +405,7 @@
     \vspace{-.25cm}
     \begin{columns}
       \column{1.06\textwidth}
-    \begin{block}{\scriptsize ZZ($\ell\ell\nu\nu$)+jets and WZ($\ell\nu\ell\ell$+jets}
+    \begin{block}{\scriptsize ZZ($\ell\ell\nu\nu$)+jets and WZ($\ell\nu\ell\ell$+jets)}
       \scriptsize
       \begin{itemize}
       \item Estimated from MC prediction
@@ -447,9 +462,10 @@
       \scriptsize
       \begin{itemize}
       \item Estimated from $e\mu$ events and Z peak sidebands:
+        \ssmall
         \vspace{-.1cm}
       \item[-] $m_{\ell\ell}$ 40-70 and 110-200 GeV
-        \vspace{-.1cm}
+        \scriptsize
       \item[-] $N_{\ell\ell}^{sig}=N^{sig}_{e\mu}\cdot N_{\ell\ell}^{SB}/N_{e\mu}^{SB}$
 
       \end{itemize}
@@ -476,13 +492,13 @@
         & ZH(125) & $2.3\pm 0.2$ & $3.1\pm 0.3$ & $10.3\pm 1.2$ & $14.7\pm 1.5$ \\
         & Observed data & 9 & 10 & 36 & 46 \\
         \hline
-        & S/B & 0.26 & 0.28 & 0.28 & 0.24 \\ 
+        & S/B for B(H$\rightarrow$inv) 100\% & 0.26 & 0.28 & 0.28 & 0.24 \\ 
         \hline
         1 jet & Total backgrounds & $2.6\pm 0.7$ & $2.8\pm 0.9$ & $10.6\pm 4.2$ & $13.8\pm 5.8$ \\
         & ZH(125) & $0.4\pm 0.1$ & $0.5\pm 0.1$ & $1.6\pm 0.2$ & $2.5\pm 0.3$ \\
         & Observed data & 1 & 4 & 11 & 17  \\
         \hline
-        & S/B & 0.15  & 0.18 & 0.15 & 0.18 \\ 
+        & S/B for B(H$\rightarrow$inv) 100\% & 0.15  & 0.18 & 0.15 & 0.18 \\ 
         \hline
       \end{tabular}
       \end{block}
@@ -542,17 +558,18 @@
         \scriptsize
         \begin{itemize}
           \vspace{-.05cm}
-        \item Two b-tagged jets, $p_{T}>30/60$ GeV
-          \vspace{-.05cm}
-        \item[-] $p_{Tjj}>100-130$ GeV
-          \vspace{-.05cm}
+        \item Two b-tagged jets:
+          \vspace{-.05cm} 
+         \ssmall
+        \item[-]$p_{T}>30/60$ GeV, $p_{Tjj}>100-130$ GeV
+            \scriptsize
         \item Three bins in MET
           \vspace{-.05cm}
+          \ssmall
         \item[-] 100-130, 130-170, $>170$ GeV
-          \vspace{-.05cm}
-        \end{itemize}
+                  \end{itemize}
       \end{block}
-      \vspace{-.3cm}
+      \vspace{-.15cm}
       \begin{block}{\scriptsize Backgrounds and Rejection Cuts}
         \scriptsize
         \begin{itemize}
@@ -563,21 +580,25 @@
           \vspace{-.05cm}
         \item WZ($\ell\nu b\bar{b}$), $t\bar{t}$, single top
           \vspace{-.05cm}
+          \ssmall
         \item[-] Veto events with leptons, $p_{T}$$>$15 GeV
+          \scriptsize
           \vspace{-.05cm}
         \item QCD
           \vspace{-.05cm}
+          \ssmall
         \item[-] MET quality requirements
           \vspace{-.05cm}
         \end{itemize}
       \end{block}
-      \vspace{-.3cm}
+      \vspace{-.15cm}
       \begin{block}{\scriptsize Background estimation - data normalised MC}
         \scriptsize
         \begin{itemize}
           \vspace{-.05cm}
-        \item Normalisation obtained from a simultaneous fit in seven control regions:
+        \item Normalisation from a simultaneous fit in seven control regions:
           \vspace{-.05cm}
+          \ssmall
         \item[-] Z+jets (0,1,2 b-jets), W+jets (0,1,2 b-jets), $t\bar{t}$
           \vspace{-.05cm}
           
@@ -637,8 +658,10 @@
     \begin{block}{}
       \scriptsize
       \begin{itemize}
-      \item Multivariate analysis (BDT) performed for each mass hypothesis and boost region
-      \item Limits computed from a fit to the BDT output distribution
+      \item Multivariate analysis (BDT):
+      \item[-] performed for each mass hypothesis and boost region
+        \scriptsize
+      \item Limits from a fit to the BDT output distribution
        \item Assuming SM Higgs production cross-section and acceptance:
        \item[-]  observed(expected) 95\% C.L. limit on $B(H\rightarrow inv)$ for $m_{H}$=125 GeV is 182(199)\%
       \end{itemize}
@@ -764,7 +787,7 @@
     \begin{block}{}
       \scriptsize
       \begin{itemize}
-      \item Limits on $\mathcal{B}$(H$\rightarrow$inv.) therefore constrain Higgs Portal DM models
+      \item Limits on $\mathcal{B}$(H$\rightarrow$inv) therefore constrain Higgs Portal DM models
       \item[-] These constraints are directly comparable to those from other experiments
       \end{itemize}
     \end{block}
@@ -773,13 +796,16 @@
   \begin{frame}
     \frametitle{Dark Matter Interpretation - Results}
     \scriptsize
+    \vspace{-.3cm}
     \begin{block}{}
       \begin{itemize}
-      \item We use an effective field theory Higgs Portal model which allows us to translate B$(H\rightarrow inv.)$ to a DM-nucleon cross-section (details in backup)
+      \item Use an effective field theory Higgs Portal model which translates B$(H\rightarrow inv)$ into a DM-nucleon cross-section (details in backup)
       \item At 90\% C.L. the CMS limit on B(H$\rightarrow$inv) is 51\% for a 125 GeV Higgs
-      \item We consider three DM spin scenarios: scalar, vector, Majorana fermion
+      \item Consider three DM spin scenarios: scalar, vector, Majorana fermion:
+      \item[-] CMS limits shown in green, blue and red respectively
       \end{itemize}
     \end{block}
+        \vspace{-.1cm}
     \begin{columns}
       \column{1.1\textwidth}
       \begin{columns}
@@ -791,14 +817,14 @@
       \column{.27\textwidth}
       
       \begin{block}{}
-          Central DM limit from lattice calculation. Min and max from MILC collaboration
+          Min, lattice and max are varying values of Higgs-nucleon coupling
 
  (see backup)
           
       \end{block}
 
       \begin{block}{}
-        $\mathcal{B}(H\rightarrow inv.)$ gives important exclusion in the $M_{\chi}<m_{h}/2$ region
+        $\mathcal{B}(H\rightarrow inv)$ gives important exclusion in the $M_{\chi}<m_{h}/2$ region
       \end{block}
     \end{columns}
       \end{columns}
@@ -821,6 +847,7 @@
         \item The combined limit is 58(44)\% observed (expected) at 95\% C.L. for $m_{H}=125$GeV
           \vspace{-.05cm}
         \item[-] This is the most sensitive direct Higgs to invisible limit to date
+        \item[-] It is broadly comparable with CMS indirect limits
           \vspace{.05cm}
         \item A Higgs portal dark matter interpretation of the above results has been presented 
           \vspace{-.05cm}
