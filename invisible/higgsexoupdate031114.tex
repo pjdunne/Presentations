@@ -152,11 +152,12 @@
       \scriptsize
       \begin{itemize}
       \item Single bin counting experiment
+      \item[-] Signal region chosen to eliminate QCD and be above trigger turn ons
       \item Major backgrounds use data driven estimates:
       \item $Z\rightarrow\nu\nu$,$W\rightarrow\ell\nu$, QCD
       \item Minor backgrounds taken from MC:
       \item VV, W$\gamma$, $t\bar{t}$, single top
-      \item Expected limit 49\%
+      \item Expected limit 49\% at $m_{H}=125$ GeV
       \end{itemize}
     \end{block}
     \column{.5\textwidth}
@@ -182,6 +183,7 @@
   \begin{block}{}
       \scriptsize
     \begin{itemize}
+    \item Use already analysed prompt trigger for run A
     \item One parked trigger for runs B and C, another for run D
     \item All parked and prompt triggers are seeded by L1ETM40
     \item Parked triggers have looser HLT thresholds
@@ -220,8 +222,8 @@
       \item Moved to one fully developed framework rather than two underdeveloped ones
       \item[-] New framework uses analysis B ntuples
       \item Synchronised yields in signal and control regions between new framework and old analyses A and B
-      \item Also checked the expected limit obtained with the new framework and ntuples for the prompt analysis
-      \item[-] Agrees with HIG-13-030 to within 2\%, which is good given change of global tag and triggers
+      \item Repeated expected limit calculation from HIG-13-030 analysis with the new framework and parked data
+      \item[-] Agrees with HIG-13-030 to within 2\%, which is good given rereco, and change of global tag and triggers
       \end{itemize}
   \end{block}
 \end{frame}
@@ -233,7 +235,7 @@
   \begin{block}{\scriptsize Initial plan}
     \scriptsize
     \begin{itemize}{}
-    \item Loosen cuts as much as possible and model QCD shape
+    \item Define a loose pre-selection and model QCD shape
     \item Several options for analysis strategy:
     \item[-] Rectangular cuts and counting experiment
     \item[-] Rectangular cuts and shape experiment
@@ -259,14 +261,14 @@
     \scriptsize
     \begin{itemize}
     \item Parked trigger efficiency has been measured including variable correlation
-    \item[-] This allows a looser preselection to be used
+    \item[-] This allows the trigger turn on region to be used
       \end{itemize}
     \end{block}
   \begin{block}{\scriptsize Signal region}
     \scriptsize
     \begin{itemize}
-    \item The signal region has been reoptimised for the new triggers
-    \item[-] New region has higher signal efficiency with less QCD
+    \item The signal region has been reoptimised for the looser parked triggers
+    \item[-] New region uses new variable has higher signal efficiency with less QCD
     \end{itemize}
   \end{block}
 \begin{block}{\scriptsize Background estimation}
@@ -288,14 +290,15 @@
     \begin{block}{}
       \scriptsize
       \begin{itemize}
-      \item The variables used in trigger are highly correlated:
+      \item The variables used in prompt and parked triggers are highly correlated:
       \item[-] dijet mass, METnoMU, jet 2 $p_{T}$
-      \item In the prompt analysis we used cuts to ensure trigger was $>95\%$ efficient
+      \item In the prompt analysis we neglected correlations and cut to ensure trigger was $>95\%$ efficient
       \item For the parked analysis we use a 2D binning in dijet mass and jet 2 $p_{T}$
-      \item Each trigger's efficiency is measured separately
-      \item[-] SingleMu dataset is used
-      \item In each bin the METnoMU trigger turn on is fit using an error function
-      \item We then combine the three triggers efficiencies weighted by the luminosity
+      \item[-] MJJ: 0,600,800,900,1000,5000
+      \item[-] Jet 2 $p_{T}$: 30,40,50,60,1000
+      \item In each bin we fit the METnoMU trigger turn on using an error function
+      \item We then combine the turn ons from runs A, BC and D weighted by luminosity and apply this to MC events
+
       \end{itemize}
     \end{block}
     \column{.5\textwidth}
@@ -303,30 +306,6 @@
     \vspace{-.2cm}
 
     \hfill \scriptsize METnoMU/GeV
-  \end{columns}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Preselection choice}
-  \vspace{-.4cm}
-  \begin{columns}
-    \column{1.05\textwidth}
-  \begin{block}{}
-    \scriptsize
-    \begin{itemize}
-    \item Trigger turn ons impose the following cuts:
-    \item[-] $\eta_{j1} \cdot \eta_{j2}<0,\, \eta_{j1,2}<4.7,\, \text{jet\,1}\, p_{T}>50 \,\text{GeV},\, \Delta\eta_{jj}>3.6,$\\$\, \text{jet\,2}\, p_{T}>40 \,\text{GeV},\text{METnomu}>90\,\text{GeV},\, M_{jj}>800 \,\text{GeV}$
-    \item As in the prompt analysis we also veto events with 'veto' electrons or muons
-    \item Poor data-MC agreement from QCD contamination motivates the following additional cuts:
-    \item $\frac{METnomu}{\sigma_{METnomu}}>3.0,\,\text{Min}\Delta\phi(all\,jets\,p_{T}>30\,GeV,METnomu)>1.0,\,M_{jj}>1000\,\text{GeV}$
-    \end{itemize}
-  \end{block}
-  \end{columns}
-  \begin{columns}
-    \column{1.15\textwidth}
-  \includegraphics[width=.34\textwidth]{TalkPics/higgsexo031114/nopreselnunu_metnomu_significance.pdf}
-  \includegraphics[width=.34\textwidth]{TalkPics/higgsexo031114/metsigpreselnunu_alljetsmetnomu_mindphi.pdf}
-  \includegraphics[width=.34\textwidth]{TalkPics/higgsexo031114/mjj800nunu_dijet_M.pdf}
   \end{columns}
 \end{frame}
 
@@ -356,6 +335,30 @@
     \item[-] Reweighting individual distributions to fix others has been tried
     \end{itemize}
   \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Preselection choice}
+  \vspace{-.4cm}
+  \begin{columns}
+    \column{1.05\textwidth}
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}
+    \item Trigger turn ons and detector acceptance impose the following cuts:
+    \item[-] $\eta_{j1} \cdot \eta_{j2}<0,\, \eta_{j1,2}<4.7,\, \text{jet\,1}\, p_{T}>50 \,\text{GeV},\, \Delta\eta_{jj}>3.6,$\\$\, \text{jet\,2}\, p_{T}>40 \,\text{GeV},\text{METnomu}>90\,\text{GeV},\, M_{jj}>800 \,\text{GeV}$
+    \item As in the prompt analysis we also veto events with 'veto' electrons or muons
+    \item Poor data-MC agreement from QCD contamination motivates the following additional cuts:
+    \item $\frac{METnomu}{\sigma_{METnomu}}>3.0,\,\text{Min}\Delta\phi(all\,jets\,p_{T}>30\,GeV,METnomu)>1.0,\,M_{jj}>1000\,\text{GeV}$
+    \end{itemize}
+  \end{block}
+  \end{columns}
+  \begin{columns}
+    \column{1.15\textwidth}
+  \includegraphics[width=.34\textwidth]{TalkPics/higgsexo031114/nopreselnunu_metnomu_significance.pdf}
+  \includegraphics[width=.34\textwidth]{TalkPics/higgsexo031114/metsigpreselnunu_alljetsmetnomu_mindphi.pdf}
+  \includegraphics[width=.34\textwidth]{TalkPics/higgsexo031114/mjj800nunu_dijet_M.pdf}
+  \end{columns}
 \end{frame}
 
 %SIGNAL SELECTION TAKE AN PLOTS
@@ -392,13 +395,14 @@
      \begin{block}{}
        \scriptsize
        \begin{itemize}
-       \item We opitimise by choosing the cut values with the best 95\% C.L. expected limit
+       \item We optimise by choosing the cut values with the best 95\% C.L. expected limit
        \item[-] Limit calculation details later
        \item We scanned through jet 2 $p_{T}$, dijet mass and $\text{Min}\Delta\phi(all\,jets\,,METnomu)$
        \item Best limit was found for:
        \item[-] No additional jet 2 $p_{T}$ cut
        \item[-] $\frac{METnoMU}{\sigma_{METnoMU}}>4$
        \item[-] $\text{Min}\Delta\phi(all\,jets,METnomu)>2.5$
+       \item Discrepancy outside signal region is from QCD
        \item This was used as our ``signal region''
        \end{itemize}
     \end{block}
@@ -482,7 +486,7 @@
     \begin{block}{}
       \scriptsize
       \begin{itemize}
-      \item Estimate error from difference between control region and signal region
+      \item Estimate error from difference between control region and signal region cuts
       \item $W\rightarrow\mu\nu$ has enough events to see data driven weight variation with $\text{Min}\Delta\phi(all\,jets,\,METnomu)$ cut 
       \item[-] weight changes by 20\% when loosening cut from 2.5 to 1.0
       \item[-] We add a 20\% systematic on the $W\rightarrow\tau\nu$ background
@@ -513,6 +517,7 @@
      \begin{block}{}
        \scriptsize
        \begin{itemize}
+       \item Try modelling QCD shape in preselection region 
        \item All QCD MC in region with low $\text{Min}\Delta\phi(all\,jets,\,METnomu)$
        \item Try inverted region with:
        \item[-] $\text{Min}\Delta\phi(all\,jets,\,METnomu)<1.0$
@@ -552,10 +557,17 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Norm 1 scale factor variation}
+  \frametitle{Scale factor variation}
+  \vspace{-.2cm}
+  \scriptsize Norm 1
+
+  \includegraphics[clip=true,trim=0 0 0 180,width=.9\textwidth]{TalkPics/higgsexo031114/qcdEstimate/jetmetnomu_mindphi_norm1_SF.pdf}
+
   \vspace{-.2cm}
 
-  \includegraphics[width=.9\textwidth]{TalkPics/higgsexo031114/jetmetnomu_mindphi_norm1_SF.pdf}
+  \scriptsize Norm 1+2
+
+  \includegraphics[clip=true,trim=0 0 0 180,width=.9\textwidth]{TalkPics/higgsexo031114/qcdEstimate/jetmetnomu_mindphi_norm12_SF.pdf}
 \end{frame}
 
 \begin{frame}
@@ -587,6 +599,7 @@
        \item[-] As norm 3 has low statistics and is an odd region: drop
        \item Use largest scale factor and largest relative error of remaining
        \item Final prediction: $N_{S}^{QCD}=17\pm 14$
+       \item Expected limit 0.5\% better with no QCD, 0.5\% worse with double error
        \end{itemize}
      \end{block}
 \end{frame}
@@ -675,7 +688,7 @@
       \item[-] Does not take into account any increased systematic
       \item[-] Therefore unlikely to be worthwhile
       \item New variables could make MVA worthwile
-      \item Ability to model QCD would enable looser preselection which may make MVA worthwhile
+      \item Ability to model QCD would enable looser starting selection which may make MVA worthwhile
       \end{itemize}
     \end{block}
     \column{.5\textwidth}
@@ -709,17 +722,115 @@
 %!!POPULATE
 %!!DETAILS OF QCD STUDIES
 %!!MORE BDT INFO
-\begin{frame}
-  \frametitle{QCD MC}
+\begin{frame}{VBF enriched QCD MC}
+  \vspace{-.3cm}
+
+  \begin{columns}
+    \column{0.45\linewidth} 
+    \begin{block}{\begin{tiny}MC Filter: Vectorial sum of neutrino $E_T$\end{tiny}}
+      \begin{itemize}
+      \item $\sum E_\perp(\vec{\nu}) > 40$ $GeV$
+      \end{itemize}
+    \end{block}
+    \vspace{-.3cm}
+    \begin{block}{\begin{tiny}MC Filter: Dijet Filter\end{tiny}}
+      \tiny
+      \begin{itemize}
+      \item Select jets with:
+        \begin{itemize}
+          \scriptsize
+        \item $p_\perp>20$ $GeV$
+        \item $|\eta|<5.0$
+        \end{itemize}
+      \item From selected jets at least one pair with:
+        \begin{itemize}
+          \scriptsize
+        \item $m_{jj}>700$ $GeV$
+        \item $\Delta\eta>3.2$
+        \end{itemize}  
+      \end{itemize}
+    \end{block}
+    \column{0.45\linewidth} 
+    \begin{block}{\tiny QCD Inc 80-600 $GeV$}
+      \tiny
+      \centering
+      \includegraphics[width=0.7\linewidth]{TalkPics/higgsexo031114/MC_QCDIncAll_GenVsReco_met}
+
+      There 2 distict populations of events: real and fake met.
+    \end{block}
+\end{columns}
+  \vspace{-.1cm}
+
+\begin{block}
+  \scriptsize
+  \centering
+  \resizebox{0.8\linewidth}{!}{
+    \begin{tabular}{|c|r|c|r|c|c|}
+      \hline
+      Sample          &       Ev. Gen. & Filter Eff. &  Events &  XS $[pb]$ & Eq. Lumi. $[fb^{-1}]$ \\
+      \hline \hline
+      QCD-Pt-80to120  & 39376000000 &    0.000049 & 1614416 &  1033680 &  38.09 \\
+      QCD-Pt-120to170 &  7000000000 &    0.000283 & 2051000 & 156293.3 &  44.79 \\
+      QCD-Pt-170to300 &  1375000000 &    0.000987 & 1391500 & 34138.15 &  40.28 \\
+      QCD-Pt-300to470 &    80000000 &    0.002659 &  207840 & 1759.549 &  45.47 \\
+      QCD-Pt-470to600 &    25000000 &    0.004127 &  104675 & 113.8791 & 219.53 \\
+      \hline
+    \end{tabular}
+  }
+\end{block}
+
 \end{frame}
 
 \begin{frame}
   \frametitle{QCD Data-Driven: j1j3, j2j3 shape}
+  \centering
+    \includegraphics[width=.42\textwidth]{TalkPics/higgsexo031114/output_qcdJiJj/DataMC_PARKED_jet1_pt.pdf}
+    \includegraphics[width=.42\textwidth]{TalkPics/higgsexo031114/output_qcdJiJj/DataMC_PARKED_jet2_pt.pdf}
+
+    \includegraphics[width=.42\textwidth]{TalkPics/higgsexo031114/output_qcdJiJj/DataMC_PARKED_dijet_deta.pdf}
+    \includegraphics[width=.42\textwidth]{TalkPics/higgsexo031114/output_qcdJiJj/DataMC_PARKED_dijet_dphi.pdf}
+
+    \includegraphics[width=.42\textwidth]{TalkPics/higgsexo031114/output_qcdJiJj/DataMC_PARKED_metnomuons.pdf}
+    \includegraphics[width=.42\textwidth]{TalkPics/higgsexo031114/output_qcdJiJj/DataMC_PARKED_metnomu_significance.pdf}
+
+    \includegraphics[width=.42\textwidth]{TalkPics/higgsexo031114/output_qcdJiJj/DataMC_PARKED_dijet_M.pdf}
+    \includegraphics[width=.42\textwidth]{TalkPics/higgsexo031114/output_qcdJiJj/DataMC_PARKED_jet3_csv.pdf}
+
 \end{frame}
 
 \begin{frame}
   \frametitle{MVA Details}
+  \centering
+  \includegraphics[width=.75\textwidth]{TalkPics/higgsexo031114/mvainputs1.pdf}
+
+  \includegraphics[clip=true,trim=0 140 0 0 ,width=.75\textwidth]{TalkPics/higgsexo031114/mvainputs2.pdf} 
 \end{frame}
+
+\begin{frame}
+  \frametitle{MVA Details}
+  \includegraphics[width=.49\textwidth]{TalkPics/higgsexo031114/inputcorrsig.pdf}
+  \hspace{.1cm}
+  \includegraphics[width=.49\textwidth]{TalkPics/higgsexo031114/inputcorrbkg.pdf} 
+\end{frame}
+
+\begin{frame}
+  \frametitle{MVA Details}
+  \includegraphics[width=.49\textwidth]{TalkPics/higgsexo031114/fisherdist.pdf}
+  \hspace{.1cm}
+  \includegraphics[width=.49\textwidth]{TalkPics/higgsexo031114/bdtdist.pdf} 
+\end{frame}
+
+\begin{frame}
+  \frametitle{MVA Details}
+  \includegraphics[width=.49\textwidth]{TalkPics/higgsexo031114/fishersoverb.pdf}
+  \hspace{.1cm}
+  \includegraphics[width=.49\textwidth]{TalkPics/higgsexo031114/bdtsoverb.pdf} 
+\end{frame}
+
+
+
+
+
 
 \end{fmffile}
 \end{document}
