@@ -1,0 +1,472 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+\begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+  \includegraphics[height=1cm]{icl.pdf}
+  \hfill
+  \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+\end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+\begin{beamercolorbox}[ht=.55cm,dp=0.4cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+  \begin{minipage}[c]{5cm}%
+    \usebeamerfont{author in head/foot}
+    \insertshortauthor 
+    \insertshorttitle
+    \end{minipage}\hfill%
+  \insertframenumber{} / \pageref{lastframe}
+  \hfill
+  \begin{minipage}{6cm}
+    \hfill
+  \end{minipage}
+\end{beamercolorbox}%
+}
+
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\title{\vspace{-0.2cm} Control Plots}
+%\subtitle{Paper - HIG-13-030, PASs: HIG-13-013, HIG-13-018, HIG-13-028 \vspace{-0.7cm}}
+\author[P. Dunne]{\underline{P. Dunne} }%\\ on behalf of the H$\rightarrow$invisible analysis groups} % A.M. Magnan and A. Nikitenko Joao Pela with \\ R. Aggleton, J. Brooke: Bristol \\ C.Asawangtrakuldee, Q.Li: Peking \\ P. Srimanobhas: Chulalongkorn \\ S. Kumar, K. Mazumdar: Mumbai}
+\titlegraphic{
+  \vspace{-0.7cm}
+  %\includegraphics[width=\textwidth]{TalkPics/invcomb021213/feyndiags}
+%% \begin{fmfgraph*}(100,70)
+%%         \fmfleft{i1,i2}
+%%         \fmfright{o1,o2,o3}
+%%         \fmf{fermion}{i1,v1,o1}
+%%         \fmf{fermion}{i2,v2,o3}
+%%         \fmf{phantom,tension=4/5}{v1,v2}
+%%         \fmffreeze
+%%         \fmf{photon,label=$W,,Z$}{v1,v3}
+%%         \fmf{photon,label=$W,,Z$}{v2,v3}
+%%         \fmf{dashes}{v3,o2}
+%%         \fmflabel{$q$}{i1}
+%%         \fmflabel{$q$}{i2}
+%%         \fmflabel{$q$}{o1}
+%%         \fmflabel{$q$}{o3}
+%%         \fmflabel{$H$}{o2}
+%%       \end{fmfgraph*}
+}
+\date{}
+\begin{document}
+\begin{fmffile}{hig1330approvalfeynmandiags}
+
+%TITLE PAGE
+\section{Title}
+\begin{frame}
+  \titlepage
+  
+\end{frame}
+
+%OUTLINE
+%% \begin{frame}
+%%   \frametitle{Overview}
+%%   \begin{block}{}
+%%     \scriptsize
+%%     \begin{itemize}
+%%     \item Updated control plots
+%%     \end{itemize}
+%%   \end{block}
+%% \end{frame}
+
+\begin{frame}
+  \frametitle{New Control Plots}
+    \begin{block}{}
+      \begin{itemize}
+      \item Cuts are:
+      \item[-] met$>60$ $jet1_pt>50$, $dijet_deta>3.6$, metnomu\_significance$>3$, jetmetnomu\_mindphi$>1.5$, $jet_{1,2} \eta <4.7$, $jet_{1}\eta\cdot jet_{2}\eta<0,m_{jj}>=800,jet_{2} p_{T}>40$
+      \item met, $jet2 p_{T}$ and $m_{jj}$ cuts chosen to be above highest trigger threshold and at at least 50\% efficiency for run D trigger 
+      \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - mumu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Jet 1 pt}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/mumuj1pt.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Jet 2 pt}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/mumuj2pt.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - mumu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{METnomu}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/mumumetnomu.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{METnomusig}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/mumumetnomusig.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - mumu }
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Mjj}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/mumumjj.pdf}
+    \end{block}
+    \column{.5\textwidth}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots -mumu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Dphijj}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/mumudphijj.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Detajj}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/mumudetajj.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots -mumu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Jet-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/mumujetmetmindphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{dijet-metnomu pt fraction}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/mumudijetmetnonmufrac.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots -enu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Jet 1 pt}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/enuj1pt.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Jet 2 pt}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/enuj2pt.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots -enu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{METnomu}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/enumetnomu.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{METnomusig}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/enumetnomusig.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - enu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Mjj}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/enumjj.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{mt}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/enumt.pdf}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - enu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Dphijj}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/enudphijj.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Detajj}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/enudetajj.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - enu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Jet-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/enujetmetmindphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{dijet-metnomu pt fraction}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/enudijetmetnomufrac.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - munu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Jet 1 pt}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/munuj1pt.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Jet 2 pt}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/munuj2pt.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - munu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{METnomu}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/munumetnomu.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{METnomusig}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/munumetnomusig.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - munu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Mjj}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/munumjj.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{mt}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/munumt.pdf}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - munu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Dphijj}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/munudphijj.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Detajj}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/munudetajj.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - munu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Jet-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/munujetmetmindphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{dijet-metnomu pt fraction}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/munudijetmetnomufrac.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - taunu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Jet 1 pt}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/taunuj1pt.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Jet 2 pt}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/taunuj2pt.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - taunu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{METnomu}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/taunumetnomu.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{METnomusig}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/taunumetnomusig.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - taunu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Mjj}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/taunumjj.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{mt}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/taunumt.pdf}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - taunu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Dphijj}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/taunudphijj.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Detajj}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/taunudetajj.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - taunu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Jet-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/taunujetmetmindphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{dijet-metnomu pt fraction}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/taunudijetmetnomufrac.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - sig}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Jet 1 pt}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/nunuj1pt.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Jet 2 pt}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/nunuj2pt.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - sig}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{METnomu}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/nunumetnomu.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{METnomusig}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/nunumetnomusig.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - sig}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Mjj}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/nunumjj.pdf}
+    \end{block}
+    \column{.5\textwidth}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - sig }
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Dphijj}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/nunudphijj.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Detajj}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/nunudetajj.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - sig}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Jet-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/nunujetmetmindphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{dijet-metnomu pt fraction}
+      \includegraphics[width=\textwidth]{TalkPics/contplots090914/nunudijetmetnomufrac.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Conclusions}
+  \label{lastframe}
+
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}
+    \item test
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Backup}
+\end{frame}
+
+\end{fmffile}
+\end{document}

@@ -1,0 +1,615 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+\begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+  \includegraphics[height=1cm]{icl.pdf}
+  \hfill
+  \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+\end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+\begin{beamercolorbox}[ht=.55cm,dp=0.4cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+  \begin{minipage}[c]{5cm}%
+    \usebeamerfont{author in head/foot}
+    \insertshortauthor 
+    \insertshorttitle
+    \end{minipage}\hfill%
+  \insertframenumber{} / \pageref{lastframe}
+  \hfill
+  \begin{minipage}{6cm}
+    \hfill
+  \end{minipage}
+\end{beamercolorbox}%
+}
+
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\title{\vspace{-0.2cm} Top Control Region}
+%\subtitle{Paper - HIG-13-030, PASs: HIG-13-013, HIG-13-018, HIG-13-028 \vspace{-0.7cm}}
+\author[P. Dunne]{\underline{P. Dunne} }%\\ on behalf of the H$\rightarrow$invisible analysis groups} % A.M. Magnan and A. Nikitenko Joao Pela with \\ R. Aggleton, J. Brooke: Bristol \\ C.Asawangtrakuldee, Q.Li: Peking \\ P. Srimanobhas: Chulalongkorn \\ S. Kumar, K. Mazumdar: Mumbai}
+\titlegraphic{
+  \vspace{-0.7cm}
+  %\includegraphics[width=\textwidth]{TalkPics/invcomb021213/feyndiags}
+%% \begin{fmfgraph*}(100,70)
+%%         \fmfleft{i1,i2}
+%%         \fmfright{o1,o2,o3}
+%%         \fmf{fermion}{i1,v1,o1}
+%%         \fmf{fermion}{i2,v2,o3}
+%%         \fmf{phantom,tension=4/5}{v1,v2}
+%%         \fmffreeze
+%%         \fmf{photon,label=$W,,Z$}{v1,v3}
+%%         \fmf{photon,label=$W,,Z$}{v2,v3}
+%%         \fmf{dashes}{v3,o2}
+%%         \fmflabel{$q$}{i1}
+%%         \fmflabel{$q$}{i2}
+%%         \fmflabel{$q$}{o1}
+%%         \fmflabel{$q$}{o3}
+%%         \fmflabel{$H$}{o2}
+%%       \end{fmfgraph*}
+}
+\date{}
+\begin{document}
+\begin{fmffile}{hig1330approvalfeynmandiags}
+
+%TITLE PAGE
+\section{Title}
+\begin{frame}
+  \titlepage
+  
+\end{frame}
+
+%OUTLINE
+\begin{frame}
+  \frametitle{Updates on progress since last week}
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}
+      \item Chayanit is producing 2D trigger weights binned in met and jet 2 pt to cross check
+      \item munu region with met not metnomu cut studied
+      \item[-] worse statistics mask some disagreement but hard to tell if actually better
+      \item Top control region studied
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Top control region study}
+    \begin{block}{}
+      \scriptsize
+      \begin{itemize}
+      \item Top contribution in presel region is small: ~3\%
+      \item However top background is up to 20\% in W control regions
+      \item Have looked into using $e\mu$ region to normalise this contribution:
+      \item[-] Require 1 tight electron and 1 tight muon
+      \item Low statistics with current presel:
+      \item[-] Try relaxing cuts whilst checking weight doesn't vary dramatically
+      \end{itemize}
+    \end{block}
+    \begin{columns}
+      \column{1.15\textwidth}
+    \begin{block}{}
+      \centering
+      \scriptsize
+      \begin{tabular}{|l|c|c|c|}
+        \hline
+        Cut on min$\Delta\phi$(alljets-metnomu) & 1.0 & 0.5 & 0.0 \\
+        \hline
+        NData in $e\mu$ region & 30 & 47 & 68  \\
+        NOther Backgrounds (not QCD) & 4 & 5 & 5 \\
+        NTop from MC & 39 & 63 & 92 \\
+        \hline
+        Top weight$\pm$data stat.$\pm$MC stat. & 0.66$\pm$0.14$\pm$0.10 & 0.68$\pm$0.11$\pm$0.08 & 0.69$\pm$0.09$\pm$0.06  \\
+        \hline
+      \end{tabular}
+    \end{block}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Check Shape Agreement}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Jet 1 pt}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_jet1_pt.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Jet 2 pt}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_jet2_pt.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - top}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{METnomu}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_metnomuons.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{METnomusig}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_metnomu_significance.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - top}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Mjj}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_dijet_M.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{dijet-metnomu pt fraction}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_dijetmetnomu_ptfraction.pdf}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - top}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Dijet Dphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_dijet_dphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Detajj}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_dijet_deta.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - top}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Leading jets-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_jetmetnomu_mindphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{All jets-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_alljetsmetnomu_mindphi.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Conclusions}
+  \label{lastframe}
+
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}
+    \item Shape agreement seems reasonably good
+    \item Weight stays fairly constant as cut is removed
+    \item As top contribution is slightly decreased W weights increase slightly
+    \item[-] enu: 0.43$\rightarrow$0.46
+    \item[-] munu: 0.49$\rightarrow$0.52
+    \item[-] taunu: 0.89$\rightarrow$0.94
+    \item Propose we use this control region to normalise top from now on
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Backup}
+\end{frame}
+
+
+%NEW BINNED J2PT PLOTS
+\begin{frame}
+  \frametitle{New control plots - mumu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Jet 1 pt}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/mumu_jet1_pt.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Jet 2 pt}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/mumu_jet2_pt.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - mumu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{METnomu}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/mumu_metnomuons.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{METnomusig}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/mumu_metnomu_significance.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - mumu }
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Mjj}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/mumu_dijet_M.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{dijet-metnomu pt fraction}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/mumu_dijetmetnomu_ptfraction.pdf}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots -mumu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Dphijj}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/mumu_dijet_dphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Detajj}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/mumu_dijet_deta.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots -mumu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Leading jets-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/mumu_jetmetnomu_mindphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{All jet-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/mumu_alljetsmetnomu_mindphi.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots -enu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Jet 1 pt}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/enu_jet1_pt.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Jet 2 pt}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/enu_jet2_pt.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots -enu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{METnomu}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/enu_metnomuons.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{METnomusig}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/enu_metnomu_significance.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - enu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Mjj}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/enu_dijet_M.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{mt}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/enu_lep_mt.pdf}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - enu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Dijet Dphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/enu_dijet_dphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Detajj}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/enu_dijet_deta.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - enu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Leading jets-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/enu_jetmetnomu_mindphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{All jets-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/enu_alljetsmetnomu_mindphi.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - enu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{dijet-metnomu pt fraction}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/enu_dijetmetnomu_ptfraction.pdf}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - munu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Jet 1 pt}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/munu_jet1_pt.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Jet 2 pt}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/munu_jet2_pt.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - munu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{METnomu}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/munu_metnomuons.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{METnomusig}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/munu_metnomu_significance.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - munu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Mjj}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/munu_dijet_M.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{mt}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/munu_lep_mt.pdf}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - munu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Dijet Dphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/munu_dijet_dphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Detajj}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/munu_dijet_deta.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - munu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Leading jets-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/munu_jetmetnomu_mindphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{All jets-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/munu_alljetsmetnomu_mindphi.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - munu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{dijet-metnomu pt fraction}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/munu_dijetmetnomu_ptfraction.pdf}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - taunu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Jet 1 pt}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/taunu_jet1_pt.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Jet 2 pt}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/taunu_jet2_pt.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - taunu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{METnomu}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/taunu_metnomuons.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{METnomusig}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/taunu_metnomu_significance.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - taunu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Mjj}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/taunu_dijet_M.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{mt}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/taunu_lep_mt.pdf}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - taunu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Dijet Dphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/taunu_dijet_dphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Detajj}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/taunu_dijet_deta.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - taunu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Leading jets-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/taunu_jetmetnomu_mindphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{All jets-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/taunu_alljetsmetnomu_mindphi.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - taunu}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{dijet-metnomu pt fraction}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/taunu_dijetmetnomu_ptfraction.pdf}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - top}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Jet 1 pt}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_jet1_pt.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Jet 2 pt}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_jet2_pt.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - top}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{METnomu}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_metnomuons.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{METnomusig}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_metnomu_significance.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - top}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Mjj}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_dijet_M.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{dijet-metnomu pt fraction}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_dijetmetnomu_ptfraction.pdf}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - top}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Dijet Dphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_dijet_dphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Detajj}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_dijet_deta.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New control plots - top}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{block}{Leading jets-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_jetmetnomu_mindphi.pdf}
+    \end{block}
+    \column{.5\textwidth}
+    \begin{block}{All jets-met mindphi}
+      \includegraphics[width=\textwidth]{TalkPics/topcontreg290914/output_contplots_alljets10topalljets0/top_alljetsmetnomu_mindphi.pdf}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\end{fmffile}
+\end{document}

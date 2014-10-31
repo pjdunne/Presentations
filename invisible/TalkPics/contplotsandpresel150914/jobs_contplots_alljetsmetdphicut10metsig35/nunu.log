@@ -1,0 +1,348 @@
+Taking input from: ../output_lighttree_nojetmetdphicut/
+-------------------------------------
+Module List
+-------------------------------------
+wmunu
+wenu
+wtaunu
+zmumu
+QCD
+vv
+wgamma
+top
+data
+signal
+plotter
+summary
+-------------------------------------
+Module Initialisation Output
+-------------------------------------
+Initialisation info for wmunu:
+  Signal MC set is: WJets_munu
+  Control MC set is: WJets_munu
+  Control data set is: PARKEDPLUSA
+  Base selection is: jet1_eta*jet2_eta<0 && jet1_eta<4.7 && jet2_eta<4.7 && dijet_M>=800&&jet1_pt>50&&dijet_deta>3.6&& jet2_pt>40&&metnomuons>90&&metnomu_significance>3.5&&alljetsmetnomu_mindphi>1.0
+  Signal extra selection is: nvetomuons==0&&nvetoelectrons==0
+  Control extra selection is: nvetoelectrons==0 && nvetomuons==1 && nselmuons==1
+  Signal MC weight is: total_weight_lepveto
+  Control MC weight is: total_weight_leptight
+  Control data weight is: weight_nolep
+Initialisation info for wenu:
+  Signal MC set is: WJets_enu
+  Control MC set is: WJets_enu
+  Control data set is: PARKEDPLUSA
+  Base selection is: jet1_eta*jet2_eta<0 && jet1_eta<4.7 && jet2_eta<4.7 && dijet_M>=800&&jet1_pt>50&&dijet_deta>3.6&& jet2_pt>40&&metnomuons>90&&metnomu_significance>3.5&&alljetsmetnomu_mindphi>1.0
+  Signal extra selection is: nvetomuons==0&&nvetoelectrons==0
+  Control extra selection is: nselelectrons==1 && nvetoelectrons ==1 && nvetomuons==0
+  Signal MC weight is: total_weight_lepveto
+  Control MC weight is: total_weight_leptight
+  Control data weight is: weight_nolep
+Initialisation info for wtaunu:
+  Signal MC set is: WJets_taunu
+  Control MC set is: WJets_taunu
+  Control data set is: PARKEDPLUSA
+  Base selection is: jet1_eta*jet2_eta<0 && jet1_eta<4.7 && jet2_eta<4.7 && dijet_M>=800&&jet1_pt>50&&dijet_deta>3.6&& jet2_pt>40&&metnomuons>90&&metnomu_significance>3.5&&alljetsmetnomu_mindphi>1.0
+  Signal extra selection is: nvetomuons==0&&nvetoelectrons==0
+  Control extra selection is: ntaus>=1&&nvetoelectrons ==0 && nvetomuons==0&&lep_mt>20
+  Signal MC weight is: total_weight_lepveto
+  Control MC weight is: total_weight_lepveto
+  Control data weight is: weight_nolep
+Initialisation info for zmumu:
+Signal MC ewk set is: ZJets_ll_vbf
+Signal MC qcd set is: ZJets_ll
+Control MC ewk set  is: ZJets_ll_vbf
+Control MC qcd set is: ZJets_ll
+Control data set is: PARKEDPLUSA
+Base selection is: jet1_eta*jet2_eta<0 && jet1_eta<4.7 && jet2_eta<4.7 && dijet_M>=800&&jet1_pt>50&&dijet_deta>3.6&& jet2_pt>40&&metnomuons>90&&metnomu_significance>3.5&&alljetsmetnomu_mindphi>1.0
+Signal extra selection is: m_mumu_gen>80&&m_mumu_gen<100
+Control extra selection is: nvetoelectrons==0 && nvetomuons==2 && nselmuons==2&&m_mumu>60&&m_mumu<120
+Inclusive control ewk cross-section: 303
+Inclusive control qcd cross-section: 1.1679e+06
+Inclusive signal ewk cross-section: 1380
+Inclusive signal qcd cross-section: 6.5998e+06
+Number of generated ewk Z events: 5781.91
+Number of generated qcd Z events: 2.27893e+07
+Number of generated ewk Z events after mass filtering: 4226.53
+Number of generated qcd Z events after mass filtering: 2.03349e+07
+Initialisation info for QCD:
+  Signal MC set is: VBF-QCD
+  Control MC set is: VBF-QCD
+  Control data set is: PARKEDPLUSA
+  Base selection is: jet1_eta*jet2_eta<0 && jet1_eta<4.7 && jet2_eta<4.7 && dijet_M>=800&&jet1_pt>50&&dijet_deta>3.6&& jet2_pt>40&&metnomuons>90&&metnomu_significance>3.5&&alljetsmetnomu_mindphi>1.0
+  Signal extra selection is: nvetomuons==0&&nvetoelectrons==0
+  Control extra selection is: nvetoelectrons==0&&nvetomuons==0
+  Signal MC weight is: total_weight_lepveto
+  Control MC weight is: total_weight_lepveto
+  Control data weight is: weight_nolep
+Initialisation info for vv:
+  Data sets are: 
+    VV
+  Base selection is: jet1_eta*jet2_eta<0 && jet1_eta<4.7 && jet2_eta<4.7 && dijet_M>=800&&jet1_pt>50&&dijet_deta>3.6&& jet2_pt>40&&metnomuons>90&&metnomu_significance>3.5&&alljetsmetnomu_mindphi>1.0
+  Extra selection is: nvetomuons==0&&nvetoelectrons==0
+  Data weight is: weight_nolep
+Initialisation info for wgamma:
+  Data sets are: 
+    WGamma
+  Base selection is: jet1_eta*jet2_eta<0 && jet1_eta<4.7 && jet2_eta<4.7 && dijet_M>=800&&jet1_pt>50&&dijet_deta>3.6&& jet2_pt>40&&metnomuons>90&&metnomu_significance>3.5&&alljetsmetnomu_mindphi>1.0
+  Extra selection is: nvetomuons==0&&nvetoelectrons==0
+  Data weight is: weight_nolep
+Initialisation info for top:
+  Data sets are: 
+    Top
+  Base selection is: jet1_eta*jet2_eta<0 && jet1_eta<4.7 && jet2_eta<4.7 && dijet_M>=800&&jet1_pt>50&&dijet_deta>3.6&& jet2_pt>40&&metnomuons>90&&metnomu_significance>3.5&&alljetsmetnomu_mindphi>1.0
+  Extra selection is: nvetomuons==0&&nvetoelectrons==0
+  Data weight is: weight_nolep
+Initialisation info for data:
+  Data sets are: 
+    PARKEDPLUSA
+  Base selection is: jet1_eta*jet2_eta<0 && jet1_eta<4.7 && jet2_eta<4.7 && dijet_M>=800&&jet1_pt>50&&dijet_deta>3.6&& jet2_pt>40&&metnomuons>90&&metnomu_significance>3.5&&alljetsmetnomu_mindphi>1.0
+  Extra selection is: nvetomuons==0&&nvetoelectrons==0&&((((run>=190456)&&(run<=193621))&&passtrigger==1)||(((run>=193833)&&(run<=196531))&&passparkedtrigger1==1)||(((run>=203777)&&(run<=208686))&&passparkedtrigger2==1))&&l1met>40
+  Data weight is: weight_nolep
+Initialisation info for signal:
+  Data sets are: 
+    sig125
+  Base selection is: jet1_eta*jet2_eta<0 && jet1_eta<4.7 && jet2_eta<4.7 && dijet_M>=800&&jet1_pt>50&&dijet_deta>3.6&& jet2_pt>40&&metnomuons>90&&metnomu_significance>3.5&&alljetsmetnomu_mindphi>1.0
+  Extra selection is: nvetomuons==0&&nvetoelectrons==0
+  Data weight is: weight_nolep
+Initialisation info for plotter:
+Initialisation info for summary:
+  Processes are: 
+    wel
+    wmu
+    wtau
+    zvv
+    qcd
+    vv
+    wg
+    top
+    qqH
+    data_obs
+-------------------------------------
+Beginning Main Analysis Sequence
+-------------------------------------
+wmunu:
+  Getting control MC shape
+  Getting control MC Backgrounds shape
+  Getting control Data shape
+  ncmc: 5406.55, ncdata: 3252, ncbkg: 854.819
+  weight: 0.443385
+  Getting signal MC shapes
+  Normalised NSMC: 1123.28
+wenu:
+  Getting control MC shape
+  Getting control MC Backgrounds shape
+  Getting control Data shape
+  ncmc: 1553.28, ncdata: 817, ncbkg: 206.675
+  weight: 0.392928
+  Getting signal MC shapes
+  Normalised NSMC: 887.608
+wtaunu:
+  Getting control MC shape
+  Getting control MC Backgrounds shape
+  Getting control Data shape
+  ncmc: 68.9469, ncdata: 77, ncbkg: 30.2369
+  weight: 0.678248
+  Getting signal MC shapes
+  Normalised NSMC: 1445.38
+zmumu:
+  Getting control MC shape
+  Getting control MC Backgrounds shape
+  Getting control Data shape
+  ncmcewk: 49.2206, ncmcqcd: 259.234, ncdata: 184, ncbkg: 15.5068
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+NSMC EWK: 252.704 NSMC QCD: 1724.66
+QCD:
+  Getting control MC shape
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+  Getting control MC Backgrounds shape
+  Getting control Data shape
+  ncmc: 133.273, ncdata: 7186, ncbkg: 6214.9
+  weight: 7.28657
+  Getting signal MC shapes
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+  Normalised NSMC: 971.1
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+WARNING: VBF-QCD-Pt-1400to1800 is empty.
+vv:
+  Getting shape
+  nevents: 66.7424
+wgamma:
+  Getting shape
+  nevents: 167.955
+top:
+  Getting shape
+  nevents: 325.358
+data:
+  Getting shape
+  nevents: 7186
+signal:
+  Getting shape
+  nevents: 1224.48
+plotter:
+  Drawing plot for jet2_pt
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf has been created
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_jet2_pt.pdf has been created
+  Drawing plot for jet1_pt
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_jet1_pt.pdf has been created
+  Drawing plot for metnomuons
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_metnomuons.pdf has been created
+  Drawing plot for l1met
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_l1met.pdf has been created
+  Drawing plot for dijet_M
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_dijet_M.pdf has been created
+  Drawing plot for jetmetnomu_mindphi
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_jetmetnomu_mindphi.pdf has been created
+  Drawing plot for alljetsmetnomu_mindphi
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_alljetsmetnomu_mindphi.pdf has been created
+  Drawing plot for metnomu_significance
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_metnomu_significance.pdf has been created
+  Drawing plot for dijet_sumeta
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_dijet_sumeta.pdf has been created
+  Drawing plot for ht
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_ht.pdf has been created
+  Drawing plot for jetunclet_mindphi
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_jetunclet_mindphi.pdf has been created
+  Drawing plot for metnomuunclet_dphi
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_metnomuunclet_dphi.pdf has been created
+  Drawing plot for dijetmetnomu_scalarSum_pt
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_dijetmetnomu_scalarSum_pt.pdf has been created
+  Drawing plot for dijetmetnomu_vectorialSum_pt
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_dijetmetnomu_vectorialSum_pt.pdf has been created
+  Drawing plot for n_jets_cjv_30
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_n_jets_cjv_30.pdf has been created
+  Drawing plot for n_jets_cjv_20EB_30EE
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_n_jets_cjv_20EB_30EE.pdf has been created
+  Drawing plot for dijet_dphi
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_dijet_dphi.pdf has been created
+  Drawing plot for dijet_deta
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_dijet_deta.pdf has been created
+  Drawing plot for lep_mt
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_lep_mt.pdf has been created
+  Drawing plot for dijetmetnomu_ptfraction
+    Getting histograms..
+    Drawing Stack..
+    Drawing Unstacked..
+Info in <TCanvas::Print>: Current canvas added to pdf file output_contplots_alljetsmetdphicut10metsig35/nunu.pdf
+Info in <TCanvas::Print>: pdf file output_contplots_alljetsmetdphicut10metsig35/nunu_dijetmetnomu_ptfraction.pdf has been created
+summary:
+wel: 887.608
+wmu: 1123.28
+wtau: 1445.38
+zvv: 1977.36
+qcd: 971.1
+vv: 66.7424
+wg: 167.955
+top: 325.358
+qqH: 1224.48
+data_obs: 7186
+All modules ran and exited with status 0.
