@@ -172,7 +172,7 @@
      W: $N_{S}=N_{S}^{MC}\frac{N_{C}^{Data}-N_{C}^{Bkg}}{N_{C}^{MC}}$
      \column{.55\textwidth}
      \scriptsize  
-   Z: $N_{S}^{Z\rightarrow\nu\nu}=\left(N_{C}^{Data}-N_{C}^{bkg}\right) \cdot\frac{\sigma\left(Z\rightarrow\nu\nu\right)}{\sigma\left(Z\rightarrow\mu\mu\right)}\cdot \frac{\epsilon_{S}^{ZMC}}{\epsilon_{C}^{ZMC}}$
+   Z: $N_{S}^{Z\rightarrow\nu\nu}=\left(N_{C}^{Data}-N_{C}^{bkg}\right) \cdot\frac{\sigma\left(Z\rightarrow\nu\nu\right)}{\sigma\left(Z/\gamma^{*}\rightarrow\mu\mu\right)}\cdot \frac{\epsilon_{S}^{ZMC}}{\epsilon_{C}^{ZMC}}$
        \end{columns}
   \end{block}
   \end{columns}
@@ -190,7 +190,7 @@
     \item This allows us to look at new regions of phase space and different analysis techniques
     \end{itemize}
   \end{block}
-  \begin{block}{}
+  \begin{block}{\scriptsize HLT}
     \scriptsize
     \centering
     \begin{tabular}{|l|c|c|c|}
@@ -219,8 +219,8 @@
       \scriptsize
       \begin{itemize}
       \item Insufficient manpower to maintain and develop two frameworks
-      \item Moved to one fully developed framework rather than two underdeveloped ones
-      \item[-] New framework uses analysis B ntuples
+      \item Moved to one fully developed framework
+      \item[-] New framework is development of analysis B and uses same ntuples
       \item Synchronised yields in signal and control regions between new framework and old analyses A and B
       \item Repeated expected limit calculation from HIG-13-030 analysis with the new framework and parked data
       \item[-] Agrees with HIG-13-030 to within 2\%, which is good given rereco, and change of global tag and triggers
@@ -232,24 +232,53 @@
 %DIFFERENT OPTIONS AND WHY WE CHOSE WHAT WE DID
 \begin{frame}
   \frametitle{Analysis strategy}
-  \begin{block}{\scriptsize Initial plan}
+  \begin{block}{\scriptsize Initial investigations}
     \scriptsize
     \begin{itemize}{}
-    \item Define a loose pre-selection and model QCD shape
+    \item Planned to define a loose pre-selection and model QCD shape
     \item Several options for analysis strategy:
     \item[-] Rectangular cuts and counting experiment
     \item[-] Rectangular cuts and shape experiment
     \item[-] MVA and counting experiment
     \item[-] MVA and shape experiment
+    \item Due to trigger conditions no appropriate QCD control region found - details later
     \end{itemize}
   \end{block}
   \begin{block}{\scriptsize Final plan for parked data}
     \begin{itemize}
       \scriptsize
-    \item Unable to model QCD shape - details later
-    \item Altered signal region cuts to remove QCD
+    \item During QCD studies found new variables which remove QCD
+    \item[-] Signal efficiency significantly higher than prompt selection
     \item Remaining backgrounds very signal like in variables studied so far
     \item[-] Opted for cut and count analysis
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{QCD options tried}
+  \begin{block}{}
+    \scriptsize Several methods tried to model QCD
+  \end{block}
+  \begin{block}{\scriptsize Standard MC}
+    \scriptsize
+    \begin{itemize}
+    \item[-] doesn't have enough events
+    \end{itemize}
+  \end{block}
+  \begin{block}{\scriptsize Private VBF$+$MET enriched QCD MC sample}
+    \scriptsize
+    \begin{itemize}
+    \item[-] Can only enrich in events with real met
+    \item[-] Can't model met from mismeasurement
+    \end{itemize}
+  \end{block}
+  \begin{block}{\scriptsize Data-driven shape using different jet pairs in the event}
+    \scriptsize
+    \begin{itemize}
+    \item[-] Jet kinematics are very biased
+    \item[-] Ordering in $p_{T}$ and angle have been tried
+    \item[-] Reweighting individual distributions to fix others has been tried
     \end{itemize}
   \end{block}
 \end{frame}
@@ -268,7 +297,7 @@
     \scriptsize
     \begin{itemize}
     \item The signal region has been reoptimised for the looser parked triggers
-    \item[-] New region uses new variable has higher signal efficiency with less QCD
+    \item[-] New region uses new variable has higher signal efficiency with much less QCD
     \end{itemize}
   \end{block}
 \begin{block}{\scriptsize Background estimation}
@@ -310,34 +339,6 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{QCD issues}
-  \begin{block}{}
-    \scriptsize Several methods tried to model QCD
-  \end{block}
-  \begin{block}{\scriptsize Standard MC}
-    \scriptsize
-    \begin{itemize}
-    \item[-] doesn't have enough events
-    \end{itemize}
-  \end{block}
-  \begin{block}{\scriptsize Private VBF enriched QCD MC sample}
-    \scriptsize
-    \begin{itemize}
-    \item[-] Can only enrich in events with real met
-    \item[-] Can't model met from mismeasurement
-    \end{itemize}
-  \end{block}
-  \begin{block}{\scriptsize Data-driven shape using different jet pairs in the event}
-    \scriptsize
-    \begin{itemize}
-    \item[-] Jet kinematics are very biased
-    \item[-] Ordering in $p_{T}$ and angle have been tried
-    \item[-] Reweighting individual distributions to fix others has been tried
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-\begin{frame}
   \frametitle{Preselection choice}
   \vspace{-.4cm}
   \begin{columns}
@@ -346,8 +347,9 @@
     \scriptsize
     \begin{itemize}
     \item Trigger turn ons and detector acceptance impose the following cuts:
-    \item[-] $\eta_{j1} \cdot \eta_{j2}<0,\, \eta_{j1,2}<4.7,\, \text{jet\,1}\, p_{T}>50 \,\text{GeV},\, \Delta\eta_{jj}>3.6,$\\$\, \text{jet\,2}\, p_{T}>40 \,\text{GeV},\text{METnomu}>90\,\text{GeV},\, M_{jj}>800 \,\text{GeV}$
+    \item[-] $\eta_{j1} \cdot \eta_{j2}<0,\, |\eta_{j1,2}|<4.7,\, \text{jet\,1}\, p_{T}>50 \,\text{GeV},\, \Delta\eta_{jj}>3.6,$\\$\, \text{jet\,2}\, p_{T}>40 \,\text{GeV},\text{METnomu}>90\,\text{GeV},\, M_{jj}>800 \,\text{GeV}$
     \item As in the prompt analysis we also veto events with 'veto' electrons or muons
+    \item QCD in plots is VBF enriched MC doesn't model all QCD
     \item Poor data-MC agreement from QCD contamination motivates the following additional cuts:
     \item $\frac{METnomu}{\sigma_{METnomu}}>3.0,\,\text{Min}\Delta\phi(all\,jets\,p_{T}>30\,GeV,METnomu)>1.0,\,M_{jj}>1000\,\text{GeV}$
     \end{itemize}
@@ -371,10 +373,9 @@
        \begin{itemize}
        \item Can't model QCD shape so alter cuts to remove most QCD
        \item[-] Can then tolerate a larger uncertainty on QCD estimation
-       \item[-] QCD in plots is vbf enriched MC doesn't model all QCD
-       \item Agreement in control regions is good for $\frac{METnoMU}{\sigma_{METnoMU}}>4$ and $\text{Min}\Delta\phi(all\,jets,METnomu)>2.0$
+       \item Remaining QCD in region $\frac{METnoMU}{\sigma_{METnoMU}}<4$ and $\text{Min}\Delta\phi(all\,jets,METnomu)<2.0$
        \item Signal contribution also large for some regions of parameter space
-       \item We blind the data in this region and use it as a basis for signal region optimisation
+       \item[-] We blind these regions and use as a basis for signal region optimisation
        \end{itemize}
     \end{block}
     \column{.5\textwidth}
@@ -402,8 +403,8 @@
        \item[-] No additional jet 2 $p_{T}$ cut
        \item[-] $\frac{METnoMU}{\sigma_{METnoMU}}>4$
        \item[-] $\text{Min}\Delta\phi(all\,jets,METnomu)>2.5$
-       \item Discrepancy outside signal region is from QCD
        \item This was used as our ``signal region''
+       \item Discrepancy outside signal region is from QCD
        \end{itemize}
     \end{block}
     \column{.5\textwidth}
@@ -453,6 +454,47 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{$W\rightarrow e\nu$}
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}
+    \item Data-MC agreement good
+    \item Same method used as for prompt analysis
+    \end{itemize}
+  \end{block}
+  \includegraphics[width=.5\textwidth]{TalkPics/higgsexo031114/output_sigreg/enu_alljetsmetnomu_mindphi}
+  \includegraphics[width=.5\textwidth]{TalkPics/higgsexo031114/output_sigreg/enu_metnomu_significance}
+\end{frame}
+
+\begin{frame}
+  \frametitle{$W\rightarrow \mu\nu$}
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}
+    \item Data-MC agreement good
+    \item Same method used as for prompt analysis
+    \end{itemize}
+  \end{block}
+  \includegraphics[width=.5\textwidth]{TalkPics/higgsexo031114/output_sigreg/munu_alljetsmetnomu_mindphi}
+  \includegraphics[width=.5\textwidth]{TalkPics/higgsexo031114/output_sigreg/munu_metnomu_significance}
+\end{frame}
+
+\begin{frame}
+  \frametitle{$Z\rightarrow \nu\nu$}
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}
+    \item Data-MC agreement good for limited statistics
+    \item Same method used as for prompt analysis
+    \end{itemize}
+  \end{block}
+  \includegraphics[width=.5\textwidth]{TalkPics/higgsexo031114/output_sigreg/mumu_alljetsmetnomu_mindphi}
+  \includegraphics[width=.5\textwidth]{TalkPics/higgsexo031114/output_sigreg/mumu_metnomu_significance}
+\end{frame}
+
+
+
+\begin{frame}
   \frametitle{$W\rightarrow\tau\nu$ control region}
   \begin{columns}
     \column{.55\textwidth}
@@ -465,7 +507,7 @@
       \item For $W\rightarrow\tau\nu$ there are not enough events in this region: 2 events for $N_{C}^{Data}$
       \item[-] In prompt analysis we removed the central jet veto (CJV)
       \item CJV no longer used, so we remove the $\text{Min}\Delta\phi(all\,jets,\,METnomu)$ cut
-      \item This leads to QCD contaminatin so we require:
+      \item This leads to QCD contamination so we require:
       \item[-] $\text{Min}\Delta\phi(leading\,2\,jets,\,METnomu)>1.0$
       \item[-] We also add an $m_{T}>20$ GeV cut on the lepton-MET system to remove QCD contamination
       \end{itemize}
@@ -488,7 +530,7 @@
       \begin{itemize}
       \item Estimate error from difference between control region and signal region cuts
       \item $W\rightarrow\mu\nu$ has enough events to see data driven weight variation with $\text{Min}\Delta\phi(all\,jets,\,METnomu)$ cut 
-      \item[-] weight changes by 20\% when loosening cut from 2.5 to 1.0
+      \item[-] weight changes by 20\% when loosening cut from 2.5 to 1.0.
       \item[-] We add a 20\% systematic on the $W\rightarrow\tau\nu$ background
       \end{itemize}
       \begin{tabular}{|l|c|c|}
@@ -518,7 +560,7 @@
        \scriptsize
        \begin{itemize}
        \item Try modelling QCD shape in preselection region 
-       \item All QCD MC in region with low $\text{Min}\Delta\phi(all\,jets,\,METnomu)$
+       \item QCD met must come from a jet, use region with low $\text{Min}\Delta\phi(all\,jets,\,METnomu)$
        \item Try inverted region with:
        \item[-] $\text{Min}\Delta\phi(all\,jets,\,METnomu)<1.0$
        \item[-] $\text{Min}\Delta\phi(leading\,jets,\,METnomu)>1.0$ 
@@ -543,10 +585,10 @@
       \begin{block}{}
         \scriptsize
         \begin{itemize}
-        \item Unfortunately selection on $\text{Min}\Delta\phi(jets,METnomu)$ or $\frac{METnomu}{\sigma_{METnomu}}$ kills all QCD so cannot normalise
+        \item Cannot use ABCD to normalise
         \item Scale factor shows strong dependence on cut variables
         \item Norm 2 and 3 have large signal contamination
-        \item[-] Norm 3 also has low stats and odd because requiring very significant met near a mismeasured object
+        \item[-] Norm 3 also has low stats and odd because we forbid jets opposite the met in phi
         \item Fit scale factor variation in norm 1
         \item Check consistency in norm 2 and 3
         \end{itemize}
@@ -582,11 +624,11 @@
          Region & Factor & Extrapolation & Extrapolation \\
          & & mindphi$>2.5$ & metsig$>4$ \\
          \hline
-         Norm 1 & 0.22 $\pm$ 0.03 & 0.016 $\pm$ 0.009 & 0.04 $\pm$ 0.03\\
+         \rowcolor{yellow} Norm 1 & 0.22 $\pm$ 0.03 & 0.016 $\pm$ 0.009 & 0.04 $\pm$ 0.03\\
          Norm 1+2 & 0.15 $\pm$ 0.02 & 0.010 $\pm$ 0.003 & 0.03 $\pm$ 0.02\\
-         \rowcolor{yellow}Norm 1+3 & 0.41 $\pm$ 0.03 & 0.036 $\pm$ 0.062 & 1.10 $\pm$ 0.10\\
+         Norm 1+3 & 0.41 $\pm$ 0.03 & 0.036 $\pm$ 0.062 & 1.10 $\pm$ 0.10\\
          Norm 2 & 0.08 $\pm$ 0.02 & - & 0.05$\pm$0.04 \\
-         \rowcolor{yellow}Norm 3 & 1.22 $\pm$ 0.15 & 0.60$\pm$0.25 & - \\
+         Norm 3 & 1.22 $\pm$ 0.15 & 0.60$\pm$0.25 & - \\
          \hline
        \end{tabular}
      \end{block}
@@ -597,8 +639,8 @@
        \item Good agreement in all $\text{Min}\Delta\phi(all\,jets,\,METnomu)$ extrapolations
        \item Norm 3 agreement in metsig is poor
        \item[-] As norm 3 has low statistics and is an odd region: drop
-       \item Use largest scale factor and largest relative error of remaining
-       \item Final prediction: $N_{S}^{QCD}=17\pm 14$
+       \item Use envelope of norm 1 scale factors
+       \item Final prediction: $N_{S}^{QCD}=14\pm 10$ 
        \item Expected limit 0.5\% better with no QCD, 0.5\% worse with double error
        \end{itemize}
      \end{block}
@@ -619,11 +661,11 @@
       $W\rightarrow e\nu$& $ 59.7\pm 7.7 (\text{stat.}) \pm 5.2 (\text{MC stat.})$ \\
       $W\rightarrow \mu\nu$& $81.2 \pm 5.6 (\text{stat.}) \pm 5.8 (\text{MC stat.})$ \\
       $W\rightarrow \tau\nu$& $95.7 \pm 12.3 (\text{stat.}) \pm 10.2 (\text{MC stat.})$ \\
-      QCD & $ 17 \pm 14 $\\
+      QCD & $ 14 \pm 10 $\\ 
       Top & $6.1\pm 1.2(\text{stat.}) \pm 1.4 (\text{MC stat.})$ \\
       VV & $ 6.0\pm  0.6(\text{MC stat.})$ \\
       \hline
-      Total bkg. & {\color{red}$404 \pm 39.6 (\text{stat.}) \pm 19.8 (\text{MC stat.})$} \\
+      Total bkg. & {\color{red}$405 \pm 39.6 (\text{stat.}) \pm 19.8 (\text{MC stat.})$} \\ 
       \hline
       VBF signal & $313.5 \pm 9.4 (\text{MC stat.})$ \\
       ggH signal & $22.5 \pm  6.0 (\text{MC stat.})$ \\
@@ -645,9 +687,9 @@
        \item Used Higgs combine package with Asymptotic CLs method
        \item Performed a single bin counting experiment
        \item Analysis blind so have expected limits only
-       \item 95\% C.L. Median limit on B(H$\rightarrow$inv.) for $m_{H}=125$ GeV is: {\color{red}31\%}
-       \item[-] 1$\sigma$ band is 23-43\%
-       \item[-] 2$\sigma$ band is 17-57\%
+       \item 95\% C.L. Median limit on B(H$\rightarrow$inv.) for $m_{H}=125$ GeV is: {\color{red}31\%} 
+       \item[-] 1$\sigma$ band is 23-42\% 
+       \item[-] 2$\sigma$ band is 17-57\% 
        \item Prompt analysis expected limit was 49\%
        \item We intend to run other mass points:
        \item 110, 150, 200, 300 and 400 GeV
@@ -662,7 +704,7 @@
          Uncertainties by decreasing impact \\
          \hline
          Control region statistics \\
-         $Z\rightarrow\nu\nu$-$Z/\gamma^{*}\rightarrow\mu\mu$ extrapolation\\ JES \\
+         $Z\rightarrow\nu\nu$-$Z/\gamma^{*}\rightarrow\mu\mu$ extrapolation\\nb above to be revisited\\ JES \\
          $W\rightarrow\tau\nu$ extrapolation \\MC statistics \\
          QCD systematics\\ lepton ID efficiency \\
          JER\\ UES\\ luminosity\\ PU weighting \\
@@ -673,7 +715,44 @@
    \end{columns}
 \end{frame}
 
-%!!BDT FIRST LOOK  WITH CAVEATS
+\begin{frame}
+  \frametitle{Uncertainty impact table - impacts larger than 0\%}
+  %!!ADD UNC IMPACT TABLE
+  \vspace{-.3cm}
+  \begin{block}{}
+    \scriptsize
+    
+    \begin{tabular}{|l|c|c|}
+      \hline
+      \multicolumn{3}{|l|}{Median expected limit with:} \\
+      \hline
+      All Nuisances: 30.8\% & \multicolumn{2}{c|}{No Nuisances: 12.2\%} \\
+      \hline
+      Nuisance                  &    Removal impact/\% &  Addition impact/\% \\
+      \hline
+      CMS\_VBFHinv\_zvv\_stat:     &    -12.7\%          &               64.6\% \\
+      CMS\_VBFHinv\_zvv\_extrapfacunc:&  -7.6\%          &               47.4\% \\
+      CMS\_scale\_j:              &     -6.3\%          &               19.2\% \\
+      CMS\_VBFHinv\_tau\_extrapfacunc:&  -4.7\%          &               24.9\% \\
+      CMS\_VBFHinv\_zvv\_norm:     &     -1.9\%          &               18.4\% \\
+      CMS\_VBFHinv\_wtau\_stat:       &  -1.9\%          &               12.0\% \\
+      CMS\_VBFHinv\_wtau\_norm:       &  -1.3\%          &                8.8\% \\
+      CMS\_VBFHinv\_wel\_stat:     &     -1.3\%          &                4.8\% \\
+      CMS\_VBFHinv\_qcd\_norm:        &  -1.3\%          &                4.0\% \\
+      CMS\_VBFHinv\_tau\_eff:      &     -0.6\%          &                5.6\% \\
+      CMS\_VBFHinv\_wmu\_norm:     &     -0.6\%          &                3.2\% \\
+      CMS\_eff\_m:                &     -0.6\%          &                2.4\% \\
+      CMS\_VBFHinv\_wmu\_stat:     &     -0.6\%          &                2.4\% \\
+      CMS\_VBFHinv\_wel\_norm:     &     -0.6\%          &                2.4\% \\
+      CMS\_res\_j:                &     -0.6\%          &                0.8\% \\
+      CMS\_scale\_met:            &      0.0\%          &                0.8\% \\
+
+      \hline
+    \end{tabular}
+  \end{block}
+\end{frame}
+
+%BDT FIRST LOOK  WITH CAVEATS
 \begin{frame}
   \frametitle{BDT Study}
   \begin{columns}
@@ -699,12 +778,12 @@
 \begin{frame}
   \frametitle{Summary}
   \label{lastframe}
-  \begin{block}{}
+  \begin{block}{\scriptsize Parked analysis}
+    \scriptsize
     \begin{itemize}
-    \item QCD modelling investigated
-    \item[-] No adequate shape model found
-    \item Cut based analysis designed to make QCD negligible
+    \item New cut based analysis found with negligible QCD and higher signal efficiency
     \item[-] Can then accept remaining QCD estimate with large error
+    \item[-] Made possible by looser parked trigger thresholds
     \item MVA investigated
     \item[-] Not sufficient benefit without new variables or looser preselection
     \item Full cut based analysis presented
@@ -712,16 +791,19 @@
     \item[-] Improved from 49\% for prompt analysis
     \end{itemize}
   \end{block}
-  %!!WOULD NEED CONTROL TRIGGERS ETC.
+  \begin{block}{\scriptsize Run 2 prospects}
+    \scriptsize
+    \begin{itemize}
+    \item Prescaled looser control triggers planned to enable better QCD control region
+    \item Will reinvistigate shape analysis and MVA
+    \end{itemize}
+    \end{block}
 \end{frame}
 
 \begin{frame}
   \frametitle{Backup}
 \end{frame}
 
-%!!POPULATE
-%!!DETAILS OF QCD STUDIES
-%!!MORE BDT INFO
 \begin{frame}{VBF enriched QCD MC}
   \vspace{-.3cm}
 
@@ -828,7 +910,14 @@
 \end{frame}
 
 
-
+\begin{frame}
+  \frametitle{No systematics limits}
+  \begin{block}{}
+    \begin{itemize}
+    \item Prompt limit with no systematics 16.6\%
+    \end{itemize}
+  \end{block}
+\end{frame}
 
 
 
