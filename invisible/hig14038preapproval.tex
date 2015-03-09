@@ -34,7 +34,7 @@
 
 \title{\vspace{-0.2cm} VBF Higgs to Invisible - Preapproval}
 \subtitle{HIG-14-038, AN-14-243\vspace{-0.7cm}}
-\author[P. Dunne]{C. Asawatangtrakuldee, J. Brooke, D. Colling, G. Davies, \underline{P. Dunne}, A.M. Magnan, A. Nikitenko, Joao Pela}
+\author[P. Dunne]{C. Asawatangtrakuldee, J. Brooke, D. Colling, G. Davies, \underline{P. Dunne}, A.M. Magnan, A. Nikitenko, J. Pela}
 \titlegraphic{
   \vspace{-0.7cm}
   %\includegraphics[width=\textwidth]{TalkPics/invcomb021213/feyndiags}
@@ -70,17 +70,16 @@
 
 %OUTLINE
 \begin{frame}
-  \frametitle{Talk outline}
   \begin{columns}
     \column{.65\textwidth}
-    \begin{block}{}
+    \begin{block}{\footnotesize Reminder}
       \scriptsize
       \begin{itemize}
-      \item For run 1 we had two sets of triggers
+      \item For Run 1 we had two sets of triggers
       \item[-] Prompt trigger used for current published result: HIG-13-30
       \item[-] Parked triggers: analysis presented today
       \item Motivation for parked analysis is the same
-      \item[-] details in backup
+      \item[-] Details in backup
       \end{itemize}
     \end{block}
     \begin{block}{\footnotesize Overview}
@@ -131,10 +130,10 @@
       \item Single bin counting experiment
       \item[-] Signal region chosen to eliminate QCD and be above trigger turn ons
       \item Major backgrounds use data driven estimates:
-      \item $Z\rightarrow\nu\nu$,$W\rightarrow\ell\nu$, QCD
+      \item[-] $Z\rightarrow\nu\nu$,$W\rightarrow\ell\nu$, QCD
       \item Minor backgrounds taken from MC:
       \item[-] VV, W$\gamma$, $t\bar{t}$, single top
-      \item Expected limit 49\% at $m_{H}=125$ GeV
+      \item Expected \hspace{-.1cm} limit 49\% at \hspace{-.1cm} $m_{H}=125$ \hspace{-.1cm}GeV
       \end{itemize}
     \end{block}
     \column{.5\textwidth}
@@ -164,7 +163,7 @@
   \begin{block}{\scriptsize Trigger}
     \scriptsize
     \begin{itemize}
-    \item Parked trigger efficiency has been measured including variable correlation
+    \item Parked\hspace{-.05cm} trigger\hspace{-.05cm} efficiency\hspace{-.05cm} has\hspace{-.05cm} been\hspace{-.05cm} measured\hspace{-.05cm} including\hspace{-.05cm} correlation\hspace{-.05cm} between\hspace{-.05cm} variables
     \item[-] This allows the trigger turn on region to be used
     \end{itemize}
   \end{block}
@@ -173,7 +172,7 @@
   \begin{block}{\scriptsize Signal region}
     \scriptsize
     \begin{itemize}
-    \item QCD hard to model, signal region cuts are chosen to make remaining QCD small
+    \item QCD hard to model, signal region cuts are chosen to make remaining QCD small whilst enhancing real-MET using new Min$\Delta\phi$(jet,MET) variable
     \item The signal region has been reoptimised for the looser parked triggers
     \item[-] New region uses new variable has higher signal efficiency with much less QCD
     \end{itemize}
@@ -183,12 +182,18 @@
   \begin{block}{\scriptsize Background estimation and limit setting}
     \scriptsize
     \begin{itemize}
+      \vspace{-.05cm}
     \item A top control region has been added
+      \vspace{-.05cm}
     \item Minor modifications made to $W\rightarrow\tau\nu$ background estimation method
+      \vspace{-.05cm}
     \item QCD background estimation method changed
+      \vspace{-.05cm}
     \item W$\gamma$ contribution found to be modelled already by our $W\rightarrow\ell\nu$ Monte Carlo
+      \vspace{-.05cm}
     \item Remaining backgrounds very signal like in variables studied so far
-    \item[-] Opted for cut and count analysis
+      \vspace{-.05cm}
+    \item[-] Stayed with cut and count analysis
     \end{itemize}
   \end{block}
 
@@ -205,7 +210,7 @@
     \item Use already analysed prompt trigger for run A
     \item One parked trigger for runs B and C, another for run D
     \item[-] Parked trigger cuts are looser so prompt trigger not used where parked trigger is available
-    \item All parked and prompt triggers are seeded by L1ETM40
+    \item All parked and prompt triggers are seeded by L1\_ETM40
     \item Parked triggers have looser HLT thresholds
     \item This allows us to look at new regions of phase space and different analysis techniques
     \item Use prompt analysis as a base:
@@ -256,14 +261,13 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Region choice}
+  \frametitle{Starting point for region choice}
   \vspace{-.4cm}
   \begin{columns}
     \column{1.05\textwidth}
   \begin{block}{}
     \scriptsize
     \begin{itemize}
-    \item Start by defining a region where data-MC agreement is good to work from
     \item Trigger turn ons and detector acceptance impose the following cuts:
     \item[-] $\eta_{j1} \cdot \eta_{j2}<0,\, |\eta_{j1,2}|<4.7,\, \text{jet\,1}\, p_{T}>50 \,\text{GeV},\, \Delta\eta_{jj}>3.6,$\\$\, \text{jet\,2}\, p_{T}>40 \,\text{GeV},\text{METnomu}>90\,\text{GeV},\, M_{jj}>800 \,\text{GeV}$
     \item QCD in plots is VBF enriched MC doesn't model all QCD
@@ -289,11 +293,15 @@
        \scriptsize
        \begin{itemize}
        \item As in the prompt analysis we veto events with 'veto' electrons or muons
+         \vspace{-.1cm}
        \item[-] Taus are not vetoed due to low ($\sim$55\%) ID efficiency and high ($\sim$2-3\%) fake rate
        \item Can't model QCD shape so cut hard to remove most QCD
+         \vspace{-.1cm}
        \item[-] Can then tolerate a larger uncertainty on QCD estimation
        \item Remaining QCD in region $\frac{METnoMU}{\sigma_{METnoMU}}<4$ and $\text{Min}\Delta\phi(all\,jets,METnomu)<2.0$
+       \item Select region $\frac{METnoMU}{\sigma_{METnoMU}}>4$ and $\text{Min}\Delta\phi(all\,jets,METnomu)>2.0$
        \item Signal contribution also large in this region of parameter space
+         \vspace{-.1cm}
        \item[-] We blind this region and use as a basis for signal region optimisation
        \end{itemize}
     \end{block}
@@ -323,7 +331,7 @@
        \item[-] $\frac{METnoMU}{\sigma_{METnoMU}}>4$
        \item[-] $\text{Min}\Delta\phi(all\,jets,METnomu)>2.3$
        \item[-] $M_{jj}>1200$ GeV
-       \item This was used as our ``signal region''
+       \item We defined this as our ``signal region''
        \item Discrepancy outside signal region is from QCD
        \end{itemize}
     \end{block}
@@ -530,8 +538,7 @@ $Final N^{Z\rightarrow\nu\nu} estimate$ & \textcolor{red}{$157.3 \pm 37.6 (data 
     \begin{block}{}
       \scriptsize
       \begin{itemize}
-      \item Other W backgrounds control region is:
-        \vspace{-.1cm}
+      \item Control regions for other W backgrounds:
       \item[-] signal region with lepton veto replaced with a requirement for a single lepton
       \item For $W\rightarrow\tau\nu$ there are not enough events in this region:
         \vspace{-.1cm}
@@ -565,8 +572,8 @@ $Final N^{Z\rightarrow\nu\nu} estimate$ & \textcolor{red}{$157.3 \pm 37.6 (data 
     \begin{block}{}
       \scriptsize
       \begin{itemize}
-      \item Estimate error from difference between control region and signal region cuts
-      \item $W\rightarrow\mu\nu$ has enough events to see data driven weight variation with $\text{Min}\Delta\phi(all\,jets,\,METnomu)$ cut 
+      \item Difference in weight between control region and signal region cuts used to estimate error
+      \item Measured in $W\rightarrow\mu\nu$ which has enough events to see data driven weight variation with $\text{Min}\Delta\phi(all\,jets,\,METnomu)$ cut 
       \item[-] weight changes by 20\% when loosening cut from 2.3 to 1.0.
       \item[-] We add a 20\% systematic on the $W\rightarrow\tau\nu$ background
       \end{itemize}
@@ -708,7 +715,7 @@ $Final N^{Z\rightarrow\nu\nu} estimate$ & \textcolor{red}{$157.3 \pm 37.6 (data 
      \begin{block}{}
        \scriptsize
        \begin{itemize}
-       \item Good agreement in $\text{Min}\Delta\phi(all\,jets,\,METnomu)$ extrapolations
+       \item Good agreement in mindphi extrapolations
        \item Norm 3 agreement in metsig is poor
        \item[-] As norm 3 has low statistics and is an odd region: drop
        \item Use envelope of norm 1 scale factors
@@ -738,8 +745,8 @@ $Final N^{Z\rightarrow\nu\nu} estimate$ & \textcolor{red}{$157.3 \pm 37.6 (data 
             \hline
             Total Background &$439.7 \pm 41.0 \pm 55.8 $\\
             \hline
-            Signal(VBF) &$273.4 \pm 0.0 \pm 31.2 $\\
-            Signal(ggH) &$22.6 \pm 0.0 \pm 15.6 $\\
+            Signal(VBF) 100\% BF &$273.4 \pm 0.0 \pm 31.2 $\\
+            Signal(ggH) 100\% BF &$22.6 \pm 0.0 \pm 15.6 $\\
             \hline
           \end{tabular}
   \end{block}
@@ -748,7 +755,7 @@ $Final N^{Z\rightarrow\nu\nu} estimate$ & \textcolor{red}{$157.3 \pm 37.6 (data 
 
 %CONTROL PLOTS
 \begin{frame}
-  \frametitle{Control Plots}
+  \frametitle{Signal Region Control Plots}
   \vspace{-.2cm}
   \begin{block}{}
     \vspace{-.1cm}
@@ -809,9 +816,9 @@ $Final N^{Z\rightarrow\nu\nu} estimate$ & \textcolor{red}{$157.3 \pm 37.6 (data 
     Lepton ID efficiency & 3.22 & 0.00 \\
     QCD normalisation & 3.18 & 0.00 \\
     Jet energy resolution & 2.86 & 1.81 \\
-    Luminosity & 0.02 & 2.60 \\
     Unclustered energy scale & 2.28 & 1.64 \\
     Pileup weight & 0.95 & 1.56 \\
+    Luminosity & 0.02 & 2.60 \\
     Theory Uncertainty & 0.01 & 5.14\\
     \hline
   \end{tabular}
@@ -846,18 +853,19 @@ $Final N^{Z\rightarrow\nu\nu} estimate$ & \textcolor{red}{$157.3 \pm 37.6 (data 
     \begin{itemize}
     \item Expected limits from prompt and parked analyses have been obtained from the prompt and parked data
     \item ggH signal and UES uncertainty not included
-    \item[-] This explains difference in parked cuts parked trigger number
+    \item[-] This explains 2\% difference in parked cuts parked trigger number
     \item Data driven top control region used for both prompt and parked cuts
     \item Prompt trigger weights ignore correlations in turn on part of parked cut region
     \end{itemize}
     \scriptsize
+    \vspace{-.15cm}
     \centering
     \begin{tabular}{|l|c|c|}
       \hline
       & Prompt trigger & parked trigger \\
       \hline
-      Prompt cuts & 45.12\% & 45.51\% \\
-      Parked cuts & 47.07\% & 39.65\% \\
+      Prompt cuts & 45\% & 46\% \\
+      Parked cuts & 47\% & 40\% \\
       \hline
     \end{tabular}
   \end{block}
@@ -868,7 +876,7 @@ $Final N^{Z\rightarrow\nu\nu} estimate$ & \textcolor{red}{$157.3 \pm 37.6 (data 
     \item Prompt cuts limits $\sim$ same as old card with both prompt and parked trigger
     \item[-] slight difference as paper limit had extra $W\gamma$
     \item The parked cuts give a worse limit with prompt trigger than with parked trigger
-    \item Improvement comes from using the new phase made available by the parked trigger
+    \item Improvement comes from using the new phase space made available by the parked trigger
     \end{itemize}
   \end{block}
   \end{columns}
@@ -1185,6 +1193,16 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
+  \frametitle{Software cross check}
+  \begin{block}{}
+    \begin{itemize}
+    \item Starting point region numbers also cross-checked in alternate software
+    \item[-] Agreement is better than 0.5\%
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
   \frametitle{Signal efficiency as a function of PU}
   \begin{block}{}
     \centering
@@ -1244,7 +1262,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 
 %ADD ALL REMAINING CONTROL PLOTS
 \begin{frame}
-  \frametitle{New control plots - mumu}
+  \frametitle{Control plots - mumu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Jet 1 pt}
@@ -1259,7 +1277,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - mumu}
+  \frametitle{Control plots - mumu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{METnomu}
@@ -1274,7 +1292,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - mumu }
+  \frametitle{Control plots - mumu }
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Mjj}
@@ -1288,7 +1306,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots -mumu}
+  \frametitle{Control plots -mumu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Dphijj}
@@ -1303,7 +1321,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots -mumu}
+  \frametitle{Control plots -mumu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Leading jets-met mindphi}
@@ -1318,7 +1336,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots -enu}
+  \frametitle{Control plots -enu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Jet 1 pt}
@@ -1333,7 +1351,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots -enu}
+  \frametitle{Control plots -enu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{METnomu}
@@ -1348,7 +1366,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - enu}
+  \frametitle{Control plots - enu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Mjj}
@@ -1362,7 +1380,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - enu}
+  \frametitle{Control plots - enu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Dijet Dphi}
@@ -1377,7 +1395,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - enu}
+  \frametitle{Control plots - enu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Leading jets-met mindphi}
@@ -1392,7 +1410,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - enu}
+  \frametitle{Control plots - enu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{dijet-metnomu pt fraction}
@@ -1402,7 +1420,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - munu}
+  \frametitle{Control plots - munu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Jet 1 pt}
@@ -1417,7 +1435,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - munu}
+  \frametitle{Control plots - munu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{METnomu}
@@ -1432,7 +1450,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - munu}
+  \frametitle{Control plots - munu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Mjj}
@@ -1446,7 +1464,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - munu}
+  \frametitle{Control plots - munu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Dijet Dphi}
@@ -1461,7 +1479,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - munu}
+  \frametitle{Control plots - munu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Leading jets-met mindphi}
@@ -1476,7 +1494,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - munu}
+  \frametitle{Control plots - munu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{dijet-metnomu pt fraction}
@@ -1486,7 +1504,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - taunu}
+  \frametitle{Control plots - taunu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Jet 1 pt}
@@ -1501,7 +1519,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - taunu}
+  \frametitle{Control plots - taunu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{METnomu}
@@ -1516,7 +1534,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - taunu}
+  \frametitle{Control plots - taunu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Mjj}
@@ -1530,7 +1548,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - taunu}
+  \frametitle{Control plots - taunu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Dijet Dphi}
@@ -1545,7 +1563,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - taunu}
+  \frametitle{Control plots - taunu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Leading jets-met mindphi}
@@ -1560,7 +1578,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - taunu}
+  \frametitle{Control plots - taunu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{dijet-metnomu pt fraction}
@@ -1570,7 +1588,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - nunu}
+  \frametitle{Control plots - nunu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Jet 1 pt}
@@ -1585,7 +1603,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - nunu}
+  \frametitle{Control plots - nunu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{METnomu}
@@ -1600,7 +1618,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - nunu}
+  \frametitle{Control plots - nunu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Mjj}
@@ -1611,7 +1629,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - nunu}
+  \frametitle{Control plots - nunu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Dijet Dphi}
@@ -1626,7 +1644,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - nunu}
+  \frametitle{Control plots - nunu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{Leading jets-met mindphi}
@@ -1641,7 +1659,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 \end{frame}
 
 \begin{frame}
-  \frametitle{New control plots - nunu}
+  \frametitle{Control plots - nunu}
   \begin{columns}
     \column{.5\textwidth}
     \begin{block}{dijet-metnomu pt fraction}
@@ -1650,6 +1668,19 @@ PU weight:                           &  0.0\%                &          0.6\% \\
   \end{columns}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Trigger efficiency error}
+  \begin{block}{}
+    \begin{itemize}
+      \item Bin used with largest uncertainty picked for each run period
+      \item Worst case scenario assumed of all bins having this uncertainty gives 2.3\% uncertainty
+      \item Error cancels in all data driven backgrounds
+      \item Only affects signal and VV
+      \item Small compared to other uncertainties and doesn't affect limit
+      \item Treated as negligible
+    \end{itemize}
+  \end{block}
+\end{frame}
 
 %ALL TRIGGER EFF PLOTS
 \begin{frame}
@@ -1863,23 +1894,6 @@ PU weight:                           &  0.0\%                &          0.6\% \\
 
 \end{frame}
 
-\begin{frame}
-  \frametitle{QCD Data-Driven: j1j3, j2j3 shape}
-  \centering
-    \includegraphics[width=.42\textwidth]{TalkPics/hig14038preapproval/output_qcdJiJj/DataMC_PARKED_jet1_pt.pdf}
-    \includegraphics[width=.42\textwidth]{TalkPics/hig14038preapproval/output_qcdJiJj/DataMC_PARKED_jet2_pt.pdf}
-
-    \includegraphics[width=.42\textwidth]{TalkPics/hig14038preapproval/output_qcdJiJj/DataMC_PARKED_dijet_deta.pdf}
-    \includegraphics[width=.42\textwidth]{TalkPics/hig14038preapproval/output_qcdJiJj/DataMC_PARKED_dijet_dphi.pdf}
-
-    \includegraphics[width=.42\textwidth]{TalkPics/hig14038preapproval/output_qcdJiJj/DataMC_PARKED_metnomuons.pdf}
-    \includegraphics[width=.42\textwidth]{TalkPics/hig14038preapproval/output_qcdJiJj/DataMC_PARKED_metnomu_significance.pdf}
-
-    \includegraphics[width=.42\textwidth]{TalkPics/hig14038preapproval/output_qcdJiJj/DataMC_PARKED_dijet_M.pdf}
-    \includegraphics[width=.42\textwidth]{TalkPics/hig14038preapproval/output_qcdJiJj/DataMC_PARKED_jet3_csv.pdf}
-
-\end{frame}
-
 %BDT FIRST LOOK  WITH CAVEATS
 \begin{frame}
   \frametitle{BDT Study}
@@ -1938,6 +1952,7 @@ PU weight:                           &  0.0\%                &          0.6\% \\
   \begin{block}{}
     \begin{itemize}
     \item Prompt limit with no systematics 16.6\%
+    \item Parked limit with no systematics 14.3\%
     \end{itemize}
   \end{block}
 \end{frame}
