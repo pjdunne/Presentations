@@ -85,8 +85,8 @@
     \begin{itemize}
     \item Why look for invisibly decaying Higgs bosons?
     \item Higgs to invisible at CMS
-    \item The vector boson fusion (VBF) channel search
-    \item Results
+    \item New search in the vector boson fusion (VBF) channel
+    \item Combination with ZH channel
     \end{itemize}
   \end{frame}
 
@@ -128,77 +128,77 @@
 
   \end{frame}
 
-  \begin{frame}
-    \frametitle{Signatures of Dark Matter (DM)}
-    \vspace{-.2cm}
-    \begin{columns}
-      \column{1.1\textwidth}
-    \begin{itemize}
-      \item If DM couples to the Higgs the following diagrams are possible
-      \end{itemize}
-    \vspace{-.2cm}
-    \end{columns}
-    \begin{columns}
-      \column{.35\textwidth}
-      \begin{block}{\scriptsize Direct Detection - e.g. LUX}
-        \vspace{.3cm}
-        \begin{fmfgraph*}(100,70)
-          \fmfleft{i1,i2}
-          \fmfright{o1,o2}
-          \fmf{fermion}{i1,v1,o1}
-          \fmf{fermion}{i2,v2,o2}
-          \fmf{dashes,label=$H$}{v1,v2}
-          \fmffreeze
-          \fmflabel{$N$}{i1}
-          \fmflabel{$\chi$}{i2}
-          \fmflabel{$N$}{o1}
-          \fmflabel{$\chi$}{o2}
-        \end{fmfgraph*}
-        \vspace{.3cm}
-      \end{block}
+  %% \begin{frame}
+  %%   \frametitle{Signatures of Dark Matter (DM)}
+  %%   \vspace{-.2cm}
+  %%   \begin{columns}
+  %%     \column{1.1\textwidth}
+  %%   \begin{itemize}
+  %%     \item If DM couples to the Higgs the following diagrams are possible
+  %%     \end{itemize}
+  %%   \vspace{-.2cm}
+  %%   \end{columns}
+  %%   \begin{columns}
+  %%     \column{.35\textwidth}
+  %%     \begin{block}{\scriptsize Direct Detection - e.g. LUX}
+  %%       \vspace{.3cm}
+  %%       \begin{fmfgraph*}(100,70)
+  %%         \fmfleft{i1,i2}
+  %%         \fmfright{o1,o2}
+  %%         \fmf{fermion}{i1,v1,o1}
+  %%         \fmf{fermion}{i2,v2,o2}
+  %%         \fmf{dashes,label=$H$}{v1,v2}
+  %%         \fmffreeze
+  %%         \fmflabel{$N$}{i1}
+  %%         \fmflabel{$\chi$}{i2}
+  %%         \fmflabel{$N$}{o1}
+  %%         \fmflabel{$\chi$}{o2}
+  %%       \end{fmfgraph*}
+  %%       \vspace{.3cm}
+  %%     \end{block}
 
-      \column{.35\textwidth}
-      \begin{block}{\scriptsize Invisible Higgs - LHC}
-        \vspace{.3cm}
-        \begin{fmfgraph*}(100,70)
-          \fmfleft{i1,i2}
-          \fmfright{o1,o2}
-          \fmf{fermion}{i1,v1,i2}
-          \fmf{fermion}{o1,v2,o2}
-          \fmf{dashes,label=$H$}{v1,v2}
-          \fmffreeze
-          %\fmflabel{$f/w/Z$}{i1}
-          \fmflabel{$\chi$}{o1}
-          %\fmflabel{$f/W/Z$}{i2}
-          \fmflabel{$\chi$}{o2}
-        \end{fmfgraph*}
-        \vspace{.3cm}
-      \end{block}
-      \column{.35\textwidth}
-      \begin{block}{\scriptsize Annihilation - e.g. WMAP}
-        \vspace{.3cm}
-        \begin{fmfgraph*}(100,70)
-          \fmfleft{i1,i2}
-          \fmfright{o1,o2}
-          \fmf{fermion}{i1,v1,i2}
-          \fmf{fermion}{o1,v2,o2}
-          \fmf{dashes,label=$H$}{v1,v2}
-          \fmffreeze
-          %\fmflabel{$f/w/Z$}{i1}
-          \fmflabel{$\chi$}{i1}
-          %\fmflabel{$f/W/Z$}{i2}
-          \fmflabel{$\chi$}{i2}
-        \end{fmfgraph*}
-        \vspace{.3cm}
-      \end{block}
-    \end{columns}
-    \begin{columns}
-      \column{1.1\textwidth}
-      \begin{itemize}
-      \item Limits on $\mathcal{B}$(H$\rightarrow$inv) complement/are complemented by other experiments
-      \end{itemize}
-    \end{columns}
-  \end{frame}
+  %%     \column{.35\textwidth}
+  %%     \begin{block}{\scriptsize Invisible Higgs - LHC}
+  %%       \vspace{.3cm}
+  %%       \begin{fmfgraph*}(100,70)
+  %%         \fmfleft{i1,i2}
+  %%         \fmfright{o1,o2}
+  %%         \fmf{fermion}{i1,v1,i2}
+  %%         \fmf{fermion}{o1,v2,o2}
+  %%         \fmf{dashes,label=$H$}{v1,v2}
+  %%         \fmffreeze
+  %%         %\fmflabel{$f/w/Z$}{i1}
+  %%         \fmflabel{$\chi$}{o1}
+  %%         %\fmflabel{$f/W/Z$}{i2}
+  %%         \fmflabel{$\chi$}{o2}
+  %%       \end{fmfgraph*}
+  %%       \vspace{.3cm}
+  %%     \end{block}
+  %%     \column{.35\textwidth}
+  %%     \begin{block}{\scriptsize Annihilation - e.g. WMAP}
+  %%       \vspace{.3cm}
+  %%       \begin{fmfgraph*}(100,70)
+  %%         \fmfleft{i1,i2}
+  %%         \fmfright{o1,o2}
+  %%         \fmf{fermion}{i1,v1,i2}
+  %%         \fmf{fermion}{o1,v2,o2}
+  %%         \fmf{dashes,label=$H$}{v1,v2}
+  %%         \fmffreeze
+  %%         %\fmflabel{$f/w/Z$}{i1}
+  %%         \fmflabel{$\chi$}{i1}
+  %%         %\fmflabel{$f/W/Z$}{i2}
+  %%         \fmflabel{$\chi$}{i2}
+  %%       \end{fmfgraph*}
+  %%       \vspace{.3cm}
+  %%     \end{block}
+  %%   \end{columns}
+  %%   \begin{columns}
+  %%     \column{1.1\textwidth}
+  %%     \begin{itemize}
+  %%     \item Limits on $\mathcal{B}$(H$\rightarrow$inv) complement/are complemented by other experiments
+  %%     \end{itemize}
+  %%   \end{columns}
+  %% \end{frame}
 
 %CMS DETECTOR
   \begin{frame}
@@ -260,7 +260,7 @@
       \item prompt: reconstructed immediately
       \item parked: looser thresholds, reconstructed in long shutdown
       \end{itemize}
-    \item Current CMS published result using full run I prompt dataset
+    \item CMS published result using full run I prompt dataset
       \begin{itemize}
       \item VBF only observed(expected) 95\% C.L. limit on $B(H\rightarrow inv)$ for $m_{H}$=125 GeV is 0.65 (0.49)
       \end{itemize}
@@ -284,7 +284,7 @@
         \begin{itemize}
         \item use tight selection to remove
         \end{itemize}
-      \item Restricted phase space necessitates data driven background estimation
+      %\item Restricted phase space necessitates data driven background estimation
       \end{itemize}
       \column{.4\textwidth}
   \begin{fmfgraph*}(100,70)
@@ -316,7 +316,7 @@
           \begin{itemize}
           \item Veto events with leptons present
           \item Require MET to be well separated from any jets
-          \item Require MET to be significant compared to event activity
+          %\item Require MET to be significant compared to event activity
           \end{itemize}
         \end{itemize}
       \begin{columns}
@@ -382,16 +382,17 @@
     \vspace{-.15cm}
     \begin{itemize}
     \item All major backgrounds have data driven normalisation
+    \vspace{-.2cm}
+      \begin{block}{}
+        \centering
+      $N_{bkg}^{sig}=\frac{(N_{obs}^{control}-N_{other\,bkgs}^{control})}{N_{MC}^{control}}\cdot N_{MC}^{sig}$
+        \end{block}
     \item Most backgrounds from missed lepton or misreconstructed jet
       \begin{itemize}
       \item use control region where object is reconstructed
       \end{itemize}
     \end{itemize}
-    \vspace{-.2cm}
-      \begin{block}{}
-        \centering
-      $N_{bkg}^{sig}=(N_{obs}^{control}-N_{other\,bkgs}^{control})\cdot \frac{N_{MC}^{sig}}{N_{MC}^{control}}$
-        \end{block}
+
     \begin{columns}
       \column{.03\textwidth}
       \column{.55\textwidth}
