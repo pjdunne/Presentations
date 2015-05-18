@@ -1,0 +1,169 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+\begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+  \includegraphics[height=1cm]{icl.pdf}
+  \hfill
+  \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+\end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+\begin{beamercolorbox}[ht=.55cm,dp=0.4cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+  \begin{minipage}[c]{5cm}%
+    \usebeamerfont{author in head/foot}
+    \insertshortauthor 
+    \insertshorttitle
+    \end{minipage}\hfill%
+  \insertframenumber{} / \pageref{lastframe}
+  \hfill
+  \begin{minipage}{6cm}
+    \hfill
+  \end{minipage}
+\end{beamercolorbox}%
+}
+
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\title{\vspace{-0.2cm} VBF Higgs to Invisible - Update}
+\subtitle{HIG-14-038, AN-14-243\vspace{-0.7cm}}
+\author[P. Dunne]{\underline{P. Dunne}} % A.M. Magnan and A. Nikitenko Joao Pela with \\ R. Aggleton, J. Brooke: Bristol \\ C.Asawangtrakuldee, Q.Li: Peking \\ P. Srimanobhas: Chulalongkorn \\ S. Kumar, K. Mazumdar: Mumbai}
+\titlegraphic{
+  \vspace{-0.7cm}
+  %\includegraphics[width=\textwidth]{TalkPics/invcomb021213/feyndiags}
+  %% \begin{fmfgraph*}(100,70)
+  %%         \fmfleft{i1,i2}
+  %%         \fmfright{o1,o2,o3}
+  %%         \fmf{fermion}{i1,v1,o1}
+  %%         \fmf{fermion}{i2,v2,o3}
+  %%         \fmf{phantom,tension=4/5}{v1,v2}
+  %%         \fmffreeze
+  %%         \fmf{photon,label=$W,,Z$}{v1,v3}
+  %%         \fmf{photon,label=$W,,Z$}{v2,v3}
+  %%         \fmf{dashes}{v3,o2}
+  %%         \fmflabel{$q$}{i1}
+  %%         \fmflabel{$q$}{i2}
+  %%         \fmflabel{$q$}{o1}
+  %%         \fmflabel{$q$}{o3}
+  %%         \fmflabel{$H$}{o2}
+  %%       \end{fmfgraph*}
+}
+\date{}
+\begin{document}
+\begin{fmffile}{higgsexoupdatefeyndiags}
+
+%TITLE PAGE
+\section{Title}
+\begin{frame}
+  \titlepage
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Overview}
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}
+    \item Preapproved with conditions
+    \item Already done:
+    \item[-] Investigate tau veto
+    \item[-] Clarify documentation
+    \item[-] Get data cards approved
+    \item In progress:
+    \item Closure tests
+    
+      
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+%OUTLINE
+\begin{frame}
+  \frametitle{enu closure}
+  \begin{block}{}
+    \centering
+    \includegraphics[width=.8\textwidth]{TalkPics/closurefirstlook161214/closurealljetsmetnomu_mindphiWJets_enu.pdf}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{enu closure}
+  \begin{block}{}
+    \centering
+    \includegraphics[width=.8\textwidth]{TalkPics/closurefirstlook161214/closuremetnomu_significanceWJets_enu.pdf}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{enu closure}
+  \begin{block}{}
+    \centering
+    \includegraphics[width=.8\textwidth]{TalkPics/closurefirstlook161214/closuredijet_MWJets_enu.pdf}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{enu closure}
+  \begin{block}{}
+    \centering
+    \includegraphics[width=.8\textwidth]{TalkPics/closurefirstlook161214/closurejet2_ptWJets_enu.pdf}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{taunu closure}
+  \begin{block}{}
+    \centering
+    \includegraphics[width=.8\textwidth]{TalkPics/closurefirstlook161214/closurealljetsmetnomu_mindphiWJets_taunu.pdf}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{taunu closure}
+  \begin{block}{}
+    \centering
+    \includegraphics[width=.8\textwidth]{TalkPics/closurefirstlook161214/closuremetnomu_significanceWJets_taunu.pdf}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{taunu closure}
+  \begin{block}{}
+    \centering
+    \includegraphics[width=.8\textwidth]{TalkPics/closurefirstlook161214/closuredijet_MWJets_taunu.pdf}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{taunu closure}
+  \begin{block}{}
+    \centering
+    \includegraphics[width=.8\textwidth]{TalkPics/closurefirstlook161214/closurejet2_ptWJets_taunu.pdf}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Conclusion}
+  \label{lastframe}
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}
+    \item
+    \end{itemize}
+    
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Backup}
+\end{frame}
+
+\end{fmffile}
+\end{document}
