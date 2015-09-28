@@ -86,7 +86,7 @@
     \frametitle{Introduction}
     \begin{itemize}
     \item CMS and the LHC
-    \item Why look for invisbly decaying Higgs bosons?
+    \item Why look for invisibly decaying Higgs bosons?
     \item How do you look for something invisible?
     \item What do we see?
     \end{itemize}
@@ -164,10 +164,10 @@
   \end{frame}        
 
    \begin{frame}
-     \frametitle{How do you look for something invisible:\\ VBF}
+     \frametitle{How do you look for something invisible:\\ Associated production}
      
      \begin{itemize}
-     \item Three main types of Higgs associated production:
+     \item Three main types of Higgs production at LHC:
        \begin{itemize}
          
        \item[] \tikz[na] \node (ggH) {ggH: high rate, normally no visible products};        
@@ -226,11 +226,11 @@
     \frametitle{How do you look for something invisible:\\ VBF strategy}
     \begin{itemize}
     \item Select events with two quark jets and missing momentum          
-    \item Main backgrounds: $W\rightarrow\ell\nu/Z\rightarrow\nu\nu$+jets, QCD, top
+    \item Main backgrounds: $W\rightarrow\ell\nu/Z\rightarrow\nu\nu$+jets, QCD
       \begin{itemize}
         \color{beamer@icmiddleblue}
-      \item QCD hard to model so use tight selection to remove
       \item Veto events with leptons present
+      \item QCD hard to model so use tight selection to remove
       \item Estimate remaining backgrounds
       \end{itemize}
     \end{itemize}
@@ -270,7 +270,7 @@
         \vspace{.3cm}
 \end{block}
       \column{.3\textwidth}
-\begin{block}{QCD}
+\begin{block}{QCD - multijets}
 %QCD                                                                                                                                                                
   \centering
     \begin{fmfgraph*}(45,60)
@@ -291,46 +291,6 @@
     \end{columns}
   \end{frame}
 
-
-  \begin{frame}
-    \frametitle{VBF: background estimation}
-    \vspace{-.15cm}
-    \begin{itemize}
-    \item All major backgrounds have data driven normalisation
-    \vspace{-.2cm}
-      \begin{block}{}
-        \centering
-      $N_{bkg}^{sig}=\frac{(N_{obs}^{control}-N_{other\,bkgs}^{control})}{N_{MC}^{control}}\cdot N_{MC}^{sig}$
-        \end{block}
-    \item Most backgrounds from missed lepton or misreconstructed jet
-      \begin{itemize}
-        \color{beamer@icmiddleblue}
-      \item use control region where object is reconstructed
-      \end{itemize}
-    \end{itemize}
-
-    \begin{columns}
-      \column{.03\textwidth}
-      \column{.55\textwidth}
-        $W\rightarrow\mu\nu$ control region
-      \begin{columns}
-        \column{.9\textwidth}
-      \includegraphics[clip=true,trim=0 0 0 0,width=1.1\textwidth]{TalkPics/IOP2015/output_sigreg/munu_alljetsmetnomu_mindphi.pdf}
-      \column{.1\textwidth}
-      \hspace{-.5cm}
-      \begin{turn}{-90}\scriptsize CMS-PAS-HIG-14-038 \end{turn}
-      \end{columns}
-      \column{.55\textwidth}
-        $Z\rightarrow\nu\nu$ control region
-      \begin{columns}
-        \column{.9\textwidth}
-      \includegraphics[clip=true,trim=0 0 0 0,width=1.1\textwidth]{TalkPics/IOP2015/output_sigreg/mumu_dijet_M.pdf}
-      \column{.1\textwidth}
-      \hspace{-.5cm}
-      \begin{turn}{-90}\scriptsize CMS-PAS-HIG-14-038 \end{turn}
-      \end{columns}
-    \end{columns}
-  \end{frame}
 
   \begin{frame}
     \frametitle{What do we see?}
@@ -493,6 +453,48 @@
     \end{columns}
 
   \end{frame}
+
+
+  \begin{frame}
+    \frametitle{VBF: background estimation}
+    \vspace{-.15cm}
+    \begin{itemize}
+    \item All major backgrounds have data driven normalisation
+    \vspace{-.2cm}
+      \begin{block}{}
+        \centering
+      $N_{bkg}^{sig}=\frac{(N_{obs}^{control}-N_{other\,bkgs}^{control})}{N_{MC}^{control}}\cdot N_{MC}^{sig}$
+        \end{block}
+    \item Most backgrounds from missed lepton or misreconstructed jet
+      \begin{itemize}
+        \color{beamer@icmiddleblue}
+      \item use control region where object is reconstructed
+      \end{itemize}
+    \end{itemize}
+
+    \begin{columns}
+      \column{.03\textwidth}
+      \column{.55\textwidth}
+        $W\rightarrow\mu\nu$ control region
+      \begin{columns}
+        \column{.9\textwidth}
+      \includegraphics[clip=true,trim=0 0 0 0,width=1.1\textwidth]{TalkPics/IOP2015/output_sigreg/munu_alljetsmetnomu_mindphi.pdf}
+      \column{.1\textwidth}
+      \hspace{-.5cm}
+      \begin{turn}{-90}\scriptsize CMS-PAS-HIG-14-038 \end{turn}
+      \end{columns}
+      \column{.55\textwidth}
+        $Z\rightarrow\nu\nu$ control region
+      \begin{columns}
+        \column{.9\textwidth}
+      \includegraphics[clip=true,trim=0 0 0 0,width=1.1\textwidth]{TalkPics/IOP2015/output_sigreg/mumu_dijet_M.pdf}
+      \column{.1\textwidth}
+      \hspace{-.5cm}
+      \begin{turn}{-90}\scriptsize CMS-PAS-HIG-14-038 \end{turn}
+      \end{columns}
+    \end{columns}
+  \end{frame}
+
 
   %!!SIMPLIFY ALL FROM HERE
   %!!EXPLAIN DATA FLOW AND HOW TO DO AN ANALYSIS
