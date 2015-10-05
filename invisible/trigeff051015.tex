@@ -32,7 +32,7 @@
 \usepackage{multirow}
 \DeclareGraphicsRule{*}{mps}{*}{}
 
-\title{\vspace{-0.2cm} IC Higgs to Invisible Activities}
+\title{\vspace{-0.2cm} Trigger Efficiencies from 2015D}
 %\subtitle{This result: HIG-15-012 \\ Contributing analyses: HIG-13-030, HIG-14-038, EXO-12-055}
 \author[P. Dunne]{\underline{P. Dunne} on behalf of the H$\rightarrow$invisible analysis group}
 \titlegraphic{
@@ -57,7 +57,7 @@
 }
 \date{}
 \begin{document}
-\begin{fmffile}{iccms300915feyndiags}
+\begin{fmffile}{trigeff051015feyndiags}
 
 %TITLE PAGE
 \section{Title}
@@ -71,254 +71,171 @@
 \begin{frame}
   \frametitle{Introduction}
   \scriptsize
-  \begin{columns}
-    \column{.5\textwidth}
     \vspace{-.2cm}
-    \begin{block}{\footnotesize Motivation}
-      \begin{itemize}
-      \item At the end of run 1 significant BSM Higgs properties are not excluded
-      \item[-] Limit from ATLAS+CMS on BR$_{\rm{BSM}}\sim$35\%
-      \item Many BSM theories predict H$\rightarrow$ invisible
-      \end{itemize}
-    \end{block}
-
     \begin{block}{\footnotesize Overview}
       \begin{itemize}
-      \item Reminder of Run I VBF analysis
-      \item New combination of all run 1 direct searches
-      \item Run 2 progress update and aims
-      \end{itemize}
-    \end{block}
-    \column{.5\textwidth}
-
-    Indirect only
-    \includegraphics[width=\textwidth]{TalkPics/iccms300915/CMS-PAS-HIG-15-002_Figure_015.pdf}
-
-
-
-    \end{columns}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Run 1 VBF analysis - HIG-14-038} 
-  \begin{columns}
-    \column{.6\textwidth}
-    \scriptsize
-    \begin{block}{\footnotesize Context}
-      \begin{itemize}
-      \item IC group works on the VBF channel
-      \item[-] Cross-check and limit setting for prompt data
-      \item[-] Main analysis for parked data
-      \end{itemize}
-    \end{block}
-    \begin{block}{\footnotesize Analysis}
-      \begin{itemize}
-      \item Select 2 VBF jets (i.e. large $\Delta\eta$) + MET
-      \item Remove QCD with tight selection
-      \item Use data driven methods to estimate major backgrounds
-      \item Single bin counting experiment
-      \item 95\% CL observed (expected) limit on B(H$\rightarrow$inv) 57(40)\%
-      \end{itemize}
-    \end{block}
-    \column{.45\textwidth}
-    \centering
-
-    \vspace{.1cm}
-
-    \begin{fmfgraph*}(100,70)
-      \fmfleft{i1,i2}
-      \fmfright{o1,o2,o3}
-      \fmf{fermion}{i1,v1,o1}
-      \fmf{fermion}{i2,v2,o3}
-      \fmf{phantom,tension=4/5}{v1,v2}
-      \fmffreeze
-      \fmf{photon,label=$W,,Z$}{v1,v3}
-      \fmf{photon,label=$W,,Z$}{v2,v3}
-      \fmf{dashes}{v3,o2}
-      \fmflabel{$q$}{i1}
-      \fmflabel{$q$}{i2}
-      \fmflabel{$q$}{o1}
-      \fmflabel{$q$}{o3}
-      \fmflabel{$H$}{o2}
-    \end{fmfgraph*}
-    
-
-    \vspace{.3cm}
-    \includegraphics[width=\textwidth]{TalkPics/hig15012preapproval/VBFlim.pdf}
-  \end{columns}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Run 1 combination}
-  \scriptsize
-  \begin{block}{}
-    \begin{itemize}
-      \item CMS performed searches in VBF, Z(ll)H, Z(bb)H and ggH+ISR channels
-      \item IC group has performed several combinations through run 1
-      \item[-] HIG-13-030, HIG-14-038, \textcolor{red}{HIG-15-012}
-      \item ZH and VBF analyses are exclusive by design
-      \item ggH+ISR analysis has small overlap with VBF
-      \item[-] Overlap region vetoed for combination
-    \end{itemize}
-  \end{block}
-
-  \includegraphics[width=.33\textwidth,height=.3\textwidth]{TalkPics/hig15012preapproval/VBFlim.pdf}
-  \includegraphics[width=.33\textwidth,height=.3\textwidth]{TalkPics/hig15012preapproval/EXOlim.pdf}
-  \includegraphics[width=.33\textwidth,height=.3\textwidth]{TalkPics/hig1330approval/zhlimit.pdf}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Run 1 combination - Limits}
-  \scriptsize
-  \begin{block}{}
-    \begin{itemize}
-    \item 95\% CL upper limits set using asymptotic method in combine assuming SM Higgs boson production and acceptance
-    \item Observed (expected) limit is 36 (30)\%
-    \end{itemize}
-%!Put likelihood scan and by channel limit here
-    \centering
-  \end{block}
-    \includegraphics[width=.5\textwidth,height=.45\textwidth]{TalkPics/hig15012approval/combscan.pdf}
-    \includegraphics[width=.5\textwidth,height=.45\textwidth]{TalkPics/hig15012approval/channellimit.pdf}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Run 2 - VBF}
-  \scriptsize
-    \begin{block}{\footnotesize Overview}
-      \begin{itemize}
-      \item Studying early data to ensure trigger is well understood
-      \item[-] Trigger designed by IC+Bristol
-      \item Initial analysis strategy is the same as run 1
-      \item Limited by low statistics in control regions
-      \end{itemize}
-    \end{block}
-    \begin{block}{\footnotesize Possible improvements}
-      \begin{itemize}
-      \item[-] New $\gamma$+jets control region for $Z\rightarrow\nu\nu$ background
-      \item[-] New MC samples for QCD background estimation (more later)
+      \item 50ns data control plots and trigger efficiencies shown previously
+      \item First golden JSONs from 2015D 25ns data have come out in the last couple of weeks
+      \item Will show updated trigger efficiencies and control plots
       \end{itemize}
     \end{block}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Trigger Efficiencies}
+  \frametitle{Trigger Efficiencies - first iteration}
   \scriptsize
   \begin{block}{}
     \begin{itemize}
     \item Measure efficiency as a function of each variable
-    \item Cut on all other variables at trigger threshold value
+    \item Start by cutting on all other variables at trigger threshold value
     \item Trigger: HLT\_DiPFJet40\_DEta3p5\_MJJ600\_PFMETNoMu140
-    \item Made using 40.24 $pb^{-1}$ of 50ns data
+    \item Made using $\sim$166.37 $pb^{-1}$ of 50ns data
+    \item[-] 2\% of grid jobs failed
     \end{itemize}
   \end{block}
-  \includegraphics[width=.5\textwidth]{TalkPics/iccms300915/output_trigeff_bayes/nunu_metnomuons.pdf}
-  \includegraphics[width=.5\textwidth]{TalkPics/iccms300915/output_trigeff_bayes/nunu_dijet_M.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dtrigeff_051015/nunu_metnomuons.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dtrigeff_051015/nunu_dijet_M.pdf}
 \end{frame}
 
 \begin{frame}
-  \frametitle{50ns Data - signal-like region}
+  \frametitle{Trigger Efficiencies - first iteration}
   \scriptsize
   \begin{block}{}
     \begin{itemize}
-    \item Apply a loose signal-like preselection
-    \item Cut at trigger threshold plus lepton veto
-    \item[-] Jet $p_{T}>40$ GeV, $\Delta\eta_{jj}>3.5$, $M_{jj}>600$ GeV, $METnoMU>140$ GeV
+    \item Same cuts and data as previous page
     \end{itemize}
   \end{block}
-  \begin{columns}
-    \column{1.1\textwidth}
-  \includegraphics[width=.35\textwidth]{TalkPics/iccms300915/output_trigreq/nunu_jet2_pt.pdf}
-  \includegraphics[width=.35\textwidth]{TalkPics/iccms300915/output_trigreq/nunu_jet1_pt.pdf}
-  \includegraphics[width=.35\textwidth]{TalkPics/iccms300915/output_trigreq/nunu_metnomuons.pdf}
-  \end{columns}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dtrigeff_051015/nunu_jet2_pt.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dtrigeff_051015/nunu_dijet_deta.pdf}
 \end{frame}
 
 \begin{frame}
-  \frametitle{50ns Data - signal-like region}
-  \centering
-  \includegraphics[width=.4\textwidth]{TalkPics/iccms300915/output_trigreq/nunu_dijet_M.pdf}
-  \includegraphics[width=.4\textwidth]{TalkPics/iccms300915/output_trigreq/nunu_dijet_deta.pdf}
-
-  \includegraphics[width=.4\textwidth]{TalkPics/iccms300915/output_trigreq/nunu_alljetsmetnomu_mindphi.pdf}
-  \includegraphics[width=.4\textwidth]{TalkPics/iccms300915/output_trigreq/nunu_dijet_dphi.pdf}
-\end{frame}
-
-\begin{frame}
-  \frametitle{50ns Data - control-like region}
+  \frametitle{Tighter MET cut}
   \scriptsize
   \begin{block}{}
     \begin{itemize}
-    \item Invert lepton veto to examine control-like region
-    \item Only single muon region has sufficient statistics
-    \item[-] Jet $p_{T}>40$ GeV, $\Delta\eta_{jj}>3.5$, $M_{jj}>600$ GeV, $METnoMU>140$ GeV, one tight muon
+    \item MET efficiency above 90\% at $\sim$300 GeV
+    \item Change cuts to:
+    \item[-] METnoMu$>300$ GeV, DiPFJet$>40$ GeV, $\Delta\eta_{jj}>3.5$, $M_{jj}>$600
     \end{itemize}
   \end{block}
-  \begin{columns}
-    \column{1.1\textwidth}
-  \includegraphics[width=.35\textwidth]{TalkPics/iccms300915/output_trigreq/munu_jet2_pt.pdf}
-  \includegraphics[width=.35\textwidth]{TalkPics/iccms300915/output_trigreq/munu_jet1_pt.pdf}
-  \includegraphics[width=.35\textwidth]{TalkPics/iccms300915/output_trigreq/munu_metnomuons.pdf}
-  \end{columns}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dtrigeffmet300_051015/nunu_dijet_M.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dtrigeffmet300_051015/nunu_jet2_pt.pdf}
 \end{frame}
 
 \begin{frame}
-  \frametitle{MC Validation}
+  \frametitle{Tighter MET cut}
   \scriptsize
   \begin{block}{}
     \begin{itemize}
-    \item We are also set up to validate jet scale and resolution in MC
-    \item Study reco jets matched to a gen jet within 0.4 in $\Delta$R
-    \item Use TT+jets samples
-    \item[-] Caveat: Still using Run I PU ID and JES - not designed for these conditions 
-    \end{itemize}
-  \end{block}
-  \begin{block}{\footnotesize Scale}
-  \includegraphics[width=.5\textwidth]{TalkPics/iccms300915/jetmetval/JetScale_vseta_TTJets.pdf}
-  \includegraphics[width=.5\textwidth]{TalkPics/iccms300915/jetmetval/JetScale_vspt_TTJets.pdf}
-  \end{block}
-\end{frame}
-
-\begin{frame}
-  \frametitle{MC Validation - ID efficiency}
-  \centering
-    \includegraphics[width=.95\textwidth]{TalkPics/iccms300915/jetmetval/Jeteta_idefficiencies_TTJets.pdf}
-
-    \includegraphics[width=.95\textwidth]{TalkPics/iccms300915/jetmetval/Jetpt_idefficiencies_TTJets.pdf}
-  \scriptsize
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{QCD MC samples}
-  \scriptsize
-  \begin{block}{}
-    \begin{itemize}
-    \item Standard QCD MC samples have very low statistics in VBF+MET region
-    \item For run 1 we generated a sample with a generator level MET cut
-    \item[-] Usefulness limited by fake MET - (top left of below plot)
-    \item Looking to make a tight VBF specific QCD sample for run 2
+    \item MET efficiency above 90\% at $\sim$300 GeV
+    \item Change cuts to:
+    \item[-] METnoMu$>300$ GeV, DiPFJet$>40$ GeV, $\Delta\eta_{jj}>3.5$, $M_{jj}>$600
     \end{itemize}
   \end{block}
   \centering
-    \includegraphics[width=.45\textwidth]{TalkPics/hig14038preapproval/Joao_140209_p11.png}
-
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dtrigeffmet300_051015/nunu_dijet_deta.pdf}
 \end{frame}
 
 \begin{frame}
-  \frametitle{QCD MC samples - proposal}
+  \frametitle{Tighter jpt cut}
   \scriptsize
   \begin{block}{}
     \begin{itemize}
-    \item About to submit proposal for Madgraph samples
-    \item Two samples binned in $\Delta\phi_{jj}$
-    \item Both will have generator level cuts of:
-    \item[-] jet $p_{T}>40$ GeV, $M_{jj}>1000$ Gev, $\Delta\eta_{jj}>3.0$ 
-    \item Will request 1 fb$^{-1}$ with $\Delta\phi_{jj}<2.15$: $\sim$26M events
-    \item Will request $\sim 100$ pb$^{-1}$ with $\Delta\phi_{jj}>2.15$: $\sim$10M events
+    \item Jet $p_{T}$ efficiency above 90\% at $\sim$80 GeV
+    \item Change cuts to:
+    \item[-] METnoMu$>300$ GeV, DiPFJet$>80$ GeV, $\Delta\eta_{jj}>3.5$, $M_{jj}>$600
     \end{itemize}
   \end{block}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dtrigeffmet300jpt80_051015/nunu_dijet_M.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dtrigeffmet300jpt80_051015/nunu_jet2_pt.pdf}
 \end{frame}
+
+\begin{frame}
+  \frametitle{Tighter jpt cut}
+  \scriptsize
+  \begin{block}{}
+    \begin{itemize}
+    \item MET efficiency above 90\% at $\sim$300 GeV
+    \item Change cuts to:
+    \item[-] METnoMu$>300$ GeV, DiPFJet$>40$ GeV, $\Delta\eta_{jj}>3.5$, $M_{jj}>$600
+    \end{itemize}
+  \end{block}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dtrigeffmet300jpt80_051015/nunu_metnomuons.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dtrigeffmet300jpt80_051015/nunu_dijet_deta.pdf}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Control Plots}
+  \scriptsize
+  \begin{block}{}
+    \begin{itemize}
+    \item Make control plots with METnoMu$>300$ GeV, DiPFJet$>40$ GeV, $\Delta\eta_{jj}>3.5$, $M_{jj}>$600 plus lepton veto
+    \item[-] Luminosity labels are incorrect
+    \end{itemize}
+  \end{block}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dcontrolplots_051015/nunu_jet1_pt.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dcontrolplots_051015/nunu_jet2_pt.pdf}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Control Plots}
+  \scriptsize
+  \begin{block}{}
+    \begin{itemize}
+    \item Make control plots with METnoMu$>300$ GeV, DiPFJet$>40$ GeV, $\Delta\eta_{jj}>3.5$, $M_{jj}>$600 plus lepton veto
+    \item[-] Luminosity labels are incorrect
+    \end{itemize}
+  \end{block}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dcontrolplots_051015/nunu_dijet_deta.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dcontrolplots_051015/nunu_dijet_M.pdf}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Control Plots}
+  \scriptsize
+  \begin{block}{}
+    \begin{itemize}
+    \item Make control plots with METnoMu$>300$ GeV, DiPFJet$>40$ GeV, $\Delta\eta_{jj}>3.5$, $M_{jj}>$600 plus lepton veto
+    \item[-] Luminosity labels are incorrect
+    \end{itemize}
+  \end{block}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dcontrolplots_051015/nunu_metnomuons.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dcontrolplots_051015/nunu_dijet_dphi.pdf}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Control Plots-munu control region}
+  \scriptsize
+  \begin{block}{}
+    \begin{itemize}
+    \item Make control plots with METnoMu$>300$ GeV, DiPFJet$>40$ GeV, $\Delta\eta_{jj}>3.5$, $M_{jj}>$600 plus single tight muon
+    \item 26 events in region. Enu region has 3 events, mumu region has 2 events
+    \item[-] Luminosity labels are incorrect
+    \end{itemize}
+  \end{block}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dcontrolplots_051015/munu_metnomuons.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dcontrolplots_051015/munu_jet2_pt.pdf}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Gamma control region first look}
+  \scriptsize
+  \begin{block}{}
+    \begin{itemize}
+    \item Cut based photon ID from EGamma POG implemented
+    \item Make control plots with METnoMu$>300$ GeV, DiPFJet$>40$ GeV, $\Delta\eta_{jj}>3.5$, $M_{jj}>$600 plus single tight photon
+    \item Met obviously needs correcting for photon pt
+    \item[-] Luminosity labels are incorrect
+    \end{itemize}
+  \end{block}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dcontrolplots_051015/gamma_metnomuons.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff051015/output_2015Dcontrolplots_051015/gamma_jet2_pt.pdf}
+\end{frame}
+
+
+
+
 
 
 \begin{frame}
@@ -327,14 +244,14 @@
   \begin{block}{}
     \scriptsize
     \begin{itemize}
-    \item All CMS Run 1 $H\rightarrow$ invisible analyses have been combined
-    \item The observed (expected) 95\% CL upper limit on B(H$\rightarrow$inv) is \textcolor{red}{36} (\textcolor{red}{30})\%
-    \item Working with Run 2 data
+    \item Trigger efficiencies from 25ns data shown
+    \item[-] MET fully efficient $\sim$300 GeV
+    \item[-] Jet pt fully efficient $\sim$80 GeV      
+    \item Control plots don't have much statistics after these cuts
+    \item Another 80pb$^{-1}$ have 99\% of jobs finished processing
     \end{itemize}
   \end{block}
   \centering
-  \includegraphics[width=.6\textwidth]{TalkPics/hig15012approval/channellimit.pdf}
-  %!!INCLUDE A RUN 2 PLOT
 \end{frame}
 
 %UPDATED BACKUP
