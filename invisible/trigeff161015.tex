@@ -1,0 +1,135 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+\begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+  \includegraphics[height=1cm]{icl.pdf}
+  \hfill
+  \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+\end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+\begin{beamercolorbox}[ht=.55cm,dp=0.4cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+  \begin{minipage}[c]{5cm}%
+    \usebeamerfont{author in head/foot}
+    \insertshortauthor 
+    \insertshorttitle
+    \end{minipage}\hfill%
+  \insertframenumber{} / \pageref{lastframe}
+  \hfill
+  \begin{minipage}{6cm}
+    \hfill
+  \end{minipage}
+\end{beamercolorbox}%
+}
+
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\usepackage{multirow}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\title{\vspace{-0.2cm} Trigger Efficiencies from 2015D}
+%\subtitle{This result: HIG-15-012 \\ Contributing analyses: HIG-13-030, HIG-14-038, EXO-12-055}
+\author[P. Dunne]{\underline{P. Dunne} on behalf of the H$\rightarrow$invisible analysis group}
+\titlegraphic{
+  \vspace{-0.7cm}
+  %\includegraphics[width=\textwidth]{TalkPics/invcomb021213/feyndiags}
+%% \begin{fmfgraph*}(100,70)
+%%         \fmfleft{i1,i2}
+%%         \fmfright{o1,o2,o3}
+%%         \fmf{fermion}{i1,v1,o1}
+%%         \fmf{fermion}{i2,v2,o3}
+%%         \fmf{phantom,tension=4/5}{v1,v2}
+%%         \fmffreeze
+%%         \fmf{photon,label=$W,,Z$}{v1,v3}
+%%         \fmf{photon,label=$W,,Z$}{v2,v3}
+%%         \fmf{dashes}{v3,o2}
+%%         \fmflabel{$q$}{i1}
+%%         \fmflabel{$q$}{i2}
+%%         \fmflabel{$q$}{o1}
+%%         \fmflabel{$q$}{o3}
+%%         \fmflabel{$H$}{o2}
+%%       \end{fmfgraph*}
+}
+\date{}
+\begin{document}
+\begin{fmffile}{trigeff051015feyndiags}
+
+%TITLE PAGE
+\section{Title}
+\begin{frame}
+  \titlepage
+  
+\end{frame}
+
+%!!CLOSURE TEST STATEMENT PU jet ID
+%OUTLINE
+\begin{frame}
+  \frametitle{Introduction}
+  \scriptsize
+    \vspace{-.2cm}
+    \begin{block}{\footnotesize Overview}
+      \begin{itemize}
+      \item Processed new miniAOD with latesd JEC and 25ns HBHE noise filter using golden json from 9th October
+      \item[-] Pileup ID also removed since last time as training was for 8 TeV and we don't need it anyway as we use PFCHS
+      \item[-] Met filter recipe was updated on Friday to add an HBHE iso filter which we don't have in our ntuples currently
+      \item[-] CSC filter is also due to be replaced with an event list to veto although this is not yet available
+      \item Will show updated trigger efficiencies
+      \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Trigger Efficiencies}
+  \scriptsize
+  \begin{block}{}
+    \begin{itemize}
+    \item Selection is:
+    \item[-] METnoMu$>300$ GeV, DiPFJet$>80$ GeV, $\Delta\eta_{jj}>3.5$, $M_{jj}>$600
+    \end{itemize}
+  \end{block}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff161015/output_2015Dtrigeff_newjechbhe_161015/nunu_dijet_M.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff161015/output_2015Dtrigeff_newjechbhe_161015/nunu_jet2_pt.pdf}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Trigger Efficiencies}
+  \scriptsize
+  \begin{block}{}
+    \begin{itemize}
+    \item Selection is:
+    \item[-] METnoMu$>300$ GeV, DiPFJet$>80$ GeV, $\Delta\eta_{jj}>3.5$, $M_{jj}>$600
+    \end{itemize}
+  \end{block}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff161015/output_2015Dtrigeff_newjechbhe_161015/nunu_metnomuons.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff161015/output_2015Dtrigeff_newjechbhe_161015/nunu_dijet_deta.pdf}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Summary}
+  \label{lastframe}
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}
+    \item Trigger efficiencies from 25ns data shown
+    \item New JSON released on Friday with 848.7/pb
+    \item[-] Aiming to process this week
+    \end{itemize}
+  \end{block}
+  \centering
+\end{frame}
+
+%UPDATED BACKUP
+\begin{frame}
+  \frametitle{Backup}
+\end{frame}
+
+\begin{frame}
+\end{frame}
+
+\end{fmffile}
+\end{document}

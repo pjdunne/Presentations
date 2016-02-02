@@ -1,0 +1,175 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+\begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+  \includegraphics[height=1cm]{icl.pdf}
+  \hfill
+  \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+\end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+\begin{beamercolorbox}[ht=.55cm,dp=0.4cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+  \begin{minipage}[c]{5cm}%
+    \usebeamerfont{author in head/foot}
+    \insertshortauthor 
+    \insertshorttitle
+    \end{minipage}\hfill%
+  \insertframenumber{} / \pageref{lastframe}
+  \hfill
+  \begin{minipage}{6cm}
+    \hfill
+  \end{minipage}
+\end{beamercolorbox}%
+}
+
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\usepackage{multirow}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\title{\vspace{-0.2cm} VBF Higgs to Invisible Trigger Efficiencies}
+%\subtitle{This result: HIG-15-012 \\ Contributing analyses: HIG-13-030, HIG-14-038, EXO-12-055}
+\author[P. Dunne]{\underline{P. Dunne} on behalf of the H$\rightarrow$invisible analysis group}
+\titlegraphic{
+  \vspace{-0.7cm}
+  %\includegraphics[width=\textwidth]{TalkPics/invcomb021213/feyndiags}
+%% \begin{fmfgraph*}(100,70)
+%%         \fmfleft{i1,i2}
+%%         \fmfright{o1,o2,o3}
+%%         \fmf{fermion}{i1,v1,o1}
+%%         \fmf{fermion}{i2,v2,o3}
+%%         \fmf{phantom,tension=4/5}{v1,v2}
+%%         \fmffreeze
+%%         \fmf{photon,label=$W,,Z$}{v1,v3}
+%%         \fmf{photon,label=$W,,Z$}{v2,v3}
+%%         \fmf{dashes}{v3,o2}
+%%         \fmflabel{$q$}{i1}
+%%         \fmflabel{$q$}{i2}
+%%         \fmflabel{$q$}{o1}
+%%         \fmflabel{$q$}{o3}
+%%         \fmflabel{$H$}{o2}
+%%       \end{fmfgraph*}
+}
+\date{}
+\begin{document}
+\begin{fmffile}{hexotrig261015feyndiags}
+
+%TITLE PAGE
+\section{Title}
+\begin{frame}
+  \titlepage
+  
+\end{frame}
+
+%!!CLOSURE TEST STATEMENT PU jet ID
+%OUTLINE
+\begin{frame}
+  \frametitle{Reminder}
+  \scriptsize
+  \begin{block}{}
+    \begin{itemize}
+      \item Presented trigger efficiency measurements using 1.28 fb$^{-1}$ to H-Exo last week
+      \item Suggested to look at jet turn on in jet only trigger
+      \item[-] Added pass/fail information for HLT\_DiPFJetAve40 and HLT\_PFHT750\_4JetPt50
+      \item Also wanted to look at offline vs online jet $p_{T}$
+      \item[-] Addedd HLT pf jets matched to offline leading jets
+      \item[-] Added calo jets matched to offline leading jets
+      \item[-] Trigger objects only present when event passes trigger
+      \item Light trees with calo information only came back this morning so plots are a bit rough
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Offline to online resolution: PF}
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}      
+    \item Compare offline and online jet $p_{T}$
+    \item Trigger cut is at 40 GeV
+    \end{itemize}
+  \end{block}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff021115/trigeffstudies/jet2trigresponse.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff021115/trigeffstudies/jet2trigresponsept<100.pdf}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Offline to online resolution: PF}
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}      
+    \item Compare offline and online jet $p_{T}$
+    \item[-] Left plot is for all jets right is for $p_{T}<50$ GeV
+    \item Trigger cut is at 40 GeV
+    \end{itemize}
+  \end{block}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff021115/trigeffstudies/jet2resolution.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff021115/trigeffstudies/jet2resolutionptbelow50.pdf}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Offline to online resolution: Calo}
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}      
+    \item We have a calo jet prefilter at 30 GeV
+    \item It has been found that the wrong JEC was used at HLT in Run2015
+    \item[-] \href{https://indico.cern.ch/event/456813/contribution/0/attachments/1178012/1704076/15-10-28_News_PPD.pdf}{Slides here}
+    \item[-] this would have a larger effect on calo as the corrections are larger
+    \end{itemize}
+  \end{block}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff021115/trigeffstudies/jet2calotrigresponse.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff021115/trigeffstudies/jet2calotrigresponsept<100.pdf}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Offline to online resolution: PF}
+  \begin{block}{}
+    \scriptsize
+    \begin{itemize}      
+    \item We have a calo jet prefilter at 30 GeV
+    \item It has been found that the wrong JEC was used at HLT in Run2015
+    \item[-] \href{https://indico.cern.ch/event/456813/contribution/0/attachments/1178012/1704076/15-10-28_News_PPD.pdf}{Slides here}
+    \item[-] this would have a larger effect on calo as the corrections are larger
+    \item Left plot is for all jets right is for $p_{T}<50$ GeV
+    \end{itemize}
+  \end{block}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff021115/trigeffstudies/jet2caloresolution.pdf}
+  \includegraphics[width=.5\textwidth]{TalkPics/trigeff021115/trigeffstudies/jet2caloresolutionptbelow50.pdf}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Summary}
+  \label{lastframe}
+  \scriptsize
+  \begin{block}{}
+    \begin{itemize}
+    \item More things to investigate
+    \item[-] Jet trigger turn on in a pure jet trigger
+    \item[-] Study PF and calo offline to online response in more detail
+    \item Latest golden JSON being processed now: 1.56 fb$^{-1}$
+    \item CSC halo filter v1 list of veto events came out over the weekend: need to switch to this
+    \end{itemize}
+  \end{block}
+  \centering
+\end{frame}
+
+%UPDATED BACKUP
+\begin{frame}
+  \frametitle{Backup}
+\end{frame}
+
+\begin{frame}
+\end{frame}
+
+\end{fmffile}
+\end{document}

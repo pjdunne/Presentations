@@ -1,0 +1,191 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+  \begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+    \includegraphics[height=1cm]{icl.pdf}
+    \hfill
+    \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+  \end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[ht=.35cm,dp=0.2cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+    \begin{minipage}[c]{5cm}%
+      \usebeamerfont{author in head/foot}
+      \insertshortauthor 
+      \insertshorttitle
+    \end{minipage}\hfill%
+    \hfill
+    \insertframenumber{} / \ref{lastframe}
+    %\hfill
+    \begin{minipage}{6cm}
+      \hfill
+      %\insertshorttitle
+    \end{minipage}
+  \end{beamercolorbox}%
+}
+
+\definecolor{beamer@icdarkblue}{RGB}{0,51,102}
+\definecolor{beamer@icmiddleblue}{RGB}{0,82,150} 
+\definecolor{beamer@iclightblue}{RGB}{200,212,232}
+\definecolor{beamer@icmiddlered}{RGB}{204,51,0}
+\definecolor{beamer@iclightred}{RGB}{232,212,32}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,backgrounds}
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\usepackage{rotating}
+\usepackage{moresize}
+\usepackage{slashed}
+\usepackage{xcolor,colortbl}
+\DeclareGraphicsRule{*}{mps}{*}{}
+\hypersetup{colorlinks=false}
+
+\title[Invisible Higgs at CMS]{\vspace{-0.2cm} Searching for the Higgs boson at the LHC}
+\author[P. Dunne]{\underline{P. Dunne} - Imperial College London} % A.M. Magnan and A. Nikitenko Joao Pela with \\ R. Aggleton, J. Brooke: Bristol \\ C.Asawangtrakuldee, Q.Li: Peking \\ P. Srimanobhas: Chulalongkorn \\ S. Kumar, K. Mazumdar: Mumbai}
+\titlegraphic{
+  \vspace{-0.7cm}
+  \includegraphics[width=\textwidth]{TalkPics/invcomb021213/feyndiags}
+  %% \begin{fmfgraph*}(100,70)
+  %%         \fmfleft{i1,i2}
+  %%         \fmfright{o1,o2,o3}
+  %%         \fmf{fermion}{i1,v1,o1}
+  %%         \fmf{fermion}{i2,v2,o3}
+  %%         \fmf{phantom,tension=4/5}{v1,v2}
+  %%         \fmffreeze
+  %%         \fmf{photon,label=$W,,Z$}{v1,v3}
+  %%         \fmf{photon,label=$W,,Z$}{v2,v3}
+  %%         \fmf{dashes}{v3,o2}
+  %%         \fmflabel{$q$}{i1}
+  %%         \fmflabel{$q$}{i2}
+  %%         \fmflabel{$q$}{o1}
+  %%         \fmflabel{$q$}{o3}
+  %%         \fmflabel{$H$}{o2}
+
+  %%       \end{fmfgraph*}
+}
+\date{}
+\begin{document}
+\tikzstyle{every picture}+=[remember picture]
+\tikzstyle{na} = [baseline=-.5ex]
+\begin{fmffile}{sgsfeyndiags}
+
+  %TITLE PAGE
+  %% \section{Title}
+  %% \begin{frame}
+  %%   \titlepage
+    
+  %% \end{frame}
+
+  %% \begin{frame}
+  %%   \frametitle{Introduction}
+  %%   \begin{itemize}
+  %%   \item What is the LHC?
+  %%   \item What is the Higgs boson?
+  %%   \item How do we search for it?
+  %%   \item What do we see?
+  %%   \end{itemize}
+  %% \end{frame}
+
+  %!!MORE DETAIL ON LHC AND CMS
+  \begin{frame}
+    \begin{center}
+      \begin{tikzpicture}
+        \node[anchor=south west,inner sep=0] (image) at (0,0) {        \includegraphics[width=.9\textwidth]{TalkPics/cubs1171115/lhc-tunnel.jpg}};
+        \node[align=center,red,font={\Huge\bfseries}] at (image.center) {What is the\\ Large Hadron Collider?};
+      \end{tikzpicture}
+    \end{center}
+  \end{frame}
+
+  \begin{frame}
+    \begin{center}
+  \begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] (image) at (0,0) {        \includegraphics[width=.9\textwidth]{TalkPics/cern-lhc-aerial.jpg}};
+            \node[align=center,red,font={\Huge\bfseries}] at (image.center) {Very big!};
+  \end{tikzpicture}
+    \end{center}
+  \end{frame}
+  
+  %% \begin{frame}
+  %%   \frametitle{CMS and the LHC}
+  %%   \begin{center}
+  %%     \includegraphics[width=.9\textwidth]{TalkPics/sgs120315/acceleratorchain.png}
+  %%     \end{center}
+  %% \end{frame}
+
+\begin{frame}
+  \centering
+  \begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] (image) at (0,0) {  \includegraphics[width=.8\textwidth]{TalkPics/cubs1171115/Hubble_Ultra_Deep_Field_NICMOS.jpg}};
+            \node[align=center,red,font={\Huge\bfseries}] at (image.center) {Emptier than space!};
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+  \centering
+  \begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] (image) at (0,0) {      \includegraphics[width=\textwidth]{TalkPics/cubs1171115/Giant_prominence_on_the_sun_erupted.jpg}};
+            \node[align=center,white,font={\Huge\bfseries}] at (image.center) {Hotter than the sun!};
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+      \centering
+    \begin{tikzpicture}
+      \node[anchor=south west,inner sep=0] (image) at (0,0) {};
+      \node[align=center,blue,font={\Huge\bfseries}] at (image.center) {What's it for?};
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+  \centering
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {          \includegraphics[height=.85\textheight]{TalkPics/cubs1171115/historybigbang.jpg}};
+    \node[align=center,red,font={\Huge\bfseries}] at (image.center) {Finding out how\\ the universe works};
+  \end{tikzpicture}
+  
+\end{frame}
+
+\begin{frame}
+  \centering
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {};
+    \node[align=center,blue,font={\Huge\bfseries}] at (image.center) {Where do scientists fit in?};
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+  \centering
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {          \includegraphics[height=.85\textheight]{TalkPics/sgs120315/cmsphoto.jpeg}};
+    \node[align=center,red,font={\Huge\bfseries}] at (image.center) {Build enormous cameras};
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+  \centering
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {          \includegraphics[height=.85\textheight]{TalkPics/cubs1171115/cern1article.jpg}};
+    \node[align=center,red,font={\Huge\bfseries}] at (image.center) {Play with data};
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+\label{lastframe}
+  \centering
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {          \includegraphics[width=.5\textwidth,height=.6\textheight]{TalkPics/cubs1171115/hi-net-neutrality-852-jpg.jpg}
+\includegraphics[width=.5\textwidth,height=.6\textheight]{TalkPics/cubs1171115/iphone_6_3058505b.jpg}};
+    \node[align=center,red,font={\Huge\bfseries}] at (image.center) {Invent new things};
+  \end{tikzpicture}
+\end{frame}
+
+
+\end{fmffile}
+\end{document}
+

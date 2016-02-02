@@ -358,7 +358,6 @@
   \end{frame}
   \begin{frame}
     \frametitle{VBF results}
-%!!Replace with hig-14-038
       \scriptsize
       \begin{tikzpicture}
         \draw node[text width=\textwidth, anchor=south west,inner sep=0] (image) at (0,0) {
@@ -434,8 +433,52 @@
 
 
   \begin{frame}
-    \frametitle{Combinations}
-    %!!what do you need to worry about with combinations
+    \frametitle{Combinations - Assumptions}
+    \scriptsize
+    \begin{block}{}
+      \begin{itemize}
+      \item Want to improve limit using constraints from other channels
+      \item Need to be careful that the quantity they set limits on is the same
+      \item[-] We assume that the Higgs we're looking at is produced as in the SM
+      \end{itemize}
+    \end{block}
+
+    \centering
+    \includegraphics[width=.6\textwidth]{../../Reports/Firstyearreport/Higgs_XS_8TeV_lx.pdf}
+    
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Combinations - Correlations}
+    \scriptsize
+    \begin{block}{}
+      \begin{itemize}
+      \item Objects in one analysis might be very different from objects in others
+      \item[-] Energy scales and other uncertainties may or may not be correlated
+      \item Measurement in one channel can constrain uncertainties in other channels
+      \end{itemize}
+    \end{block}
+      \begin{block}{}
+        \centering
+        \begin{fmfgraph*}(60,50)
+          \fmftop{i1,m1,m2,m3,m4,m5,m6,m7o1}
+          \fmfbottom{i2,o2}
+          \fmf{fermion,tension=4}{v1,i2}
+          \fmf{fermion,tension=4}{v1,o2}
+          \fmf{dashes}{v1,m2}
+        \end{fmfgraph*}
+        \begin{fmfgraph*}(60,50)
+          \fmftop{i1,m1,m2,m3,m4,m5,m6,m7o1}
+          \fmfbottom{i2,m11,o2}
+          \fmf{phantom}{v1,m11}
+          \fmf{phantom}{v1,m4}
+          \fmffreeze
+          \fmf{fermion,tension=1}{v1,m11}
+          \fmf{dashes,tension =3}{v1,m2}
+        \end{fmfgraph*}
+        \vspace{.2cm}
+      \end{block}
+
   \end{frame}
 
   \begin{frame}
@@ -560,11 +603,12 @@
       \item Previously used an effective field theory model which translates B$(H\rightarrow inv)$ into a DM-nucleon cross-section
       \item Consider three DM spin scenarios: scalar, vector, Majorana fermion:
       \item[-] all but one go to infinity as the mass goes to zero
+      \item Need new models - watch this space
       \end{itemize}
     \end{block}
     \centering
     \begin{tikzpicture}
-      \node[anchor=south west,inner sep=0] (image) at (0,0) {    \includegraphics[clip=true,trim=0 0 0 0, width=.65\textwidth]{TalkPics/panicpics/dmlimit.pdf}    };
+      \node[anchor=south west,inner sep=0] (image) at (0,0) {    \includegraphics[clip=true,trim=0 0 0 0, width=.6\textwidth]{TalkPics/panicpics/dmlimit.pdf}    };
       \begin{scope}[x={(image.south east)},y={(image.north west)}]
         \draw[red,ultra thick,visible on=<2>] (0.,0.) -- (1,1);
         \draw[red,ultra thick,visible on=<2>] (0.,1.) -- (1,0);
@@ -575,18 +619,17 @@
   \begin{frame}%CHECK AT END
     \frametitle{Conclusions}
     \label{lastframe}
-    \begin{columns}
-      \column{.5\textwidth}
     \begin{block}{}
         \footnotesize
         \begin{itemize}
-        \item %!!some conclusions
+        \item We have set limits on invisible decays of the Higgs using the VBF channel
+        \item This has been combined with other channels to give tighter limits
+        \item We can use these limits to constrain dark matter models but we need to be careful
         \end{itemize}
       \end{block}
-        \column{.5\textwidth}
-          \includegraphics[clip=true,trim=0 0 0 0, width=1.2\textwidth]{TalkPics/studentseminar221015/hig15012figures/channellimit.pdf}
+    \centering
+    \includegraphics[clip=true,trim=0 0 0 0, width=.65\textwidth]{TalkPics/studentseminar221015/hig15012figures/channellimit.pdf}
 
-    \end{columns}
 
 
   \end{frame}
