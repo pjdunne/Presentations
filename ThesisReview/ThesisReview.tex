@@ -82,6 +82,8 @@
 
 \begin{frame}
   \frametitle{My thesis outline}
+  \begin{columns}
+    \column{.5\textwidth}
   \begin{itemize}
   \item Theory
   \item Detector \& physics objects
@@ -92,6 +94,9 @@
   \item Dark matter interpretrations
   \item Run II
   \end{itemize}
+  \column{.5\textwidth}
+  \fbox{\includegraphics[page=1,width=.8\textwidth]{../../Thesis/thesis.pdf}}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -101,106 +106,116 @@
     \begin{itemize}
     \item Introduce Standard Model Higgs mechanism
     \item Introduce Dark Matter
-    \item Discuss why Higgs is a good place to look for dark matter
+    \item[-] Discuss why Higgs is a good place to look for dark matter
     \item[-] Give model examples e.g. EFT, simplified models
-    \item Discuss Higgs production and why VBF
+    \item Discuss Higgs production and why VBF for invisible searches
     \end{itemize}
     \column{.5\textwidth}
     \includegraphics[width=\textwidth]{../invisible/TalkPics/sgs120315/higgspotential.png}
   \end{columns}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Why look for invisibly decaying Higgs bosons?}
-    \begin{columns}
-      \column{1.1\textwidth}
-    \begin{itemize}
-    \item SM compatible 125 GeV Higgs boson observed by ATLAS and CMS
-      \begin{itemize}
-      \item SM compatible does not mean BSM incompatible
-        \end{itemize}
-    \end{itemize}
-    \end{columns}
-    \begin{columns}
-      \column{.51\textwidth}
-      \begin{columns}
-      \column{.9\textwidth}
+%% \begin{frame}
+%%     \frametitle{Why look for invisibly decaying Higgs bosons?}
+%%     \begin{columns}
+%%       \column{1.1\textwidth}
+%%     \begin{itemize}
+%%     \item SM compatible 125 GeV Higgs boson observed by ATLAS and CMS
+%%       \begin{itemize}
+%%       \item SM compatible does not mean BSM incompatible
+%%         \end{itemize}
+%%     \end{itemize}
+%%     \end{columns}
+%%     \begin{columns}
+%%       \column{.51\textwidth}
+%%       \begin{columns}
+%%       \column{.9\textwidth}
 
-      \hfill\includegraphics[height=.55\textheight]{../invisible/TalkPics/IOP2015/decaylimits.png}
-      \column{.1\textwidth}
-      \begin{turn}{-90}\scriptsize CMS-HIG-14-009\end{turn}
-%      \column{.45\textwidth}
+%%       \hfill\includegraphics[height=.55\textheight]{../invisible/TalkPics/IOP2015/decaylimits.png}
+%%       \column{.1\textwidth}
+%%       \begin{turn}{-90}\scriptsize CMS-HIG-14-009\end{turn}
+%% %      \column{.45\textwidth}
 
-%      \hfill\includegraphics[height=.55\textheight]{../invisible/TalkPics/IOP2015/brbsm.png}
-%      \column{.05\textwidth}
-%      \begin{turn}{-90}\scriptsize CMS-HIG-14-009\end{turn}
-        \end{columns}
-    \end{columns}
-    \begin{columns}
-      \column{1.1\textwidth}
-        \begin{itemize}
-        \item Many BSM theories predict Higgs to invisible, e.g. SUSY
-          \begin{itemize}
-          \item Often provide good DM candidates
-          \end{itemize}
-        \end{itemize}
-    \end{columns}
+%% %      \hfill\includegraphics[height=.55\textheight]{../invisible/TalkPics/IOP2015/brbsm.png}
+%% %      \column{.05\textwidth}
+%% %      \begin{turn}{-90}\scriptsize CMS-HIG-14-009\end{turn}
+%%         \end{columns}
+%%     \end{columns}
+%%     \begin{columns}
+%%       \column{1.1\textwidth}
+%%         \begin{itemize}
+%%         \item Many BSM theories predict Higgs to invisible, e.g. SUSY
+%%           \begin{itemize}
+%%           \item Often provide good DM candidates
+%%           \end{itemize}
+%%         \end{itemize}
+%%     \end{columns}
 
-  \end{frame}
+%%   \end{frame}
 
 \begin{frame}
   \frametitle{Detector \& physics objects}
   %CMS DETECTOR
-  \begin{itemize}
-  \item LHC overview, introduction to CMS subsystems and objects
-  \end{itemize}
-  \centering
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{itemize}
+    \item LHC overview, introduction to CMS
+    \item[-] Describe all subsystems
+    \item Describe event reconstruction
+    \item[-] Emphasis on jets and MET
+    \item[-] Shorter sections on leptons and photons
+    \item Describe trigger
+    \item In progress description of LHC completed
+    \end{itemize}
+    \column{.5\textwidth}
+    \centering
     \includegraphics[width=.9\textwidth]{../invisible/TalkPics/IOP2015/CMSdiag.jpg}
+    \end{columns}
 \end{frame}
 
-  \begin{frame}
-    \frametitle{Invisible signatures at CMS}
-    \begin{columns}
-      \column{1.1\textwidth}
-      \vspace{-.3cm}
-      \begin{itemize}
-      \item Which signatures do we see at CMS?
-      \item Indirect: Look for effect of BSM Higgs decays on Higgs total width
-      \item Direct: Use channels where the Higgs recoils against a visible system
-        \begin{itemize}
-        \item[] \tikz[na] \node (ggH) {ggH: high rate, no visible products (unless ISR/FSR, i.e. mono-X)};        
-        \item[] \tikz[na] \node (VBF) {VBF: medium rate, jets+MET final state};        
-        \item[] \tikz[na] \node (ZH) {ZH: low rate, leptons/b jets+MET final state};        
-        \end{itemize}
-      \end{itemize}
-    \end{columns}
+%%   \begin{frame}
+%%     \frametitle{Invisible signatures at CMS}
+%%     \begin{columns}
+%%       \column{1.1\textwidth}
+%%       \vspace{-.3cm}
+%%       \begin{itemize}
+%%       \item Which signatures do we see at CMS?
+%%       \item Indirect: Look for effect of BSM Higgs decays on Higgs total width
+%%       \item Direct: Use channels where the Higgs recoils against a visible system
+%%         \begin{itemize}
+%%         \item[] \tikz[na] \node (ggH) {ggH: high rate, no visible products (unless ISR/FSR, i.e. mono-X)};        
+%%         \item[] \tikz[na] \node (VBF) {VBF: medium rate, jets+MET final state};        
+%%         \item[] \tikz[na] \node (ZH) {ZH: low rate, leptons/b jets+MET final state};        
+%%         \end{itemize}
+%%       \end{itemize}
+%%     \end{columns}
 
-    \begin{columns}
+%%     \begin{columns}
 
-        \column{.5\textwidth}
-%        \tikzstyle{background grid}=[draw, black!50,step=.5cm]
-           \begin{tikzpicture}%[show background grid]
-            \node [inner sep=0pt,above right]
-            {\includegraphics[height=.45\textheight,width=.9\textwidth]{../../Reports/Firstyearreport/Higgs_XS_8TeV_lx.pdf}};
- %           \fill (0,0) circle (2pt);
+%%         \column{.5\textwidth}
+%% %        \tikzstyle{background grid}=[draw, black!50,step=.5cm]
+%%            \begin{tikzpicture}%[show background grid]
+%%             \node [inner sep=0pt,above right]
+%%             {\includegraphics[height=.45\textheight,width=.9\textwidth]{../../Reports/Firstyearreport/Higgs_XS_8TeV_lx.pdf}};
+%%  %           \fill (0,0) circle (2pt);
 
-            \path (1.2,3.1) coordinate (ggHl)
-                  (1.9,2.2) coordinate (VBFl)
-                  (2.6,1.2) coordinate (ZHl);
-          \end{tikzpicture}
+%%             \path (1.2,3.1) coordinate (ggHl)
+%%                   (1.9,2.2) coordinate (VBFl)
+%%                   (2.6,1.2) coordinate (ZHl);
+%%           \end{tikzpicture}
 
-          \column{.5\textwidth}
-        \centering
-        \includegraphics[height=.45\textheight,width=.7\textwidth]{../invisible/TalkPics/sgs120315/vbfevent.png}
-      \end{columns}
+%%           \column{.5\textwidth}
+%%         \centering
+%%         \includegraphics[height=.45\textheight,width=.7\textwidth]{../invisible/TalkPics/sgs120315/vbfevent.png}
+%%       \end{columns}
 
-    \begin{tikzpicture}[overlay]
-      \path[->,blue,thick] (ggH.west) edge [bend right] (ggHl);
-      \path[->,red,thick] (VBF.west) edge [bend right] (VBFl);
-      \path[->,green,thick] (ZH.south) edge [bend left] (ZHl);
+%%     \begin{tikzpicture}[overlay]
+%%       \path[->,blue,thick] (ggH.west) edge [bend right] (ggHl);
+%%       \path[->,red,thick] (VBF.west) edge [bend right] (VBFl);
+%%       \path[->,green,thick] (ZH.south) edge [bend left] (ZHl);
 
-    \end{tikzpicture}
-  \end{frame}
+%%     \end{tikzpicture}
+%%   \end{frame}
 
 \begin{frame}
   \frametitle{Statistics}
@@ -223,10 +238,12 @@
     \end{itemize}
   \item CMS published result using full run I prompt dataset
     \begin{itemize}
+    \item \href{http://link.springer.com/article/10.1140\%2Fepjc\%2Fs10052-014-2980-6}{10.1140/epjc/s10052-014-2980-6}
     \item I did the limit setting and worked on the cross-check
     \end{itemize}
   \item A CMS PAS was produced using the full run I parked dataset
     \begin{itemize}
+    \item HIG-14-038
     \item I was the main analysis contact
     \item This will be the main piece of work in my thesis
     \end{itemize}
@@ -238,8 +255,11 @@
   \begin{columns}
     \column{.65\textwidth}
     \begin{itemize}
-    \item Introduce analysis focusing on my work
-    \item[-] Background estimation, systematics, limits
+    \item Describe analysis focusing on my work
+    \item[-] Introduce challenges of jets+MET: trigger, QCD
+    \item[-] Background estimation methods
+    \item[-] systematics
+    \item[-] VBF only limits
     \end{itemize}
       %\item Restricted phase space necessitates data driven background estimation
     \column{.4\textwidth}
@@ -264,18 +284,238 @@
   \end{columns}
 \end{frame}
 
+  \begin{frame}
+    \frametitle{VBF parked analysis limits}
+          \normalsize
+    \begin{columns}
+      \column{1.1\textwidth}
+            \begin{itemize}
+            \item Observed(expected) 95\% C.L. limit on $B(H\rightarrow inv)$ for $m_{H}$=125 GeV is \textcolor{red}{65(49)\%}
+            \end{itemize}
+    \end{columns}
+    \vspace{-0.1cm}
+    \begin{columns}
+      \column{.03\textwidth}
+      \column{.55\textwidth}
+      \begin{columns}
+        \column{.9\textwidth}
+      \includegraphics[clip=true,trim=0 0 0 0,width=1.1\textwidth]{../invisible/TalkPics/panicpics/vbfxslimit.pdf}
+      \column{.1\textwidth}
+      \hspace{-.5cm}
+      \begin{turn}{-90}\scriptsize CMS-PAS-HIG-14-038 \end{turn}
+      \end{columns}
+      \column{.55\textwidth}
+      \begin{columns}
+        \column{.9\textwidth}
+      \includegraphics[clip=true,trim=0 0 0 0,width=1.1\textwidth]{../invisible/TalkPics/panicpics/vbflimit.pdf}
+      \column{.1\textwidth}
+      \hspace{-.5cm}
+      \begin{turn}{-90}\scriptsize CMS-PAS-HIG-14-038 \end{turn}
+      \end{columns}
+    \end{columns}
+  \end{frame}
+
 \begin{frame}
   \frametitle{Parked data VBF analysis}
     \begin{itemize}
     \item I was the main contact for this analysis and it will be the main piece of work in my thesis
-    \item Analysis reoptimised using new variables
-    \item[-] Target significant MET away from jets
     \item Trigger efficiency remeasured
     \item[-] 3D characterisation to enable trigger turn on to be used
+    \item Analysis reoptimised using new variables
+    \item[-] Target significant MET away from jets
     \item Systematics and background estimations improved
-
     \end{itemize}
 \end{frame}
+
+  \begin{frame}
+    \frametitle{VBF parked analysis limits}
+          \normalsize
+    \begin{columns}
+      \column{1.1\textwidth}
+            \begin{itemize}
+            \item Observed(expected) 95\% C.L. limit on $B(H\rightarrow inv)$ for $m_{H}$=125 GeV is \textcolor{red}{57(40)\%}
+            \end{itemize}
+    \end{columns}
+    \vspace{-0.1cm}
+    \begin{columns}
+      \column{.03\textwidth}
+      \column{.55\textwidth}
+      \begin{columns}
+        \column{.9\textwidth}
+      \includegraphics[clip=true,trim=0 0 0 0,width=1.1\textwidth]{../invisible/TalkPics/IOP2015/vbfxslimit.pdf}
+      \column{.1\textwidth}
+      \hspace{-.5cm}
+      \begin{turn}{-90}\scriptsize CMS-PAS-HIG-14-038 \end{turn}
+      \end{columns}
+      \column{.55\textwidth}
+      \begin{columns}
+        \column{.9\textwidth}
+      \includegraphics[clip=true,trim=0 0 0 0,width=1.1\textwidth]{../invisible/TalkPics/IOP2015/vbflimit.pdf}
+      \column{.1\textwidth}
+      \hspace{-.5cm}
+      \begin{turn}{-90}\scriptsize CMS-PAS-HIG-14-038 \end{turn}
+      \end{columns}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Combined Results}
+    \begin{itemize}
+    \item I was responsible for combining the VBF search results with those in the ZH channels
+    \item Separate limits on $\sigma$x$B(H\rightarrow inv)$ are combined at 125 GeV
+    \item Assume SM production cross-sections to interpret as a limit on B(H$\rightarrow$inv)
+    \item Combination with monojet search also in progress
+    \end{itemize}
+    \begin{columns}
+      \column{.5\textwidth}
+      Prompt
+      \includegraphics[width=.9\textwidth]{../invisible/TalkPics/panicpics/combinedlimit.pdf}
+      \column{.35\textwidth}
+      Parked
+      \begin{block}{}
+        \footnotesize
+        Observed (expected) limits on B(H$\rightarrow$inv) at 95\% C.L. for $m_{H}$=125 GeV
+
+        \centering
+        \begin{tabular}{lc}
+          \hline
+          Channel & Limit/\% \\
+          \hline
+          VBF & 57(40) \\
+          ZH($\ell\ell$+bb) & 81(83) \\
+          \hline
+          VBF + ZH &{\color{red} 47(35)} \\
+          \hline
+        \end{tabular}
+      \end{block}
+    \end{columns}
+  \end{frame}
+
+
+
+
+\begin{frame}
+  \frametitle{Dark matter interpretations}
+    \begin{itemize}
+    \item Completed: Parked result has been interpreted in a scalar EFT
+    \item In progress: Replicating analysis in Delphes framework for phenomenology paper with other simplified models
+    \end{itemize}
+    \centering
+    \includegraphics[width=.65\textwidth]{DMplot.pdf}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Run II}
+    \begin{itemize}
+    \item Currently working on VBF Higgs to invisible Run II analysis
+    \item Contribution to the thesis will depend on progress
+    \item Plans:
+      \begin{itemize}
+      \item Add $\gamma$+jets control region to improve Z estimation
+      \item Reoptimise analysis for new kinematics and trigger
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+  %% \begin{frame}
+  %%   \frametitle{Signatures of Dark Matter (DM)}
+  %%   \vspace{-.2cm}
+  %%   \begin{columns}
+  %%     \column{1.1\textwidth}
+  %%   \begin{itemize}
+  %%     \item If DM couples to the Higgs the following diagrams are possible
+  %%     \end{itemize}
+  %%   \vspace{-.2cm}
+  %%   \end{columns}
+  %%   \begin{columns}
+  %%     \column{.35\textwidth}
+  %%     \begin{block}{\scriptsize Direct Detection - e.g. LUX}
+  %%       \vspace{.3cm}
+  %%       \begin{fmfgraph*}(100,70)
+  %%         \fmfleft{i1,i2}
+  %%         \fmfright{o1,o2}
+  %%         \fmf{fermion}{i1,v1,o1}
+  %%         \fmf{fermion}{i2,v2,o2}
+  %%         \fmf{dashes,label=$H$}{v1,v2}
+  %%         \fmffreeze
+  %%         \fmflabel{$N$}{i1}
+  %%         \fmflabel{$\chi$}{i2}
+  %%         \fmflabel{$N$}{o1}
+  %%         \fmflabel{$\chi$}{o2}
+  %%       \end{fmfgraph*}
+  %%       \vspace{.3cm}
+  %%     \end{block}
+
+  %%     \column{.35\textwidth}
+  %%     \begin{block}{\scriptsize Invisible Higgs - LHC}
+  %%       \vspace{.3cm}
+  %%       \begin{fmfgraph*}(100,70)
+  %%         \fmfleft{i1,i2}
+  %%         \fmfright{o1,o2}
+  %%         \fmf{fermion}{i1,v1,i2}
+  %%         \fmf{fermion}{o1,v2,o2}
+  %%         \fmf{dashes,label=$H$}{v1,v2}
+  %%         \fmffreeze
+  %%         %\fmflabel{$f/w/Z$}{i1}
+  %%         \fmflabel{$\chi$}{o1}
+  %%         %\fmflabel{$f/W/Z$}{i2}
+  %%         \fmflabel{$\chi$}{o2}
+  %%       \end{fmfgraph*}
+  %%       \vspace{.3cm}
+  %%     \end{block}
+  %%     \column{.35\textwidth}
+  %%     \begin{block}{\scriptsize Annihilation - e.g. WMAP}
+  %%       \vspace{.3cm}
+  %%       \begin{fmfgraph*}(100,70)
+  %%         \fmfleft{i1,i2}
+  %%         \fmfright{o1,o2}
+  %%         \fmf{fermion}{i1,v1,i2}
+  %%         \fmf{fermion}{o1,v2,o2}
+  %%         \fmf{dashes,label=$H$}{v1,v2}
+  %%         \fmffreeze
+  %%         %\fmflabel{$f/w/Z$}{i1}
+  %%         \fmflabel{$\chi$}{i1}
+  %%         %\fmflabel{$f/W/Z$}{i2}
+  %%         \fmflabel{$\chi$}{i2}
+  %%       \end{fmfgraph*}
+  %%       \vspace{.3cm}
+  %%     \end{block}
+  %%   \end{columns}
+  %%   \begin{columns}
+  %%     \column{1.1\textwidth}
+  %%     \begin{itemize}
+  %%     \item Limits on $\mathcal{B}$(H$\rightarrow$inv) complement/are complemented by other experiments
+  %%     \end{itemize}
+  %%   \end{columns}
+  %% \end{frame}
+
+%!!FOCUS MORE ON VBF AND CHANGE TO HOW TO DETECT INVISIBLE AT CMS
+  \begin{frame}%!!REVISIT AT END
+    \frametitle{Conclusions}
+    \label{lastframe}
+    \begin{itemize}
+    \item The thesis will focus on the parked data VBF Higgs to invisible analysis
+    \item The majority of work is complete
+    \item Items still in progress are:
+      \begin{itemize}
+      \item Combination with monojet
+      \item[-] Should be a PAS soon after monojet is approved
+      \item[-] Synchronising uncertainty treatment and correlations
+      \item Further work on interpretations
+      \item[-] Aiming for a phenomenology paper by end of year
+      \item Run II
+      \item[-] Dependent on progress
+      \end{itemize}
+    \item On track to submit before funding runs out in March 2016
+    \end{itemize}
+    
+
+
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Backup}
+  \end{frame}
 
 \begin{frame}
   \frametitle{Parked Triggers}
@@ -479,192 +719,7 @@
 
   \end{frame}
 
-  \begin{frame}
-    \frametitle{VBF limits}
-          \normalsize
-    \begin{columns}
-      \column{1.1\textwidth}
-            \begin{itemize}
-            \item Perform a single bin counting experiment using $CL_{S}$ method
-            \item Observed(expected) 95\% C.L. limit on $B(H\rightarrow inv)$ for $m_{H}$=125 GeV is \textcolor{red}{57(40)\%}
-            \end{itemize}
-    \end{columns}
-    \vspace{-0.1cm}
-    \begin{columns}
-      \column{.03\textwidth}
-      \column{.55\textwidth}
-      \begin{columns}
-        \column{.9\textwidth}
-      \includegraphics[clip=true,trim=0 0 0 0,width=1.1\textwidth]{../invisible/TalkPics/IOP2015/vbfxslimit.pdf}
-      \column{.1\textwidth}
-      \hspace{-.5cm}
-      \begin{turn}{-90}\scriptsize CMS-PAS-HIG-14-038 \end{turn}
-      \end{columns}
-      \column{.55\textwidth}
-      \begin{columns}
-        \column{.9\textwidth}
-      \includegraphics[clip=true,trim=0 0 0 0,width=1.1\textwidth]{../invisible/TalkPics/IOP2015/vbflimit.pdf}
-      \column{.1\textwidth}
-      \hspace{-.5cm}
-      \begin{turn}{-90}\scriptsize CMS-PAS-HIG-14-038 \end{turn}
-      \end{columns}
-    \end{columns}
-  \end{frame}
 
-  \begin{frame}
-    \frametitle{Combined Results}
-    \begin{itemize}
-    \item I was responsible for combining the VBF search results with those in the ZH channels
-    \item Separate limits on $\sigma$x$B(H\rightarrow inv)$ are combined at 125 GeV
-    \item Assume SM production cross-sections to interpret as a limit on B(H$\rightarrow$inv)
-    \end{itemize}
-    \begin{columns}
-      \column{.5\textwidth}
-      Prompt
-      \includegraphics[width=\textwidth]{../invisible/TalkPics/panicpics/combinedlimit.pdf}
-      \column{.35\textwidth}
-      Parked
-      \begin{block}{}
-        \footnotesize
-        Observed (expected) limits on B(H$\rightarrow$inv) at 95\% C.L. for $m_{H}$=125 GeV
-
-        \centering
-        \begin{tabular}{lc}
-          \hline
-          Channel & Limit/\% \\
-          \hline
-          VBF & 57(40) \\
-          ZH($\ell\ell$+bb) & 81(83) \\
-          \hline
-          VBF + ZH &{\color{red} 47(35)} \\
-          \hline
-        \end{tabular}
-      \end{block}
-    \end{columns}
-  \end{frame}
-
-
-
-
-\begin{frame}
-  \frametitle{Dark matter interpretations}
-    \begin{itemize}
-    \item Completed: Parked result has been interpreted in a scalar EFT
-    \item In progress: Replicating analysis in Delphes framework for phenomenology paper with other  models
-    \end{itemize}
-    \centering
-    \includegraphics[width=.65\textwidth]{DMplot.pdf}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Run II}
-    \begin{itemize}
-    \item Currently working on VBF Higgs to invisible Run II analysis
-    \item Contribution to the thesis will depend on progress
-    \item Plans:
-      \begin{itemize}
-      \item Add $\gamma$+jets control region to improve Z estimation
-      \item Reoptimise analysis for new kinematics and trigger
-      \end{itemize}
-    \end{itemize}
-\end{frame}
-
-  %% \begin{frame}
-  %%   \frametitle{Signatures of Dark Matter (DM)}
-  %%   \vspace{-.2cm}
-  %%   \begin{columns}
-  %%     \column{1.1\textwidth}
-  %%   \begin{itemize}
-  %%     \item If DM couples to the Higgs the following diagrams are possible
-  %%     \end{itemize}
-  %%   \vspace{-.2cm}
-  %%   \end{columns}
-  %%   \begin{columns}
-  %%     \column{.35\textwidth}
-  %%     \begin{block}{\scriptsize Direct Detection - e.g. LUX}
-  %%       \vspace{.3cm}
-  %%       \begin{fmfgraph*}(100,70)
-  %%         \fmfleft{i1,i2}
-  %%         \fmfright{o1,o2}
-  %%         \fmf{fermion}{i1,v1,o1}
-  %%         \fmf{fermion}{i2,v2,o2}
-  %%         \fmf{dashes,label=$H$}{v1,v2}
-  %%         \fmffreeze
-  %%         \fmflabel{$N$}{i1}
-  %%         \fmflabel{$\chi$}{i2}
-  %%         \fmflabel{$N$}{o1}
-  %%         \fmflabel{$\chi$}{o2}
-  %%       \end{fmfgraph*}
-  %%       \vspace{.3cm}
-  %%     \end{block}
-
-  %%     \column{.35\textwidth}
-  %%     \begin{block}{\scriptsize Invisible Higgs - LHC}
-  %%       \vspace{.3cm}
-  %%       \begin{fmfgraph*}(100,70)
-  %%         \fmfleft{i1,i2}
-  %%         \fmfright{o1,o2}
-  %%         \fmf{fermion}{i1,v1,i2}
-  %%         \fmf{fermion}{o1,v2,o2}
-  %%         \fmf{dashes,label=$H$}{v1,v2}
-  %%         \fmffreeze
-  %%         %\fmflabel{$f/w/Z$}{i1}
-  %%         \fmflabel{$\chi$}{o1}
-  %%         %\fmflabel{$f/W/Z$}{i2}
-  %%         \fmflabel{$\chi$}{o2}
-  %%       \end{fmfgraph*}
-  %%       \vspace{.3cm}
-  %%     \end{block}
-  %%     \column{.35\textwidth}
-  %%     \begin{block}{\scriptsize Annihilation - e.g. WMAP}
-  %%       \vspace{.3cm}
-  %%       \begin{fmfgraph*}(100,70)
-  %%         \fmfleft{i1,i2}
-  %%         \fmfright{o1,o2}
-  %%         \fmf{fermion}{i1,v1,i2}
-  %%         \fmf{fermion}{o1,v2,o2}
-  %%         \fmf{dashes,label=$H$}{v1,v2}
-  %%         \fmffreeze
-  %%         %\fmflabel{$f/w/Z$}{i1}
-  %%         \fmflabel{$\chi$}{i1}
-  %%         %\fmflabel{$f/W/Z$}{i2}
-  %%         \fmflabel{$\chi$}{i2}
-  %%       \end{fmfgraph*}
-  %%       \vspace{.3cm}
-  %%     \end{block}
-  %%   \end{columns}
-  %%   \begin{columns}
-  %%     \column{1.1\textwidth}
-  %%     \begin{itemize}
-  %%     \item Limits on $\mathcal{B}$(H$\rightarrow$inv) complement/are complemented by other experiments
-  %%     \end{itemize}
-  %%   \end{columns}
-  %% \end{frame}
-
-%!!FOCUS MORE ON VBF AND CHANGE TO HOW TO DETECT INVISIBLE AT CMS
-  \begin{frame}%!!REVISIT AT END
-    \frametitle{Conclusions}
-    \label{lastframe}
-    \begin{itemize}
-    \item The thesis will focus on the parked data VBF Higgs to invisible analysis
-    \item The majority of work is complete
-    \item Items still in progress are:
-      \begin{itemize}
-      \item Further work on interpretations
-      \item[-] Aiming for a phenomenology paper by end of year
-      \item Run II
-      \item[-] Dependent on progress
-      \end{itemize}
-    \item On track to submit before funding runs out in March 2016
-    \end{itemize}
-    
-
-
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Backup}
-  \end{frame}
 
   \begin{frame}
     \frametitle{ZH: summary}
