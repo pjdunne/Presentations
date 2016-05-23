@@ -1,0 +1,198 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+  \begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+    \includegraphics[height=1cm]{icl.pdf}
+    \hfill
+%    \includegraphics[height=1cm]{../Pics/ATLAS-Logo-Square-Blue-RGB.png}
+%    \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+    \includegraphics[height=1cm]{TalkPics/t2k_logo_large.png}
+
+%??put t2k logo here
+  \end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[ht=.35cm,dp=0.2cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+    \begin{minipage}[c]{5cm}%
+      \usebeamerfont{author in head/foot}
+      \insertshortauthor 
+      \insertshorttitle
+    \end{minipage}\hfill%
+    \hfill
+    \insertframenumber{} / \ref{lastframe}
+    %\hfill
+    \begin{minipage}{6cm}
+      \hfill
+      %\insertshorttitle
+    \end{minipage}
+  \end{beamercolorbox}%
+}
+
+\definecolor{beamer@icdarkblue}{RGB}{0,51,102}
+\definecolor{beamer@icmiddleblue}{RGB}{0,82,150} 
+\definecolor{beamer@iclightblue}{RGB}{200,212,232}
+\definecolor{beamer@icmiddlered}{RGB}{204,51,0}
+\definecolor{beamer@iclightred}{RGB}{232,212,32}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,backgrounds}
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\usepackage{rotating}
+\usepackage{moresize}
+\usepackage{slashed}
+\usepackage{xcolor,colortbl}
+\DeclareGraphicsRule{*}{mps}{*}{}
+\hypersetup{colorlinks=false}
+
+\title[2D vs 1D yields]{\vspace{-0.2cm} 2D vs 1D yields}
+\author[P. Dunne]{Patrick Dunne - Imperial College London}
+\titlegraphic{
+  \vspace{-0.4cm}
+}
+\date{}
+\begin{document}
+\tikzstyle{every picture}+=[remember picture]
+\tikzstyle{na} = [baseline=-.5ex]
+\begin{fmffile}{t2ktemplatefeyndiags}
+
+
+  %TITLE PAGE
+  %20 mins + 5 questions
+  \section{Title}
+  \begin{frame}
+    \titlepage
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Overview}
+    \begin{block}{}
+      \begin{itemize}
+      \item Have checked yields for SKrate executable against Leila's to verify correct inputs being used
+      \item Now comparing yields from SK\_plots2015 obtained with 2D and 1D binning
+      \item Using Kirsty's branch of CVS with changes added by Leila to do 2D
+       \item Start by using SK nominal ``style 0'' which should result in identical yields
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Changes since Leila's numbers last week}
+    \begin{block}{Code}
+      \begin{itemize}
+       \item $\beta=1$ now set for $\nu_{\mu}$ events (was 0 before in both 1D and 2D)
+       \item Fixed difference in hardcoded oscillation parameters between 1D and 2D
+      \end{itemize}
+    \end{block}
+    \begin{block}{Results}
+      \begin{itemize}
+       \item Unoscillated yields were identical to start with
+       \item Oscillated $\nu_{\mu}$ yields also now identical
+       \item[-] Binning is the same so this is expected
+       \item Oscillated $\nu_{e}$ yields very similar but small differences
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{$\nu_{e}$ Oscillated - 1D}
+      \begin{block}{}
+        \scriptsize
+        \begin{tabular}{|c||c|c|c|c|c|c|} 
+          \hline
+          & $\nu_{\mu}$ & $\nu_{e}$ & $\bar{\nu}_{\mu}$ & $\bar{\nu}_{e}$ & $\nu_{e}$ signal & $\bar{\nu}_{e}$ signal \\ 
+          \hline
+          CCQE & 0.063 & 1.988 & 0.001 & 0.085 & 9.321 & 0.157 \\ 
+          \hline
+          CC1$\pi$ & 0.013 & 0.388 & 0.000 & 0.027 & 1.285 & 0.028 \\ 
+          \hline
+          CC coherent & 0.000 & 0.008 & 0.000 & 0.006 & 0.029 & 0.010 \\ 
+          \hline
+          CCn$\pi$ & 0.001 & 0.032 & 0.000 & 0.003 & 0.017 & 0.001 \\ 
+          \hline
+          CC other & 0.000 & 0.005 & 0.000 & 0.000 & 0.002 & 0.000 \\ 
+          \hline
+          NC$\pi^{0}$ & 0.655 & 0.015 & 0.029 & 0.001 & 0.000 & 0.000 \\ 
+          \hline
+          NC$\pi^{+/-}$ & 0.119 & 0.003 & 0.005 & 0.000 & 0.000 & 0.000 \\ 
+          \hline
+          NC coherent & 0.150 & 0.003 & 0.018 & 0.001 & 0.000 & 0.000 \\ 
+          \hline
+          NC other & 0.096 & 0.004 & 0.007 & 0.001 & 0.000 & 0.000 \\ 
+          \hline
+          2p-2h & 0.004 & 0.380 & 0.000 & 0.020 & 1.390 & 0.027 \\ 
+          \hline
+          NC 1$\gamma$ & 0.191 & 0.003 & 0.010 & 0.000 & 0.000 & 0.000 \\ 
+          \hline
+          \textbf{Sample totals}  & 1.292 & 2.828 & 0.070 & 0.145 & 12.044 & 0.224 \\ 
+          \hline
+          \textbf{Total}& \multicolumn{6}{|c|}{16.602} \\
+          \hline
+        \end{tabular}
+      \end{block}
+  \end{frame}
+
+
+  \begin{frame}
+    \frametitle{$\nu_{e}$ Oscillated - 2D}
+      \begin{block}{}
+        \scriptsize
+\begin{tabular}{|c||c|c|c|c|c|c|} 
+\hline
+ & $\nu_{\mu}$ & $\nu_{e}$ & $\bar{\nu}_{\mu}$ & $\bar{\nu}_{e}$ & $\nu_{e}$ signal & $\bar{\nu}_{e}$ signal \\ 
+\hline
+CCQE & 0.063 & 1.988 & 0.001 & 0.085 & 9.321 & 0.157 \\ 
+\hline
+CC1$\pi$ & 0.013 & 0.388 & 0.000 & 0.027 & 1.285 & 0.028 \\ 
+\hline
+CC coherent & 0.000 & 0.008 & 0.000 & 0.006 & 0.029 & 0.010 \\ 
+\hline
+CCn$\pi$ & 0.001 & 0.032 & 0.000 & 0.003 & 0.017 & 0.001 \\ 
+\hline
+CC other & 0.000 & 0.005 & 0.000 & 0.000 & 0.002 & 0.000 \\ 
+\hline
+NC$\pi^{0}$ & 0.655 & 0.015 & 0.029 & 0.001 & 0.000 & 0.000 \\ 
+\hline
+NC$\pi^{+/-}$ & 0.119 & 0.003 & 0.005 & 0.000 & 0.000 & 0.000 \\ 
+\hline
+NC coherent & 0.150 & 0.003 & 0.018 & 0.001 & 0.000 & 0.000 \\ 
+\hline
+NC other & 0.096 & 0.004 & 0.007 & 0.001 & 0.000 & 0.000 \\ 
+\hline
+2p-2h & 0.004 & 0.380 & 0.000 & 0.020 & 1.390 & 0.027 \\ 
+\hline
+NC 1$\gamma$ & 0.054 & 0.003 & 0.005 & 0.000 & 0.006 & 0.000 \\ 
+\hline
+\textbf{Sample totals}  & 1.154 & 2.828 & 0.066 & 0.145 & 12.049 & 0.224 \\ 
+\hline
+\textbf{Total}& \multicolumn{6}{|c|}{16.466} \\
+\hline
+\end{tabular}
+      \end{block}
+  \end{frame}
+
+
+
+  \begin{frame}
+    \frametitle{}
+    \label{lastframe}
+    \begin{block}{}
+      \begin{itemize}
+      \item Yields now acceptably similar
+      \item Remaining $\nu_{e}$ oscillated difference is all in NC 1$\gamma$
+      \item[-] will investigate further
+      \item Will now move on to applying 2D splines from Raj then, investigate binning using my splines
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  %Backup goes here
+  
+\end{fmffile}
+\end{document}
+
