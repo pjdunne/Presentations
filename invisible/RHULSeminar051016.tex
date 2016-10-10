@@ -1,0 +1,789 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+  \begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+    \includegraphics[height=1cm]{icl.pdf}
+    \hfill
+%    \includegraphics[height=1cm]{../Pics/ATLAS-Logo-Square-Blue-RGB.png}
+    \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+  \end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[ht=.35cm,dp=0.2cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+    \begin{minipage}[c]{5cm}%
+      \usebeamerfont{author in head/foot}
+      \insertshortauthor 
+      \insertshorttitle
+    \end{minipage}\hfill%
+    \hfill
+    \insertframenumber{} / \ref{lastframe}
+    %\hfill
+    \begin{minipage}{6cm}
+      \hfill
+      %\insertshorttitle
+    \end{minipage}
+  \end{beamercolorbox}%
+}
+
+\definecolor{beamer@icdarkblue}{RGB}{0,51,102}
+\definecolor{beamer@icmiddleblue}{RGB}{0,82,150} 
+\definecolor{beamer@iclightblue}{RGB}{200,212,232}
+\definecolor{beamer@icmiddlered}{RGB}{204,51,0}
+\definecolor{beamer@iclightred}{RGB}{232,212,32}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,backgrounds}
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\usepackage{rotating}
+\usepackage{moresize}
+\usepackage{slashed}
+\usepackage{xcolor,colortbl}
+\DeclareGraphicsRule{*}{mps}{*}{}
+\hypersetup{colorlinks=false}
+
+\title[Searches for invisibly decaying Higgs bosons]{\vspace{-0.2cm} Searches for invisibly decaying Higgs bosons}
+\author[P. Dunne]{Patrick Dunne - Imperial College London \\ RHUL 05/10/2016}
+\titlegraphic{
+  \vspace{-0.4cm}
+  \begin{fmffile}{dmlhcfeyndiagstitle}
+    \begin{fmfgraph*}(75,75)
+      \fmfleft{i0,i2,ix,i3,i5}
+      \fmfright{o0,o3,o1,o4,o6}
+      \fmf{phantom,tension=4/3}{i2,v1,o3}
+      \fmf{phantom,tension=4/3}{i3,v2,o4}
+      \fmffreeze
+      \fmf{gluon,tension=4/3}{i2,v1}
+      \fmf{gluon,tension=4/3}{i3,v2}
+      \fmf{fermion,tension=0}{v1,v2}
+      \fmf{fermion,tension=2/3}{v2,v3,v1}
+      \fmf{dashes}{v3,o1}
+      \fmflabel{$g$}{i2}
+      \fmflabel{$g$}{i3}
+      \fmflabel{$H$}{o1}
+    \end{fmfgraph*}    
+    \hspace{.5cm}
+    \begin{fmfgraph*}(75,75)
+      \fmfleft{i1,i2}
+      \fmfright{o1,o2,o3}
+      \fmf{fermion}{i1,v1,o1}
+      \fmf{fermion}{i2,v2,o3}
+      \fmf{photon,label=$W,,Z$}{v1,v3}
+      \fmf{photon,label=$W,,Z$}{v2,v3}
+      \fmf{dashes}{v3,o2}
+      \fmflabel{$q$}{i1}
+      \fmflabel{$q$}{i2}
+      \fmflabel{$q$}{o1}
+      \fmflabel{$q$}{o3}
+      \fmflabel{$H$}{o2}
+    \end{fmfgraph*}
+    \hspace{.5cm}
+    \begin{fmfgraph*}(75,75)
+      \fmfleft{i1,i2}
+      \fmfright{o1,o2}
+      \fmf{fermion}{i1,v1}
+      \fmf{fermion}{v1,i2}
+      \fmf{photon,label=$W,,Z$}{v1,v2}
+      \fmf{photon}{v2,o1}
+      \fmf{dashes}{v2,o2}
+      \fmflabel{$q$}{i1}
+      \fmflabel{$\bar{q}$}{i2}
+      \fmflabel{$W,Z$}{o1}
+      \fmflabel{$H$}{o2}
+    \end{fmfgraph*}
+  \end{fmffile}
+  %% \begin{fmfgraph*}(100,70)
+  %%         \fmfleft{i1,i2}
+  %%         \fmfright{o1,o2,o3}
+  %%         \fmf{fermion}{i1,v1,o1}
+  %%         \fmf{fermion}{i2,v2,o3}
+  %%         \fmf{phantom,tension=4/5}{v1,v2}
+  %%         \fmffreeze
+  %%         \fmf{photon,label=$W,,Z$}{v1,v3}
+  %%         \fmf{photon,label=$W,,Z$}{v2,v3}
+  %%         \fmf{dashes}{v3,o2}
+  %%         \fmflabel{$q$}{i1}
+  %%         \fmflabel{$q$}{i2}
+  %%         \fmflabel{$q$}{o1}
+  %%         \fmflabel{$q$}{o3}
+  %%         \fmflabel{$H$}{o2}
+
+  %%       \end{fmfgraph*}
+}
+\date{}
+\begin{document}
+\tikzstyle{every picture}+=[remember picture]
+\tikzstyle{na} = [baseline=-.5ex]
+\begin{fmffile}{dmlhcfeyndiags}
+
+
+  %TITLE PAGE
+  %20 mins + 5 questions
+  \section{Title}
+  \begin{frame}
+    \titlepage
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Outline}
+    \begin{block}{}
+      \begin{itemize}
+      \item Why search for invisibly decaying Higgs bosons
+      \item How to search for invisibly decaying Higgs bosons:
+      \item[-] Direct and indirect searches
+      \item[-] Focus on most sensitive VBF channel
+      \item Results from LHC Runs 1 and 2
+      \item Projections of future sensitivity
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  %??new unconstrained thing, what we know so far, lots of room left  
+  \begin{frame}
+    \frametitle{Why look for invisibly decaying Higgs bosons?}
+    \begin{columns}
+    \column{.55\textwidth}
+    \vspace{-.2cm}    
+    \begin{block}{New particle}
+      \small
+      \begin{itemize}
+      \item Measurements of the Higgs boson made so far are impressive:
+        \vspace{-.1cm}
+      \item[-] Mass measured with 0.2\% error
+      \item But a lot of parameters are still relatively unconstrained:
+        \vspace{-.1cm}
+      \item[-] Indirect limit on width is $\sim$4$\Gamma_{SM}$
+      \item Plenty of room for Higgs boson couplings to exotic particles
+      \end{itemize}
+    \end{block}
+    \column{.45\textwidth}
+    \includegraphics[width=.95\textwidth]{TalkPics/DM@LHC2016/CMS-PAS-HIG-15-002_Figure_012.pdf}
+      \centering
+      \scriptsize
+
+      CMS-PAS-HIG-15-002
+      
+      ATLAS-CONF-2015-044
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Why invisible particularly?}
+    \begin{block}{}
+      \begin{itemize}
+      \item There is evidence from several sources for ``dark matter'' (DM)
+      \item Amounts of DM and SM matter seem to be of the same order of magnitude so it's likely they interact
+      \item Where does dark matter get its mass from?
+      \end{itemize}
+    \end{block}
+    \includegraphics[clip=true,trim=0 0 0 0,height=.5\textheight,width=.5\textwidth]{TalkPics/sgs120315/bulletcluster.png}
+    \includegraphics[clip=true,trim=0 0 0 0,height=.5\textheight,width=.5\textwidth]{TalkPics/sgs120315/rotationcurve.jpg}
+  \end{frame}
+  
+
+  %??Expand with mass term lagrangian and some DM intro
+  \begin{frame}
+    \frametitle{Why look for invisibly decaying Higgs bosons?}
+    \vspace{-.3cm}
+    \begin{columns}
+      \column{1.06\textwidth}
+    \begin{block}{Theoretical Motivations}
+      \small
+      \begin{itemize}
+      \item All massive SM particles get their mass through Higgs boson couplings:
+      \item[-] Fermions: $ \bar{\psi}_{i}y_{ij}\psi_{j}\phi+$ hermitian conjugate
+      \item[-] Bosons: $|D_{\mu}\phi|^2-V(\phi)$
+      \item DM must also get its mass from somewhere motivating interaction with a scalar like the Higgs
+      \item Some theories of collider DM also have similar production mechanisms to the Higgs
+      \end{itemize}
+    \end{block}
+    %??feynman diagram of VBF
+    \end{columns}
+  \end{frame}
+  
+
+  %??expand a bit more, decisions on fixed width etc.
+  \begin{frame}
+    \frametitle{How to search for invisibly decaying Higgs bosons}
+    \vspace{-.2cm}
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{block}{Indirect searches}
+          \small
+          \begin{itemize}
+          \item Compare visible width to total width:
+          \item[-] $\rm{BR}_{BSM}=\frac{\Gamma_{H}-\Gamma_{vis}}{\Gamma_{H}}$
+          \item No measurement of $\Gamma_{H}$, need to make an assumption
+          \item[-] Usually assume SM width
+          \item ATLAS+CMS combination gives an observed (expected) limit on $\rm{BR}_{BSM}$ of 0.34 (0.35)
+          \end{itemize}
+      \end{block}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/CMS-PAS-HIG-15-002_Figure_015.pdf}
+      \centering
+      \scriptsize
+
+      CMS-PAS-HIG-15-002
+      
+      ATLAS-CONF-2015-044
+       \end{columns}
+       %ATLAS or CMS rates of each channel plot
+  \end{frame}
+
+  %??one slide on each process
+  \begin{frame}
+    \frametitle{How to search for invisibly decaying Higgs bosons}
+    \begin{columns}
+      \column{1.06\textwidth}
+    \begin{block}{Direct searches}
+      \small
+      \begin{itemize}
+      \item Look for products of associated production of a Higgs boson plus momentum imbalance ``$E_{T}^{miss}$''
+      \end{itemize}
+    \end{block}
+    \end{columns}
+    \begin{columns}
+      \column{.5\textwidth}
+      %??diagram of MET
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/XS_8TeV-eps-converted-to.pdf}
+      \end{columns}
+    \end{frame}
+
+  %??ggh
+  \begin{frame}
+    \frametitle{Gluon Fusion: ggH}
+      \begin{block}{Production channels}
+          \small
+          %??high rate low purity
+          %??ggH, VBF, VH tikz lines to plot if time
+          \begin{itemize}
+          \item VBF mode is most sensitive
+          \item[-] Second highest rate and distinctive topology
+          \item Gluon fusion has no visible products, needs ISR
+          \item[-] High rate, difficult final state
+          \item VH has clean final states but low rate
+          \end{itemize}
+      \end{block}
+
+  \end{frame}
+
+  %??zh
+  \begin{frame}
+    \frametitle{Vector boson associated production: VH}
+    %??high purity low rate
+  \end{frame}
+
+  %??vbf
+  \begin{frame}
+    \frametitle{Vector Boson Fusion: VBF}
+    %??best of both worlds
+  \end{frame}
+
+  %??ttH
+  \begin{frame}
+    \frametitle{ttH}
+    %??aside just for completeness
+  \end{frame}
+
+
+  %??why ATLAS and CMS are good for invisible detection
+  \begin{frame}
+    \frametitle{Detector capabilities}
+    %??things needed to see VBF i.e. jets and met
+  \end{frame}
+
+  %??bit on particle flow
+  \begin{frame}
+  \end{frame}
+
+  %??bit on met and jet corrections
+  \begin{frame}
+  \end{frame}
+
+  %??bit on met and jet corrections
+  \begin{frame}
+  \end{frame}
+
+  %??What are the main backgrounds to VBF: QCD
+  \begin{frame}
+  \end{frame}
+
+  %??What are the main backgrounds to VBF: V+jets
+  \begin{frame}
+  \end{frame}
+
+  %??What are the main backgrounds to VBF: others
+  \begin{frame}
+  \end{frame}
+
+  %??Outline challenges of VBF analysis trigger/high QCD background
+  \begin{frame}
+  \end{frame}
+
+  %??parked data
+  \begin{frame}
+  \end{frame}
+
+  %??Strategy after trigger
+  \begin{frame}
+  \end{frame}
+
+
+  %??Selection: preselection variables
+  \begin{frame}
+  \end{frame}
+
+  %??Selection: selection optimisation
+  \begin{frame}
+  \end{frame}
+
+  %??Selection: why not a BDT
+  \begin{frame}
+  \end{frame}
+
+  %??Remaining background estimation general data driven methods intro
+  \begin{frame}
+  \end{frame}
+
+  %??Remaining background estimation W/Z
+  \begin{frame}
+  \end{frame}
+
+  %??Remaining background estimation QCD, how it evolved
+  \begin{frame}
+  \end{frame}
+
+  %??Remaining background estimation QCD, how it evolved
+  \begin{frame}
+  \end{frame}
+
+  %??Results over run 1 and statistics: prompt
+  \begin{frame}
+  \end{frame}
+
+  \begin{frame}
+    %??HIG-14-038
+    \frametitle{Run 1 CMS direct searches - VBF}%??parked
+    \begin{columns}
+      %??quick description of parked data  
+      \column{.5\textwidth}
+      \vspace{-.3cm}
+      \begin{block}{}
+        \small
+        \vspace{-.2cm}
+        \begin{itemize}
+        \item Select two jets with large $\Delta\eta$ separated from large $E_{T}^{miss}$
+          \vspace{-.2cm}
+        \item Update of first search Eur. Phys. J. C 74 (2014) 2980
+          \vspace{-.2cm}
+        \item Dedicated ``parked data'' trigger
+          \vspace{-.2cm}
+        \item Counting experiment with data driven backgrounds
+          \vspace{-.2cm}
+        \item V+jets backgrounds separately normalised
+          \vspace{-.2cm}
+        \item Observed (expected) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ for $m_{H}=$125 GeV is 57 (40)\%
+          \vspace{-.2cm}
+        \item[-] If all normalisations had same uncertainty as $W\rightarrow\mu\nu$ expected limit would be 33\%
+        \end{itemize}
+      \end{block}
+      \column{.5\textwidth}
+      %??limit plot from hig-14-038
+      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/Figure_007-a.pdf}
+      \centering
+      \scriptsize
+      
+      CMS-PAS-HIG-14-038
+    \end{columns}
+  \end{frame}
+
+
+  %??intro to ZH searches
+
+  %??CMS Run 1
+  \begin{frame}
+    %HIG-13-030
+    \frametitle{Run 1 CMS direct searches - ZH}
+    \begin{columns}
+      %quick description comb from hig-13-030
+      \column{.5\textwidth}
+      \begin{block}{}
+        \small
+        \begin{itemize}
+        \item Searches in $Z\rightarrow\ell\ell$ and $Z\rightarrow b\bar{b}$ channels
+        \item $Z(\ell\ell)H$ search is a 2D shape analysis with data driven backgrounds
+        \item $Z(b\bar{b})H$ search is a BDT shape analysis with data driven backgrounds
+        \item Combined $ZH$ searches observed (expected) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ for $m_{H}=$125 GeV is 81 (83)\%
+        \end{itemize}
+      \end{block}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/Fig9b-ZH-LimitNorm.pdf}      
+      \centering
+      \scriptsize
+      
+      Eur. Phys. J. C 74 (2014) 2980
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    %??EXO-12-055
+    \frametitle{Run 1 CMS direct searches - Monojet+V(had)H}
+    \begin{columns}
+      %??quick description
+      \column{.5\textwidth}
+      \begin{block}{}
+        \small
+        \begin{itemize}
+        \item Search has categories targeting $V(had)H$ and $ggH$ production modes
+        \item $E_{T}^{miss}$ shape analysis with data driven background estimation
+        \item Observed (expected) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ for $m_{H}=$125 GeV is 53 (62)\%
+        \end{itemize}
+      \end{block}
+      \column{.5\textwidth}
+      %??fig 8b from pas
+      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/CMS-PAS-EXO-12-055_Figure_008-b.png}
+      \centering
+      \scriptsize
+      
+      CMS-PAS-EXO-12-055
+    \end{columns}
+  \end{frame}
+
+  %??why combine and how does CMS handle correlated errors
+  \begin{frame}
+  \end{frame}
+
+  %??Combinations expand
+  \begin{frame}
+    %??HIG-15-012
+    \frametitle{Run 1 CMS direct searches - Combination}
+    \vspace{-.2cm}
+    \begin{block}{}
+      \small
+      \begin{itemize}
+        \vspace{-.1cm}
+      \item Combine by production mode as well as full combination
+        \vspace{-.2cm}
+      \item[-] ggH-tagged is monojet, VH-tagged is Z($\ell\ell$)H+Z($bb$)H+V(had)H, VBF-tagged is VBF
+      \item Obs. (exp.) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ at $m_{H}=$125 GeV is 36 (30)\%
+      \end{itemize}
+    \end{block}
+    \begin{columns}
+      %??by category plot
+      \column{.5\textwidth}
+      \includegraphics[width=.8\textwidth]{TalkPics/DM@LHC2016/CMS-PAS-HIG-15-012_Figure_002.png}
+      \column{.5\textwidth}
+      \includegraphics[width=.9\textwidth]{TalkPics/DM@LHC2016/CMS-PAS-HIG-15-012_Figure_003.png}
+    \end{columns}
+    \centering
+    \scriptsize
+    
+    CMS-PAS-HIG-15-012
+  \end{frame}
+
+
+  %??Moving to a simultaneous fit for run 2
+  \begin{frame}
+  \end{frame}
+
+  %??Current run 2 result and combinations
+  \begin{frame}
+    %??HIG-16-009
+    \frametitle{Run 2 CMS direct searches - VBF}
+    %??mass scan plot, WZ tying together
+%    \begin{columns}
+%      \column{.5\textwidth}
+      \begin{block}{}
+        \small
+        \begin{itemize}
+        \item Dedicated trigger used again
+          \vspace{-.2cm}
+        \item Counting experiment with data driven background estimation
+          \vspace{-.2cm}
+        \item V+jets backgrounds all taken to have same normalisation
+          \vspace{-.2cm}
+        \item Observed (expected) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ for $m_{H}=$125 GeV is 69 (62)\% 
+        \end{itemize}
+      \end{block}
+      %\column{.5\textwidth}
+      %??mass scan
+      \centering
+
+      \includegraphics[width=.5\textwidth]{TalkPics/DM@LHC2016/output_run2ana_160329_sig/nunu_alljetsmetnomu_mindphi.pdf}
+      \includegraphics[width=.35\textwidth]{TalkPics/DM@LHC2016/brlhscan.pdf}
+      \centering
+      \scriptsize
+      
+      CMS-PAS-HIG-16-009
+%    \end{columns}
+  \end{frame}
+
+  %??CMS Run 2
+  \begin{frame}
+    %??HIG-16-008
+    \frametitle{Run 2 CMS direct searches - ZH}
+    %??fig 3c, mention move away from mass scans in BR
+    %\begin{columns}
+      %\column{.5\textwidth}
+      \begin{block}{}
+        \small
+        \begin{itemize}
+        \item Targets $Z\rightarrow\ell\ell$ final state
+          \vspace{-.2cm}
+        \item 2D shape analysis with leading backgrounds estimated using MC
+          \vspace{-.2cm}
+        \item Observed (expected) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ for $m_{H}=$125 GeV is 124 (124)\%
+        \end{itemize}
+      \end{block}
+      %\column{.5\textwidth}
+      \includegraphics[width=.4\textwidth]{TalkPics/DM@LHC2016/HIG16008datamc.png}
+      \includegraphics[width=.4\textwidth]{TalkPics/DM@LHC2016/CMS-PAS-HIG-16-008_Figure_003-c.png}
+       \centering
+      \scriptsize
+      
+      CMS-PAS-HIG-16-008
+%    \end{columns}
+  \end{frame}
+
+  
+  %??HIG-16-009 Combination CMS Run 1 + Run 2
+  \begin{frame}
+    \frametitle{Run 2 CMS direct searches - Combination}
+    %??explain contributing analyses
+    %??13 TeV only and 8 TeV+13 TeV category plot
+    \begin{block}{}
+      \begin{itemize}
+      \item First CMS analysis combining 8 and 13 TeV results
+      \item Limit calculated both by production mode and overall
+      \item Combined observed (expected) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ for $m_{H}=$125 GeV is 32 (26)\% %??
+      \end{itemize}
+      
+    \end{block}
+    \begin{columns}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/channellimit13_withoutMono.pdf}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/channellimit.pdf}
+    \end{columns}
+    \centering
+    \scriptsize
+    
+    CMS-PAS-HIG-16-009
+  \end{frame}
+
+  
+
+  %??DM pheno paper
+  \begin{frame}
+    \frametitle{Projections}
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{block}{}
+        \small
+        \begin{itemize}
+        \item CMS VBF analysis projected to increased luminosity at 13 TeV
+        \item If systematics scale as $\sqrt{\mathcal{L}}$ can exclude $\mathcal{B}\left(H\rightarrow inv.\right)=5\%$ with full LHC dataset
+        \end{itemize}
+      \end{block}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/phenoprojectedvbflimit.pdf}
+      \centering
+      \scriptsize
+
+      arXiv:1603.07739
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Dark matter interpretations - Run 1 results}
+    %??ATLAS DM plot and arxiv EFT plane plot
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{block}{}
+        \small
+        \begin{itemize}
+        \item Several models for interpreting invisible Higgs limits
+          \vspace{-.1cm}
+        \item ``Higgs portal'' has been quite commonly used
+          \vspace{-.2cm}
+        \item[-] Assume 125 GeV Higgs acts as mediator between visible and dark matter sectors
+          \vspace{-.2cm}
+        \item[-] Assume scalar, fermion or vector dark matter
+          \vspace{-.1cm}
+        \item Scalar dark matter would mix with Higgs boson
+          \vspace{-.2cm}
+        \item[-] mixing angle must be small
+          \vspace{-.1cm}
+        \item Vector dark matter width goes to infinity as mass decreases
+        \end{itemize}
+      \end{block}      
+
+      \column{.5\textwidth}
+
+      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/ATLASdmlimit.png}
+      \centering
+      \scriptsize
+
+      JHEP11(2015)206      
+    
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Dark matter interpretations - Projections}
+    \begin{block}{}
+      \small
+      \begin{itemize}
+      \item Models with electroweak couplings studied: favour VBF channel
+      \item VBF topology allows looser $E_{T}^{miss}$ selection making EFTs valid
+      \item Also investigate simplified models with scalar/pseudoscalar mediator
+      \item Projections of CMS VBF channel sensitivity at several luminosities
+      \end{itemize}
+    \end{block}
+    \begin{columns}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/D5_multilumi.pdf}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/Aplane.pdf}      
+    \end{columns}
+      \centering
+      \scriptsize
+
+      arXiv:1603.07739
+  \end{frame}
+
+  %??three more slides on projections
+  \begin{frame}
+  \end{frame}
+  
+  \begin{frame}
+  \end{frame}
+
+  \begin{frame}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Summary}
+    \label{lastframe}
+    \begin{block}{}
+      \begin{itemize}
+      \item Both collaborations are sensitive to $\mathcal{B}\left(H\rightarrow inv.\right)\sim 25\%$ with current datasets
+      \item[-] Current 95\% CL upper observed (expected) limits from direct searches are CMS: 32 (26)\%, ATLAS: 25 (27) \%
+      \item[-] Combination of channels allow sensitivity to be greatly improved
+      \item Projected limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ $\sim$10-20\% from VBF alone by the end of LHC Run 2 and 5\% by end of LHC running assuming systematics scale as $\sqrt{\mathcal{L}}$
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+
+  %??ATLAS RUN 1 
+  \begin{frame}
+    %ZH http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.112.201802
+    \frametitle{Run 1 ATLAS direct searches - Z($\ell\ell$)H}
+    %search description and limit
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{block}{}
+        \small
+        \begin{itemize}
+        \item Selects two leptons opposite large $E_{T}^{miss}$
+        \item $E_{T}^{miss}$ shape analysis with data driven backgrounds
+        \item Observed (expected) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ for $m_{H}=$125.5 GeV is 75 (62)\%
+        \end{itemize}
+      \end{block}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/ATLASZH.png}
+      \centering
+      \scriptsize
+      
+      PRL 112, 201802 (2014)
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    %V(had)H: http://arxiv.org/abs/1504.04324
+    \frametitle{Run 1 ATLAS direct searches - V(had)H}
+    %search description and limit
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{block}{}
+        \small
+        \begin{itemize}
+        \item Targets $W/Z\rightarrow qq$ final state
+        \item $E_{T}^{miss}$ and dijet $p_{T}$ shape analysis with data driven backgrounds
+        \item Observed (expected) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ for $m_{H}=$125 GeV is 78 (86)\%
+        \end{itemize}
+      \end{block}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/ATLASVH.png}
+      \centering
+      \scriptsize
+
+      Eur. Phys. J. C (2015) 75:337
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    %http://arxiv.org/pdf/1508.07869v2.pdf
+    \frametitle{Run 1 ATLAS direct searches - VBF}
+    %search description and limit mention tying W and Z together
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{block}{}
+        \small
+        \begin{itemize}
+        \item Select two jets with large $\Delta\eta$ opposite large $E_{T}^{miss}$
+        \item Counting experiment with data driven background estimation
+        \item[- ] $W\rightarrow e\nu$, $W\rightarrow \mu\nu$ and $W\rightarrow \tau\nu$ and $Z\rightarrow \nu\nu$ normalisation tied together
+        \item Observed (expected) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ for $m_{H}=$125 GeV is 28 (31)\%
+        \end{itemize}
+      \end{block}
+      \column{.5\textwidth}
+      %??no mas scan find another pic to use
+      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/ATLASvbfyields.png}
+      \centering
+      \scriptsize
+
+      JHEP 01 (2016) 172
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    %http://arxiv.org/pdf/1509.00672v2.pdf (fig 8)
+    %comb with vis
+    \frametitle{Run 1 ATLAS direct searches - Combination}
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{block}{}
+        \small
+        \begin{itemize}
+        \item Combining searches significantly improves limits
+        \item Direct searches provide most sensitivity
+        \item[-] Observed (expected) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ for $m_{H}=$125 GeV is 25 (27)\%
+        \item Adding indirect results adds assumption on Higgs total width 
+        \item[-] Observed (expected) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ for $m_{H}=$125 GeV is 23 (24)\%
+        \end{itemize}
+      \end{block}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/ATLASviscomb.png}
+      \centering
+      \scriptsize
+
+      JHEP11(2015)206
+    \end{columns}
+  \end{frame}
+
+
+
+
+
+  
+\end{fmffile}
+\end{document}
+
