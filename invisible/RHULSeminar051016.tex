@@ -34,6 +34,7 @@
 \definecolor{beamer@iclightred}{RGB}{232,212,32}
 
 \usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
 \usetikzlibrary{arrows,shapes,backgrounds}
 \usepackage{color}
 \usepackage{tabularx,colortbl}
@@ -51,52 +52,54 @@
 \author[P. Dunne]{Patrick Dunne - Imperial College London \\ RHUL 05/10/2016}
 \titlegraphic{
   \vspace{-0.4cm}
-  \begin{fmffile}{dmlhcfeyndiagstitle}
-    \begin{fmfgraph*}(75,75)
-      \fmfleft{i0,i2,ix,i3,i5}
-      \fmfright{o0,o3,o1,o4,o6}
-      \fmf{phantom,tension=4/3}{i2,v1,o3}
-      \fmf{phantom,tension=4/3}{i3,v2,o4}
-      \fmffreeze
-      \fmf{gluon,tension=4/3}{i2,v1}
-      \fmf{gluon,tension=4/3}{i3,v2}
-      \fmf{fermion,tension=0}{v1,v2}
-      \fmf{fermion,tension=2/3}{v2,v3,v1}
-      \fmf{dashes}{v3,o1}
-      \fmflabel{$g$}{i2}
-      \fmflabel{$g$}{i3}
-      \fmflabel{$H$}{o1}
-    \end{fmfgraph*}    
-    \hspace{.5cm}
-    \begin{fmfgraph*}(75,75)
-      \fmfleft{i1,i2}
-      \fmfright{o1,o2,o3}
-      \fmf{fermion}{i1,v1,o1}
-      \fmf{fermion}{i2,v2,o3}
-      \fmf{photon,label=$W,,Z$}{v1,v3}
-      \fmf{photon,label=$W,,Z$}{v2,v3}
-      \fmf{dashes}{v3,o2}
-      \fmflabel{$q$}{i1}
-      \fmflabel{$q$}{i2}
-      \fmflabel{$q$}{o1}
-      \fmflabel{$q$}{o3}
-      \fmflabel{$H$}{o2}
-    \end{fmfgraph*}
-    \hspace{.5cm}
-    \begin{fmfgraph*}(75,75)
-      \fmfleft{i1,i2}
-      \fmfright{o1,o2}
-      \fmf{fermion}{i1,v1}
-      \fmf{fermion}{v1,i2}
-      \fmf{photon,label=$W,,Z$}{v1,v2}
-      \fmf{photon}{v2,o1}
-      \fmf{dashes}{v2,o2}
-      \fmflabel{$q$}{i1}
-      \fmflabel{$\bar{q}$}{i2}
-      \fmflabel{$W,Z$}{o1}
-      \fmflabel{$H$}{o2}
-    \end{fmfgraph*}
-  \end{fmffile}
+  %% \begin{fmffile}{dmlhcfeyndiagstitle}
+  %%   \begin{fmfgraph*}(75,75)
+  %%     \fmfleft{i0,i2,ix,i3,i5}
+  %%     \fmfright{o0,o3,o1,o4,o6}
+  %%     \fmf{phantom,tension=4/3}{i2,v1,o3}
+  %%     \fmf{phantom,tension=4/3}{i3,v2,o4}
+  %%     \fmffreeze
+  %%     \fmf{gluon,tension=4/3}{i2,v1}
+  %%     \fmf{gluon,tension=4/3}{i3,v2}
+  %%     \fmf{fermion,tension=0}{v1,v2}
+  %%     \fmf{fermion,tension=2/3}{v2,v3,v1}
+  %%     \fmf{dashes}{v3,o1}
+  %%     \fmflabel{$g$}{i2}
+  %%     \fmflabel{$g$}{i3}
+  %%     \fmflabel{$H$}{o1}
+  %%   \end{fmfgraph*}    
+  %%   \hspace{.5cm}
+  %%   \begin{fmfgraph*}(75,75)
+  %%     \fmfleft{i1,i2}
+  %%     \fmfright{o1,o2,o3}
+  %%     \fmf{fermion}{i1,v1,o1}
+  %%     \fmf{fermion}{i2,v2,o3}
+  %%     \fmf{photon,label=$W,,Z$}{v1,v3}
+  %%     \fmf{photon,label=$W,,Z$}{v2,v3}
+  %%     \fmf{dashes}{v3,o2}
+  %%     \fmflabel{$q$}{i1}
+  %%     \fmflabel{$q$}{i2}
+  %%     \fmflabel{$q$}{o1}
+  %%     \fmflabel{$q$}{o3}
+  %%     \fmflabel{$H$}{o2}
+  %%   \end{fmfgraph*}
+  %%   \hspace{.5cm}
+  %%   \begin{fmfgraph*}(75,75)
+  %%     \fmfleft{i1,i2}
+  %%     \fmfright{o1,o2}
+  %%     \fmf{fermion}{i1,v1}
+  %%     \fmf{fermion}{v1,i2}
+  %%     \fmf{photon,label=$W,,Z$}{v1,v2}
+  %%     \fmf{photon}{v2,o1}
+  %%     \fmf{dashes}{v2,o2}
+  %%     \fmflabel{$q$}{i1}
+  %%     \fmflabel{$\bar{q}$}{i2}
+  %%     \fmflabel{$W,Z$}{o1}
+  %%     \fmflabel{$H$}{o2}
+  %%   \end{fmfgraph*}
+  %% \end{fmffile}
+
+
   %% \begin{fmfgraph*}(100,70)
   %%         \fmfleft{i1,i2}
   %%         \fmfright{o1,o2,o3}
@@ -119,7 +122,8 @@
 \begin{document}
 \tikzstyle{every picture}+=[remember picture]
 \tikzstyle{na} = [baseline=-.5ex]
-\begin{fmffile}{dmlhcfeyndiags}
+
+\begin{fmffile}{rhulseminarfeyndiags}
 
 
   %TITLE PAGE
@@ -136,14 +140,15 @@
       \item Why search for invisibly decaying Higgs bosons
       \item How to search for invisibly decaying Higgs bosons:
       \item[-] Direct and indirect searches
-      \item[-] Focus on most sensitive VBF channel
+      \item[-] Focus on most sensitive result: Run 1 VBF channel
       \item Results from LHC Runs 1 and 2
+      \item Interpretations of results
       \item Projections of future sensitivity
       \end{itemize}
     \end{block}
   \end{frame}
 
-  %??new unconstrained thing, what we know so far, lots of room left  
+  %new unconstrained thing, what we know so far, lots of room left  
   \begin{frame}
     \frametitle{Why look for invisibly decaying Higgs bosons?}
     \begin{columns}
@@ -177,8 +182,8 @@
     \begin{block}{}
       \begin{itemize}
       \item There is evidence from several sources for ``dark matter'' (DM)
-      \item Amounts of DM and SM matter seem to be of the same order of magnitude so it's likely they interact
       \item Where does dark matter get its mass from?
+      \item Amounts of DM and SM matter seem to be of the same order of magnitude so it's likely they interact
       \end{itemize}
     \end{block}
     \includegraphics[clip=true,trim=0 0 0 0,height=.5\textheight,width=.5\textwidth]{TalkPics/sgs120315/bulletcluster.png}
@@ -186,28 +191,29 @@
   \end{frame}
   
 
-  %??Expand with mass term lagrangian and some DM intro
+  %Expand with mass term lagrangian and some DM intro
   \begin{frame}
     \frametitle{Why look for invisibly decaying Higgs bosons?}
     \vspace{-.3cm}
     \begin{columns}
       \column{1.06\textwidth}
-    \begin{block}{Theoretical Motivations}
+    \begin{block}{}
       \small
       \begin{itemize}
-      \item All massive SM particles get their mass through Higgs boson couplings:
+      \item All massive SM particles get their mass through Higgs field couplings:
       \item[-] Fermions: $ \bar{\psi}_{i}y_{ij}\psi_{j}\phi+$ hermitian conjugate
       \item[-] Bosons: $|D_{\mu}\phi|^2-V(\phi)$
+      \item Higgs mechanism is the only known locally gauge invariant way to give mass to particles charged under the SM symmetry groups
       \item DM must also get its mass from somewhere motivating interaction with a scalar like the Higgs
       \item Some theories of collider DM also have similar production mechanisms to the Higgs
       \end{itemize}
     \end{block}
-    %??feynman diagram of VBF
+    %feynman diagram of VBF
     \end{columns}
   \end{frame}
   
 
-  %??expand a bit more, decisions on fixed width etc.
+  %expand a bit more, decisions on fixed width etc.
   \begin{frame}
     \frametitle{How to search for invisibly decaying Higgs bosons}
     \vspace{-.2cm}
@@ -235,166 +241,787 @@
        %ATLAS or CMS rates of each channel plot
   \end{frame}
 
-  %??one slide on each process
+  %one slide on each process
   \begin{frame}
     \frametitle{How to search for invisibly decaying Higgs bosons}
     \begin{columns}
-      \column{1.06\textwidth}
+      \column{.5\textwidth}
+      %diagram of MET
     \begin{block}{Direct searches}
-      \small
       \begin{itemize}
-      \item Look for products of associated production of a Higgs boson plus momentum imbalance ``$E_{T}^{miss}$''
+      \item No visible products if Higgs boson is created alone
+      \item Have to use associated Higgs production
+      \item Tag associated production, then look for momentum imbalance ``$E_{T}^{miss}$''
       \end{itemize}
     \end{block}
-    \end{columns}
-    \begin{columns}
+
       \column{.5\textwidth}
-      %??diagram of MET
-      \column{.5\textwidth}
-      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/XS_8TeV-eps-converted-to.pdf}
+      \includegraphics[width=\textwidth]{TalkPics/RHULSeminar051016/CMSResult042211figure1.jpg}
       \end{columns}
     \end{frame}
 
-  %??ggh
+  %ggh
   \begin{frame}
     \frametitle{Gluon Fusion: ggH}
-      \begin{block}{Production channels}
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{block}{}
           \small
-          %??high rate low purity
-          %??ggH, VBF, VH tikz lines to plot if time
+          %high rate low purity
+          %ggH, VBF, VH tikz lines to plot if time
           \begin{itemize}
-          \item VBF mode is most sensitive
-          \item[-] Second highest rate and distinctive topology
-          \item Gluon fusion has no visible products, needs ISR
-          \item[-] High rate, difficult final state
-          \item VH has clean final states but low rate
+          \item Gluon fusion production has
+            \tikz[na] \node (ggH) {\hspace{-.1cm} the highest rate \checkmark};
+          \item Normally leaves no visible products $\boldsymbol{\times}$
+          \item Only visible with initial state radiation (ISR)
+          \item[-] ISR is difficult to tag and lowers rate
           \end{itemize}
       \end{block}
+          
+          \column{.5\textwidth}
+            \centering
+            \begin{fmfgraph*}(75,75)
+              \fmfleft{i0,i2,ix,i3,i5}
+              \fmfright{o0,o3,o1,o4,o6}
+              \fmf{phantom,tension=4/3}{i2,v1,o3}
+              \fmf{phantom,tension=4/3}{i3,v2,o4}
+              \fmffreeze
+              \fmf{gluon,tension=4/3}{i2,v1}
+              \fmf{gluon,tension=4/3}{i3,v2}
+              \fmf{fermion,tension=0}{v1,v2}
+              \fmf{fermion,tension=2/3}{v2,v3,v1}
+              \fmf{dashes}{v3,o1}
+              \fmflabel{$g$}{i2}
+              \fmflabel{$g$}{i3}
+              \fmflabel{$H$}{o1}
+            \end{fmfgraph*}
+
+            \begin{tikzpicture}%[show background grid]
+              \node [inner sep=0pt,above right]
+                    {\includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/XS_8TeV-eps-converted-to.pdf}};
+                    %           \fill (0,0) circle (2pt);                                                                                                                                                                                                       
+                    
+                    \path (1.2,3.5) coordinate (ggHl)
+                    (1.9,2.2) coordinate (VBFl)
+                    (2.6,1.2) coordinate (ZHl);
+            \end{tikzpicture}
+
+
+            \begin{tikzpicture}[overlay]
+              \path[->,blue,thick] (ggH.east) edge [bend left] (ggHl);
+              %\path[->,red,thick] (VBF.west) edge [bend right] (VBFl);
+              %\path[->,red,thick] (VBF.east) edge [bend left] (VBFdiag);
+              %\path[->,green,thick] (ZH.south) edge [bend left] (ZHl);
+              
+            \end{tikzpicture}
+            
+      \end{columns}
+
 
   \end{frame}
 
-  %??zh
+  %zh
   \begin{frame}
     \frametitle{Vector boson associated production: VH}
-    %??high purity low rate
+    %high purity low rate
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{block}{}
+          \small
+          %high rate low purity
+          %ggH, VBF, VH tikz lines to plot if time
+          \begin{itemize}
+          \item VH production has a much
+            \tikz[na] \node (VH) {\hspace{-.1cm}lower rate than ggH $\boldsymbol{\times}$};
+          \item Leptonically decaying vector bosons are easy to tag \checkmark
+          \item[-] Particularly $Z\rightarrow\ell\ell$ which was the first VH channel used
+          \end{itemize}
+      \end{block}
+          
+          \column{.5\textwidth}
+            \centering
+    \begin{fmfgraph*}(75,75)
+      \fmfleft{i0,i1,i2,i3}
+      \fmfright{o0,o1,o2,o3}
+      \fmf{fermion}{i1,v1}
+      \fmf{fermion}{v1,i2}
+      \fmf{photon,label=$W,,Z$}{v1,v2}
+      \fmf{photon}{v2,o1}
+      \fmf{dashes}{v2,o2}
+      \fmflabel{$q$}{i1}
+      \fmflabel{$\bar{q}$}{i2}
+      \fmflabel{$W,Z$}{o1}
+      \fmflabel{$H$}{o2}
+    \end{fmfgraph*}
+            
+            \begin{tikzpicture}%[show background grid]
+              \node [inner sep=0pt,above right]
+                    {\includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/XS_8TeV-eps-converted-to.pdf}};
+                    %           \fill (0,0) circle (2pt);                                                                                                                                                                                                       
+                    
+                    \path (1.2,3.5) coordinate (ggHl)
+                    (1.9,2.2) coordinate (VBFl)
+                    (2.6,1.5) coordinate (ZHl);
+            \end{tikzpicture}
+
+
+            \begin{tikzpicture}[overlay]
+              %\path[->,blue,thick] (ggH.east) edge [bend left] (ggHl);
+              %\path[->,red,thick] (VBF.west) edge [bend right] (VBFl);
+              %\path[->,red,thick] (VBF.east) edge [bend left] (VBFdiag);
+              \path[->,green,thick] (VH.east) edge [bend left] (ZHl);
+              
+            \end{tikzpicture}
+            
+      \end{columns}
+
   \end{frame}
 
-  %??vbf
+  %vbf
   \begin{frame}
     \frametitle{Vector Boson Fusion: VBF}
-    %??best of both worlds
+    %best of both worlds
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{block}{}
+          \small
+          %high rate low purity
+          %ggH, VBF, VH tikz lines to plot if time
+          \begin{itemize}
+          \item VBF has a relatively high
+            \tikz[na] \node (VBF) {\hspace{-.1cm}production rate \checkmark};
+          \item Lack of strong force `colour connection' leaves large polar angle between quarks
+          \item[-] This allows the resulting jets to be tagged \checkmark
+          \item Focus of the rest of the talk
+          \end{itemize}
+      \end{block}
+          
+          \column{.5\textwidth}
+            \centering
+            \begin{fmfgraph*}(75,75)
+              \fmfleft{i0,i1,i2,i3}
+              \fmfright{o0,o1,o2,o3,o4}
+              \fmf{fermion}{i1,v1,o1}
+              \fmf{fermion}{i2,v2,o3}
+              \fmf{photon}{v1,v3}
+              \fmf{photon,label=$W,,Z$}{v2,v3}
+              \fmf{dashes}{v3,o2}
+              \fmflabel{$q$}{i1}
+              \fmflabel{$q$}{i2}
+              \fmflabel{$q$}{o1}
+              \fmflabel{$q$}{o3}
+              \fmflabel{$H$}{o2}
+            \end{fmfgraph*}
+
+            \begin{tikzpicture}%[show background grid]
+              \node [inner sep=0pt,above right]
+                    {\includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/XS_8TeV-eps-converted-to.pdf}};
+                    %           \fill (0,0) circle (2pt);                                                                                                                                                                                                       
+                    
+                    \path (1.2,3.5) coordinate (ggHl)
+                    (1.9,2.6) coordinate (VBFl)
+                    (2.6,1.2) coordinate (ZHl);
+            \end{tikzpicture}
+
+
+            \begin{tikzpicture}[overlay]
+              %\path[->,blue,thick] (ggH.east) edge [bend left] (ggHl);
+              \path[->,red,thick] (VBF.east) edge [bend left] (VBFl);
+              %\path[->,red,thick] (VBF.east) edge [bend left] (VBFdiag);
+              %\path[->,green,thick] (ZH.south) edge [bend left] (ZHl);
+              
+            \end{tikzpicture}
+            
+      \end{columns}
+
   \end{frame}
 
-  %??ttH
+  %ttH
   \begin{frame}
     \frametitle{ttH}
-    %??aside just for completeness
-  \end{frame}
-
-
-  %??why ATLAS and CMS are good for invisible detection
-  \begin{frame}
-    \frametitle{Detector capabilities}
-    %??things needed to see VBF i.e. jets and met
-  \end{frame}
-
-  %??bit on particle flow
-  \begin{frame}
-  \end{frame}
-
-  %??bit on met and jet corrections
-  \begin{frame}
-  \end{frame}
-
-  %??bit on met and jet corrections
-  \begin{frame}
-  \end{frame}
-
-  %??What are the main backgrounds to VBF: QCD
-  \begin{frame}
-  \end{frame}
-
-  %??What are the main backgrounds to VBF: V+jets
-  \begin{frame}
-  \end{frame}
-
-  %??What are the main backgrounds to VBF: others
-  \begin{frame}
-  \end{frame}
-
-  %??Outline challenges of VBF analysis trigger/high QCD background
-  \begin{frame}
-  \end{frame}
-
-  %??parked data
-  \begin{frame}
-  \end{frame}
-
-  %??Strategy after trigger
-  \begin{frame}
-  \end{frame}
-
-
-  %??Selection: preselection variables
-  \begin{frame}
-  \end{frame}
-
-  %??Selection: selection optimisation
-  \begin{frame}
-  \end{frame}
-
-  %??Selection: why not a BDT
-  \begin{frame}
-  \end{frame}
-
-  %??Remaining background estimation general data driven methods intro
-  \begin{frame}
-  \end{frame}
-
-  %??Remaining background estimation W/Z
-  \begin{frame}
-  \end{frame}
-
-  %??Remaining background estimation QCD, how it evolved
-  \begin{frame}
-  \end{frame}
-
-  %??Remaining background estimation QCD, how it evolved
-  \begin{frame}
-  \end{frame}
-
-  %??Results over run 1 and statistics: prompt
-  \begin{frame}
-  \end{frame}
-
-  \begin{frame}
-    %??HIG-14-038
-    \frametitle{Run 1 CMS direct searches - VBF}%??parked
+    %aside just for completeness
     \begin{columns}
-      %??quick description of parked data  
+      \column{.5\textwidth}
+      \begin{block}{}
+          \small
+          \begin{itemize}
+          \item \tikz[na] \node (ttH) {ttH has a very low rate $\boldsymbol{\times}$$\boldsymbol{\times}$};
+          \item Taggable decay products \checkmark
+          \item Not sensitive with LHC Run 1 data
+          \item[-] Starting to become interesting with higher Run 2 energy
+          \end{itemize}
+      \end{block}
+          
+          \column{.5\textwidth}
+            \centering
+            \vspace{.5cm}
+            \begin{fmfgraph*}(75,50)
+              \fmfleft{i1,i2}
+              \fmfright{o1,o2,o3}
+              \fmf{gluon}{i1,v1}
+              \fmf{gluon}{i2,v2}
+              \fmf{fermion}{o1,v1,v3,v2,o3}
+              \fmf{dashes}{v3,o2}
+              \fmflabel{$t$}{o1}
+              \fmflabel{$t$}{o3}
+              \fmflabel{$H$}{o2}
+            \end{fmfgraph*}
+            \vspace{.2cm}
+            \begin{tikzpicture}%[show background grid]
+              \node [inner sep=0pt,above right]
+                    {\includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/XS_8TeV-eps-converted-to.pdf}};
+                    %           \fill (0,0) circle (2pt);                                                                                                                                                                                                       
+                    
+                    \path (1.2,3.5) coordinate (ggHl)
+                    (1.9,2.2) coordinate (VBFl)
+                    (2.6,1.2) coordinate (ZHl)
+                    (2.6,1.2) coordinate (ttHl);
+            \end{tikzpicture}
+
+
+            \begin{tikzpicture}[overlay]
+              \path[->,violet,thick] (ttH.east) edge [bend left] (ttHl);
+              %\path[->,red,thick] (VBF.west) edge [bend right] (VBFl);
+              %\path[->,red,thick] (VBF.east) edge [bend left] (VBFdiag);
+              %\path[->,green,thick] (ZH.south) edge [bend left] (ZHl);
+              
+            \end{tikzpicture}
+            
+      \end{columns}
+
+  \end{frame}
+
+
+  %why CMS is good for invisible detection
+  \begin{frame}
+    \frametitle{What detector capabilities do we need?}
+    %things needed to see VBF i.e. jets and met
+    \begin{block}{}
+      \begin{itemize}
+      \item VBF jets have a large polar angle separation
+      \item[-] Calorimetry close to the beamline is important
+      \item $E_{T}^{miss}$ measurement accuracy requires a 4$\pi$ hermitic detector
+      \item Good energy resolution for all objects is also necessary
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{CMS}
+    \begin{block}{}
+      \begin{itemize}
+      \item Detector covers pseudorapidities up to 5
+      \end{itemize}
+    \end{block}
+    \centering
+    \includegraphics[width=.9\textwidth]{TalkPics/RHULSeminar051016/detector.jpg}
+  \end{frame}
+
+  %bit on particle flow
+  \begin{frame}
+    \frametitle{CMS particle flow reconstruction}
+    \begin{columns}
+      \column{1.06\textwidth}
+      \vspace{-.3cm}
+      \begin{block}{}
+        \scriptsize
+        \begin{itemize}
+        \item 4T magnet and tracking system give good momentum measurements
+        \item PbWO$_{4}$ crystal ECAL gives good EM energy resolution
+        \item CMS HCAL is the least precise subdetector
+        \item[-] What about jet energy resolution?
+        \end{itemize}
+      \end{block}
+    \end{columns}
+    \centering
+    \vspace{.1cm}
+    \includegraphics[width=.9\textwidth]{TalkPics/CMS_Slice.png}
+  \end{frame}
+
+  %bit on met and jet corrections
+  \begin{frame}
+    \frametitle{Particle flow}
+    \begin{columns}
+      \column{.6\textwidth}
+      \begin{block}{}
+        \begin{itemize}
+        \item Particle flow links information from all subdetectors
+        \item Jets mostly consist of charged hadrons (60\%) and $e/\gamma$ (30\%)
+        \item[-] Charged hadron deposits in HCAL can be matched to precise tracker measurements
+        \item[-] $e/\gamma$ can be measured in the ECAL
+        \item This leaves only 10\% of the jet measured by the HCAL
+        \item Good resolution of all objects allows accurate $E_{T}^{miss}$ calculation
+        \end{itemize}
+      \end{block}
+      \column{.4\textwidth}
+      Jets
+      \includegraphics[angle=90,width=\textwidth]{TalkPics/RHULSeminar051016/particleflow.pdf}
+      
+      $E_{T}^{miss}$
+      \includegraphics[angle=90,width=\textwidth]{TalkPics/RHULSeminar051016/particleflowmet.pdf}
+    \end{columns}
+  \end{frame}
+
+  %Outline challenges of VBF analysis trigger/high QCD background
+  \begin{frame}
+    \frametitle{Main challenges for VBF Higgs to invisible}
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{block}{}
+        \begin{itemize}
+        \item QCD multijet production cross-section is much larger than signal cross-section
+        \item[-] Some of these jets will fake the VBF topology
+        \item Trigger must be very tight to reduce event rate to an acceptable level
+        \item Significant remaining QCD background is hard to model
+        \end{itemize}
+      \end{block}
+      \column{.5\textwidth}
+      \centering
+      Signal
+
+      \vspace{.5cm}
+
+      \begin{fmfgraph*}(45,60)
+        \fmftop{i1,m1,m2,m3,m4,o1}
+        \fmfbottom{i2,o2}
+        \fmf{fermion,tension=4}{v1,i2}
+        \fmf{fermion,tension=4}{v1,o2}
+        \fmf{phantom}{v1,m1}
+        \fmf{dashes}{v1,m2}
+        \fmf{phantom}{v1,m3}
+        \fmf{phantom}{v1,m4}
+        \fmflabel{$H$}{m2}
+        \fmflabel{$jet$}{i2}
+        \fmflabel{$jet$}{o2}
+      \end{fmfgraph*}
+
+      \vspace{.5cm}
+
+      QCD background
+
+      \begin{fmfgraph*}(45,60)
+        \fmftop{i1,m1,m2,m3,m4,o1}
+        \fmfbottom{i2,o2}
+        \fmf{fermion,tension=4}{v1,i2}
+        \fmf{fermion,tension=4}{v1,o2}
+        \fmf{fermion,label=$jets$,label.side=left}{v1,m1}
+        \fmf{fermion}{v1,m2}
+        \fmf{fermion}{v1,m3}
+        \fmf{fermion}{v1,m4}
+        \fmflabel{$jet$}{i2}
+        \fmflabel{$jet$}{o2}
+      \end{fmfgraph*}
+    \end{columns}
+  \end{frame}
+
+  %parked data
+  \begin{frame}
+    \frametitle{Parked data}
+    \begin{block}{}
+      \scriptsize
+      \begin{itemize}
+      \item Limiting factor in CMS event rate found to be processing time, not data output
+      \item During Run 1 about a third of data was 'promptly' reconstructed
+      \item[-] Remaining two thirds were 'parked' for reconstruction in the long shutdown
+      \item This parked data has much looser trigger thresholds
+      \item Dedicated VBF invisible Higgs triggers were run for both streams
+      \end{itemize}
+    \end{block}
+    \vspace{-.05cm}
+    \centering
+  \end{frame}
+
+
+
+  \begin{frame}
+    \frametitle{Trigger}
+      %table of cuts and a comment
+      \begin{block}{}
+        \begin{itemize}
+        \item Require a pair of jets with VBF topology
+        \item Also require large $E_{T}^{miss}$
+        \item[-] Calculated ignoring muons to enable background estimation
+        \item Thresholds vary through run periods
+        \end{itemize}
+        \centering
+        %% \begin{tabular}{l|c}
+        %%   \hline
+        %%   Variable & Requirement \\
+        %%   \hline
+        %%   Jet $p_{T}$ & $>$30-40 GeV\\
+        %%   Dijet mass ($M_{jj}$) & $>$600-800 GeV \\
+        %%   $\Delta\eta_{jj}$ & $>3.5$\\
+        %%   $E_{T}^{miss}$ & $>40-65$ GeV\\
+        %%   \hline
+        %% \end{tabular}
+      \end{block}
+      \centering
+      \includegraphics[clip=true,trim=0 0 0 50,width=.45\textwidth]{../../Thesis/plots/prompt/TrigEff_SingleMu_Jet2Pt.pdf}
+      \includegraphics[clip=true,trim=0 0 0 50,width=.45\textwidth]{../../Thesis/plots/prompt/TrigEff_SingleMu_MET.pdf}
+  \end{frame}
+
+  %??maybe efficiency measurement
+
+  %Selection: preselection variables
+  \begin{frame}
+    \frametitle{Preselection}
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{block}{}
+        \begin{itemize}
+        \item After setting trigger variables to point of 50\% trigger efficiency most data is still QCD
+        \item Not modelled well by MC
+        \item[-] Rate is too high to produce a large enough sample
+        \item Additional tight cuts must be applied before MC driven selection optimisation can be performed
+        \end{itemize}
+      \end{block}
+      \column{.5\textwidth}
+      \centering
+      \includegraphics[width=.8\textwidth]{../../Thesis/plots/parked/AN-14-243-figs/lognopreselnunu_metnomu_significance.pdf}
+
+      \includegraphics[width=.8\textwidth]{../../Thesis/plots/parked/AN-14-243-figs/Joao_140209_p11.png}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Reducing QCD Backgrounds}
+    %WJETS                                                                                                                                                                                                                                  
+      \begin{block}{$E_{T}^{miss}$ significance}
+        \centering
+        \begin{fmfgraph*}(60,50)
+          \fmftop{i1,m1,m2,m3,m4,m5,m6,m7,o1}
+          \fmfbottom{i2,m8,m9,m10,m11,o2}
+          \fmf{fermion,tension=4}{v1,i2}
+          \fmf{fermion,tension=4}{v1,o2}
+          \fmf{fermion,label=$jets$,label.side=left}{v1,m1}
+          \fmf{dashes}{v1,m3}
+          \fmf{fermion}{v1,m4}
+          \fmf{fermion}{v1,m5}
+          \fmf{fermion}{v1,m6}
+          \fmf{fermion}{v1,m7}
+          \fmf{fermion}{v1,m8}
+          \fmf{fermion}{v1,m9}
+          \fmf{fermion}{v1,m10}
+          \fmf{fermion}{v1,m11}
+          \fmflabel{$jet$}{i2}
+          \fmflabel{$jet$}{o2}
+        \end{fmfgraph*}
+        \hspace{1.5cm}
+        VS
+        \hspace{1.5cm}
+        \begin{fmfgraph*}(60,50)
+          \fmftop{i1,m1,m2,m3,m4,m5,m6,m7,o1}
+          \fmfbottom{i2,m8,m9,m10,m11,o2}
+          \fmf{fermion,tension=4}{v1,i2}
+          \fmf{fermion,tension=4}{v1,o2}
+          \fmf{fermion,label=$jets$,label.side=left}{v1,m1}
+          \fmf{dashes}{v1,m3}
+          \fmflabel{$jet$}{i2}
+          \fmflabel{$jet$}{o2}
+        \end{fmfgraph*}
+        \vspace{.2cm}
+      \end{block}
+      \begin{block}{min$\Delta\phi$(j,$E_{T}^{miss}$)}
+        \centering
+        \begin{fmfgraph*}(60,50)
+          \fmftop{i1,m1,m2,m3,m4,m5,m6,m7o1}
+          \fmfbottom{i2,o2}
+          \fmf{fermion,tension=4}{v1,i2}
+          \fmf{fermion,tension=4}{v1,o2}
+          \fmf{fermion,label=$jets$,label.side=left}{v1,m1}
+          \fmf{dashes}{v1,m2}
+          \fmflabel{$jet$}{i2}
+          \fmflabel{$jet$}{o2}
+        \end{fmfgraph*}
+        \vspace{.2cm}
+      \end{block}
+
+
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Preselection}
+    \begin{block}{}
+      \begin{itemize}
+      \item Require $E_{T}^{miss}$ significance$>4$, min$\Delta\phi$(j,$E_{T}^{miss}$)$>2$ and $M_{jj}>800$ GeV
+      \end{itemize}
+    \end{block}
+    \begin{tikzpicture}
+      \node[anchor=south west,inner sep=0] (image) at (0,0) { \begin{columns}\column{.5\textwidth}      \begin{block}{\scriptsize Before} \includegraphics[width=\textwidth]{../../Thesis/plots/parked/AN-14-243-figs/lognopreselnunu_metnomu_significance.pdf} \end{block}
+    \column{.5\textwidth} \begin{block}{\scriptsize After}  \includegraphics[width=\textwidth]{../../Thesis/plots/parked/AN-14-243-figs/logmjj800nunu_dijet_M.pdf} \end{block} \end{columns} };
+      \begin{scope}[x={(image.south east)},y={(image.north west)}]
+        \path[->,color=red,ultra thick] (0.3,0.5) edge (0.6,0.5);
+      \end{scope}
+    \end{tikzpicture}
+  \end{frame}
+
+  %Strategy after trigger
+  \begin{frame}
+    \frametitle{Remaining backgrounds}
+    \begin{block}{}
+      \begin{itemize}
+      \item After preselection most backgrounds are from $W$/$Z$+jets
+      \item Veto leptons to reduce leptonic decay contribution
+      \item Hadronic decays reduced by anti-QCD selection
+      \item Apply further selection then estimate remainder with data driven techniques
+      \item[-] Further minor contributions from VV, top and remaining QCD          
+      \end{itemize}
+    \end{block}
+    
+    \begin{columns}
+      \column{.33\textwidth}
+      \begin{block}{W+jets}
+        \centering
+        \begin{fmfgraph*}(60,50)
+          \fmftop{i1,m1,m2,o1}
+          \fmfbottom{i2,o2}
+          \fmf{fermion,label=$e/\mu/\tau$,label.side=left}{v2,m1}
+          \fmf{fermion,label=$\nu$,label.side=right}{v2,m2}
+          \fmf{photon,tension=7/5,label=$W$}{v1,v2}
+          \fmf{fermion}{v1,i2}
+          \fmf{fermion}{v1,o2}
+          \fmflabel{$jet$}{i2}
+          \fmflabel{$jet$}{o2}
+        \end{fmfgraph*}
+        \vspace{.2cm}
+      \end{block}
+
+      \column{.33\textwidth}
+      \begin{block}{Z+jets}
+        \centering
+        \begin{fmfgraph*}(60,50)
+          \fmftop{i1,m1,m2,o1}
+          \fmfbottom{i2,o2}
+          \fmf{fermion}{v1,i2}
+          \fmf{fermion}{v1,o2}
+          \fmf{photon,tension=7/5,label=$Z$}{v1,v2}
+          \fmf{fermion,label=$\nu$,label.side=left}{v2,m1}
+          \fmf{fermion,label=$\nu$,label.side=right}{v2,m2}
+          \fmflabel{$jet$}{i2}
+          \fmflabel{$jet$}{o2}
+        \end{fmfgraph*}
+        \vspace{.2cm}
+      \end{block}
+    \end{columns}
+    
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Data driven background estimation}
+      \vspace{-.3cm}
+      \begin{block}{}
+        \scriptsize
+        \begin{itemize}
+          \item Choose control region enriched in background
+          \item Use MC signal-control ratio to go to signal region:
+          $N^{signal}_{Bkg} = (N^{control}_{obs}-N^{control}_{other bkgs}) \cdot \frac{N^{signal}_{MC}}{N^{control}_{MC}}.$
+        \end{itemize}
+      \end{block}
+    \begin{tikzpicture}
+      \node[anchor=south west,inner sep=0] (image) at (0,0) { \begin{columns}\column{.5\textwidth}      \begin{block}{\scriptsize Control Region: Single Muon} \includegraphics[width=\textwidth]{TalkPics/studentseminar221015/hig14038figures/output_sigreg/munu_metnomuons.pdf} \end{block}
+    \column{.5\textwidth} \begin{block}{\scriptsize Signal Region: Lepton veto}  \includegraphics[width=\textwidth]{TalkPics/studentseminar221015/hig14038figures/output_sigreg/nunu_metnomuons.pdf} \end{block} \end{columns} };
+      \begin{scope}[x={(image.south east)},y={(image.north west)}]
+        \path[->,color=red,ultra thick] (0.3,0.5) edge (0.6,0.5);
+      \end{scope}
+    \end{tikzpicture}
+
+  \end{frame}
+
+
+  %Remaining background estimation W/Z
+  \begin{frame}
+    \frametitle{W control regions}
+    \begin{block}{}
+      \begin{itemize}
+      \item For $W\rightarrow\ell\nu$+jets background use region with inverted lepton veto
+      \item[-] Single electron region for $W\rightarrow e\nu$
+      \end{itemize}
+    \end{block}
+    \begin{block}{$W\rightarrow e\nu$}
+    \includegraphics[width=.5\textwidth]{../../Thesis/plots/parked/HIG-14-038-figs/output_sigreg/enu_jetmetnomu_mindphi.pdf}
+    \includegraphics[width=.5\textwidth]{../../Thesis/plots/parked/HIG-14-038-figs/output_sigreg/enu_jet2_pt.pdf}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{W control regions}
+    \begin{block}{}
+      \begin{itemize}
+      \item Single muon region for $W\rightarrow\mu\nu$ with $E_{T}^{miss}$ recalculated ignoring muon
+      \end{itemize}
+    \end{block}
+    \begin{block}{$W\rightarrow \mu\nu$}
+    \includegraphics[width=.5\textwidth]{../../Thesis/plots/parked/HIG-14-038-figs/output_sigreg/munu_jetmetnomu_mindphi.pdf}
+    \includegraphics[width=.5\textwidth]{../../Thesis/plots/parked/HIG-14-038-figs/output_sigreg/munu_jet2_pt.pdf}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{W control regions}
+    \vspace{-.2cm}
+    \begin{block}{}
+      \begin{itemize}
+      \item Very few events in single tau region after other selections
+      \item[-] Relaxed min$\Delta\phi$(j,$E_{T}^{miss}$) requirement to $>1$ only considering leading two jets
+      \item[-] Added lepton-$E_{T}^{miss}$ $m_{T}>20$ GeV requirement to reduce QCD
+      \end{itemize}
+    \end{block}
+    \vspace{-.15cm}
+    \begin{block}{$W\rightarrow \tau\nu$}
+    \includegraphics[width=.5\textwidth]{../../Thesis/plots/parked/HIG-14-038-figs/output_sigreg/taunu_jetmetnomu_mindphi.pdf}
+    \includegraphics[width=.5\textwidth]{../../Thesis/plots/parked/HIG-14-038-figs/output_sigreg/taunu_jet2_pt.pdf}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{W control regions}
+    \begin{block}{}
+      \begin{itemize}
+      \item For $W\rightarrow\ell\nu$+jets background use region with inverted lepton veto
+      \item[-] e.g. Single muon region for $W\rightarrow\mu\nu$
+      \end{itemize}
+    \end{block}
+    \begin{block}{$W\rightarrow \tau\nu$}
+    \includegraphics[width=.5\textwidth]{../../Thesis/plots/parked/HIG-14-038-figs/output_sigreg/taunu_jetmetnomu_mindphi.pdf}
+    \includegraphics[width=.5\textwidth]{../../Thesis/plots/parked/HIG-14-038-figs/output_sigreg/taunu_jet2_pt.pdf}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Z$\rightarrow\nu\nu$ control region}
+    \vspace{-.2cm}
+    \begin{block}{}
+      \begin{itemize}
+      \item Remove lepton veto and require a dimuon
+      \item[-] Statistical uncertainty on event rate in this region is limiting uncertainty on the analysis
+      \item $Z\rightarrow\nu\nu$ and $Z/\gamma^{*}\rightarrow\mu\mu$ have different cross-sections
+      \item[-] Must be corrected for
+      \end{itemize}
+    \end{block}
+    \includegraphics[width=.5\textwidth]{../../Thesis/plots/parked/HIG-14-038-figs/output_sigreg/mumu_jetmetnomu_mindphi.pdf}
+    \includegraphics[width=.5\textwidth]{../../Thesis/plots/parked/HIG-14-038-figs/output_sigreg/mumu_jet2_pt.pdf}
+  \end{frame}
+
+
+
+  %??Remaining background estimation QCD, how it evolved
+  \begin{frame}
+  \end{frame}
+
+  %??Remaining background estimation QCD, how it evolved
+  \begin{frame}
+  \end{frame}
+
+  %Selection: selection optimisation
+  \begin{frame}
+    \frametitle{Selection Optimisation}
+    \begin{block}{}
+      \begin{itemize}
+      \item Final selection was determined by tightening preselection requirements to find optimum expected limit
+      \item Selection driven by the preselection and limited numbers of events in background control regions
+      \end{itemize}
+    \end{block}
+    \begin{columns}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{../../Thesis/plots/parked/AN-14-243-figs/trigfitplots/hData_MET_1D_35D.pdf}
+      \column{.55\textwidth}
+      \vspace{-.2cm}
+      \begin{block}{}
+        \scriptsize
+        \begin{tabular}{l|c}
+          Variable & Requirement \\
+          \hline
+          $\eta_{j1}.\eta_{j2}$ &$<0$ \\
+          jet 1 $p_{T}$ & $>50$ GeV \\
+          jet 2 $p_{T}$ & $>45$ GeV \\
+          $\Delta\eta_{jj}$ & $>3.6$ \\
+          $M_{jj}$ & $>1200$ GeV \\
+          $E_{T}^{miss}$ & $>90$ GeV \\
+          $E_{T}^{miss}$ significance & $>4$ GeV \\
+          min$\Delta\phi$(j,$E_{T}^{miss}$)&$>2.3$ \\
+        \end{tabular}
+      \end{block}
+      \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Systematic uncertainties}
+    \begin{block}{}
+      \scriptsize
+      \begin{tabular}{lcc}
+        \hline \hline
+        Source  & Total background & Signal     \\
+        \hline
+        Control region statistics & 9.3 & - \\
+        MC statistics & 5.4 & 3.8 \\
+        JES & 4.6 & 11 \\
+        $W\rightarrow\tau\nu$ control region extrapolation & 4.3 & - \\
+        QCD background estimation & 3.2 & - \\
+        JER & 3.0 & 1.8 \\
+        Lepton ID efficiency & 2.4 & - \\
+        UES & 1.9 & 1.6 \\
+        Pileup weight & 1.1 & 1.5 \\
+        Top MC scale factor unc. & 0.25 & - \\
+        Luminosity & 0.02 & 2.6 \\
+        QCD scale, PDF and cross-section uncertainties & 0.01 & 5.2 \\
+        \hline
+        Total & 13.6 & 13.3 \\
+        \hline \hline
+      \end{tabular}
+    \end{block}
+  \end{frame}
+
+
+
+  \begin{frame}
+    \frametitle{What did we see?}
+    \begin{block}{}
+      \centering
+      \begin{tabular}{lc}
+        \hline \hline
+        Process & Event yields \\
+        \hline
+        $Z\rightarrow\nu\nu$&$158.1 \pm 37.3 \pm 21.2$\\
+        $W\rightarrow e\nu$&$57.9 \pm 7.4 \pm 7.7$\\
+        $W\rightarrow\mu\nu$&$102.5 \pm 6.2 \pm 11.7$\\
+        $W\rightarrow\tau\nu$&$94.6 \pm 13.1 \pm 23.8$\\
+        top&$5.5 \pm  1.8$\\
+        Minor backgrounds&$3.9 \pm 0.7$\\
+        QCD multijet &$17\pm 14$\\
+        \hline
+        Total background &$439.4 \pm 40.7 \pm 43.5 $\\
+        \hline
+        Signal(VBF) &$273.1 \pm 31.2 $\\
+        Signal(ggH) &$23.1 \pm 15.9 $\\
+        \hline
+        Observed data & 508 \\
+        \hline \hline
+      \end{tabular}
+      \begin{itemize}
+      \item No significant excess so set limits
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    %HIG-14-038
+    \frametitle{Run 1 CMS direct searches - VBF}%parked
+    \begin{columns}
+      %quick description of parked data  
       \column{.5\textwidth}
       \vspace{-.3cm}
       \begin{block}{}
         \small
         \vspace{-.2cm}
         \begin{itemize}
-        \item Select two jets with large $\Delta\eta$ separated from large $E_{T}^{miss}$
-          \vspace{-.2cm}
-        \item Update of first search Eur. Phys. J. C 74 (2014) 2980
-          \vspace{-.2cm}
-        \item Dedicated ``parked data'' trigger
-          \vspace{-.2cm}
-        \item Counting experiment with data driven backgrounds
-          \vspace{-.2cm}
-        \item V+jets backgrounds separately normalised
-          \vspace{-.2cm}
-        \item Observed (expected) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ for $m_{H}=$125 GeV is 57 (40)\%
-          \vspace{-.2cm}
-        \item[-] If all normalisations had same uncertainty as $W\rightarrow\mu\nu$ expected limit would be 33\%
+        \item Perform a single bin counting experiment using LHC $CL_{S}$ formalism
+        \item 95\% CL Observed (expected) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ for $m_{H}=$125 GeV is 57 (40)\%
+        \item All V+jets normalisations were allowed to float separately
+        \item[-] If all V+jets normalisations had same uncertainty as $W\rightarrow\mu\nu$ expected limit would be 33\%
         \end{itemize}
       \end{block}
       \column{.5\textwidth}
-      %??limit plot from hig-14-038
+      %limit plot from hig-14-038
       \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/Figure_007-a.pdf}
       \centering
       \scriptsize
@@ -404,9 +1031,9 @@
   \end{frame}
 
 
-  %??intro to ZH searches
+  %intro to ZH searches
 
-  %??CMS Run 1
+  %CMS Run 1
   \begin{frame}
     %HIG-13-030
     \frametitle{Run 1 CMS direct searches - ZH}
@@ -432,10 +1059,10 @@
   \end{frame}
 
   \begin{frame}
-    %??EXO-12-055
+    %EXO-12-055
     \frametitle{Run 1 CMS direct searches - Monojet+V(had)H}
     \begin{columns}
-      %??quick description
+      %quick description
       \column{.5\textwidth}
       \begin{block}{}
         \small
@@ -446,7 +1073,7 @@
         \end{itemize}
       \end{block}
       \column{.5\textwidth}
-      %??fig 8b from pas
+      %fig 8b from pas
       \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/CMS-PAS-EXO-12-055_Figure_008-b.png}
       \centering
       \scriptsize
@@ -457,6 +1084,16 @@
 
   %??why combine and how does CMS handle correlated errors
   \begin{frame}
+    \frametitle{Combining}
+    \begin{block}{}
+      \begin{itemize}
+      \item Best result can be obtained by combining all available searches
+      \item Must properly account for correlations between channels
+      \item Most energy resolutions and reconstruction efficiencies are centrally calculated so the uncertainties on these are correlated
+      \item Exceptions are jet uncertainties in monojet analysis which are not correlated due to very different kinematics from other analyses
+      \item Some cross-section uncertainties are also correlated between channels
+      \end{itemize}
+    \end{block}
   \end{frame}
 
   %??Combinations expand
@@ -471,7 +1108,7 @@
       \item Combine by production mode as well as full combination
         \vspace{-.2cm}
       \item[-] ggH-tagged is monojet, VH-tagged is Z($\ell\ell$)H+Z($bb$)H+V(had)H, VBF-tagged is VBF
-      \item Obs. (exp.) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ at $m_{H}=$125 GeV is 36 (30)\%
+      \item Obs. (exp.) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ at $m_{H}=$125 GeV was 36 (30)\%
       \end{itemize}
     \end{block}
     \begin{columns}
@@ -524,11 +1161,11 @@
 %    \end{columns}
   \end{frame}
 
-  %??CMS Run 2
+  %CMS Run 2
   \begin{frame}
-    %??HIG-16-008
+    %HIG-16-008
     \frametitle{Run 2 CMS direct searches - ZH}
-    %??fig 3c, mention move away from mass scans in BR
+    %fig 3c, mention move away from mass scans in BR
     %\begin{columns}
       %\column{.5\textwidth}
       \begin{block}{}
@@ -551,37 +1188,40 @@
 %    \end{columns}
   \end{frame}
 
+
   
-  %??HIG-16-009 Combination CMS Run 1 + Run 2
+  %HIG-16-009 Combination CMS Run 1 + Run 2
   \begin{frame}
     \frametitle{Run 2 CMS direct searches - Combination}
-    %??explain contributing analyses
-    %??13 TeV only and 8 TeV+13 TeV category plot
+    %explain contributing analyses
+    %13 TeV only and 8 TeV+13 TeV category plot
+    %Replace with HIG-16-016
     \begin{block}{}
+      \scriptsize
       \begin{itemize}
+      \item All of the above analyses plus a 13 TeV update of Monojet+V(had)H search were combined
       \item First CMS analysis combining 8 and 13 TeV results
-      \item Limit calculated both by production mode and overall
-      \item Combined observed (expected) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ for $m_{H}=$125 GeV is 32 (26)\% %??
+      \item Observed (expected) $\mathcal{B}\left(H\rightarrow inv.\right)$ limit for $m_{H}=$125 GeV is 24 (23)\%
       \end{itemize}
       
     \end{block}
     \begin{columns}
       \column{.5\textwidth}
-      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/channellimit13_withoutMono.pdf}
+      \includegraphics[width=.9\textwidth]{TalkPics/RHULSeminar051016/run2combbychannel.pdf}
       \column{.5\textwidth}
-      \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/channellimit.pdf}
+      \includegraphics[width=.9\textwidth]{TalkPics/RHULSeminar051016/run2comblhscan.pdf}
     \end{columns}
     \centering
     \scriptsize
     
-    CMS-PAS-HIG-16-009
+    CMS-PAS-HIG-16-016
   \end{frame}
 
   
 
-  %??DM pheno paper
+  %DM pheno paper
   \begin{frame}
-    \frametitle{Projections}
+    \frametitle{VBF analysis projections}
     \begin{columns}
       \column{.5\textwidth}
       \begin{block}{}
@@ -601,8 +1241,82 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Dark matter interpretations - Run 1 results}
-    %??ATLAS DM plot and arxiv EFT plane plot
+    \frametitle{What does this mean for dark matter?}
+    \vspace{-.2cm}
+    \begin{block}{}
+      \scriptsize
+      \begin{itemize}
+      \item If DM couples to the Higgs the following diagrams are possible
+      \end{itemize}
+    \end{block}
+    \vspace{-.2cm}
+    \begin{columns}
+      \column{.35\textwidth}
+      \begin{block}{\scriptsize Direct Detection - e.g. LUX}
+        \vspace{.3cm}
+        \begin{fmfgraph*}(100,70)
+          \fmfleft{i1,i2}
+          \fmfright{o1,o2}
+          \fmf{fermion}{i1,v1,o1}
+          \fmf{fermion}{i2,v2,o2}
+          \fmf{dashes,label=$H$}{v1,v2}
+          \fmffreeze
+          \fmflabel{$N$}{i1}
+          \fmflabel{$\chi$}{i2}
+          \fmflabel{$N$}{o1}
+          \fmflabel{$\chi$}{o2}
+        \end{fmfgraph*}
+        \vspace{.3cm}
+      \end{block}
+
+      \column{.35\textwidth}
+      \begin{block}{\scriptsize Invisible Higgs - LHC}
+        \vspace{.3cm}
+        \begin{fmfgraph*}(100,70)
+          \fmfleft{i1,i2}
+          \fmfright{o1,o2}
+          \fmf{fermion}{i1,v1,i2}
+          \fmf{fermion}{o1,v2,o2}
+          \fmf{dashes,label=$H$}{v1,v2}
+          \fmffreeze
+          %\fmflabel{$f/w/Z$}{i1}                                                                                                                                                                                                            
+          \fmflabel{$\chi$}{o1}
+          %\fmflabel{$f/W/Z$}{i2}                                                                                                                                                                                                            
+          \fmflabel{$\chi$}{o2}
+        \end{fmfgraph*}
+        \vspace{.3cm}
+      \end{block}
+      \column{.35\textwidth}
+      \begin{block}{\scriptsize Annihilation - e.g. WMAP}
+        \vspace{.3cm}
+        \begin{fmfgraph*}(100,70)
+          \fmfleft{i1,i2}
+          \fmfright{o1,o2}
+          \fmf{fermion}{i1,v1,i2}
+          \fmf{fermion}{o1,v2,o2}
+          \fmf{dashes,label=$H$}{v1,v2}
+          \fmffreeze
+          %\fmflabel{$f/w/Z$}{i1}                                                                                                                                                                                                            
+          \fmflabel{$\chi$}{i1}
+          %\fmflabel{$f/W/Z$}{i2}                                                                                                                                                                                                            
+          \fmflabel{$\chi$}{i2}
+        \end{fmfgraph*}
+        \vspace{.3cm}
+      \end{block}
+      \end{columns}
+      \begin{block}{}
+        \scriptsize
+        \begin{itemize}
+      \item Limits on $\mathcal{B}$(H$\rightarrow$inv) therefore constrain Higgs Portal DM models
+      \item These constraints are directly comparable to those from other experiments
+      \item[-] Only valid within the assumptions of the model used so caution needed
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Which model to use? - Run 1 results}
+    %ATLAS DM plot and arxiv EFT plane plot
     \begin{columns}
       \column{.5\textwidth}
       \begin{block}{}
@@ -668,21 +1382,22 @@
   \begin{frame}
   \end{frame}
 
+  %??
   \begin{frame}
     \frametitle{Summary}
     \label{lastframe}
     \begin{block}{}
       \begin{itemize}
-      \item Both collaborations are sensitive to $\mathcal{B}\left(H\rightarrow inv.\right)\sim 25\%$ with current datasets
-      \item[-] Current 95\% CL upper observed (expected) limits from direct searches are CMS: 32 (26)\%, ATLAS: 25 (27) \%
+      \item Current 95\% CL upper observed (expected) limit on invisible branching fraction from direct searches is 24 (23)\% comparable with ATLAS: 25 (27) \%
       \item[-] Combination of channels allow sensitivity to be greatly improved
       \item Projected limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ $\sim$10-20\% from VBF alone by the end of LHC Run 2 and 5\% by end of LHC running assuming systematics scale as $\sqrt{\mathcal{L}}$
+      \item Several dark matter interpretations are being investigated
       \end{itemize}
     \end{block}
   \end{frame}
 
 
-  %??ATLAS RUN 1 
+  %ATLAS RUN 1 
   \begin{frame}
     %ZH http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.112.201802
     \frametitle{Run 1 ATLAS direct searches - Z($\ell\ell$)H}
@@ -745,7 +1460,7 @@
         \end{itemize}
       \end{block}
       \column{.5\textwidth}
-      %??no mas scan find another pic to use
+      %no mas scan find another pic to use
       \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/ATLASvbfyields.png}
       \centering
       \scriptsize
