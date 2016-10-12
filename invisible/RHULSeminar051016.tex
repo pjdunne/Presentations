@@ -504,6 +504,23 @@
       \item Good energy resolution for all objects is also necessary
       \end{itemize}
     \end{block}
+    \vspace{.4cm}
+            \centering
+            \begin{fmfgraph*}(75,75)
+              \fmfleft{i1,i2}
+              \fmfright{o1,o2,o3}
+              \fmf{fermion}{i1,v1,o1}
+              \fmf{fermion}{i2,v2,o3}
+              \fmf{photon,label=$W,,Z$}{v1,v3}
+              \fmf{photon,label=$W,,Z$}{v2,v3}
+              \fmf{dashes}{v3,o2}
+              \fmflabel{$q$}{i1}
+              \fmflabel{$q$}{i2}
+              \fmflabel{$q$}{o1}
+              \fmflabel{$q$}{o3}
+              \fmflabel{$H$}{o2}
+            \end{fmfgraph*}
+
   \end{frame}
 
   \begin{frame}
@@ -629,6 +646,34 @@
     \end{block}
     \vspace{-.05cm}
     \centering
+    \begin{columns}
+      \column{1.1\textwidth}
+      \begin{tikzpicture}
+          \node (l1node){
+            \includegraphics[width=.3\textwidth,height=.4\textheight]{TalkPics/sgs120315/L1.jpg}
+          };
+          \node[node distance=4cm,right of=l1node] (hltnode){
+          };
+          \node[node distance=1cm,above of=hltnode] (hlt2node){
+            \includegraphics[width=.3\textwidth,height=.2\textheight]{TalkPics/RHULSeminar051016/tumblr_ktfo5h8L241qzyhb5o1_1280.jpg}
+          };
+        \node[node distance=1cm,below of=hltnode] (hlt3node){
+            \includegraphics[width=.3\textwidth,height=.2\textheight]{TalkPics/sgs120315/HLT.jpg}
+          };
+          \node[node distance=4cm,right of=hltnode] (gridnode){
+            \includegraphics[width=.3\textwidth]{TalkPics/sgs120315/grid.jpg}
+          };
+        \node at (l1node.north) {\color{beamer@icmiddleblue}{Trigger}};
+        \node at (hlt2node.north) {\color{beamer@icmiddleblue}{600 Hz stored on tape}};
+        \node at (hlt3node.south) {\color{beamer@icmiddleblue}{Processing}};
+        \node at (gridnode.north) {\color{beamer@icmiddleblue}{Analysis}};
+        \node at (l1node.south) {\color{beamer@icmiddleblue}{40MHz $\rightarrow$ 1kHz}};
+        \path[->,color=red,very thick] (1.4,-1) edge (2.4,-1);
+        \path[->,color=red,very thick] (5.4,-1) edge (6.4,0.15);
+        \path[->,color=red,very thick] (1.4,1) edge (2.4,1);
+        \path[dashed,->,color=red,very thick] (4.4,0.6) edge (4.4,-0.3);
+      \end{tikzpicture}
+    \end{columns}
   \end{frame}
 
 
@@ -661,6 +706,20 @@
   \end{frame}
 
   %??maybe efficiency measurement
+  \begin{frame}
+    \frametitle{Trigger Efficiency Measurement}
+    \begin{block}{}
+      \begin{itemize}
+      \item Trigger thresholds are a limiting factor for the analysis
+      \item Need to measure accurately so turn on region can be used
+      \item[-] Variables are highly correlated so measured by fitting as a function of $E_{T}^{miss}$ in bins of $M_{jj}$ and second jet $p_{T}$
+      \end{itemize}
+    \end{block}
+          \includegraphics[width=.5\textwidth]{../../Thesis/plots/parked/AN-14-243-figs/trigfitplots/hData_MET_1D_35D.pdf}
+          \includegraphics[width=.5\textwidth]{../../Thesis/plots/parked/AN-14-243-figs/trigfitplots/hData_MET_1D_22D.pdf}
+
+  \end{frame}
+
 
   %Selection: preselection variables
   \begin{frame}
@@ -814,7 +873,8 @@
         \begin{itemize}
           \item Choose control region enriched in background
           \item Use MC signal-control ratio to go to signal region:
-          $N^{signal}_{Bkg} = (N^{control}_{obs}-N^{control}_{other bkgs}) \cdot \frac{N^{signal}_{MC}}{N^{control}_{MC}}.$
+          $N^{signal}_{Bkg} = \frac{(N^{control}_{obs}-N^{control}_{other bkgs})}{N^{signal}_{MC}}\cdot N^{control}_{MC}.$
+          \item Ratio referred to as data driven scale factor
         \end{itemize}
       \end{block}
     \begin{tikzpicture}
@@ -874,20 +934,6 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{W control regions}
-    \begin{block}{}
-      \begin{itemize}
-      \item For $W\rightarrow\ell\nu$+jets background use region with inverted lepton veto
-      \item[-] e.g. Single muon region for $W\rightarrow\mu\nu$
-      \end{itemize}
-    \end{block}
-    \begin{block}{$W\rightarrow \tau\nu$}
-    \includegraphics[width=.5\textwidth]{../../Thesis/plots/parked/HIG-14-038-figs/output_sigreg/taunu_jetmetnomu_mindphi.pdf}
-    \includegraphics[width=.5\textwidth]{../../Thesis/plots/parked/HIG-14-038-figs/output_sigreg/taunu_jet2_pt.pdf}
-    \end{block}
-  \end{frame}
-
-  \begin{frame}
     \frametitle{Z$\rightarrow\nu\nu$ control region}
     \vspace{-.2cm}
     \begin{block}{}
@@ -904,12 +950,24 @@
 
 
 
-  %??Remaining background estimation QCD, how it evolved
+  %Remaining background estimation QCD, how it evolved
   \begin{frame}
-  \end{frame}
+    \frametitle{QCD Estimation}
+    \begin{block}{}
+      \begin{itemize}
+      \item Small phase space between trigger thresholds and signal region
+      \item Invert QCD reduction criteria to obtain a shape for QCD background
+      \item Normalised using fit of scale factor in sideband 1 as QCD reduction criteria are tightened
+      \end{itemize}
+    \end{block}
+    \begin{columns}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/RHULSeminar051016/qcdfit.png}
 
-  %??Remaining background estimation QCD, how it evolved
-  \begin{frame}
+      \includegraphics[width=\textwidth]{TalkPics/RHULSeminar051016/qcdfit2.png}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/RHULSeminar051016/qcddiag.png}
+    \end{columns}
   \end{frame}
 
   %Selection: selection optimisation
@@ -998,14 +1056,24 @@
         \hline \hline
       \end{tabular}
       \begin{itemize}
-      \item No significant excess so set limits
+      \item Small 1 $\sigma$ excess seen
       \end{itemize}
     \end{block}
   \end{frame}
 
   \begin{frame}
+    \frametitle{Control plots}
+    \centering
+    \includegraphics[width=.45\textwidth]{../../Thesis/plots/parked/HIG-14-038-figs/output_sigreg/nunu_jetmetnomu_mindphi.pdf}
+    \includegraphics[width=.45\textwidth]{../../Thesis/plots/parked/HIG-14-038-figs/output_sigreg/nunu_metnomu_significance.pdf}
+
+    \includegraphics[width=.45\textwidth]{../../Thesis/plots/parked/HIG-14-038-figs/output_sigreg/nunu_dijet_deta.pdf}
+    \includegraphics[width=.45\textwidth]{../../Thesis/plots/parked/HIG-14-038-figs/output_sigreg/nunu_jet2_pt.pdf}
+  \end{frame}
+
+  \begin{frame}
     %HIG-14-038
-    \frametitle{Run 1 CMS direct searches - VBF}%parked
+    \frametitle{Limits from Run 1 VBF search}%parked
     \begin{columns}
       %quick description of parked data  
       \column{.5\textwidth}
@@ -1032,6 +1100,10 @@
 
 
   %intro to ZH searches
+  \begin{frame}
+    \centering
+    \huge\textcolor{beamer@icmiddleblue}{Other Run 1 analyses}
+  \end{frame}
 
   %CMS Run 1
   \begin{frame}
@@ -1082,13 +1154,14 @@
     \end{columns}
   \end{frame}
 
-  %??why combine and how does CMS handle correlated errors
+  %why combine and how does CMS handle correlated errors
   \begin{frame}
     \frametitle{Combining}
     \begin{block}{}
       \begin{itemize}
       \item Best result can be obtained by combining all available searches
       \item Must properly account for correlations between channels
+      \item[-] CMS framework only allows for 100\% or 0\% correlation of a parameter
       \item Most energy resolutions and reconstruction efficiencies are centrally calculated so the uncertainties on these are correlated
       \item Exceptions are jet uncertainties in monojet analysis which are not correlated due to very different kinematics from other analyses
       \item Some cross-section uncertainties are also correlated between channels
@@ -1096,9 +1169,9 @@
     \end{block}
   \end{frame}
 
-  %??Combinations expand
+  %Combinations expand
   \begin{frame}
-    %??HIG-15-012
+    %HIG-15-012
     \frametitle{Run 1 CMS direct searches - Combination}
     \vspace{-.2cm}
     \begin{block}{}
@@ -1112,7 +1185,7 @@
       \end{itemize}
     \end{block}
     \begin{columns}
-      %??by category plot
+      %by category plot
       \column{.5\textwidth}
       \includegraphics[width=.8\textwidth]{TalkPics/DM@LHC2016/CMS-PAS-HIG-15-012_Figure_002.png}
       \column{.5\textwidth}
@@ -1124,32 +1197,46 @@
     CMS-PAS-HIG-15-012
   \end{frame}
 
-
-  %??Moving to a simultaneous fit for run 2
   \begin{frame}
+    \centering
+    \huge\textcolor{beamer@icmiddleblue}{Run 2}
   \end{frame}
 
-  %??Current run 2 result and combinations
+  %Moving to a simultaneous fit for run 2
   \begin{frame}
-    %??HIG-16-009
+    \frametitle{Run 2 CMS direct searches - VBF improvements}
+    \begin{block}{}
+      \begin{itemize}
+      \item Dominant uncertainty in Run 1 was control region statistics
+      \item In order to improve this all W+jets processes now assumed to share the same scale factor
+      \item[-] True in the absence of mismodelling of lepton identification efficiency
+      \item[-] Previous results show compatible scale factors within statistical errors
+      \item W+jets and Z+jets normalisations are also tied together
+      \item[-] 30\% systematic uncertainty calculated using NLO MC placed on their ratio
+      \end{itemize}
+  \end{block}
+    \end{frame}
+
+  %Current run 2 result and combinations
+  \begin{frame}
+    %HIG-16-009
     \frametitle{Run 2 CMS direct searches - VBF}
-    %??mass scan plot, WZ tying together
+    %mass scan plot, WZ tying together
 %    \begin{columns}
 %      \column{.5\textwidth}
+    \vspace{-.2cm}
       \begin{block}{}
         \small
         \begin{itemize}
-        \item Dedicated trigger used again
+        \item Dedicated trigger used again with tighter thresholds due to increased pileup and higher energy beam
           \vspace{-.2cm}
-        \item Counting experiment with data driven background estimation
-          \vspace{-.2cm}
-        \item V+jets backgrounds all taken to have same normalisation
+        \item Control regions and signal region are all considered as single bins in a simultaneous fit
           \vspace{-.2cm}
         \item Observed (expected) limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ for $m_{H}=$125 GeV is 69 (62)\% 
         \end{itemize}
       \end{block}
       %\column{.5\textwidth}
-      %??mass scan
+      %mass scan
       \centering
 
       \includegraphics[width=.5\textwidth]{TalkPics/DM@LHC2016/output_run2ana_160329_sig/nunu_alljetsmetnomu_mindphi.pdf}
@@ -1200,7 +1287,7 @@
       \scriptsize
       \begin{itemize}
       \item All of the above analyses plus a 13 TeV update of Monojet+V(had)H search were combined
-      \item First CMS analysis combining 8 and 13 TeV results
+      \item 8 TeV VBF analysis redone with simultaneous fit and joint V+jets normalisation
       \item Observed (expected) $\mathcal{B}\left(H\rightarrow inv.\right)$ limit for $m_{H}=$125 GeV is 24 (23)\%
       \end{itemize}
       
@@ -1238,6 +1325,11 @@
 
       arXiv:1603.07739
     \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \centering
+    \huge\textcolor{beamer@icmiddleblue}{Dark matter interpretations}
   \end{frame}
 
   \begin{frame}
@@ -1354,10 +1446,39 @@
     \begin{block}{}
       \small
       \begin{itemize}
-      \item Models with electroweak couplings studied: favour VBF channel
-      \item VBF topology allows looser $E_{T}^{miss}$ selection making EFTs valid
-      \item Also investigate simplified models with scalar/pseudoscalar mediator
+      \item EFT models with electroweak couplings studied: favour VBF channel
+      \item VBF topology allows looser $E_{T}^{miss}$ selection than QCD driven searches making EFTs valid
+      \item Also studied `implified' models with a scalar/pseudoscalar mediator
       \item Projections of CMS VBF channel sensitivity at several luminosities
+      \end{itemize}
+    \end{block}
+    \includegraphics[width=\textwidth]{TalkPics/RHULSeminar051016/dmfeyndiags.png}
+      \centering
+      \scriptsize
+
+      arXiv:1603.07739
+  \end{frame}
+
+  \begin{frame}
+    \centering
+    \includegraphics[width=.7\textwidth]{TalkPics/RHULSeminar051016/phenomodeleqns.png}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Simulation framework}
+    \begin{block}{}
+      \begin{itemize}
+      \item Events simulated with MadGraph and run through Delphes fast detector simulation
+      \item Simulation validated by comparing VBF produced SM Higgs to invisible events with yields from CMS central sample
+      \end{itemize}
+    \end{block}
+    \includegraphics[width=\textwidth]{TalkPics/RHULSeminar051016/phenomodeldists.png}
+  \end{frame}
+
+  \begin{frame}
+    \begin{block}{}
+      \begin{itemize}
+      \item Exclusion possible to several TeV for some models
       \end{itemize}
     \end{block}
     \begin{columns}
@@ -1366,32 +1487,19 @@
       \column{.5\textwidth}
       \includegraphics[width=\textwidth]{TalkPics/DM@LHC2016/Aplane.pdf}      
     \end{columns}
-      \centering
-      \scriptsize
-
-      arXiv:1603.07739
   \end{frame}
 
-  %??three more slides on projections
-  \begin{frame}
-  \end{frame}
-  
-  \begin{frame}
-  \end{frame}
-
-  \begin{frame}
-  \end{frame}
-
-  %??
   \begin{frame}
     \frametitle{Summary}
     \label{lastframe}
     \begin{block}{}
       \begin{itemize}
+      \item CMS has produced a wide range of invisibly decaying Higgs boson searches in LHC Runs 1 and 2
       \item Current 95\% CL upper observed (expected) limit on invisible branching fraction from direct searches is 24 (23)\% comparable with ATLAS: 25 (27) \%
       \item[-] Combination of channels allow sensitivity to be greatly improved
       \item Projected limit on $\mathcal{B}\left(H\rightarrow inv.\right)$ $\sim$10-20\% from VBF alone by the end of LHC Run 2 and 5\% by end of LHC running assuming systematics scale as $\sqrt{\mathcal{L}}$
       \item Several dark matter interpretations are being investigated
+      \item[-] Starting to move beyond simple Higgs portal models
       \end{itemize}
     \end{block}
   \end{frame}
