@@ -1,0 +1,145 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+  \begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+    \includegraphics[height=1cm]{icl.pdf}
+    \hfill
+%    \includegraphics[height=1cm]{../Pics/ATLAS-Logo-Square-Blue-RGB.png}
+%    \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+    \includegraphics[height=1cm]{TalkPics/t2k_logo_large.png}
+
+%??put t2k logo here
+  \end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[ht=.35cm,dp=0.2cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+    \begin{minipage}[c]{5cm}%
+      \usebeamerfont{author in head/foot}
+      \insertshortauthor 
+      \insertshorttitle
+    \end{minipage}\hfill%
+    \hfill
+    \insertframenumber{} / \ref{lastframe}
+    %\hfill
+    \begin{minipage}{6cm}
+      \hfill
+      %\insertshorttitle
+    \end{minipage}
+  \end{beamercolorbox}%
+}
+
+\definecolor{beamer@icdarkblue}{RGB}{0,51,102}
+\definecolor{beamer@icmiddleblue}{RGB}{0,82,150} 
+\definecolor{beamer@iclightblue}{RGB}{200,212,232}
+\definecolor{beamer@icmiddlered}{RGB}{204,51,0}
+\definecolor{beamer@iclightred}{RGB}{232,212,32}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,backgrounds}
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\usepackage{rotating}
+\usepackage{moresize}
+\usepackage{slashed}
+\usepackage{xcolor,colortbl}
+\DeclareGraphicsRule{*}{mps}{*}{}
+\hypersetup{colorlinks=false}
+
+\title[MaCh3 Summer Plans]{\vspace{-0.2cm} MaCh3 Summer Plans}
+\author[P. Dunne]{Patrick Dunne - Imperial College London}
+\titlegraphic{
+  \vspace{-0.4cm}
+}
+\date{}
+\begin{document}
+\tikzstyle{every picture}+=[remember picture]
+\tikzstyle{na} = [baseline=-.5ex]
+\begin{fmffile}{t2ktemplatefeyndiags}
+
+
+  %TITLE PAGE
+  %20 mins + 5 questions
+  \section{Title}
+  \begin{frame}
+    \titlepage
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Overview}
+    \begin{block}{}
+        \begin{itemize}
+        \item Range of plans for Summer 2017 analysis
+        \item Our default analysis will use the 5 samples we already have
+        \item[-] We will use the new cross-section parametrisation and $E_{rec}$-$\theta$ binning for $\nu_{e}$
+        \item We also plan to look at adding new samples and studying new parametrisations
+        \item[-] These can be added to the main analysis depending on progress
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{5 sample analysis}
+    \begin{block}{}
+      \begin{itemize}
+      \item Will produce 5 sample joint fit using data available
+      \item Patrick will produce new SK splines
+      \item[-] Fairly quick after T2KRW validation completed
+      \item Kirsty will implement new cross-section parametrisation including BeRPA at SK
+      \item[-] Likely to take about a month of work once splines are available
+      \item Clarence will implement psyche v3 and new cross-section parametrisation at ND280
+      \item[-] A lot of this work is already done
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{New samples}
+    \begin{block}{}
+      \begin{itemize}
+        \item Leila will look at adding $\nu_{\mu}$ CC1$\pi$ APFit sample
+        \item[-] Should take a few months
+        \item Elder will look at adding $\nu_{\mu}$ CC1$\pi$ fitQun sample
+        \item[-] Aiming for sensitivity studies in a couple of months
+        \item Clarence will look at subdividing the SK samples into forward and not forward
+        \item[-] Aiming for sensitivity studies in the Summer
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{New parametrisations and analyses}
+    \begin{block}{}
+      \begin{itemize}
+        \item Leila will look at p-theta binning
+        \item[-] Should take about a month once splines from Patrick are available
+        \item Patrick will look at 2D binning in $\nu_{\mu}$ sample
+        \item[-] About a month of work if splines with fine enough binning to see oscillation dip do not take up too much memory, a few months if more major work required
+        \item Tarak will look at adding a joint $\nu_{\mu}$-$\nu_{e}$ ND280 sterile neutrino search
+        \item[-] Will start with SBL $\nu_{\mu}$ disappearance analysis an then add $\nu_{e}$
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{}
+    \label{lastframe}
+    \begin{block}{}
+      \begin{itemize}
+      \item We should have the 5 sample analysis with new cross-section parametrisation ready as a minimum
+      \item We have several plans for improvements that we will add depending on progress
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  %Backup goes here
+  
+\end{fmffile}
+\end{document}
+
+\begin{frame}
+\end{frame}
