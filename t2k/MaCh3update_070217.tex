@@ -74,7 +74,7 @@
     \begin{block}{}
         \scriptsize
         \begin{itemize}
-        \item Leila updated on Run 1-7 5 sample status
+        \item Le\"ila updated on Run 1-7 5 sample status
         \item Preparation for main summer analysis
         \item New things we're working on
       \end{itemize}
@@ -85,8 +85,8 @@
     \frametitle{Preparations for the summer: Analysers and baseline}
     \begin{itemize}
     \item Planned baseline analysis is 5 sample+ND280 joint fit with new Xsec parameterisation
-    \item Leila, Clarence and Patrick (me) will be the main analysers
-    \item[-] Leila has to graduate at some point this summer
+    \item Le\"ila, Clarence and Patrick (me) will be the main analysers for this
+    \item[-] Le\"ila has to graduate at some point this summer
     \item[-] We also have Elder and Kirsty in the group able to help
     \end{itemize}
   \end{frame}
@@ -95,44 +95,81 @@
     \frametitle{Preparations for the summer: Framework}
     \begin{itemize}
     \item Turnaround from final inputs to results is about 1 week each for Asimov fits and data fits
+    \item Notes from Clarence about framework streamlining %!!
     \end{itemize}
   \end{frame}
 
   \begin{frame}
     \frametitle{Preparations for the summer: New Xsec parametrisation}
-    %?? the new Xsec parameters which we're nearly ready for thanks to Clarence and Kirsty
     \begin{itemize}
-    \item Most of new parameters are implemented in our ND280 and SK code
+    \item Parameters are implemented in our ND280 (Clarence) and SK (Kirsty) code to the extent they're final
     \item[-] BeRPA implemented event-by-event already
-    \item Waiting for freeze of parameters
+    \item I'm waiting for freeze of parameters for spline production and SK implementation of spline parameters (see other talk)
     \end{itemize}
   \end{frame}
 
   \begin{frame}
-    \frametitle{fitQun CC1$\pi$}
-    %??update from Elder
+    \frametitle{fitQun CC1$\pi$: Elder}
+    \begin{itemize}
+    \item Working on adding fitQun numu pion ring samples
+    \item Aiming for stats only analysis in the next few weeks
+    \item Will then add FSI+SI covariance matrix (with current implementation) as a conservative approach
+    \item Also, working on preparing splines for this sample
+    \end{itemize}
   \end{frame}
 
   \begin{frame}
-    \frametitle{Continuous $\beta$}
-    %??update from Kirsty
+    \frametitle{Continuous $\beta$: Kirsty}
+    \begin{itemize}
+    \item Take $\beta$ from $\bar{\nu}_{e}$ appearance analysis and allow to be continuous
+    \item Have run Asimov's (shown today set 1 wRC)
+    \end{itemize}
+    \centering
+    \includegraphics[width=.5\textwidth]{TalkPics/MaCh3update_070217/betadcp_asimov1wrc.png}
   \end{frame}
 
   \begin{frame}
-    \frametitle{2D $\nu_{\mu}$ studies}
-    %??update from me
+    \frametitle{Continuous $\beta$: Kirsty}
+    \begin{itemize}
+    \item Take $\beta$ from $\bar{\nu}_{e}$ appearance analysis and allow to be continuous
+    \item Have run Asimov's (shown today set 1 wRC)
+    \item nb lower rightmost point is $\delta_{CP}=-\pi/2$
+    \end{itemize}
+    \includegraphics[width=\textwidth]{TalkPics/MaCh3update_070217/biprob_asimov1wrc.png}
   \end{frame}
 
   \begin{frame}
-    \frametitle{ND280 and codebase streamlining}
-    %??update from Clarence
-    %  on the ND280 side BANFF and us are moving to psyche 3 hopefully at the end of summer because there's now a person that's dedicated to it (Pierre Lasorak)
-
+    \frametitle{2D $\nu_{\mu}$ studies: Me}
+    \begin{itemize}
+    \item Looking at finding a working $E_{rec}-\theta$ binning for 2D $\nu_{\mu}$
+    \item Difficult to capture oscillation dip without very large number of bins
+    \item Very preliminary kinematic plots shown here
+    \end{itemize}
+    \centering
+    \includegraphics[width=.5\textwidth]{TalkPics/MaCh3update_070217/numu2dfullrange.png}
+    \includegraphics[width=.5\textwidth]{TalkPics/MaCh3update_070217/numu2dzoom.png}
   \end{frame}
 
   \begin{frame}
-    \frametitle{Sterile search}
-    %??update from Tarak
+    \frametitle{ND280: Clarence}
+    \begin{itemize}
+    \item For summer: ready subject to last minute changes in Xsec parameterisation
+    \item For future hopefully moving to psyche 3 at end of summer
+    \item[-] Will allow $\nu_{e}$ and 4$\pi$ samples to be added
+    \item[-] Dedicated person for this effort in BANFF now (Pierre Lasorak)
+    \end{itemize}
+  \end{frame}
+  
+  \begin{frame}
+    \frametitle{Sterile search: Tarak}
+    \begin{itemize}
+    \item Plan to implement ND280 $\nu_{\mu}$ disappearance analysis with P6 and compare to previous analysis (based on P5)
+    \item Have implemented 2 flavour oscillation weights
+    \item Working to incorporate this into the Markov Chain 
+    \item[-] Was planning ot use BANFF-like approach for cross-section parameters
+    \item Significant effort recommended by NIWG convenors to implement a satisfactory cross-section model \hyperlink{http://www.t2k.org/asg/xsec/meetings/2017/niwg-premeetings-febr2017/niwg-NDOAmodel}{see here}
+    \item Plan to have preliminary sensitivity studies with the recommended cross section model by Summer
+    \end{itemize}
   \end{frame}
 
 
@@ -141,7 +178,11 @@
     \label{lastframe}
     \begin{block}{}
       \begin{itemize}
-      \item 
+      \item On track for Summer analysis
+      \item[-] Ready for new Xsec parameterisation when it arrives
+      \item[-] Framework is stable
+      \item Several interesting new studies in progress
+      \item[-] New samples at SK and ND280, continuous beta etc.
       \end{itemize}
     \end{block}
   \end{frame}
@@ -152,6 +193,18 @@
 \begin{frame}
   \centering
   \huge \textcolor{beamer@icmiddleblue}{Backup}
+\end{frame}
+
+%??Add NH, IH and biprob prediction from Davide plots that Kirsty sent
+\begin{frame}
+  \frametitle{Continuous beta}
+  \includegraphics[width=\textwidth]{TalkPics/MaCh3update_070217/biprobpred.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Continuous beta}
+  \includegraphics[width=.5\textwidth]{TalkPics/MaCh3update_070217/NHbiprob.png}
+  \includegraphics[width=.5\textwidth]{TalkPics/MaCh3update_070217/IHbiprob.png}
 \end{frame}
 
 \end{fmffile}
