@@ -1,0 +1,158 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+  \begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+    \includegraphics[height=1cm]{icl.pdf}
+    \hfill
+%    \includegraphics[height=1cm]{../Pics/ATLAS-Logo-Square-Blue-RGB.png}
+%    \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+    \includegraphics[height=1cm]{TalkPics/t2k_logo_large.png}
+
+%??put t2k logo here
+  \end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[ht=.35cm,dp=0.2cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+    \begin{minipage}[c]{5cm}%
+      \usebeamerfont{author in head/foot}
+      \insertshortauthor 
+      \insertshorttitle
+    \end{minipage}\hfill%
+    \hfill
+    \insertframenumber{} / \ref{lastframe}
+    %\hfill
+    \begin{minipage}{6cm}
+      \hfill
+      %\insertshorttitle
+    \end{minipage}
+  \end{beamercolorbox}%
+}
+
+\definecolor{beamer@icdarkblue}{RGB}{0,51,102}
+\definecolor{beamer@icmiddleblue}{RGB}{0,82,150} 
+\definecolor{beamer@iclightblue}{RGB}{200,212,232}
+\definecolor{beamer@icmiddlered}{RGB}{204,51,0}
+\definecolor{beamer@iclightred}{RGB}{232,212,32}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,backgrounds}
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\usepackage{rotating}
+\usepackage{moresize}
+\usepackage{slashed}
+\usepackage{xcolor,colortbl}
+\DeclareGraphicsRule{*}{mps}{*}{}
+\hypersetup{colorlinks=false}
+
+\title[MaCh3 status and plans]{\vspace{-0.2cm} MaCh3 status and plans}
+\author[P. Dunne]{Patrick Dunne - Imperial College London \\ for the MaCh3 group}
+\titlegraphic{
+  \vspace{-0.4cm}
+}
+\date{}
+\begin{document}
+\tikzstyle{every picture}+=[remember picture]
+\tikzstyle{na} = [baseline=-.5ex]
+\begin{fmffile}{t2ktemplatefeyndiags}
+
+
+  %TITLE PAGE
+  %20 mins + 5 questions
+  \section{Title}
+  \begin{frame}
+    \titlepage
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Overview}
+    \begin{block}{}
+        \scriptsize
+        \begin{itemize}
+        \item Leila updated on Run 1-7 5 sample status
+        \item Preparation for main summer analysis
+        \item New things we're working on
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Preparations for the summer: Analysers and baseline}
+    \begin{itemize}
+    \item Planned baseline analysis is 5 sample+ND280 joint fit with new Xsec parameterisation
+    \item Leila, Clarence and Patrick (me) will be the main analysers
+    \item[-] Leila has to graduate at some point this summer
+    \item[-] We also have Elder and Kirsty in the group able to help
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Preparations for the summer: Framework}
+    \begin{itemize}
+    \item Turnaround from final inputs to results is about 1 week each for Asimov fits and data fits
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Preparations for the summer: New Xsec parametrisation}
+    %?? the new Xsec parameters which we're nearly ready for thanks to Clarence and Kirsty
+    \begin{itemize}
+    \item Most of new parameters are implemented in our ND280 and SK code
+    \item[-] BeRPA implemented event-by-event already
+    \item Waiting for freeze of parameters
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{fitQun CC1$\pi$}
+    %??update from Elder
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Continuous $\beta$}
+    %??update from Kirsty
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{2D $\nu_{\mu}$ studies}
+    %??update from me
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{ND280 and codebase streamlining}
+    %??update from Clarence
+    %  on the ND280 side BANFF and us are moving to psyche 3 hopefully at the end of summer because there's now a person that's dedicated to it (Pierre Lasorak)
+
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Sterile search}
+    %??update from Tarak
+  \end{frame}
+
+
+  \begin{frame}
+    \frametitle{Conclusions}
+    \label{lastframe}
+    \begin{block}{}
+      \begin{itemize}
+      \item 
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  %Backup goes here
+  
+
+\begin{frame}
+  \centering
+  \huge \textcolor{beamer@icmiddleblue}{Backup}
+\end{frame}
+
+\end{fmffile}
+\end{document}
