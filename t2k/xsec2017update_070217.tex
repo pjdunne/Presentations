@@ -1,0 +1,154 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+  \begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+    \includegraphics[height=1cm]{icl.pdf}
+    \hfill
+%    \includegraphics[height=1cm]{../Pics/ATLAS-Logo-Square-Blue-RGB.png}
+%    \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+    \includegraphics[height=1cm]{TalkPics/t2k_logo_large.png}
+
+%??put t2k logo here
+  \end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[ht=.35cm,dp=0.2cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+    \begin{minipage}[c]{5cm}%
+      \usebeamerfont{author in head/foot}
+      \insertshortauthor 
+      \insertshorttitle
+    \end{minipage}\hfill%
+    \hfill
+    \insertframenumber{} / \ref{lastframe}
+    %\hfill
+    \begin{minipage}{6cm}
+      \hfill
+      %\insertshorttitle
+    \end{minipage}
+  \end{beamercolorbox}%
+}
+
+\definecolor{beamer@icdarkblue}{RGB}{0,51,102}
+\definecolor{beamer@icmiddleblue}{RGB}{0,82,150} 
+\definecolor{beamer@iclightblue}{RGB}{200,212,232}
+\definecolor{beamer@icmiddlered}{RGB}{204,51,0}
+\definecolor{beamer@iclightred}{RGB}{232,212,32}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,backgrounds}
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\usepackage{rotating}
+\usepackage{moresize}
+\usepackage{slashed}
+\usepackage{xcolor,colortbl}
+\DeclareGraphicsRule{*}{mps}{*}{}
+\hypersetup{colorlinks=false}
+
+\title[Transverse Variables for HPTPC]{\vspace{-0.2cm} Spline production and BeRPA update}
+\author[P. Dunne]{Patrick Dunne - Imperial College London}
+\titlegraphic{
+  \vspace{-0.4cm}
+}
+\date{}
+\begin{document}
+\tikzstyle{every picture}+=[remember picture]
+\tikzstyle{na} = [baseline=-.5ex]
+\begin{fmffile}{t2ktemplatefeyndiags}
+
+
+  %TITLE PAGE
+  %20 mins + 5 questions
+  \section{Title}
+  \begin{frame}
+    \titlepage
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Overview}
+    \begin{block}{}
+        \begin{itemize}
+        \item 2 Main packages used for spline production:
+          \begin{itemize}
+          \item T2KReWeight and things that go into it, e.g. NIWGReWeight
+          \item XsecResponse
+          \end{itemize}
+        \item Need a T2KReWeight freeze before spline production can progress
+        \item Kendall has gone through most of the T2KReWeight status
+        \item Will cover XsecResponse status and BeRPA progress in T2KReWeight
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{BeRPA}
+    \scriptsize
+      \begin{equation*}
+        f(x)=\begin{cases}
+        A(1-x)^3 + 3B(1-x)^2 x + 3C(1-x)x^2 + Dx^3, q^{2}<U \\
+        1+\left(D-1\right)e^{-E\left(q^{2}-U\right)}, q^{2} \geq U
+        \end{cases}
+      \end{equation*}
+      \begin{block}{}
+        \begin{itemize}
+        \item BeRPA implementation for Wing's tests done by Raj and Wing using 2015 splines T2KReWeight freeze
+        \item[-] Event-by-event weight stored in mtuple for nominal value
+        \item[-] Binned splines made for variations about that nominal
+        \item As Kendall mentioned/s there is a BeRPA implementation in the current T2KReWeight
+        \item[-] It does both of the above steps in one
+        \item[-] May not perform as well due to large nominal$\rightarrow$nominal+BeRPA weights
+        \item 2 options: implement dial in T2KReWeight as Raj has or use current T2KReWeight dial and revalidate
+        \end{itemize}
+      \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Aside: BeRPA naming}
+    \begin{block}{}
+      \begin{itemize}
+      \item In presentations BeRPA parameters that vary are ABDEU
+      \item[-] C is fixed by continuity
+      \item In code, names of variables are often ABCDU
+      \item These map to presented BeRPA parameters as A$\rightarrow$A, B$\rightarrow$B, C$\rightarrow$D, D$\rightarrow$E, U$\rightarrow$U
+      \item Awaiting TN309 for official naming
+      \end{itemize}
+      \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{XsecResponse}
+    \begin{block}{}
+      \begin{itemize}
+      \item Takes weights from T2KReWeight as input and makes splines
+      \item Already set up to make Erec-theta, Erec and p-theta splines
+      \item T2KReWeight output is a set of weights for each 'tweak' in the order they were run in the T2KReWeight executable
+      \item[-] Need to know the number of variations for each dial and the order they were run in the exec
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Summary}
+    \label{lastframe}
+    \begin{block}{}
+      \begin{itemize}
+      \item BeRPA implementation now understood
+      \item[-] Need to decide which approach to use and put it into T2KReWeight
+      \item XsecResponse work as far as it can be without some T2KReWeight details
+      \item After these two are done will be ready to generate splines after T2KReWeight freeze
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  %Backup goes here
+  
+\end{fmffile}
+\end{document}
+
+\begin{frame}
+\end{frame}

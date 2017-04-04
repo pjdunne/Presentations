@@ -1,0 +1,174 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+  \begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+    \includegraphics[height=1cm]{icl.pdf}
+    \hfill
+%    \includegraphics[height=1cm]{../Pics/ATLAS-Logo-Square-Blue-RGB.png}
+%    \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+    \includegraphics[height=1cm]{TalkPics/t2k_logo_large.png}
+
+%??put t2k logo here
+  \end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[ht=.35cm,dp=0.2cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+    \begin{minipage}[c]{5cm}%
+      \usebeamerfont{author in head/foot}
+      \insertshortauthor 
+      \insertshorttitle
+    \end{minipage}\hfill%
+    \hfill
+    \insertframenumber{} / \ref{lastframe}
+    %\hfill
+    \begin{minipage}{6cm}
+      \hfill
+      %\insertshorttitle
+    \end{minipage}
+  \end{beamercolorbox}%
+}
+
+\definecolor{beamer@icdarkblue}{RGB}{0,51,102}
+\definecolor{beamer@icmiddleblue}{RGB}{0,82,150} 
+\definecolor{beamer@iclightblue}{RGB}{200,212,232}
+\definecolor{beamer@icmiddlered}{RGB}{204,51,0}
+\definecolor{beamer@iclightred}{RGB}{232,212,32}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,backgrounds}
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\usepackage{rotating}
+\usepackage{moresize}
+\usepackage{slashed}
+\usepackage{xcolor,colortbl}
+\DeclareGraphicsRule{*}{mps}{*}{}
+\hypersetup{colorlinks=false}
+
+\title[MaCh3 status]{\vspace{-0.2cm} MaCh3 Summer 17 NIWG model implementation}
+\author[P. Dunne]{Patrick Dunne - Imperial College London \\ for the MaCh3 group}
+\titlegraphic{
+  \vspace{-0.4cm}
+}
+\date{}
+\begin{document}
+\tikzstyle{every picture}+=[remember picture]
+\tikzstyle{na} = [baseline=-.5ex]
+\begin{fmffile}{t2ktemplatefeyndiags}
+
+
+  %TITLE PAGE
+  %20 mins + 5 questions
+  \section{Title}
+  \begin{frame}
+    \titlepage
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Overview}
+    \begin{block}{}
+        \scriptsize
+        \begin{itemize}
+        \item T2KReWeight and neut versions frozen week after collaboration meeting
+        \item SK splines and weights for new model have been generated and put on iRods
+        \item[-] Also new mtuples with BeRPA nominal weights
+        \item Currently using APfit samples as fitQun only recently available
+        \item New model is implemented in MaCh3 now validating
+        \item[-] Deadline in OA plan is 3rd March (tomorrow)
+        \item[-] See Clarence's talks for results with ND280 only fit
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Splines}
+    \begin{block}{}
+    \begin{itemize}
+    \item Most splines behaving well
+    \item[-] Ignore line, just drawn by TGraph
+    \end{itemize}
+    \end{block}
+    \centering
+    \includegraphics[width=.75\textwidth,page=2708]{TalkPics/MaCh3update_020317/splines_numu_x_numu_numuselec.pdf}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Splines}
+    \begin{block}{}
+    \begin{itemize}
+    \item Some don't look so smooth but expected and spline interpolation should be able to take into account
+    \end{itemize}
+    \end{block}
+    \centering
+    \includegraphics[width=.8\textwidth,page=630]{TalkPics/MaCh3update_020317/splines_numu_x_numu_numuselec.pdf}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Implementation in MaCh3}
+    \begin{block}{}
+    \begin{itemize}
+    \item Code changes required have been made
+    \item We calculate BeRPA event-by-event using Q2
+    \item[-] don't use BeRPA splines and nominal weights
+    \item[-] RPA weights no longer applied
+    \item Executables compile and run, now validating
+    \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Event rates}
+    \begin{block}{}
+    \begin{itemize}
+    \item SK nominal event rates with Run 1-7c POT, just a check of code
+    \item Expected to be different from TN269 as RPA weights not applied anymore
+    \item[-] BeRPA weight not applied here either
+    \end{itemize}
+    \centering
+      \begin{tabular}{|c||c|c|c|c|}
+        \hline
+        & $\nu_{\mu}$ osc & $\nu_{\mu}$ unosc & $\nu_{e}$ osc & $\nu_{e}$ unosc \\
+        \hline
+        $\nu_{\mu}$ & 109.7 & 439.8 & 1.388 & 1.861\\
+        $\nu_{e}$ & 0.3075 & 0.3113 & 3.032 & 3.253\\
+        $\bar{\nu}_{\mu}$ & 9.067 & 15.98 & 0.07582 & 0.07799\\
+        $\bar{\nu}_{e}$ & 0.03278 & 0.03290 & 0.1591 & 0.1680\\
+        $\nu_{e}$ signal & 0.3284 & 0.000 & 20.24 & 0.000\\
+        $\bar{\nu}_{e}$ signal & 0.00211 & 0.000 & 0.1647 & 0.000\\
+        \hline
+        Total & 119.5 & 456.1 & 25.06 & 5.370\\
+        \hline
+      \end{tabular}
+      \begin{itemize}
+      \item Running rates with nominal weights applied now for comparison with other groups
+      \end{itemize}
+      \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Conclusions}
+    \label{lastframe}
+    \begin{block}{}
+      \begin{itemize}
+      \item Currently within schedule for summer OA
+      \item Need to perform more validations of Xsec model and cross-check with other groups
+      \item Will start generating weights and splines for fitQun samples
+       \end{itemize}
+    \end{block}
+  \end{frame}
+
+  %Backup goes here
+  
+
+\begin{frame}
+  \centering
+  \huge \textcolor{beamer@icmiddleblue}{Backup}
+\end{frame}
+
+\end{fmffile}
+\end{document}
