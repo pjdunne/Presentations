@@ -121,6 +121,7 @@
   \begin{frame}
     \frametitle{What problems could we have?}
       \begin{itemize}
+        \vspace{-.3cm}
       \item Different energy spectrum at near and far detector
       \end{itemize}
       \centering
@@ -128,13 +129,14 @@
 
     \begin{itemize}
     \item Even if same nucleus this can be problematic
+    \item Other problems too, efficiency and misreconstruction (see Kevin's talk)
     \end{itemize}
   \end{frame}
 
   \begin{frame}
     \frametitle{What can we do about it?}
     \begin{itemize}
-    \item Great work already being done by xsec/external fitting groups
+    \item Great work already being done by xsec/external fitting etc. groups (see other talks)
     \item Need to do more to test if $\nu/\bar{\nu}$ difference is from CP violation
     \item[-] Must look at more variables including hadronic ones
     \item[-] Must look at as many nuclei as possible
@@ -151,16 +153,16 @@
     \end{itemize}
     \centering
     \includegraphics[width=.5\textwidth]{TalkPics/CorrelationWorkshop050217/nd280evdisp.png}
+    \includegraphics[width=.5\textwidth]{TalkPics/CorrelationWorkshop050217/HPTPCchamber3.png}
   \end{frame}
 
   \begin{frame}
     \frametitle{Sensitivity studies with HPTPC}
     \begin{itemize}
-    \item Aim to include an $\sim$600kg HPTPC as an HK near detector
-    \item Have taken ND280 truth MC and applied HPTPC like efficiencies and thresholds
-    \item[-] Assumes same target nuclei as ND280
-    \item Calculate event variables and compare detectors
-    \item Low hadronic thresholds allow for use of hadron kinematics
+    \item Plan to include a 40$m^3$ HPTPC as an HK near detector
+    \item[-] $\sim$600kg of Argon gas
+    \item[-] $\sim$42,000 events per $10^{21}$ POT
+    \item Envisage the following thresholds and efficiencies:
     \end{itemize}
     \begin{tabular}{l|cc}
       \hline
@@ -172,6 +174,21 @@
       $e$ & 100 & 1 \\
       \hline
     \end{tabular}
+    \centering
+    
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Sensitivity studies with HPTPC}
+    \begin{itemize}
+    \item Have taken ND280 truth MC and applied HPTPC like efficiencies and thresholds
+    \item[-] Assumes same target nuclei as ND280
+    \item Separate CC0$\pi$ and CC1$\pi$ events by number of protons
+    \item Calculate event variables and compare detectors
+    \item Low hadronic thresholds allow for use of hadron kinematics
+    \end{itemize}
+    \centering
+    \includegraphics[width=.5\textwidth]{TalkPics/CorrelationWorkshop050217/howmanyprotons.png}
   \end{frame}
 
   %??what can we do with this hadron information STV
@@ -192,7 +209,7 @@
     \frametitle{Aside on naming for STV}
     \begin{itemize}
     \item Naming that is emerging in neutrino physics is different from other areas: e.g. hadron colliders
-    \scriptsize\item[-] $\delta p_{T}=p_{T}^{miss}$, $\delta\phi_{T}=\pi-\Delta\phi(lep,had)$, $\delta\alpha_{T}=\pi-\Delta\phi(lep,p_{T}^{miss})$
+    \scriptsize\item[-] $\delta p_{T}=p_{T}^{miss}$, $\delta\phi_{T}=\pi-\Delta\phi_{T}(lep,had)$, $\delta\alpha_{T}=\pi-\Delta\phi_{T}(lep,p_{T}^{miss})$
     \normalsize
     \item Personally find hadron collider naming more intuitive
     \item Worth considering whether we want to standardise
@@ -300,7 +317,8 @@
       \item Look at component of proton momentum in transverse plane
     \end{itemize}
     \centering
-    \includegraphics[width=.7\textwidth]{TalkPics/STVforHPTPC_211116/hptpcplots_211116/cc0pi1p_p_pt.pdf}
+    \includegraphics[width=.5\textwidth]{TalkPics/STVforHPTPC_211116/hptpcplots_211116/cc0pi1p_d_pt.pdf}
+    \includegraphics[width=.5\textwidth]{TalkPics/STVforHPTPC_211116/hptpcplots_211116/cc0pi1p_p_pt.pdf}
   \end{frame}
 
   \begin{frame}
@@ -413,8 +431,16 @@
 
   %Backup goes here
   
-\end{fmffile}
-\end{document}
 
 \begin{frame}
+  \centering
+  \huge \textcolor{beamer@icmiddleblue}{Backup}
 \end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=}
+\includepdf[pages={3,4,5,6,7,8,9,10,11,12}]{STVforHPTPC_101016.pdf}
+}
+
+\end{fmffile}
+\end{document}
