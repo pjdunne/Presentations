@@ -1,0 +1,273 @@
+\documentclass[hyperref=colorlinks]{beamer}
+\mode<presentation>
+\usetheme{iclpt}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{
+  \begin{beamercolorbox}[leftskip=.2cm,rightskip=.2cm,topskip=.2cm,ht=1.1cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
+    \includegraphics[height=1cm]{icl.pdf}
+    \hfill
+%    \includegraphics[height=1cm]{../Pics/ATLAS-Logo-Square-Blue-RGB.png}
+%    \includegraphics[height=1cm]{../Pics/CMS-Color.pdf}
+    \includegraphics[height=1cm]{TalkPics/t2k_logo_large.png}
+
+%??put t2k logo here
+  \end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[ht=.35cm,dp=0.2cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+    \begin{minipage}[c]{5cm}%
+      \usebeamerfont{author in head/foot}
+      \insertshortauthor 
+      \insertshorttitle
+    \end{minipage}\hfill%
+    \hfill
+    \insertframenumber{} / \ref{lastframe}
+    %\hfill
+    \begin{minipage}{6cm}
+      \hfill
+      %\insertshorttitle
+    \end{minipage}
+  \end{beamercolorbox}%
+}
+
+\definecolor{beamer@icdarkblue}{RGB}{0,51,102}
+\definecolor{beamer@icmiddleblue}{RGB}{0,82,150} 
+\definecolor{beamer@iclightblue}{RGB}{200,212,232}
+\definecolor{beamer@icmiddlered}{RGB}{204,51,0}
+\definecolor{beamer@iclightred}{RGB}{232,212,32}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,backgrounds}
+\usepackage{color}
+\usepackage{tabularx,colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{feynmp}
+\usepackage{rotating}
+\usepackage{moresize}
+\usepackage{slashed}
+\usepackage{xcolor,colortbl}
+\DeclareGraphicsRule{*}{mps}{*}{}
+\hypersetup{colorlinks=false}
+
+\title[MaCh3 status]{\vspace{-0.2cm} MaCh3 Summer 17 OA}
+\author[P. Dunne]{Patrick Dunne, \\ for the MaCh3 group}
+\titlegraphic{
+  \vspace{-0.4cm}
+}
+\date{}
+\begin{document}
+\tikzstyle{every picture}+=[remember picture]
+\tikzstyle{na} = [baseline=-.5ex]
+\begin{fmffile}{t2ktemplatefeyndiags}
+
+
+  %TITLE PAGE
+  %20 mins + 5 questions
+  \section{Title}
+  \begin{frame}
+    \titlepage
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Oscillations at T2K}
+    \scriptsize
+    \begin{itemize}
+    \item Standard PMNS oscillations apply to mass eigenstates as:
+    \end{itemize}
+    \begin{equation*}
+      \left(\begin{array}{c}
+        \nu_{e}\\
+        \nu_{\mu}\\
+        \nu_{\tau}\\
+  \end{array}\right)
+      \left(
+      \begin{array}{ccc}
+        1 & 0 & 0 \\
+        0 & c_{23} & s_{23} \\
+        0 & -s_{23} & c_{23} \\
+      \end{array}
+      \right)
+      \left(
+      \begin{array}{ccc}
+        c_{13} & 0 & s_{13}e^{i\delta} \\
+        0 & 1 & 0 \\
+        -s_{13}e^{-i\delta} & 0 & c_{13} \\
+      \end{array}
+      \right)
+      \left(
+      \begin{array}{ccc}
+        c_{12} & s_{12} & 0 \\
+        -s_{12} & c_{12} & 0 \\
+        0 & 0 & 1 \\
+      \end{array}
+      \right)      
+      \left(
+      \begin{array}{c}
+        \nu_{1}\\
+        \nu_{2}\\
+        \nu_{3}\\
+      \end{array}
+      \right)
+    \end{equation*}
+    \begin{itemize}
+    \item T2K sees disappearance of $\nu_{\mu}$, appearance of $\nu_{e}$ and equivalents for antineutrino
+    \item Gives sensitivity to $\sin^2\left(\theta_{23}\right)$, $\sin^2\left(\theta_{13}\right)$, $\Delta m^2_{23}$ and $\delta$
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{MaCh3 introduction}
+    \begin{itemize}
+    \item MaCh3 is a Bayesian Markov Chain Monte Carlo (MCMC) oscillation fitter
+    \item Performs MCMC integration to give the posterior probability
+    \item Choose to fit ND280 and SK simultaneously
+    \end{itemize}
+  \end{frame}
+
+
+
+  \begin{frame}
+    \frametitle{What goes into an oscillation fit?}
+    \centering
+    \includegraphics[width=.9\textwidth]{TalkPics/PdunneF2F050417/oadiagram.pdf}
+    
+    \scriptsize K. Duffy
+  \end{frame}
+
+
+  \begin{frame}
+    \frametitle{Updates for Summer OA}
+      \begin{itemize}
+      \item SK data: Use full Run 1-8 SK data for all 5 samples
+      \item[-] All analyses fitting in $E_{rec}$ for $\nu_{\mu}$ and 2D for $\nu_{e}$
+      \item ND280 data: No new data, but new RHC binning
+      \item New SK reconstruction using fitQun
+      \item New xsec model
+      \end{itemize}
+      \centering
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{fitQun}
+    \begin{itemize}
+    \item SK reconstruction with significantly lower mis-ID probability
+    \item Available for all samples used in OA fit
+    \end{itemize}
+    \centering
+    \includegraphics[width=\textwidth]{TalkPics/PdunneF2F050417/fitqun.pdf}
+
+    \scriptsize A. Missert
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{fitQun: Fiducial volume}
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{itemize}
+      \item Much lower mis-ID probability allows fiducial volume (FV) to be expanded
+      \item Optimise 2 variables cut values based on:
+        \begin{equation*}
+          \sum^{bins}_{i} \frac{\left(\frac{dN_{i}}{d\theta}\right)}{N_{i}+\left(\sigma_{syst}^2\right)_{i}}
+        \end{equation*}
+      \item Results in 20\% larger FV with more events around oscillation max. energy
+      \end{itemize}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/PdunneF2F050417/fitqunfv.pdf}
+
+      \scriptsize A. Missert
+          
+    \end{columns}
+  \end{frame}
+
+
+  %??list and motivate changes
+  %??see Kendall's slides
+  \begin{frame}
+    \frametitle{New xsec model (2017b)}
+    \begin{itemize}
+    \item Large changes made to this year's cross-section model:
+    \item Removal of $E_{B}$ dial
+    \item 2p2h uncertainty treatment
+    \item Change to RPA treatment
+    \end{itemize}
+  \end{frame}
+  
+  \begin{frame}
+    \frametitle{$E_{B}$}
+    %?? explain what tried to do and why dropped
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{2p2h}
+    %?? some of my validation plots to show shift
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{BeRPA}
+    %?? explain plus Asher's nice plot
+  \end{frame}
+  
+  %??headline event rate comparisons and systematic variation highlights
+  \begin{frame}
+    \frametitle{Validation progress}
+    \begin{itemize}
+    \item All of the above changes implemented in MaCh3
+    \item Event rates validated against p-theta
+    \end{itemize}
+    %??table of rates
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Validation progress}
+    \begin{itemize}
+    \item Systematic variations also compared to p-theta
+    \end{itemize}
+    %??syst variation plots
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Asimov fits}
+    \begin{itemize}
+    \item Hot off the presses!
+    \item woRC Asimov A ($\delta=-1.601$,  $\sin^2\left(\theta_{23}\right)=0.523$)
+    \end{itemize}
+    %??Asimov plot
+  \end{frame}
+  
+  \begin{frame}
+    \frametitle{Asimov fits: Comparison with p-theta}
+    %??include comparison and comment
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Timeline}
+    \begin{itemize}
+    \item Targeting EPS-HEP: July 5-12
+    \item Currently on time (just)
+    \end{itemize}
+    \centering
+      \includegraphics[width=.5\textwidth]{TalkPics/OAupdate_160317/oaschedule.pdf}    
+  \end{frame}
+  
+  \begin{frame}
+    \frametitle{Conclusions}
+    \label{lastframe}
+    \begin{block}{}
+      \begin{itemize}
+      \item 
+        %??add some conclusions
+       \end{itemize}
+    \end{block}
+  \end{frame}
+
+  %Backup goes here
+  
+
+\begin{frame}
+  \centering
+  \huge \textcolor{beamer@icmiddleblue}{Backup}
+\end{frame}
+
+\end{fmffile}
+\end{document}
