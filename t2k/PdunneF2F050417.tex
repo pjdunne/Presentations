@@ -81,6 +81,7 @@
         \nu_{\mu}\\
         \nu_{\tau}\\
   \end{array}\right)
+      =
       \left(
       \begin{array}{ccc}
         1 & 0 & 0 \\
@@ -195,35 +196,139 @@
   
   \begin{frame}
     \frametitle{$E_{B}$}
-    %?? explain what tried to do and why dropped
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{itemize}
+      \item Part of model of inital nucleon momentum
+      \item[-] Describes energy needed to remove nucleon from atom
+      \item $E_{B}$ dial in 2015 parametrisation didn't migrate events as desired
+      \item Also it's effect was very small, so we dropped it
+      \end{itemize}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/PdunneF2F050417/ebdiag.pdf}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{$E_{B}$}
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{itemize}
+      \item Planned new dial based on comparison of nominal SF model with RFG model with varied $E_{B}$
+      \item SF has larger phase space than RFG so should work
+      \item Problem: larger $\neq$ covering
+      \item[-] RFG (red) populates some areas SF (black) doesn't
+      \item[-] Large bias in forward region
+      \item Dropped new dial as well
+      \end{itemize}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/PdunneF2F050417/ebphasespace.pdf}
+      
+      \scriptsize M. Dunkman
+    \end{columns}
   \end{frame}
 
   \begin{frame}
     \frametitle{2p2h}
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{itemize}
+      \item 2p2h is multi-nucleon hard scatter
+      \item Effect largest at flux peak
+      \item Old model only varied normalisation
+      \item Add shape modelling
+      \end{itemize}
+      \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{TalkPics/PdunneF2F050417/2p2h.pdf}
+    \end{columns}
     %?? some of my validation plots to show shift
   \end{frame}
 
   \begin{frame}
     \frametitle{BeRPA}
     %?? explain plus Asher's nice plot
+      \begin{itemize}
+      \item RPA describes screening of nucleon by rest of nucleus
+      \item Old model weighted to Nieves model nominal
+      \item[-] No uncertainty
+      \item Introduce BeRPA parametrisation
+      \end{itemize}
+      \begin{block}{}
+        \vspace{-.4cm}
+        \begin{equation*}
+          \scriptsize
+          f\left(x\right)=\begin{cases}
+          A\left(1-\frac{x}{U}\right)^3+3B\left(1-\frac{x}{U}\right)^2\frac{x}{U}+3p_{1}\left(1-\frac{x}{U}\right)\left(\frac{x}{U}\right)^2+D\left(\frac{x}{U}\right)^3, x<U \\
+          1+p_{2}\exp\left(-E\left(x-U\right)\right), x>U
+          \end{cases}
+        \end{equation*}
+        \end{block}
+        \normalsize
+        \begin{itemize}
+        \item Values and errors for A, B, D, E and U obtained by fitting to Nieves model
+        \item[-] $p_{1}$ and $p_{2}$ fixed by continuity
+        \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{BeRPA}
+    %?? explain plus Asher's nice plot
+    \begin{columns}
+      \column{.5\textwidth}
+      \begin{itemize}
+      \item A, B, D, E and U varied in ND280 Data fit
+      \item Appear to go away from nominal
+      \item High flux parameters seen last year return to normal
+      \item NB MaCh3 implement BeRPA event-by-event, other fitters don't
+      \end{itemize}
+      \column{.5\textwidth}
+      \includegraphics[clip=true,trim=250 0 0 0,width=\textwidth]{TalkPics/PdunneF2F050417/2017b_datafit_vanilla_BeRPA.png}
+
+      \scriptsize C. Wret
+    \end{columns}
   \end{frame}
   
-  %??headline event rate comparisons and systematic variation highlights
+  
+  
   \begin{frame}
-    \frametitle{Validation progress}
+    \frametitle{Validation progress: event rate}
     \begin{itemize}
     \item All of the above changes implemented in MaCh3
-    \item Event rates validated against p-theta
+    \item Validate that code is ok by checking against other analyses
+    \item[-] expect some differences due to BeRPA treatment
+    \item[-] Still validating CC1pi
     \end{itemize}
-    %??table of rates
+    \begin{columns}
+      \column{.6\textwidth}
+    \begin{block}{}
+      \centering
+      \begin{tabular}{|l|cc|}
+        \hline
+        & MaCh3 & p-theta \\
+        \hline
+        FHC 1Rmu & 145.817 & 148.031 \\
+        FHC 1Re & 41.050 & 41.6955 \\
+        RHC 1Rmu & 8.468 & 8.494 \\
+        RHC 1Re & 67.039 & 68.0174 \\
+        FHC CC1pi & 3.9659 & 3.63896\\
+        \hline
+      \end{tabular}
+    \end{block}
+    \end{columns}
   \end{frame}
 
   \begin{frame}
     \frametitle{Validation progress}
     \begin{itemize}
-    \item Systematic variations also compared to p-theta
+    \item Validate systematic model implementation too
+    \item MaCh3 (dashed) vs p-theta (solid)
+    \item[-] Expect small differences due to different spline binning
     \end{itemize}
+    \includegraphics[width=.5\textwidth]{TalkPics/PdunneF2F050417/systvariation.pdf}
+    \includegraphics[width=.5\textwidth]{TalkPics/PdunneF2F050417/systvariation2.pdf}
+
     %??syst variation plots
+    
   \end{frame}
 
   \begin{frame}
